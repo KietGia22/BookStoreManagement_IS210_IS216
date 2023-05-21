@@ -34,18 +34,18 @@ public class ChamCongNV extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Chấm công cho nhân viên");
 
-        jPanel1.setBackground(new java.awt.Color(237, 242, 251));
+        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
 
-        Startbtn.setBackground(new java.awt.Color(237, 242, 251));
-        Startbtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         Startbtn.setText("Bắt đầu ");
+        Startbtn.setBackground(new java.awt.Color(204, 204, 255));
+        Startbtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
 
-        EndBtn.setBackground(new java.awt.Color(237, 242, 251));
-        EndBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         EndBtn.setText("Kết thúc");
+        EndBtn.setBackground(new java.awt.Color(204, 204, 255));
+        EndBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
 
-        QlaiBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         QlaiBtn.setText("Quay Lại");
+        QlaiBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);

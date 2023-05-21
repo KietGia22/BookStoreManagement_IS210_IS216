@@ -33,12 +33,12 @@ public class ChamCong extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Chấm công");
 
-        jPanel1.setBackground(new java.awt.Color(237, 242, 251));
+        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
 
         QlaiBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         QlaiBtn.setText("Quay lại");
 
-        XemdsccBtn.setBackground(new java.awt.Color(237, 242, 251));
+        XemdsccBtn.setBackground(new java.awt.Color(204, 204, 255));
         XemdsccBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         XemdsccBtn.setText("Xem danh sách chấm công");
 

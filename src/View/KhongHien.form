@@ -37,7 +37,7 @@
     <Container class="javax.swing.JPanel" name="jPanel1">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="fb" green="f2" red="ed" type="rgb"/>
+          <Color blue="ff" green="cc" red="cc" type="rgb"/>
         </Property>
       </Properties>
 
@@ -67,9 +67,6 @@
       <SubComponents>
         <Component class="javax.swing.JButton" name="QlaiBtn">
           <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Times New Roman" size="18" style="1"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Quay l&#x1ea1;i"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -78,14 +75,17 @@
                 </LineBorder>
               </Border>
             </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Times New Roman" size="18" style="1"/>
+            </Property>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
+            <Property name="text" type="java.lang.String" value="B&#x1ea1;n kh&#xf4;ng ph&#x1ea3;i l&#xe0; qu&#x1ea3;n l&#xfd; n&#xea;n kh&#xf4;ng c&#xf3; quy&#x1ec1;n s&#x1eed; d&#x1ee5;ng t&#xed;nh n&#x103;ng n&#xe0;y"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Serif" size="24" style="3"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="B&#x1ea1;n kh&#xf4;ng ph&#x1ea3;i l&#xe0; qu&#x1ea3;n l&#xfd; n&#xea;n kh&#xf4;ng c&#xf3; quy&#x1ec1;n s&#x1eed; d&#x1ee5;ng t&#xed;nh n&#x103;ng n&#xe0;y"/>
           </Properties>
         </Component>
       </SubComponents>

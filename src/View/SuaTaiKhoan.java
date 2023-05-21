@@ -57,11 +57,11 @@ public class SuaTaiKhoan extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Sửa tài khoản");
 
-        jPanel1.setBackground(new java.awt.Color(238, 242, 251));
+        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
 
         jLabel1.setText("Sửa thông tin nhân viên");
         jLabel1.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(153, 0, 0));
+        jLabel1.setForeground(new java.awt.Color(0, 153, 102));
 
         jLabel4.setText("Họ Tên");
         jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -87,31 +87,31 @@ public class SuaTaiKhoan extends javax.swing.JFrame {
         NgTao.setEnabled(false);
         NgTao.setFocusable(false);
 
-        jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel6.setText("Tên đăng nhập");
+        jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
 
         TDN_txt.setFocusable(false);
 
-        jLabel10.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel10.setText("Mật khẩu");
+        jLabel10.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
 
         CV_txt2.setFocusable(false);
 
         Search_txt.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
 
-        jComboBox1.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mã tài khoản", "Họ Tên", "SĐT" }));
+        jComboBox1.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
 
-        SearchBtn.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         SearchBtn.setText("Tìm");
+        SearchBtn.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
 
-        LuuBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         LuuBtn.setText("Lưu lại");
         LuuBtn.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 0, 51), 2, true));
+        LuuBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
 
-        QlaiBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         QlaiBtn.setText("Quay lại");
         QlaiBtn.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 0, 51), 2, true));
+        QlaiBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
 
         jTable1.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(

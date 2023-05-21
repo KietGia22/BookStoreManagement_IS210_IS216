@@ -45,10 +45,10 @@ public class CTHD extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Chi tiết hoá đơn");
 
-        jPanel1.setBackground(new java.awt.Color(237, 242, 251));
+        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
 
         jLabel1.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(153, 0, 0));
+        jLabel1.setForeground(new java.awt.Color(0, 153, 102));
         jLabel1.setText("Chi tiết hoá đơn");
 
         QlaiBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
