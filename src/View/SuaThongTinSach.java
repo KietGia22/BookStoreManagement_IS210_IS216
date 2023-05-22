@@ -115,7 +115,7 @@ public class SuaThongTinSach extends javax.swing.JFrame {
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mã sách", "Tên sách", "Tác giả", "Thể loại" }));
 
         SearchBtn.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
-        SearchBtn.setText("Tìm");
+        SearchBtn.setText("Tìm sách");
 
         QlaiBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         QlaiBtn.setText("Quay lại");

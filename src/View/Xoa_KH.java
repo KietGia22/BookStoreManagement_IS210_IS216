@@ -50,7 +50,7 @@ public class Xoa_KH extends javax.swing.JFrame {
         jLabel2.setText("Xoá thông tin khách hàng");
 
         Delbtn1.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
-        Delbtn1.setText("Xoá");
+        Delbtn1.setText("Xoá khách hàng");
         Delbtn1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Delbtn1ActionPerformed(evt);
@@ -58,7 +58,7 @@ public class Xoa_KH extends javax.swing.JFrame {
         });
 
         SearchBtn.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
-        SearchBtn.setText("Tìm");
+        SearchBtn.setText("Tìm khách hàng");
 
         QlaiBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         QlaiBtn.setText("Quay lại");
@@ -97,13 +97,13 @@ public class Xoa_KH extends javax.swing.JFrame {
                         .addComponent(jLabel2)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(Tim_txt1, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(75, 75, 75)
-                                .addComponent(SearchBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(Delbtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(42, 42, 42)
+                                .addComponent(SearchBtn)
+                                .addGap(33, 33, 33)
+                                .addComponent(Delbtn1))
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 555, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
                         .addComponent(QlaiBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -182,15 +182,11 @@ public class Xoa_KH extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Delbtn;
     private javax.swing.JButton Delbtn1;
     private javax.swing.JButton QlaiBtn;
     private javax.swing.JButton SearchBtn;
-    private javax.swing.JTextField Tim_txt;
     private javax.swing.JTextField Tim_txt1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;

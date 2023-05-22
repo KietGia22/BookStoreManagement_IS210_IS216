@@ -29,7 +29,6 @@ public class Home extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         NVienBtn = new javax.swing.JButton();
-        HomeBtn = new javax.swing.JButton();
         SachBtn = new javax.swing.JButton();
         KHangBtn = new javax.swing.JButton();
         HoaDonBtn = new javax.swing.JButton();
@@ -50,40 +49,44 @@ public class Home extends javax.swing.JFrame {
 
         NVienBtn.setBackground(new java.awt.Color(237, 242, 251));
         NVienBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        NVienBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/icon_img/icons8-employee-30.png"))); // NOI18N
         NVienBtn.setText("Nhân viên ");
         NVienBtn.setToolTipText("");
 
-        HomeBtn.setBackground(new java.awt.Color(237, 242, 251));
-        HomeBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        HomeBtn.setText("Home");
-
         SachBtn.setBackground(new java.awt.Color(237, 242, 251));
         SachBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        SachBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/icon_img/icons8-book-30.png"))); // NOI18N
         SachBtn.setText("Sách");
         SachBtn.setToolTipText("");
 
         KHangBtn.setBackground(new java.awt.Color(237, 242, 251));
         KHangBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        KHangBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/icon_img/icons8-customer-48.png"))); // NOI18N
         KHangBtn.setText("Khách hàng");
 
         HoaDonBtn.setBackground(new java.awt.Color(237, 242, 251));
         HoaDonBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        HoaDonBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/icon_img/icons8-bill-48.png"))); // NOI18N
         HoaDonBtn.setText("Hoá đơn");
 
         NhaCCBtn.setBackground(new java.awt.Color(237, 242, 251));
         NhaCCBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        NhaCCBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/icon_img/icons8-supply-chain-48.png"))); // NOI18N
         NhaCCBtn.setText("Nhà Cung Cấp");
 
         ChamCongBtn.setBackground(new java.awt.Color(237, 242, 251));
         ChamCongBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        ChamCongBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/icon_img/icons8-timer-30.png"))); // NOI18N
         ChamCongBtn.setText("Chấm công");
 
         BaoCaoBtn.setBackground(new java.awt.Color(237, 242, 251));
         BaoCaoBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        BaoCaoBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/icon_img/icons8-report-file-48.png"))); // NOI18N
         BaoCaoBtn.setText("Báo cáo");
 
         NhapHangBtn.setBackground(new java.awt.Color(237, 242, 251));
         NhapHangBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        NhapHangBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/icon_img/icons8-hangar-48.png"))); // NOI18N
         NhapHangBtn.setText("Nhập kho");
 
         OutBtn.setBackground(new java.awt.Color(9, 188, 138));
@@ -103,6 +106,7 @@ public class Home extends javax.swing.JFrame {
 
         TLBtn.setBackground(new java.awt.Color(237, 242, 251));
         TLBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        TLBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/icon_img/icons8-category-48.png"))); // NOI18N
         TLBtn.setText("Thể loại");
         TLBtn.setToolTipText("");
 
@@ -110,7 +114,7 @@ public class Home extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
@@ -125,59 +129,53 @@ public class Home extends javax.swing.JFrame {
                                 .addComponent(jLabel2)
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(NhaCCBtn)
+                            .addComponent(NVienBtn))
+                        .addGap(64, 64, 64)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(11, 11, 11)
-                                .addComponent(NhaCCBtn)
-                                .addGap(53, 53, 53)
-                                .addComponent(NhapHangBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(SachBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(104, 104, 104))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(NhapHangBtn)
+                                .addGap(97, 97, 97)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(NVienBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(92, 92, 92)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(SachBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TLBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(100, 100, 100)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(TLBtn)
+                                .addGap(81, 81, 81)
+                                .addComponent(ChamCongBtn)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
+                                .addComponent(BaoCaoBtn)
+                                .addContainerGap())
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(KHangBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(96, 96, 96)
-                                .addComponent(HoaDonBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(ChamCongBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(KHangBtn)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(BaoCaoBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(17, 17, 17))))
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(16, 16, 16)
-                    .addComponent(HomeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(894, Short.MAX_VALUE)))
+                                .addComponent(HoaDonBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(100, 100, 100))))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(HoaDonBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(SachBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(NVienBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(KHangBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(NhaCCBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(NhapHangBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ChamCongBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(BaoCaoBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(SachBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(KHangBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(HoaDonBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(18, 18, 18)
-                        .addComponent(TLBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(NhapHangBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TLBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ChamCongBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(BaoCaoBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addComponent(NVienBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(NhaCCBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(34, 34, 34)
@@ -187,12 +185,7 @@ public class Home extends javax.swing.JFrame {
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(OutBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(75, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(16, 16, 16)
-                    .addComponent(HomeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(536, Short.MAX_VALUE)))
+                .addContainerGap(86, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -203,9 +196,7 @@ public class Home extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -256,7 +247,6 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JButton BaoCaoBtn;
     private javax.swing.JButton ChamCongBtn;
     private javax.swing.JButton HoaDonBtn;
-    private javax.swing.JButton HomeBtn;
     private javax.swing.JButton KHangBtn;
     private javax.swing.JButton NVienBtn;
     private javax.swing.JButton NhaCCBtn;

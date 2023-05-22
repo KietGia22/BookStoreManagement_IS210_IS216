@@ -50,7 +50,7 @@ public class Xoa_TL extends javax.swing.JFrame {
         jLabel2.setText("Xoá thể loại");
 
         Delbtn1.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
-        Delbtn1.setText("Xoá");
+        Delbtn1.setText("Xoá thể loại");
         Delbtn1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Delbtn1ActionPerformed(evt);
@@ -58,7 +58,7 @@ public class Xoa_TL extends javax.swing.JFrame {
         });
 
         SearchBtn.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
-        SearchBtn.setText("Tìm");
+        SearchBtn.setText("Tìm thể loại");
 
         QlaiBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         QlaiBtn.setText("Quay lại");
@@ -101,9 +101,9 @@ public class Xoa_TL extends javax.swing.JFrame {
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(Tim_txt1, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(SearchBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(84, 84, 84)
-                                .addComponent(Delbtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(SearchBtn)
+                                .addGap(71, 71, 71)
+                                .addComponent(Delbtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 627, javax.swing.GroupLayout.PREFERRED_SIZE)))

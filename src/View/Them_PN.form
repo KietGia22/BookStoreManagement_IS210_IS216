@@ -61,7 +61,7 @@
                                   <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                                   <Component id="jComboBox1" min="-2" pref="121" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="SearchBtn" min="-2" pref="160" max="-2" attributes="0"/>
+                                  <Component id="SearchBtn" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Component id="jScrollPane1" alignment="0" min="-2" pref="615" max="-2" attributes="0"/>
                           </Group>

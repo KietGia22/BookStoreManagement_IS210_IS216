@@ -49,16 +49,17 @@ public class Xoa_TK extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(0, 153, 102));
         jLabel1.setText("Xoá thông tin nhân viên");
 
-        Delbtn.setText("Xoá");
         Delbtn.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        Delbtn.setText("Xoá nhân viên");
+        Delbtn.setToolTipText("");
         Delbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DelbtnActionPerformed(evt);
             }
         });
 
-        SearchBtn.setText("Tìm");
         SearchBtn.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        SearchBtn.setText("Tìm nhân viên");
 
         QlaiBtn.setText("Quay lại");
         QlaiBtn.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 0, 51), 2, true));
@@ -100,10 +101,10 @@ public class Xoa_TK extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(Tim_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(80, 80, 80)
-                                .addComponent(SearchBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(Delbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(SearchBtn)
+                                .addGap(18, 18, 18)
+                                .addComponent(Delbtn))
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 574, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
                         .addComponent(QlaiBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
