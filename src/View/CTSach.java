@@ -81,20 +81,36 @@ public class CTSach extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel9.setText("Tác giả");
 
+        TS_txt.setBackground(new java.awt.Color(204, 204, 255));
+        TS_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
         TS_txt.setFocusable(false);
 
+        Tg_txt.setBackground(new java.awt.Color(204, 204, 255));
+        Tg_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
         Tg_txt.setFocusable(false);
 
+        G_txt.setBackground(new java.awt.Color(204, 204, 255));
+        G_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
         G_txt.setFocusable(false);
 
+        NXB_txt.setBackground(new java.awt.Color(204, 204, 255));
+        NXB_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
         NXB_txt.setFocusable(false);
 
+        TL_txt.setBackground(new java.awt.Color(204, 204, 255));
+        TL_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
         TL_txt.setFocusable(false);
 
+        MS_txt.setBackground(new java.awt.Color(204, 204, 255));
+        MS_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
         MS_txt.setFocusable(false);
 
+        GC_txt.setBackground(new java.awt.Color(204, 204, 255));
+        GC_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
         GC_txt.setFocusable(false);
 
+        SL_txt.setBackground(new java.awt.Color(204, 204, 255));
+        SL_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
         SL_txt.setFocusable(false);
 
         jLabel10.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N

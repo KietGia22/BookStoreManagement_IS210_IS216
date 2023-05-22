@@ -62,22 +62,47 @@ public class SuaKhachHang extends javax.swing.JFrame {
         jLabel4.setText("Họ Tên");
         jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
 
+        HoTen_txt.setFont(new java.awt.Font("Times New Roman", 1, 15)); // NOI18N
+        HoTen_txt.setBackground(new java.awt.Color(204, 204, 255));
+        HoTen_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+
         jLabel3.setText("Ngày sinh");
         jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
 
         jLabel9.setText("Giới tính");
         jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
 
+        GT_txt.setFont(new java.awt.Font("Times New Roman", 1, 15)); // NOI18N
+        GT_txt.setBackground(new java.awt.Color(204, 204, 255));
+        GT_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+
         jLabel6.setText("Địa chỉ");
         jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+
+        DC_txt.setFont(new java.awt.Font("Times New Roman", 1, 15)); // NOI18N
+        DC_txt.setBackground(new java.awt.Color(204, 204, 255));
+        DC_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
 
         jLabel7.setText("Số điện thoại");
         jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
 
+        SDT_txt.setFont(new java.awt.Font("Times New Roman", 1, 15)); // NOI18N
+        SDT_txt.setBackground(new java.awt.Color(204, 204, 255));
+        SDT_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+
         jLabel5.setText("Ghi chú");
         jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
 
-        Search_txt.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        GC_txt.setFont(new java.awt.Font("Times New Roman", 1, 15)); // NOI18N
+        GC_txt.setBackground(new java.awt.Color(204, 204, 255));
+        GC_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+
+        NgSinh.setBackground(new java.awt.Color(204, 204, 255));
+        NgSinh.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+
+        Search_txt.setFont(new java.awt.Font("Times New Roman", 1, 15)); // NOI18N
+        Search_txt.setBackground(new java.awt.Color(204, 204, 255));
+        Search_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mã khách hàng", "Tên khách hàng", "SĐT" }));
         jComboBox1.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
@@ -119,6 +144,8 @@ public class SuaKhachHang extends javax.swing.JFrame {
         jLabel8.setText("Ngày tạo tài khoản");
         jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
 
+        NgTao.setBackground(java.awt.Color.pink);
+        NgTao.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
         NgTao.setEnabled(false);
         NgTao.setFocusable(false);
 
@@ -159,7 +186,7 @@ public class SuaKhachHang extends javax.swing.JFrame {
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 798, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(Search_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(37, 37, 37)
+                        .addGap(39, 39, 39)
                         .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(33, 33, 33)
                         .addComponent(SearchBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -174,12 +201,12 @@ public class SuaKhachHang extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Search_txt, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(13, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Search_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(SearchBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(27, 27, 27)
+                    .addComponent(SearchBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE))
+                .addGap(20, 20, 20)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 397, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(72, 72, 72)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -228,7 +255,7 @@ public class SuaKhachHang extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();

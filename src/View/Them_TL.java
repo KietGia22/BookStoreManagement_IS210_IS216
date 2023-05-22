@@ -50,9 +50,13 @@ public class Them_TL extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel2.setText("Ghi chú");
 
+        GC_txt.setBackground(new java.awt.Color(204, 204, 255));
         GC_txt.setFont(new java.awt.Font("Times New Roman", 1, 15)); // NOI18N
+        GC_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
 
+        TL_txt.setBackground(new java.awt.Color(204, 204, 255));
         TL_txt.setFont(new java.awt.Font("Times New Roman", 1, 15)); // NOI18N
+        TL_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
 
         LuuBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         LuuBtn.setText("Lưu lại");

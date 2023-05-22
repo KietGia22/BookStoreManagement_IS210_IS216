@@ -114,19 +114,29 @@ public class CTHD extends javax.swing.JFrame {
         jLabel6.setText("Ngày lập hoá đơn");
         jLabel6.setToolTipText("");
 
+        MaHD_txt.setBackground(new java.awt.Color(204, 204, 255));
         MaHD_txt.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        MaHD_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
         MaHD_txt.setFocusable(false);
 
+        TenKH_txt.setBackground(new java.awt.Color(204, 204, 255));
         TenKH_txt.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        TenKH_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
         TenKH_txt.setFocusable(false);
 
+        TenNV_txt.setBackground(new java.awt.Color(204, 204, 255));
         TenNV_txt.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        TenNV_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
         TenNV_txt.setFocusable(false);
 
+        NgayLapHD_txt.setBackground(new java.awt.Color(204, 204, 255));
         NgayLapHD_txt.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        NgayLapHD_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
         NgayLapHD_txt.setFocusable(false);
 
+        Gia_txt.setBackground(new java.awt.Color(204, 204, 255));
         Gia_txt.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        Gia_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
         Gia_txt.setFocusable(false);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);

@@ -53,20 +53,40 @@ public class Them_KH extends javax.swing.JFrame {
         jLabel4.setText("Họ Tên");
         jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
 
+        HoTen_txt.setFont(new java.awt.Font("Times New Roman", 1, 15)); // NOI18N
+        HoTen_txt.setBackground(new java.awt.Color(204, 204, 255));
+        HoTen_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+
         jLabel3.setText("Ngày sinh");
         jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
 
         jLabel9.setText("Giới tính");
         jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
 
+        GT_txt.setFont(new java.awt.Font("Times New Roman", 1, 15)); // NOI18N
+        GT_txt.setBackground(new java.awt.Color(204, 204, 255));
+        GT_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+
         jLabel6.setText("Địa chỉ");
         jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+
+        DC_txt.setFont(new java.awt.Font("Times New Roman", 1, 15)); // NOI18N
+        DC_txt.setBackground(new java.awt.Color(204, 204, 255));
+        DC_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
 
         jLabel7.setText("Số điện thoại");
         jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
 
+        SDT_txt.setFont(new java.awt.Font("Times New Roman", 1, 15)); // NOI18N
+        SDT_txt.setBackground(new java.awt.Color(204, 204, 255));
+        SDT_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+
         jLabel5.setText("Ghi chú");
         jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+
+        GC_txt.setFont(new java.awt.Font("Times New Roman", 1, 15)); // NOI18N
+        GC_txt.setBackground(new java.awt.Color(204, 204, 255));
+        GC_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
 
         jLabel8.setText("Ngày tạo tài khoản");
         jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -77,9 +97,9 @@ public class Them_KH extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 153, 102));
 
-        LuuBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         LuuBtn.setText("Lưu lại");
         LuuBtn.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 0, 51), 2, true));
+        LuuBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
 
         QlaiBtn.setText("Quay lại");
         QlaiBtn.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 0, 51), 2, true));

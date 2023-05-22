@@ -66,20 +66,40 @@ public class SuaTaiKhoan extends javax.swing.JFrame {
         jLabel4.setText("Họ Tên");
         jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
 
+        HoTen_txt.setFont(new java.awt.Font("Times New Roman", 1, 15)); // NOI18N
+        HoTen_txt.setBackground(new java.awt.Color(204, 204, 255));
+        HoTen_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+
         jLabel3.setText("Ngày sinh");
         jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
 
         jLabel9.setText("Gmail");
         jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
 
+        gmail_txt.setFont(new java.awt.Font("Times New Roman", 1, 15)); // NOI18N
+        gmail_txt.setBackground(new java.awt.Color(204, 204, 255));
+        gmail_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+
         DC_label.setText("Địa chỉ");
         DC_label.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+
+        DC_txt.setFont(new java.awt.Font("Times New Roman", 1, 15)); // NOI18N
+        DC_txt.setBackground(new java.awt.Color(204, 204, 255));
+        DC_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
 
         jLabel7.setText("Số điện thoại");
         jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
 
+        SDT_txt.setFont(new java.awt.Font("Times New Roman", 1, 15)); // NOI18N
+        SDT_txt.setBackground(new java.awt.Color(204, 204, 255));
+        SDT_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+
         jLabel5.setText("Chức vụ");
         jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+
+        CV_txt.setFont(new java.awt.Font("Times New Roman", 1, 15)); // NOI18N
+        CV_txt.setBackground(new java.awt.Color(204, 204, 255));
+        CV_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
 
         jLabel8.setText("Ngày tạo tài khoản");
         jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -90,14 +110,22 @@ public class SuaTaiKhoan extends javax.swing.JFrame {
         jLabel6.setText("Tên đăng nhập");
         jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
 
+        TDN_txt.setFont(new java.awt.Font("Times New Roman", 1, 15)); // NOI18N
+        TDN_txt.setBackground(new java.awt.Color(204, 204, 255));
+        TDN_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
         TDN_txt.setFocusable(false);
 
         jLabel10.setText("Mật khẩu");
         jLabel10.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
 
+        CV_txt2.setFont(new java.awt.Font("Times New Roman", 1, 15)); // NOI18N
+        CV_txt2.setBackground(new java.awt.Color(204, 204, 255));
+        CV_txt2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
         CV_txt2.setFocusable(false);
 
         Search_txt.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        Search_txt.setBackground(new java.awt.Color(204, 204, 255));
+        Search_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mã tài khoản", "Họ Tên", "SĐT" }));
         jComboBox1.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N

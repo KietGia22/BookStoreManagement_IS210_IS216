@@ -97,7 +97,9 @@ public class Them_HD extends javax.swing.JFrame {
         jTable2.setShowGrid(true);
         jScrollPane2.setViewportView(jTable2);
 
-        Search_txt.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        Search_txt.setBackground(new java.awt.Color(204, 204, 255));
+        Search_txt.setFont(new java.awt.Font("Times New Roman", 1, 15)); // NOI18N
+        Search_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
 
         jComboBox1.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mã sách", "Tên sách" }));
@@ -113,7 +115,9 @@ public class Them_HD extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel2.setText("Số lượng mua");
 
+        SL_txt.setBackground(new java.awt.Color(204, 204, 255));
         SL_txt.setFont(new java.awt.Font("Times New Roman", 1, 15)); // NOI18N
+        SL_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
 
         DelBtn.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         DelBtn.setText("Xoá sách trong hoá đơn");

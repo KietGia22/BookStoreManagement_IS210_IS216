@@ -61,27 +61,55 @@ public class SuaThongTinSach extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel4.setText("Tên sách");
 
+        TS_txt.setBackground(new java.awt.Color(204, 204, 255));
+        TS_txt.setFont(new java.awt.Font("Times New Roman", 1, 15)); // NOI18N
+        TS_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+
         jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel3.setText("Thể loại");
+
+        TL_txt.setBackground(new java.awt.Color(204, 204, 255));
+        TL_txt.setFont(new java.awt.Font("Times New Roman", 1, 15)); // NOI18N
+        TL_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
 
         jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel9.setText("Tác giả");
 
+        Tg_txt.setBackground(new java.awt.Color(204, 204, 255));
+        Tg_txt.setFont(new java.awt.Font("Times New Roman", 1, 15)); // NOI18N
+        Tg_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+
         jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel6.setText("Giá");
+
+        G_txt.setBackground(new java.awt.Color(204, 204, 255));
+        G_txt.setFont(new java.awt.Font("Times New Roman", 1, 15)); // NOI18N
+        G_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
 
         jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel7.setText("Số lượng trong kho");
 
+        SL_txt.setBackground(new java.awt.Color(204, 204, 255));
+        SL_txt.setFont(new java.awt.Font("Times New Roman", 1, 15)); // NOI18N
+        SL_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+
         jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel5.setText("Ghi chú");
+
+        GC_txt.setBackground(new java.awt.Color(204, 204, 255));
+        GC_txt.setFont(new java.awt.Font("Times New Roman", 1, 15)); // NOI18N
+        GC_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
 
         jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel8.setText("Ảnh");
 
-        Search_txt.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        Search_txt.setBackground(new java.awt.Color(204, 204, 255));
+        Search_txt.setFont(new java.awt.Font("Times New Roman", 1, 15)); // NOI18N
+        Search_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
 
-        Anh_txt.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        Anh_txt.setBackground(new java.awt.Color(204, 204, 255));
+        Anh_txt.setFont(new java.awt.Font("Times New Roman", 1, 15)); // NOI18N
+        Anh_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
 
         jComboBox1.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mã sách", "Tên sách", "Tác giả", "Thể loại" }));
@@ -129,6 +157,10 @@ public class SuaThongTinSach extends javax.swing.JFrame {
 
         jLabel10.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel10.setText("Nhà xuất bản");
+
+        NXB_txt.setBackground(new java.awt.Color(204, 204, 255));
+        NXB_txt.setFont(new java.awt.Font("Times New Roman", 1, 15)); // NOI18N
+        NXB_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);

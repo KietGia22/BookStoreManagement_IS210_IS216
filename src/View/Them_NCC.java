@@ -42,32 +42,38 @@ public class Them_NCC extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 255));
 
+        jLabel1.setText("Thêm nhà cung cấp");
         jLabel1.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 153, 102));
-        jLabel1.setText("Thêm nhà cung cấp");
 
-        LuuBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         LuuBtn.setText("Lưu lại");
         LuuBtn.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 0, 51), 2, true));
+        LuuBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
 
-        QlaiBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         QlaiBtn.setText("Quay lại");
         QlaiBtn.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 0, 51), 2, true));
+        QlaiBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
 
-        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel2.setText("Số điện thoại");
+        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
 
-        jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel3.setText("Tên nhà cung cấp");
+        jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
 
-        jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel4.setText("Địa chỉ");
+        jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
 
+        NCC_txt.setBackground(new java.awt.Color(204, 204, 255));
         NCC_txt.setFont(new java.awt.Font("Times New Roman", 1, 15)); // NOI18N
+        NCC_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
 
+        SDT_txt.setBackground(new java.awt.Color(204, 204, 255));
         SDT_txt.setFont(new java.awt.Font("Times New Roman", 1, 15)); // NOI18N
+        SDT_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
 
+        DC_txt.setBackground(new java.awt.Color(204, 204, 255));
         DC_txt.setFont(new java.awt.Font("Times New Roman", 1, 15)); // NOI18N
+        DC_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);

@@ -54,52 +54,86 @@ public class Them_TK extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 255));
 
+        jLabel1.setText("Thêm thông tin nhân viên");
         jLabel1.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 153, 102));
-        jLabel1.setText("Thêm thông tin nhân viên");
 
-        jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel4.setText("Họ Tên");
+        jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
 
-        jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        HoTen_txt.setFont(new java.awt.Font("Times New Roman", 1, 15)); // NOI18N
+        HoTen_txt.setAutoscrolls(false);
+        HoTen_txt.setBackground(new java.awt.Color(204, 204, 255));
+        HoTen_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+
         jLabel3.setText("Ngày sinh");
+        jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
 
-        jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel9.setText("Gmail");
+        jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
 
-        DC_label.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        gmail_txt.setFont(new java.awt.Font("Times New Roman", 1, 15)); // NOI18N
+        gmail_txt.setAutoscrolls(false);
+        gmail_txt.setBackground(new java.awt.Color(204, 204, 255));
+        gmail_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+
         DC_label.setText("Địa chỉ");
+        DC_label.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
 
-        jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        DC_txt.setFont(new java.awt.Font("Times New Roman", 1, 15)); // NOI18N
+        DC_txt.setAutoscrolls(false);
+        DC_txt.setBackground(new java.awt.Color(204, 204, 255));
+        DC_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+
         jLabel7.setText("Số điện thoại");
+        jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
 
-        jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        SDT_txt.setFont(new java.awt.Font("Times New Roman", 1, 15)); // NOI18N
+        SDT_txt.setAutoscrolls(false);
+        SDT_txt.setBackground(new java.awt.Color(204, 204, 255));
+        SDT_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+
         jLabel5.setText("Chức vụ");
+        jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
 
+        CV_txt.setFont(new java.awt.Font("Times New Roman", 1, 15)); // NOI18N
+        CV_txt.setAutoscrolls(false);
+        CV_txt.setBackground(new java.awt.Color(204, 204, 255));
+        CV_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
         CV_txt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CV_txtActionPerformed(evt);
             }
         });
 
-        jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel8.setText("Ngày tạo tài khoản");
+        jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+
+        TDN_txt.setFont(new java.awt.Font("Times New Roman", 1, 15)); // NOI18N
+        TDN_txt.setAutoscrolls(false);
+        TDN_txt.setBackground(new java.awt.Color(204, 204, 255));
+        TDN_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
 
         NgTao.setFocusable(false);
 
-        jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel6.setText("Tên đăng nhập");
+        jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
 
-        jLabel10.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel10.setText("Mật khẩu");
+        jLabel10.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
 
-        LuuBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        CV_txt2.setFont(new java.awt.Font("Times New Roman", 1, 15)); // NOI18N
+        CV_txt2.setAutoscrolls(false);
+        CV_txt2.setBackground(new java.awt.Color(204, 204, 255));
+        CV_txt2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+
         LuuBtn.setText("Lưu lại");
         LuuBtn.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 0, 51), 2, true));
+        LuuBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
 
-        QlaiBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         QlaiBtn.setText("Quay lại");
         QlaiBtn.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 0, 51), 2, true));
+        QlaiBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
