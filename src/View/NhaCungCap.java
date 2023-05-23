@@ -87,7 +87,7 @@ public class NhaCungCap extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         SearchBtn2.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
-        SearchBtn2.setText("Tìm nhà cung cấp");
+        SearchBtn2.setText("Thêm nhà cung cấp");
         SearchBtn2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SearchBtn2ActionPerformed(evt);
@@ -117,7 +117,7 @@ public class NhaCungCap extends javax.swing.JFrame {
                                 .addGap(60, 60, 60)
                                 .addComponent(SearchBtn1))
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 611, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
                         .addComponent(SearchBtn2)))
                 .addGap(42, 42, 42))
         );
@@ -198,7 +198,6 @@ public class NhaCungCap extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton QlaiBtn;
-    private javax.swing.JButton SearchBtn;
     private javax.swing.JButton SearchBtn1;
     private javax.swing.JButton SearchBtn2;
     private javax.swing.JTextField Search_txt;

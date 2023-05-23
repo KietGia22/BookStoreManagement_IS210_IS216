@@ -45,11 +45,11 @@ public class Them_TK extends javax.swing.JFrame {
         NgTao = new com.github.lgooddatepicker.components.DatePicker();
         jLabel6 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        MK_txt = new javax.swing.JTextField();
         LuuBtn = new javax.swing.JButton();
         QlaiBtn = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         L_txt = new javax.swing.JTextField();
+        MK_Txt = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Thêm tài khoản cho nhân viên");
@@ -124,11 +124,6 @@ public class Them_TK extends javax.swing.JFrame {
         jLabel10.setText("Mật khẩu");
         jLabel10.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
 
-        MK_txt.setFont(new java.awt.Font("Times New Roman", 1, 15)); // NOI18N
-        MK_txt.setAutoscrolls(false);
-        MK_txt.setBackground(new java.awt.Color(204, 204, 255));
-        MK_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-
         LuuBtn.setText("Lưu lại");
         LuuBtn.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 0, 51), 2, true));
         LuuBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -140,10 +135,14 @@ public class Them_TK extends javax.swing.JFrame {
         jLabel11.setText("Lương");
         jLabel11.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
 
-        L_txt.setBackground(new java.awt.Color(204, 204, 255));
         L_txt.setFont(new java.awt.Font("Times New Roman", 1, 15)); // NOI18N
         L_txt.setAutoscrolls(false);
+        L_txt.setBackground(new java.awt.Color(204, 204, 255));
         L_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+
+        MK_Txt.setFont(new java.awt.Font("Times New Roman", 1, 15)); // NOI18N
+        MK_Txt.setBackground(new java.awt.Color(204, 204, 255));
+        MK_Txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -181,11 +180,11 @@ public class Them_TK extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(DC_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 161, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(MK_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(MK_Txt))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -216,9 +215,9 @@ public class Them_TK extends javax.swing.JFrame {
                             .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(TDN_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(MK_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
+                            .addComponent(MK_Txt))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -319,7 +318,7 @@ public class Them_TK extends javax.swing.JFrame {
     private javax.swing.JTextField HoTen_txt;
     private javax.swing.JTextField L_txt;
     private javax.swing.JButton LuuBtn;
-    private javax.swing.JTextField MK_txt;
+    private javax.swing.JPasswordField MK_Txt;
     private com.github.lgooddatepicker.components.DatePicker NgSinh;
     private com.github.lgooddatepicker.components.DatePicker NgTao;
     private javax.swing.JButton QlaiBtn;
