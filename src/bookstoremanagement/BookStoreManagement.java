@@ -4,6 +4,8 @@
  */
 package bookstoremanagement;
 
+import View.Login;
+
 /**
  *
  * @author GIA KIET
@@ -11,10 +13,11 @@ package bookstoremanagement;
 public class BookStoreManagement {
 
     /**
-     * @param args the command line arguments
+     * @param args the command line 
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        new Login();
     }
     
 }

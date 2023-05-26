@@ -5,6 +5,8 @@
 package View;
 
 import java.awt.Color;
+import Controller.TaiKhoanController;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -15,9 +17,12 @@ public class Login extends javax.swing.JFrame {
     /**
      * Creates new form Login
      */
+    public String user;
     public Login() {
         initComponents();
         setSize(1040, 600);
+        this.setVisible(true);
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -80,6 +85,11 @@ public class Login extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(183, 239, 197));
         jButton1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jButton1.setText("Đăng nhập");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -96,9 +106,8 @@ public class Login extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(MatKhau_Txt)
                         .addComponent(TenDN_Txt, javax.swing.GroupLayout.DEFAULT_SIZE, 241, Short.MAX_VALUE)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -187,6 +196,27 @@ public class Login extends javax.swing.JFrame {
             MatKhau_Txt.setForeground(new Color(153, 153, 153));
         }
     }//GEN-LAST:event_MatKhau_TxtFocusLost
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        String TenDN, MatKhau;
+        this.user = TenDN_Txt.getText();
+        TenDN = TenDN_Txt.getText();
+        MatKhau = MatKhau_Txt.getText();
+        if(TenDN.equals("") || MatKhau.equals("")){
+            JOptionPane.showMessageDialog(this, "Vui lòng điền đầy đủ thông tin", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            TaiKhoanController tk = new TaiKhoanController();
+            int kiemtra = tk.DangNhap(TenDN, MatKhau);
+            if(kiemtra == 1){
+                JOptionPane.showMessageDialog(this, "Chào mừng");
+                new Home(TenDN, MatKhau);
+                this.dispose();
+            } else {
+                JOptionPane.showMessageDialog(this, "Đăng nhập thất bại", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

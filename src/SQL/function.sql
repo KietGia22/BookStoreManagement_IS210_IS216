@@ -61,8 +61,7 @@ BEGIN
        WHEN NO_DATA_FOUND THEN
            DBMS_OUTPUT.PUT_LINE('KHONG TIM THAY NHAN VIEN');
 END;
-   
-   
-   
+/
+
    
    

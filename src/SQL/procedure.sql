@@ -527,6 +527,19 @@ BEGIN
         AND MAPN = mpn;
         COMMIT;
 END;
+/
+
+CREATE OR REPLACE PROCEDURE GET_DANG_NHAP(tendn TAIKHOAN.TENDN%TYPE, mk TAIKHOAN.MATKHAU%TYPE, out_cur OUT SYS_REFCURSOR) 
+AS
+BEGIN
+       OPEN out_cur FOR 
+        SELECT * FROM TAIKHOAN
+        WHERE TENDN = tendn
+        AND MATKHAU = mk;
+        COMMIT;
+END;
+/
+   
 
 
 
