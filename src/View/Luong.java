@@ -13,8 +13,19 @@ public class Luong extends javax.swing.JFrame {
     /**
      * Creates new form Luong
      */
+    
+    public String TenDNHome, MatKhauHome;
+    
     public Luong() {
         initComponents();
+    }
+    
+    public Luong(String TenDN, String MatKhau){
+        initComponents();
+        this.setVisible(true);
+        this.setLocationRelativeTo(null);
+        this.TenDNHome = TenDN;
+        this.MatKhauHome = MatKhau;
     }
 
     /**
@@ -44,6 +55,11 @@ public class Luong extends javax.swing.JFrame {
         QlaiBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         QlaiBtn.setText("Quay lại");
         QlaiBtn.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 0, 51), 2, true));
+        QlaiBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                QlaiBtnActionPerformed(evt);
+            }
+        });
 
         jTable1.setBackground(new java.awt.Color(0, 204, 204));
         jTable1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
@@ -145,6 +161,12 @@ public class Luong extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void QlaiBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QlaiBtnActionPerformed
+        // TODO add your handling code here:
+        new Home(TenDNHome, MatKhauHome);
+        this.dispose();
+    }//GEN-LAST:event_QlaiBtnActionPerformed
 
     /**
      * @param args the command line arguments

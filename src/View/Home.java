@@ -5,7 +5,6 @@
 package View;
 
 import Controller.TaiKhoanController;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -85,11 +84,21 @@ public class Home extends javax.swing.JFrame {
         KHangBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         KHangBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/icon_img/icons8-customer-48.png"))); // NOI18N
         KHangBtn.setText("Khách hàng");
+        KHangBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                KHangBtnActionPerformed(evt);
+            }
+        });
 
         HoaDonBtn.setBackground(new java.awt.Color(237, 242, 251));
         HoaDonBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         HoaDonBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/icon_img/icons8-bill-48.png"))); // NOI18N
         HoaDonBtn.setText("Hoá đơn");
+        HoaDonBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                HoaDonBtnActionPerformed(evt);
+            }
+        });
 
         NhaCCBtn.setBackground(new java.awt.Color(237, 242, 251));
         NhaCCBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -105,6 +114,11 @@ public class Home extends javax.swing.JFrame {
         ChamCongBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         ChamCongBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/icon_img/icons8-timer-30.png"))); // NOI18N
         ChamCongBtn.setText("Chấm công");
+        ChamCongBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ChamCongBtnActionPerformed(evt);
+            }
+        });
 
         BaoCaoBtn.setBackground(new java.awt.Color(237, 242, 251));
         BaoCaoBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -141,6 +155,11 @@ public class Home extends javax.swing.JFrame {
         TLBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/icon_img/icons8-category-48.png"))); // NOI18N
         TLBtn.setText("Thể loại");
         TLBtn.setToolTipText("");
+        TLBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TLBtnActionPerformed(evt);
+            }
+        });
 
         LuongBtn.setBackground(new java.awt.Color(237, 242, 251));
         LuongBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -153,19 +172,16 @@ public class Home extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(NhaCCBtn)
                             .addComponent(NVienBtn))
                         .addGap(64, 64, 64)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(SachBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(104, 104, 104))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(PhieuNhapBtn)
-                                .addGap(97, 97, 97)))
+                            .addComponent(SachBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(PhieuNhapBtn))
+                        .addGap(97, 97, 97)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(226, 226, 226)
@@ -190,9 +206,8 @@ public class Home extends javax.swing.JFrame {
                                             .addComponent(LuongBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                                 .addGap(20, 20, 20))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
                         .addComponent(jLabel1)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -221,12 +236,13 @@ public class Home extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(99, 99, 99)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 169, Short.MAX_VALUE)
+                        .addComponent(OutBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(74, 74, 74))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(OutBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 359, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(74, 74, 74))
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 359, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -253,37 +269,77 @@ public class Home extends javax.swing.JFrame {
         // TODO add your handling code here:
         TaiKhoanController tk = new TaiKhoanController();
         if(tk.TraVeChucVu(TenDNHome, MatKhauHome) == 3){
-            TaiKhoan.main(null);
+            new TaiKhoan(TenDNHome, MatKhauHome);
         } else {
-            KhongHien.main(null);
+            new KhongHien(TenDNHome, MatKhauHome);
         }
+        this.dispose();
     }//GEN-LAST:event_NVienBtnActionPerformed
 
     private void NhaCCBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NhaCCBtnActionPerformed
         // TODO add your handling code here:
         TaiKhoanController tk = new TaiKhoanController();
         if(tk.TraVeChucVu(TenDNHome, MatKhauHome) == 2){
-            KhongHien.main(null);
+            new KhongHien(TenDNHome, MatKhauHome);
         } else {
-            NhaCungCap.main(null);
+            new NhaCungCap(TenDNHome, MatKhauHome);
         }
+        this.dispose();
     }//GEN-LAST:event_NhaCCBtnActionPerformed
 
     private void SachBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SachBtnActionPerformed
         // TODO add your handling code here:
         TaiKhoanController tk = new TaiKhoanController();
-        Sach.main(null);
+        new Sach(TenDNHome, MatKhauHome);
+        this.dispose();
     }//GEN-LAST:event_SachBtnActionPerformed
 
     private void PhieuNhapBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PhieuNhapBtnActionPerformed
         // TODO add your handling code here:
         TaiKhoanController tk = new TaiKhoanController();
         if(tk.TraVeChucVu(TenDNHome, MatKhauHome) == 2){
-            KhongHien.main(null);
+            new KhongHien(TenDNHome, MatKhauHome);
         } else {
-            PhieuNhap.main(null);
+            new PhieuNhap(TenDNHome, MatKhauHome);
         }
+        this.dispose();
     }//GEN-LAST:event_PhieuNhapBtnActionPerformed
+
+    private void KHangBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_KHangBtnActionPerformed
+        // TODO add your handling code here:
+        TaiKhoanController tk = new TaiKhoanController();
+        if(tk.TraVeChucVu(TenDNHome, MatKhauHome) == 1){
+            new KhongHien(TenDNHome, MatKhauHome);
+        } else {
+            new KhachHang(TenDNHome, MatKhauHome);
+        }
+        this.dispose();
+    }//GEN-LAST:event_KHangBtnActionPerformed
+
+    private void TLBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TLBtnActionPerformed
+        // TODO add your handling code here:
+        TaiKhoanController tk = new TaiKhoanController();
+        if(tk.TraVeChucVu(TenDNHome, MatKhauHome) == 3){
+            new TheLoai(TenDNHome, MatKhauHome);
+        } else {
+            new KhongHien(TenDNHome, MatKhauHome);
+        }
+        this.dispose();
+    }//GEN-LAST:event_TLBtnActionPerformed
+
+    private void HoaDonBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HoaDonBtnActionPerformed
+        // TODO add your handling code here:
+        TaiKhoanController tk = new TaiKhoanController();
+        new HoaDon(TenDNHome, MatKhauHome);
+        this.dispose();
+    }//GEN-LAST:event_HoaDonBtnActionPerformed
+
+    private void ChamCongBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChamCongBtnActionPerformed
+        // TODO add your handling code here:
+        TaiKhoanController tk = new TaiKhoanController();
+        new ChamCong(TenDNHome, MatKhauHome);
+        this.dispose();
+    }//GEN-LAST:event_ChamCongBtnActionPerformed
 
     /**
      * @param args the command line arguments

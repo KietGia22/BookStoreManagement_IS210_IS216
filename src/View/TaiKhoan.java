@@ -16,6 +16,16 @@ public class TaiKhoan extends javax.swing.JFrame {
     public TaiKhoan() {
         initComponents();
     }
+    
+    public String TenDNHome, MatKhauHome;
+    
+    public TaiKhoan(String TenDN, String MatKhau){
+        initComponents();
+        this.setVisible(true);
+        this.setLocationRelativeTo(null);
+        this.TenDNHome = TenDN;
+        this.MatKhauHome = MatKhau;
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -58,6 +68,11 @@ public class TaiKhoan extends javax.swing.JFrame {
         QlaiBtn1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         QlaiBtn1.setText("Quay lại");
         QlaiBtn1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 0, 51), 2, true));
+        QlaiBtn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                QlaiBtn1ActionPerformed(evt);
+            }
+        });
 
         jTable2.setBackground(new java.awt.Color(0, 204, 204));
         jTable2.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
@@ -227,6 +242,12 @@ public class TaiKhoan extends javax.swing.JFrame {
     private void DetailBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DetailBtnActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_DetailBtnActionPerformed
+
+    private void QlaiBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QlaiBtn1ActionPerformed
+        // TODO add your handling code here:
+        new Home(TenDNHome, MatKhauHome);
+        this.dispose();
+    }//GEN-LAST:event_QlaiBtn1ActionPerformed
 
     /**
      * @param args the command line arguments

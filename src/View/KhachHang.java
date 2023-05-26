@@ -13,8 +13,19 @@ public class KhachHang extends javax.swing.JFrame {
     /**
      * Creates new form KhachHang
      */
+    public String TenDNHome, MatKhauHome;
+
+    
     public KhachHang() {
         initComponents();
+    }
+    
+    public KhachHang(String TenDN, String MatKhau){
+        initComponents();
+        this.setVisible(true);
+        this.setLocationRelativeTo(null);
+        this.TenDNHome = TenDN;
+        this.MatKhauHome = MatKhau;
     }
 
     /**
@@ -58,9 +69,14 @@ public class KhachHang extends javax.swing.JFrame {
         SearchBtn.setText("Tìm khách hàng");
         SearchBtn.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
 
+        QlaiBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         QlaiBtn.setText("Quay lại");
         QlaiBtn.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 0, 51), 2, true));
-        QlaiBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        QlaiBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                QlaiBtnActionPerformed(evt);
+            }
+        });
 
         jTable1.setBackground(new java.awt.Color(0, 204, 204));
         jTable1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
@@ -242,6 +258,12 @@ public class KhachHang extends javax.swing.JFrame {
     private void AddKHBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddKHBtnActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_AddKHBtnActionPerformed
+
+    private void QlaiBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QlaiBtnActionPerformed
+        // TODO add your handling code here:
+        new Home(TenDNHome, MatKhauHome);
+        this.dispose();
+    }//GEN-LAST:event_QlaiBtnActionPerformed
 
     /**
      * @param args the command line arguments
