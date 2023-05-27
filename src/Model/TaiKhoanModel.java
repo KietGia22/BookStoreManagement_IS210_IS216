@@ -33,6 +33,19 @@ public class TaiKhoanModel {
         this.NgSinh = NgSinh;
         this.NgTaoTK = NgTaoTK;
     }
+    
+    public TaiKhoanModel(long Luong, String TenDN, String MK, String HoTen, String DiaChi, String SDT, String Gmail, String ChucVu, LocalDate NgSinh, LocalDate NgTaoTK) {
+        this.Luong = Luong;
+        this.TenDN = TenDN;
+        this.MK = MK;
+        this.HoTen = HoTen;
+        this.DiaChi = DiaChi;
+        this.SDT = SDT;
+        this.Gmail = Gmail;
+        this.ChucVu = ChucVu;
+        this.NgSinh = NgSinh;
+        this.NgTaoTK = NgTaoTK;
+    }
 
     public int getMaTK() {
         return MaTK;

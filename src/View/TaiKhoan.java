@@ -66,7 +66,7 @@ public class TaiKhoan extends javax.swing.JFrame {
     }
     
     public boolean CheckNumberOrNot(String regax){
-        return regax.matches("\\\\d+");
+        return regax.matches("-?\\d+(\\.\\d+)?");
     }
     
     public TaiKhoanController tk = new TaiKhoanController();
@@ -449,6 +449,8 @@ public class TaiKhoan extends javax.swing.JFrame {
         LocalDate date2 = NgTao.getDate();
         String NgaySinh = date1.format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
         String NgayTaoTK = date2.format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
+        LocalDate NgSinhLC = LocalDate.parse(NgaySinh, DateTimeFormatter.ofPattern("dd-MM-yyyy"));
+        LocalDate NgTaoLC = LocalDate.parse(NgayTaoTK, DateTimeFormatter.ofPattern("dd-MM-yyyy"));
         if(HoTen.isEmpty() || Gmail.isEmpty() || SDT.isEmpty() || DiaChi.isEmpty() || ChucVuNV.isEmpty() || Luong.isEmpty() || NgaySinh.isEmpty() || NgayTaoTK.isEmpty())
         {
             JOptionPane.showMessageDialog(this, "Vui lòng nhập đầy đủ thông tin", "Error", JOptionPane.ERROR_MESSAGE);
@@ -459,28 +461,29 @@ public class TaiKhoan extends javax.swing.JFrame {
         } else if(CheckEmail(Gmail) == false) {
             JOptionPane.showMessageDialog(this, "Sai định dạng Email", "Error", JOptionPane.ERROR_MESSAGE);
             return;
-        } else if(CheckNumberOrNot(HoTen) == true || CheckNumberOrNot(ChucVuNV)){
-            JOptionPane.showMessageDialog(this, "Họ tên và chức vụ không chứa số", "Error", JOptionPane.ERROR_MESSAGE);
+        } else if(CheckNumberOrNot(HoTen) == true || CheckNumberOrNot(ChucVuNV) == true){
+            JOptionPane.showMessageDialog(this, "Họ tên hoặc chức vụ không chứa số", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         } else if(CheckNumberOrNot(SDT) == false || CheckNumberOrNot(Luong) == false){
             JOptionPane.showMessageDialog(this, "Lương hoặc SĐT phải là số", "Error", JOptionPane.ERROR_MESSAGE);
             return;
-        } else if (Integer.parseInt(Luong) <=0){
+        } else if (Long.parseLong(Luong) <=0){
             JOptionPane.showMessageDialog(this, "Lương phải lớn hơn 0", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
         
         int opt = JOptionPane.showConfirmDialog(this, "Bạn có chắc là muốn cập nhập thông tin nhân viên này", "Chỉnh sửa nhân viên", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
             if (opt == JOptionPane.YES_OPTION) {
-                    if(tk.XoaTK(ID_S) != 0){
-                        JOptionPane.showMessageDialog(this, "Xoá thành công");
+                TaiKhoanModel tkm = new TaiKhoanModel(ID, Long.parseLong(Luong), TenDNHome, MatKhauHome, HoTen, DiaChi, SDT, Gmail, ChucVuNV, NgSinhLC, NgTaoLC);
+                    if(tk.SuaTK(tkm) != 0){
+                        JOptionPane.showMessageDialog(this, "Chỉnh sử thành công");
                         Reset();
                         GetAllNhanVien();
                     } else {
-                        JOptionPane.showMessageDialog(this, "Xoá thất bại", "Error", JOptionPane.ERROR_MESSAGE);
-                        return ;
+                        JOptionPane.showMessageDialog(this, "Chỉnh sửa thất bại", "Error", JOptionPane.ERROR_MESSAGE);
+                        return;
                     }
-            } 
+            }
     }//GEN-LAST:event_UpdateTKBtnActionPerformed
 
     private void DelTKBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DelTKBtnActionPerformed
@@ -497,7 +500,7 @@ public class TaiKhoan extends javax.swing.JFrame {
                         GetAllNhanVien();
                     } else {
                         JOptionPane.showMessageDialog(this, "Xoá thất bại", "Error", JOptionPane.ERROR_MESSAGE);
-                        return ;
+                        return;
                     }
             } 
         } else {
@@ -534,19 +537,23 @@ public class TaiKhoan extends javax.swing.JFrame {
     private void jTable2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable2MouseClicked
         try {
             // TODO add your handling code here:
-            SimpleDateFormat dtformat = new SimpleDateFormat("dd-MM-yyyy");
             int selectedRow = jTable2.getSelectedRow();
             DefaultTableModel temp = (DefaultTableModel) jTable2.getModel();
-            Date date1 = dtformat.parse((String)temp.getValueAt(selectedRow, 2).toString());
-            Date date2 = dtformat.parse((String)temp.getValueAt(selectedRow, 7).toString());
-            LocalDate NgSinhLocal = date1.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-            LocalDate NgTaoTKLocal = date2.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+            
             HoTen_txt.setText(temp.getValueAt(selectedRow, 1).toString());
             gmail_txt.setText(temp.getValueAt(selectedRow, 3).toString());
             DC_txt.setText(temp.getValueAt(selectedRow, 4).toString());
             SDT_txt.setText(temp.getValueAt(selectedRow, 5).toString());
             Luong_txt.setText(temp.getValueAt(selectedRow, 6).toString());
             CV_txt.setText(temp.getValueAt(selectedRow, 8).toString());
+            
+            SimpleDateFormat dtformat = new SimpleDateFormat("dd-MM-yyyy");
+   
+            Date date1 = dtformat.parse((String)temp.getValueAt(selectedRow, 2).toString());
+            Date date2 = dtformat.parse((String)temp.getValueAt(selectedRow, 7).toString());
+            LocalDate NgSinhLocal = date1.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+            LocalDate NgTaoTKLocal = date2.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+            
             NgSinh.setDate(NgSinhLocal);
             NgTao.setDate(NgTaoTKLocal);
             ID_S = temp.getValueAt(selectedRow, 0).toString();

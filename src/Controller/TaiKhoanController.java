@@ -155,7 +155,6 @@ public class TaiKhoanController {
         try {
             try{
                 conn = ConnectDB.getJDBCConnection();
-                conn.setAutoCommit(false);
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();
             }
@@ -163,7 +162,68 @@ public class TaiKhoanController {
             callsql = conn.prepareCall(sql);
             callsql.setString(1, ID_S);
             check = callsql.executeUpdate();
-            conn.commit();
+            conn.close();
+            return check;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
+    
+    public int SuaTK(TaiKhoanModel tk){
+        Connection conn = null;
+        CallableStatement callsql = null;
+        String sql = "";
+        int check = 0;
+        try {
+            try{
+                conn = ConnectDB.getJDBCConnection();
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+            sql = "{call SuaTK(?, ?, to_date(?, ('dd-mm-yyyy')), ?, ?, ?, ?, ?)}";
+            callsql = conn.prepareCall(sql);
+            callsql.setInt(1, tk.getMaTK());
+            callsql.setString(2, tk.getHoTen());
+            callsql.setString(3, tk.toString(tk.getNgSinh()));            
+            callsql.setString(4, tk.getDiaChi());
+            callsql.setString(5, tk.getSDT());
+            callsql.setString(6, tk.getGmail());
+            callsql.setString(7, tk.getChucVu());
+            callsql.setLong(8, tk.getLuong());
+            check = callsql.executeUpdate();
+            conn.close();
+            return check;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
+    
+    public int ThemTK(TaiKhoanModel tk){
+        Connection conn = null;
+        CallableStatement callsql = null;
+        String sql = "";
+        int check = 0;
+        try {
+            try{
+                conn = ConnectDB.getJDBCConnection();
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+            sql = "{call ThemTK(?, ? , ?, to_date(?, ('dd-mm-yyyy')), ?, ?, ?, ?, to_date(?, ('dd-mm-yyyy')), ?)}";
+            callsql = conn.prepareCall(sql);
+            callsql.setString(1, tk.getTenDN());
+            callsql.setString(2, tk.getMK());
+            callsql.setString(3, tk.getHoTen());
+            callsql.setString(4, tk.toString(tk.getNgSinh()));            
+            callsql.setString(5, tk.getDiaChi());
+            callsql.setString(6, tk.getSDT());
+            callsql.setString(7, tk.getGmail());
+            callsql.setString(8, tk.getChucVu());
+            callsql.setString(9, tk.toString(tk.getNgTaoTK()));   
+            callsql.setLong(10, tk.getLuong());
+            check = callsql.executeUpdate();
             conn.close();
             return check;
         } catch (SQLException e) {
