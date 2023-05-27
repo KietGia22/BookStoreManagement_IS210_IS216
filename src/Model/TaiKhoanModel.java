@@ -11,16 +11,16 @@ import java.time.format.DateTimeFormatter;
  *
  * @author GIA KIET
  */
-public class NhanVienModel {
+public class TaiKhoanModel {
     protected int MaTK; 
     protected String TenDN, MK, HoTen, DiaChi, SDT, Gmail, ChucVu;
     protected LocalDate NgSinh, NgTaoTK;
     protected long Luong;
     DateTimeFormatter dtformat = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 
-    public NhanVienModel() {}
+    public TaiKhoanModel() {}
 
-    public NhanVienModel(int MaTK, long Luong, String TenDN, String MK, String HoTen, String DiaChi, String SDT, String Gmail, String ChucVu, LocalDate NgSinh, LocalDate NgTaoTK) {
+    public TaiKhoanModel(int MaTK, long Luong, String TenDN, String MK, String HoTen, String DiaChi, String SDT, String Gmail, String ChucVu, LocalDate NgSinh, LocalDate NgTaoTK) {
         this.MaTK = MaTK;
         this.Luong = Luong;
         this.TenDN = TenDN;
