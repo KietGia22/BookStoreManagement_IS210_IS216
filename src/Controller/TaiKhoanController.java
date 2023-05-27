@@ -60,8 +60,9 @@ public class TaiKhoanController {
             callsql.registerOutParameter(3, OracleTypes.CURSOR);
             callsql.execute();
             rs = (ResultSet) callsql.getObject(3);
-            if(rs.next())
+            if(rs.next()){
                 ChucVu = rs.getString("CHUCVU");
+            }
             rs.close();
             conn.close();
         } catch (SQLException e){
@@ -73,10 +74,12 @@ public class TaiKhoanController {
     public int TraVeChucVu(String TenDN, String MatKhau){
         String chucvu = getChucVu(TenDN, MatKhau);
         if(chucvu.equals("Quản lý"))
-            return 3;
+            return 4;
         else if(chucvu.equals("Nhân viên"))
+            return 3;
+        else if(chucvu.equals("Nhân viên kho"))
             return 2;
-        else
+        else 
             return 1;
     }
 }

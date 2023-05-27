@@ -268,7 +268,7 @@ public class Home extends javax.swing.JFrame {
     private void NVienBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NVienBtnActionPerformed
         // TODO add your handling code here:
         TaiKhoanController tk = new TaiKhoanController();
-        if(tk.TraVeChucVu(TenDNHome, MatKhauHome) == 3){
+        if(tk.TraVeChucVu(TenDNHome, MatKhauHome) == 4){
             new TaiKhoan(TenDNHome, MatKhauHome);
         } else {
             new KhongHien(TenDNHome, MatKhauHome);
@@ -279,7 +279,7 @@ public class Home extends javax.swing.JFrame {
     private void NhaCCBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NhaCCBtnActionPerformed
         // TODO add your handling code here:
         TaiKhoanController tk = new TaiKhoanController();
-        if(tk.TraVeChucVu(TenDNHome, MatKhauHome) == 2){
+        if(tk.TraVeChucVu(TenDNHome, MatKhauHome) == 3 || tk.TraVeChucVu(TenDNHome, MatKhauHome) == 1){
             new KhongHien(TenDNHome, MatKhauHome);
         } else {
             new NhaCungCap(TenDNHome, MatKhauHome);
@@ -297,7 +297,7 @@ public class Home extends javax.swing.JFrame {
     private void PhieuNhapBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PhieuNhapBtnActionPerformed
         // TODO add your handling code here:
         TaiKhoanController tk = new TaiKhoanController();
-        if(tk.TraVeChucVu(TenDNHome, MatKhauHome) == 2){
+        if(tk.TraVeChucVu(TenDNHome, MatKhauHome) == 3 || tk.TraVeChucVu(TenDNHome, MatKhauHome) == 1){
             new KhongHien(TenDNHome, MatKhauHome);
         } else {
             new PhieuNhap(TenDNHome, MatKhauHome);
@@ -308,7 +308,7 @@ public class Home extends javax.swing.JFrame {
     private void KHangBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_KHangBtnActionPerformed
         // TODO add your handling code here:
         TaiKhoanController tk = new TaiKhoanController();
-        if(tk.TraVeChucVu(TenDNHome, MatKhauHome) == 1){
+        if(tk.TraVeChucVu(TenDNHome, MatKhauHome) == 2 || tk.TraVeChucVu(TenDNHome, MatKhauHome) == 1){
             new KhongHien(TenDNHome, MatKhauHome);
         } else {
             new KhachHang(TenDNHome, MatKhauHome);
@@ -319,7 +319,7 @@ public class Home extends javax.swing.JFrame {
     private void TLBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TLBtnActionPerformed
         // TODO add your handling code here:
         TaiKhoanController tk = new TaiKhoanController();
-        if(tk.TraVeChucVu(TenDNHome, MatKhauHome) == 3){
+        if(tk.TraVeChucVu(TenDNHome, MatKhauHome) == 4){
             new TheLoai(TenDNHome, MatKhauHome);
         } else {
             new KhongHien(TenDNHome, MatKhauHome);

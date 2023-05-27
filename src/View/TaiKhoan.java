@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package View;
+import Controller.TaiKhoanController;
 
 /**
  *
@@ -26,6 +27,9 @@ public class TaiKhoan extends javax.swing.JFrame {
         this.TenDNHome = TenDN;
         this.MatKhauHome = MatKhau;
     }
+    
+    public TaiKhoanController tk = new TaiKhoanController();
+    public int ChucVu = tk.TraVeChucVu(TenDNHome, MatKhauHome);
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -46,7 +50,6 @@ public class TaiKhoan extends javax.swing.JFrame {
         AddTKBtn = new javax.swing.JButton();
         UpdateTKBtn = new javax.swing.JButton();
         DelTKBtn = new javax.swing.JButton();
-        DetailBtn = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
 
@@ -122,14 +125,6 @@ public class TaiKhoan extends javax.swing.JFrame {
             }
         });
 
-        DetailBtn.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
-        DetailBtn.setText("Chi tiết lương");
-        DetailBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DetailBtnActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -141,7 +136,6 @@ public class TaiKhoan extends javax.swing.JFrame {
                         .addComponent(jScrollPane2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(DetailBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(UpdateTKBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(DelTKBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(AddTKBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -163,11 +157,14 @@ public class TaiKhoan extends javax.swing.JFrame {
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(77, 77, 77)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Search_txt1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(SearchBtn1, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE))
+                .addGap(78, 78, 78)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addComponent(jComboBox2))
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(Search_txt1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(SearchBtn1, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
@@ -176,12 +173,10 @@ public class TaiKhoan extends javax.swing.JFrame {
                         .addComponent(UpdateTKBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(DelTKBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(DetailBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 352, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
                         .addComponent(QlaiBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(12, 12, 12))))
         );
@@ -229,19 +224,21 @@ public class TaiKhoan extends javax.swing.JFrame {
 
     private void AddTKBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddTKBtnActionPerformed
         // TODO add your handling code here:
+        new Them_TK(TenDNHome, MatKhauHome);
+        this.dispose();
     }//GEN-LAST:event_AddTKBtnActionPerformed
 
     private void UpdateTKBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateTKBtnActionPerformed
         // TODO add your handling code here:
+        new SuaTaiKhoan(TenDNHome, MatKhauHome);
+        this.dispose();
     }//GEN-LAST:event_UpdateTKBtnActionPerformed
 
     private void DelTKBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DelTKBtnActionPerformed
         // TODO add your handling code here:
+        new Xoa_TK(TenDNHome, MatKhauHome);
+        this.dispose();
     }//GEN-LAST:event_DelTKBtnActionPerformed
-
-    private void DetailBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DetailBtnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_DetailBtnActionPerformed
 
     private void QlaiBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QlaiBtn1ActionPerformed
         // TODO add your handling code here:
@@ -287,7 +284,6 @@ public class TaiKhoan extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AddTKBtn;
     private javax.swing.JButton DelTKBtn;
-    private javax.swing.JButton DetailBtn;
     private javax.swing.JButton QlaiBtn1;
     private javax.swing.JButton SearchBtn1;
     private javax.swing.JTextField Search_txt1;
