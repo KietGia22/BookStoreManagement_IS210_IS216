@@ -5,8 +5,10 @@
         <group>
             <file>file:/D:/KIET's%20Folder/CODE/Research/Java/Project/BookStoreManagement/src/View/Them_TK.java</file>
             <file>file:/D:/KIET's%20Folder/CODE/Research/Java/Project/BookStoreManagement/src/View/TaiKhoan.java</file>
-            <file>file:/D:/KIET's%20Folder/CODE/Research/Java/Project/BookStoreManagement/src/Model/TaiKhoanModel.java</file>
+            <file>file:/D:/KIET's%20Folder/CODE/Research/Java/Project/BookStoreManagement/src/Controller/KhachHangController.java</file>
+            <file>file:/D:/KIET's%20Folder/CODE/Research/Java/Project/BookStoreManagement/src/View/KhachHang.java</file>
             <file>file:/D:/KIET's%20Folder/CODE/Research/Java/Project/BookStoreManagement/src/Controller/TaiKhoanController.java</file>
+            <file>file:/D:/KIET's%20Folder/CODE/Research/Java/Project/BookStoreManagement/src/Model/KhachHangModel.java</file>
         </group>
     </open-files>
 </project-private>

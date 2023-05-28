@@ -35,7 +35,6 @@ public class TaiKhoan extends javax.swing.JFrame {
     
     public String TenDNHome, MatKhauHome;
     public int ID;
-    public String ID_S;
     
     public TaiKhoan(String TenDN, String MatKhau){
         initComponents();
@@ -116,34 +115,32 @@ public class TaiKhoan extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(173, 216, 230));
 
-        Search_txt1.setBackground(new java.awt.Color(173, 216, 230));
         Search_txt1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        Search_txt1.setBackground(new java.awt.Color(173, 216, 230));
         Search_txt1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 1, 1, new java.awt.Color(0, 0, 0)));
 
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mã nhân viên", "Tên nhân viên" }));
         jComboBox2.setBackground(new java.awt.Color(0, 204, 204));
         jComboBox2.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mã nhân viên", "Tên nhân viên" }));
 
+        SearchBtn1.setText("Tìm nhân viên");
         SearchBtn1.setBackground(new java.awt.Color(0, 204, 204));
         SearchBtn1.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
-        SearchBtn1.setText("Tìm nhân viên");
         SearchBtn1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SearchBtn1ActionPerformed(evt);
             }
         });
 
-        QlaiBtn1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         QlaiBtn1.setText("Quay lại");
         QlaiBtn1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 0, 51), 2, true));
+        QlaiBtn1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         QlaiBtn1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 QlaiBtn1ActionPerformed(evt);
             }
         });
 
-        jTable2.setBackground(new java.awt.Color(0, 204, 204));
-        jTable2.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null},
@@ -163,6 +160,8 @@ public class TaiKhoan extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
+        jTable2.setBackground(new java.awt.Color(0, 204, 204));
+        jTable2.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         jTable2.setShowGrid(true);
         jTable2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -184,79 +183,79 @@ public class TaiKhoan extends javax.swing.JFrame {
             jTable2.getColumnModel().getColumn(8).setResizable(false);
         }
 
+        AddTKBtn.setText("Thêm nhân viên");
         AddTKBtn.setBackground(new java.awt.Color(0, 204, 204));
         AddTKBtn.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
-        AddTKBtn.setText("Thêm nhân viên");
         AddTKBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AddTKBtnActionPerformed(evt);
             }
         });
 
+        UpdateTKBtn.setText("Sửa nhân viên");
         UpdateTKBtn.setBackground(new java.awt.Color(0, 204, 204));
         UpdateTKBtn.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
-        UpdateTKBtn.setText("Sửa nhân viên");
         UpdateTKBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 UpdateTKBtnActionPerformed(evt);
             }
         });
 
+        DelTKBtn.setText("Xoá nhân viên");
         DelTKBtn.setBackground(new java.awt.Color(0, 204, 204));
         DelTKBtn.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
-        DelTKBtn.setText("Xoá nhân viên");
         DelTKBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DelTKBtnActionPerformed(evt);
             }
         });
 
+        ResetBtn.setText("Làm mới");
         ResetBtn.setBackground(new java.awt.Color(0, 204, 204));
         ResetBtn.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
-        ResetBtn.setText("Làm mới");
         ResetBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ResetBtnActionPerformed(evt);
             }
         });
 
-        jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel4.setText("Họ Tên");
+        jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
 
-        HoTen_txt.setBackground(new java.awt.Color(173, 216, 230));
         HoTen_txt.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        HoTen_txt.setBackground(new java.awt.Color(173, 216, 230));
         HoTen_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 1, new java.awt.Color(0, 0, 0)));
 
-        jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel3.setText("Ngày sinh");
+        jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
 
         NgSinh.setBackground(new java.awt.Color(173, 216, 230));
         NgSinh.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
         NgSinh.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
 
-        jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel9.setText("Gmail");
+        jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
 
-        gmail_txt.setBackground(new java.awt.Color(173, 216, 230));
         gmail_txt.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        gmail_txt.setBackground(new java.awt.Color(173, 216, 230));
         gmail_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 1, new java.awt.Color(0, 0, 0)));
 
-        jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel6.setText("Địa chỉ");
+        jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
 
-        DC_txt.setBackground(new java.awt.Color(173, 216, 230));
         DC_txt.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        DC_txt.setBackground(new java.awt.Color(173, 216, 230));
         DC_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 1, new java.awt.Color(0, 0, 0)));
 
-        jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel7.setText("Số điện thoại");
+        jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
 
-        SDT_txt.setBackground(new java.awt.Color(173, 216, 230));
         SDT_txt.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        SDT_txt.setBackground(new java.awt.Color(173, 216, 230));
         SDT_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 1, new java.awt.Color(0, 0, 0)));
 
-        jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel8.setText("Ngày tạo tài khoản");
+        jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
 
         NgTao.setBackground(new java.awt.Color(173, 216, 230));
         NgTao.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
@@ -264,18 +263,18 @@ public class TaiKhoan extends javax.swing.JFrame {
         NgTao.setFocusable(false);
         NgTao.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
 
-        jLabel10.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel10.setText("Lương");
+        jLabel10.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
 
-        Luong_txt.setBackground(new java.awt.Color(173, 216, 230));
         Luong_txt.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        Luong_txt.setBackground(new java.awt.Color(173, 216, 230));
         Luong_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 1, new java.awt.Color(0, 0, 0)));
 
-        jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel5.setText("Chức vụ");
+        jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
 
-        CV_txt.setBackground(new java.awt.Color(173, 216, 230));
         CV_txt.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        CV_txt.setBackground(new java.awt.Color(173, 216, 230));
         CV_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 1, new java.awt.Color(0, 0, 0)));
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -392,9 +391,9 @@ public class TaiKhoan extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 100, 100));
 
+        jLabel2.setText("Danh sách nhân viên");
         jLabel2.setFont(new java.awt.Font("Serif", 3, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Danh sách nhân viên");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -447,10 +446,19 @@ public class TaiKhoan extends javax.swing.JFrame {
         String Luong = Luong_txt.getText();
         LocalDate date1 = NgSinh.getDate();
         LocalDate date2 = NgTao.getDate();
-        String NgaySinh = date1.format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
-        String NgayTaoTK = date2.format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
-        LocalDate NgSinhLC = LocalDate.parse(NgaySinh, DateTimeFormatter.ofPattern("dd-MM-yyyy"));
-        LocalDate NgTaoLC = LocalDate.parse(NgayTaoTK, DateTimeFormatter.ofPattern("dd-MM-yyyy"));
+        String NgayTaoTK = "";
+        LocalDate NgTaoLC = null;
+        String NgaySinh = "";
+        LocalDate NgSinhLC = null;
+        
+        if(date1 != null){
+            NgaySinh = date1.format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
+            NgSinhLC = LocalDate.parse(NgaySinh, DateTimeFormatter.ofPattern("dd-MM-yyyy"));
+        }    
+        if(date2 != null){
+            NgayTaoTK = date2.format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
+            NgTaoLC = LocalDate.parse(NgayTaoTK, DateTimeFormatter.ofPattern("dd-MM-yyyy"));
+        }
         if(HoTen.isEmpty() || Gmail.isEmpty() || SDT.isEmpty() || DiaChi.isEmpty() || ChucVuNV.isEmpty() || Luong.isEmpty() || NgaySinh.isEmpty() || NgayTaoTK.isEmpty())
         {
             JOptionPane.showMessageDialog(this, "Vui lòng nhập đầy đủ thông tin", "Error", JOptionPane.ERROR_MESSAGE);
@@ -476,7 +484,7 @@ public class TaiKhoan extends javax.swing.JFrame {
             if (opt == JOptionPane.YES_OPTION) {
                 TaiKhoanModel tkm = new TaiKhoanModel(ID, Long.parseLong(Luong), TenDNHome, MatKhauHome, HoTen, DiaChi, SDT, Gmail, ChucVuNV, NgSinhLC, NgTaoLC);
                     if(tk.SuaTK(tkm) != 0){
-                        JOptionPane.showMessageDialog(this, "Chỉnh sử thành công");
+                        JOptionPane.showMessageDialog(this, "Chỉnh sửa thành công");
                         Reset();
                         GetAllNhanVien();
                     } else {
@@ -488,13 +496,35 @@ public class TaiKhoan extends javax.swing.JFrame {
 
     private void DelTKBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DelTKBtnActionPerformed
         // TODO add your handling code here:
-        DefaultTableModel Table_for_delete = (DefaultTableModel) jTable2.getModel();
+        /*DefaultTableModel Table_for_delete = (DefaultTableModel) jTable2.getModel();
         int selectedRow = jTable2.getSelectedRow();
-        ID = Integer.parseInt(Table_for_delete.getValueAt(selectedRow, 0).toString());
+        ID = Integer.parseInt(Table_for_delete.getValueAt(selectedRow, 0).toString());*/
+        String HoTen = HoTen_txt.getText();
+        String Gmail = gmail_txt.getText();
+        String SDT = SDT_txt.getText();
+        String DiaChi = DC_txt.getText();
+        String ChucVuNV = CV_txt.getText();
+        String Luong = Luong_txt.getText();
+        LocalDate date1 = NgSinh.getDate();
+        LocalDate date2 = NgTao.getDate();
+        String NgayTaoTK = "";
+        LocalDate NgTaoLC = null;
+        String NgaySinh = "";
+        LocalDate NgSinhLC = null;
+        
+        if(date1 != null){
+            NgaySinh = date1.format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
+            NgSinhLC = LocalDate.parse(NgaySinh, DateTimeFormatter.ofPattern("dd-MM-yyyy"));
+        }    
+        if(date2 != null){
+            NgayTaoTK = date2.format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
+            NgTaoLC = LocalDate.parse(NgayTaoTK, DateTimeFormatter.ofPattern("dd-MM-yyyy"));
+        }
         if(ID != 0){
             int opt = JOptionPane.showConfirmDialog(this, "Bạn có chắc là muốn xoá nhân viên này", "Xoá nhân viên", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
             if (opt == JOptionPane.YES_OPTION) {
-                    if(tk.XoaTK(ID_S) != 0){
+                TaiKhoanModel tkm = new TaiKhoanModel(ID, Long.parseLong(Luong), TenDNHome, MatKhauHome, HoTen, DiaChi, SDT, Gmail, ChucVuNV, NgSinhLC, NgTaoLC);
+                    if(tk.XoaTK(tkm) != 0){
                         JOptionPane.showMessageDialog(this, "Xoá thành công");
                         Reset();
                         GetAllNhanVien();
@@ -523,9 +553,14 @@ public class TaiKhoan extends javax.swing.JFrame {
         DefaultTableModel Table_for_search = (DefaultTableModel) jTable2.getModel();
         Table_for_search.setRowCount(0);
         ArrayList<TaiKhoanModel> tkmodel = new ArrayList<TaiKhoanModel>();
-        tkmodel = tk.TimKiemTK(choice, search);
-        TaiKhoanModel nvModel = new TaiKhoanModel();
-        Add(nvModel, tkmodel, Table_for_search);
+        if(CheckNumberOrNot(search) == false && choice.equals("Mã nhân viên")){
+            JOptionPane.showMessageDialog(this, "Mã nhân viên phải là số", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        } else {
+            tkmodel = tk.TimKiemTK(choice, search);
+            TaiKhoanModel nvModel = new TaiKhoanModel();
+            Add(nvModel, tkmodel, Table_for_search);
+        }
     }//GEN-LAST:event_SearchBtn1ActionPerformed
 
     private void ResetBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResetBtnActionPerformed
@@ -556,7 +591,7 @@ public class TaiKhoan extends javax.swing.JFrame {
             
             NgSinh.setDate(NgSinhLocal);
             NgTao.setDate(NgTaoTKLocal);
-            ID_S = temp.getValueAt(selectedRow, 0).toString();
+            
             ID = Integer.parseInt(temp.getValueAt(selectedRow, 0).toString());
         } catch (ParseException ex) {
             Logger.getLogger(TaiKhoan.class.getName()).log(Level.SEVERE, null, ex);
@@ -582,7 +617,8 @@ public class TaiKhoan extends javax.swing.JFrame {
     
     public void GetAllNhanVien(){
         String[] title = {"Mã TK", "Họ Tên", "Ngày sinh", "Gmail", "Địa chỉ", "SĐT", "Lương", "Ngày tạo", "Chức vụ"};
-        table = new DefaultTableModel(title, 0);
+        table.setColumnIdentifiers(title);
+        table.setRowCount(0);
         ArrayList<TaiKhoanModel> tkmodel = new ArrayList<TaiKhoanModel>();
         tkmodel = tk.getTCTaiKhoan();
         TaiKhoanModel nvModel = new TaiKhoanModel();

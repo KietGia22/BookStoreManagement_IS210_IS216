@@ -10,6 +10,8 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import oracle.jdbc.OracleTypes;
 
 /**
@@ -24,8 +26,8 @@ public class TaiKhoanController {
         try {
             try{
                 conn = ConnectDB.getJDBCConnection();
-            } catch (ClassNotFoundException e) {
-                e.printStackTrace();
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(TaiKhoanController.class.getName()).log(Level.SEVERE, null, ex);
             }
             String sql = "{call GET_DANG_NHAP(?, ?, ?)}";
             callsql = conn.prepareCall(sql);
@@ -52,8 +54,8 @@ public class TaiKhoanController {
         try {
             try{
                 conn = ConnectDB.getJDBCConnection();
-            } catch (ClassNotFoundException e) {
-                e.printStackTrace();
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(TaiKhoanController.class.getName()).log(Level.SEVERE, null, ex);
             }
             String sql = "{call GET_DANG_NHAP(?, ?, ?)}";
             callsql = conn.prepareCall(sql);
@@ -91,10 +93,10 @@ public class TaiKhoanController {
         ResultSet rs = null;
         CallableStatement callsql = null;
         try {
-            try{
+            try {
                 conn = ConnectDB.getJDBCConnection();
-            } catch (ClassNotFoundException e) {
-                e.printStackTrace();
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(TaiKhoanController.class.getName()).log(Level.SEVERE, null, ex);
             }
             String sql = "{call GETTCTK(?)}";
             callsql = conn.prepareCall(sql);
@@ -102,9 +104,11 @@ public class TaiKhoanController {
             callsql.execute();
             rs =  (ResultSet) callsql.getObject(1);
             while(rs.next()){
-                TaiKhoanModel nv = new TaiKhoanModel(rs.getInt("MATK"), rs.getLong("LUONG"), rs.getString("TENDN"), rs.getString("MATKHAU"), rs.getString("HOTEN"), rs.getString("DIACHI"), rs.getString("SDT"), rs.getString("GMAIL"), rs.getString("CHUCVU"), rs.getDate("NGAYSINH").toLocalDate(), rs.getDate("NGAYTAOTAIKHOAN").toLocalDate());
+                TaiKhoanModel nv = new 
+                                 TaiKhoanModel(rs.getInt("MATK"), rs.getLong("LUONG"), rs.getString("TENDN"), rs.getString("MATKHAU"), rs.getString("HOTEN"), rs.getString("DIACHI"), rs.getString("SDT"), rs.getString("GMAIL"), rs.getString("CHUCVU"), rs.getDate("NGAYSINH").toLocalDate(), rs.getDate("NGAYTAOTAIKHOAN").toLocalDate());
                 tkModel.add(nv);
             }
+            rs.close();
             conn.close();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -121,8 +125,8 @@ public class TaiKhoanController {
         try {
             try{
                 conn = ConnectDB.getJDBCConnection();
-            } catch (ClassNotFoundException e) {
-                e.printStackTrace();
+            } catch (ClassNotFoundException ex) {
+               Logger.getLogger(TaiKhoanController.class.getName()).log(Level.SEVERE, null, ex);
             }
             if(choice.equals("Mã nhân viên")){
                 sql = "{call GETTKTHEOMA(?, ?)}";
@@ -138,6 +142,7 @@ public class TaiKhoanController {
                 TaiKhoanModel nv = new TaiKhoanModel(rs.getInt("MATK"), rs.getLong("LUONG"), rs.getString("TENDN"), rs.getString("MATKHAU"), rs.getString("HOTEN"), rs.getString("DIACHI"), rs.getString("SDT"), rs.getString("GMAIL"), rs.getString("CHUCVU"), rs.getDate("NGAYSINH").toLocalDate(), rs.getDate("NGAYTAOTAIKHOAN").toLocalDate());
                 tkModel.add(nv);
             }
+            rs.close();
             conn.close();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -146,7 +151,7 @@ public class TaiKhoanController {
     }
     
     
-    public int XoaTK(String ID_S) {
+    public int XoaTK(TaiKhoanModel tk) {
         Connection conn = null;
         ResultSet rs = null;
         CallableStatement callsql = null;
@@ -155,12 +160,12 @@ public class TaiKhoanController {
         try {
             try{
                 conn = ConnectDB.getJDBCConnection();
-            } catch (ClassNotFoundException e) {
-                e.printStackTrace();
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(TaiKhoanController.class.getName()).log(Level.SEVERE, null, ex);
             }
             sql = "{call XoaTK(?)}";
             callsql = conn.prepareCall(sql);
-            callsql.setString(1, ID_S);
+            callsql.setInt(1, tk.getMaTK());
             check = callsql.executeUpdate();
             conn.close();
             return check;
@@ -178,14 +183,14 @@ public class TaiKhoanController {
         try {
             try{
                 conn = ConnectDB.getJDBCConnection();
-            } catch (ClassNotFoundException e) {
-                e.printStackTrace();
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(TaiKhoanController.class.getName()).log(Level.SEVERE, null, ex);
             }
             sql = "{call SuaTK(?, ?, to_date(?, ('dd-mm-yyyy')), ?, ?, ?, ?, ?)}";
             callsql = conn.prepareCall(sql);
             callsql.setInt(1, tk.getMaTK());
             callsql.setString(2, tk.getHoTen());
-            callsql.setString(3, tk.toString(tk.getNgSinh()));            
+            callsql.setString(3, tk.toString(tk.getNgSinh()));   
             callsql.setString(4, tk.getDiaChi());
             callsql.setString(5, tk.getSDT());
             callsql.setString(6, tk.getGmail());
@@ -203,13 +208,13 @@ public class TaiKhoanController {
     public int ThemTK(TaiKhoanModel tk){
         Connection conn = null;
         CallableStatement callsql = null;
-        String sql = "";
-        int check = 0;
+        String sql;
+        int check;
         try {
             try{
                 conn = ConnectDB.getJDBCConnection();
-            } catch (ClassNotFoundException e) {
-                e.printStackTrace();
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(TaiKhoanController.class.getName()).log(Level.SEVERE, null, ex);
             }
             sql = "{call ThemTK(?, ? , ?, to_date(?, ('dd-mm-yyyy')), ?, ?, ?, ?, to_date(?, ('dd-mm-yyyy')), ?)}";
             callsql = conn.prepareCall(sql);

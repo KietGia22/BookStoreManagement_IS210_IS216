@@ -47,6 +47,8 @@ public class Them_TK extends javax.swing.JFrame {
         CV_txt.setText("");
         NgSinh.setDate(null);
         NgTao.setDate(null);
+        TDN_txt.setText("");
+        MK_txt.setText("");
     }
     
     public boolean CheckSDT(String regax){
@@ -378,10 +380,19 @@ public class Them_TK extends javax.swing.JFrame {
         String Luong = Luong_txt.getText();
         LocalDate date1 = NgSinh.getDate();
         LocalDate date2 = NgTao.getDate();
-        String NgaySinh = date1.format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
-        String NgayTaoTK = date2.format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
-        LocalDate NgSinhLC = LocalDate.parse(NgaySinh, DateTimeFormatter.ofPattern("dd-MM-yyyy"));
-        LocalDate NgTaoLC = LocalDate.parse(NgayTaoTK, DateTimeFormatter.ofPattern("dd-MM-yyyy"));
+        String NgayTaoTK = "";
+        LocalDate NgTaoLC = null;
+        String NgaySinh = "";
+        LocalDate NgSinhLC = null;
+        
+        if(date1 != null){
+            NgaySinh = date1.format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
+            NgSinhLC = LocalDate.parse(NgaySinh, DateTimeFormatter.ofPattern("dd-MM-yyyy"));
+        }    
+        if(date2 != null){
+            NgayTaoTK = date2.format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
+            NgTaoLC = LocalDate.parse(NgayTaoTK, DateTimeFormatter.ofPattern("dd-MM-yyyy"));
+        }
         if(HoTen.isEmpty() || Gmail.isEmpty() || SDT.isEmpty() || DiaChi.isEmpty() || ChucVuNV.isEmpty() || Luong.isEmpty() || NgaySinh.isEmpty() || NgayTaoTK.isEmpty())
         {
             JOptionPane.showMessageDialog(this, "Vui lòng nhập đầy đủ thông tin", "Error", JOptionPane.ERROR_MESSAGE);
