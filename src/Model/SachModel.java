@@ -10,13 +10,13 @@ package Model;
  */
 public class SachModel {
     protected int MaSach, SlTon, MaTL;
-    protected String TenSach, GhiChu, TenTG, NXB, AnhSach;
+    protected String TenSach, GhiChu, TenTG, NXB, AnhSach, TenTheLoai;
     protected long Gia;
 
     public SachModel() {
     }
 
-    public SachModel(int MaSach, int SlTon, int MaTL, String TenSach, String GhiChu, String TenTG, String NXB, String AnhSach, long Gia) {
+    public SachModel(int MaSach, int SlTon, int MaTL, String TenSach, String GhiChu, String TenTG, String NXB, String AnhSach, long Gia, String TenTheLoai) {
         this.MaSach = MaSach;
         this.SlTon = SlTon;
         this.MaTL = MaTL;
@@ -26,6 +26,7 @@ public class SachModel {
         this.NXB = NXB;
         this.AnhSach = AnhSach;
         this.Gia = Gia;
+        this.TenTheLoai = TenTheLoai;
     }
 
     public int getMaSach() {
@@ -99,5 +100,12 @@ public class SachModel {
     public void setGia(long Gia) {
         this.Gia = Gia;
     }
-    
+
+    public String getTenTheLoai() {
+        return TenTheLoai;
+    }
+
+    public void setTenTheLoai(String TenTheLoai) {
+        this.TenTheLoai = TenTheLoai;
+    }
 }

@@ -438,12 +438,6 @@ public class TaiKhoan extends javax.swing.JFrame {
 
     private void UpdateTKBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateTKBtnActionPerformed
         // TODO add your handling code here:
-        String HoTen = HoTen_txt.getText();
-        String Gmail = gmail_txt.getText();
-        String SDT = SDT_txt.getText();
-        String DiaChi = DC_txt.getText();
-        String ChucVuNV = CV_txt.getText();
-        String Luong = Luong_txt.getText();
         LocalDate date1 = NgSinh.getDate();
         LocalDate date2 = NgTao.getDate();
         String NgayTaoTK = "";
@@ -459,30 +453,30 @@ public class TaiKhoan extends javax.swing.JFrame {
             NgayTaoTK = date2.format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
             NgTaoLC = LocalDate.parse(NgayTaoTK, DateTimeFormatter.ofPattern("dd-MM-yyyy"));
         }
-        if(HoTen.isEmpty() || Gmail.isEmpty() || SDT.isEmpty() || DiaChi.isEmpty() || ChucVuNV.isEmpty() || Luong.isEmpty() || NgaySinh.isEmpty() || NgayTaoTK.isEmpty())
+        if(HoTen_txt.getText().isEmpty() || gmail_txt.getText().isEmpty() || SDT_txt.getText().isEmpty() || DC_txt.getText().isEmpty() || CV_txt.getText().isEmpty() || Luong_txt.getText().isEmpty() || NgaySinh.isEmpty() || NgayTaoTK.isEmpty())
         {
             JOptionPane.showMessageDialog(this, "Vui lòng nhập đầy đủ thông tin", "Error", JOptionPane.ERROR_MESSAGE);
             return;
-        } else if(CheckSDT(SDT) == false) {
+        } else if(CheckSDT(SDT_txt.getText()) == false) {
             JOptionPane.showMessageDialog(this, "Sai định dạng SDT", "Error", JOptionPane.ERROR_MESSAGE);
             return;
-        } else if(CheckEmail(Gmail) == false) {
+        } else if(CheckEmail(gmail_txt.getText()) == false) {
             JOptionPane.showMessageDialog(this, "Sai định dạng Email", "Error", JOptionPane.ERROR_MESSAGE);
             return;
-        } else if(CheckNumberOrNot(HoTen) == true || CheckNumberOrNot(ChucVuNV) == true){
+        } else if(CheckNumberOrNot(HoTen_txt.getText()) == true || CheckNumberOrNot(CV_txt.getText()) == true){
             JOptionPane.showMessageDialog(this, "Họ tên hoặc chức vụ không chứa số", "Error", JOptionPane.ERROR_MESSAGE);
             return;
-        } else if(CheckNumberOrNot(SDT) == false || CheckNumberOrNot(Luong) == false){
+        } else if(CheckNumberOrNot(SDT_txt.getText()) == false || CheckNumberOrNot(Luong_txt.getText()) == false){
             JOptionPane.showMessageDialog(this, "Lương hoặc SĐT phải là số", "Error", JOptionPane.ERROR_MESSAGE);
             return;
-        } else if (Long.parseLong(Luong) <=0){
+        } else if (Long.parseLong(Luong_txt.getText()) <=0){
             JOptionPane.showMessageDialog(this, "Lương phải lớn hơn 0", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
         
         int opt = JOptionPane.showConfirmDialog(this, "Bạn có chắc là muốn cập nhập thông tin nhân viên này", "Chỉnh sửa nhân viên", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
         if (opt == JOptionPane.YES_OPTION) {
-            TaiKhoanModel tkm = new TaiKhoanModel(ID, Long.parseLong(Luong), TenDNHome, MatKhauHome, HoTen, DiaChi, SDT, Gmail, ChucVuNV, NgSinhLC, NgTaoLC);
+            TaiKhoanModel tkm = new TaiKhoanModel(ID, Long.parseLong(Luong_txt.getText()), TenDNHome, MatKhauHome, HoTen_txt.getText(), DC_txt.getText(), SDT_txt.getText(), gmail_txt.getText(), CV_txt.getText(), NgSinhLC, NgTaoLC);
             if(tk.SuaTK(tkm) != 0){
                 JOptionPane.showMessageDialog(this, "Chỉnh sửa thành công");
                 Reset();
@@ -496,12 +490,6 @@ public class TaiKhoan extends javax.swing.JFrame {
 
     private void DelTKBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DelTKBtnActionPerformed
         // TODO add your handling code here:
-        String HoTen = HoTen_txt.getText();
-        String Gmail = gmail_txt.getText();
-        String SDT = SDT_txt.getText();
-        String DiaChi = DC_txt.getText();
-        String ChucVuNV = CV_txt.getText();
-        String Luong = Luong_txt.getText();
         LocalDate date1 = NgSinh.getDate();
         LocalDate date2 = NgTao.getDate();
         String NgayTaoTK = "";
@@ -517,8 +505,7 @@ public class TaiKhoan extends javax.swing.JFrame {
             NgayTaoTK = date2.format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
             NgTaoLC = LocalDate.parse(NgayTaoTK, DateTimeFormatter.ofPattern("dd-MM-yyyy"));
         }
-        
-        if(HoTen.isEmpty() || Gmail.isEmpty() || SDT.isEmpty() || DiaChi.isEmpty() || ChucVuNV.isEmpty() || Luong.isEmpty() || NgaySinh.isEmpty() || NgayTaoTK.isEmpty())
+        if(HoTen_txt.getText().isEmpty() || gmail_txt.getText().isEmpty() || SDT_txt.getText().isEmpty() || DC_txt.getText().isEmpty() || CV_txt.getText().isEmpty() || Luong_txt.getText().isEmpty() || NgaySinh.isEmpty() || NgayTaoTK.isEmpty())
         {
             JOptionPane.showMessageDialog(this, "Vui lòng nhập đầy đủ thông tin", "Error", JOptionPane.ERROR_MESSAGE);
             return;
@@ -526,7 +513,7 @@ public class TaiKhoan extends javax.swing.JFrame {
        
        int opt = JOptionPane.showConfirmDialog(this, "Bạn có chắc là muốn xoá nhân viên này", "Xoá nhân viên", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
        if (opt == JOptionPane.YES_OPTION) {
-            TaiKhoanModel tkm = new TaiKhoanModel(ID, Long.parseLong(Luong), TenDNHome, MatKhauHome, HoTen, DiaChi, SDT, Gmail, ChucVuNV, NgSinhLC, NgTaoLC);
+            TaiKhoanModel tkm = new TaiKhoanModel(ID, Long.parseLong(Luong_txt.getText()), TenDNHome, MatKhauHome, HoTen_txt.getText(), DC_txt.getText(), SDT_txt.getText(), gmail_txt.getText(), CV_txt.getText(), NgSinhLC, NgTaoLC);
             if(tk.XoaTK(tkm) != 0){
                 JOptionPane.showMessageDialog(this, "Xoá thành công");
                 Reset();
@@ -547,7 +534,7 @@ public class TaiKhoan extends javax.swing.JFrame {
     private void SearchBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchBtn1ActionPerformed
         // TODO add your handling code here:
         String search = Search_txt1.getText();
-        String choice = (String) jComboBox2.getSelectedItem();
+        String choice = jComboBox2.getSelectedItem().toString();
         DefaultTableModel Table_for_search = (DefaultTableModel) jTable2.getModel();
         Table_for_search.setRowCount(0);
         ArrayList<TaiKhoanModel> tkmodel = new ArrayList<TaiKhoanModel>();

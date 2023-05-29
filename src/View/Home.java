@@ -24,7 +24,6 @@ public class Home extends javax.swing.JFrame {
     public Home(String TenDN, String MatKhau){
         initComponents();
         this.setVisible(true);
-        this.setLocationRelativeTo(null);
         this.TenDNHome = TenDN;
         this.MatKhauHome = MatKhau;
     }
