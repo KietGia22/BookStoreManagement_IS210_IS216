@@ -16,6 +16,15 @@ public class Them_HD extends javax.swing.JFrame {
     public Them_HD() {
         initComponents();
     }
+    
+    
+    String TenDNHome, MatKhauHome;
+    
+    public Them_HD(String TenDN, String MatKhau){
+        initComponents();
+        this.TenDNHome = TenDN;
+        this.MatKhauHome = MatKhau;
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
