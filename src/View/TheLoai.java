@@ -312,7 +312,7 @@ public class TheLoai extends javax.swing.JFrame {
             return;
         }
         
-        int opt = JOptionPane.showConfirmDialog(this, "Bạn có chắc là muốn xoá thông tin nhà cung cấp", "Thêm nhà cung cấp", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        int opt = JOptionPane.showConfirmDialog(this, "Bạn có chắc là muốn xoá thông tin nhà cung cấp", "Xoá nhà cung cấp", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
             if (opt == JOptionPane.YES_OPTION) {
                     TheLoaiModel tlm = new TheLoaiModel(ID, TenTL, GhiChu);
                     if(tl.XoaTL(tlm) != 0){
@@ -365,7 +365,7 @@ public class TheLoai extends javax.swing.JFrame {
             return;
         }
         
-        int opt = JOptionPane.showConfirmDialog(this, "Bạn có chắc là muốn sửa thông tin nhà cung cấp", "Thêm nhà cung cấp", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        int opt = JOptionPane.showConfirmDialog(this, "Bạn có chắc là muốn sửa thông tin nhà cung cấp", "Xoá nhà cung cấp", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
             if (opt == JOptionPane.YES_OPTION) {
                     TheLoaiModel tlm = new TheLoaiModel(ID, TenTL, GhiChu);
                     if(tl.SuaTL(tlm) != 0){
