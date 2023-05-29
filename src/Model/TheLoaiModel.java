@@ -20,6 +20,11 @@ public class TheLoaiModel {
         this.TenTL = TenTL;
         this.GhiChu = GhiChu;
     }
+    
+    public TheLoaiModel(String TenTL, String GhiChu){
+        this.TenTL = TenTL;
+        this.GhiChu = GhiChu;
+    }
 
     public int getMaTL() {
         return MaTL;

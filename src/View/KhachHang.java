@@ -123,9 +123,11 @@ public class KhachHang extends javax.swing.JFrame {
         Search_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 1, 1, new java.awt.Color(0, 0, 0)));
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mã khách hàng", "Tên khách hàng" }));
+        jComboBox1.setBackground(new java.awt.Color(0, 204, 204));
         jComboBox1.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
 
         SearchBtn.setText("Tìm khách hàng");
+        SearchBtn.setBackground(new java.awt.Color(0, 204, 204));
         SearchBtn.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         SearchBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -133,8 +135,6 @@ public class KhachHang extends javax.swing.JFrame {
             }
         });
 
-        jTable1.setBackground(new java.awt.Color(0, 204, 204));
-        jTable1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null},
@@ -154,6 +154,8 @@ public class KhachHang extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
+        jTable1.setBackground(new java.awt.Color(0, 204, 204));
+        jTable1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jTable1.setShowGrid(true);
         jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -163,6 +165,7 @@ public class KhachHang extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         AddKHBtn.setText("Thêm khách hàng");
+        AddKHBtn.setBackground(new java.awt.Color(0, 204, 204));
         AddKHBtn.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         AddKHBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -171,6 +174,7 @@ public class KhachHang extends javax.swing.JFrame {
         });
 
         UpdateKHBtn.setText("Sửa khách hàng");
+        UpdateKHBtn.setBackground(new java.awt.Color(0, 204, 204));
         UpdateKHBtn.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         UpdateKHBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -179,6 +183,7 @@ public class KhachHang extends javax.swing.JFrame {
         });
 
         DelKHBtn.setText("Xoá khách hàng");
+        DelKHBtn.setBackground(new java.awt.Color(0, 204, 204));
         DelKHBtn.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         DelKHBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -252,6 +257,7 @@ public class KhachHang extends javax.swing.JFrame {
         GC_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 1, new java.awt.Color(0, 0, 0)));
 
         ResetBtn.setText("Làm mới");
+        ResetBtn.setBackground(new java.awt.Color(0, 204, 204));
         ResetBtn.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         ResetBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

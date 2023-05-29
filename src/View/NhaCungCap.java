@@ -94,6 +94,7 @@ public class NhaCungCap extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(173, 216, 230));
 
+        jComboBox1.setBackground(new java.awt.Color(0, 204, 204));
         jComboBox1.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mã nhà cung cấp", "Tên nhà cung cấp" }));
 
@@ -101,6 +102,7 @@ public class NhaCungCap extends javax.swing.JFrame {
         Search_txt.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         Search_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 1, 1, new java.awt.Color(0, 0, 0)));
 
+        SearchBtn1.setBackground(new java.awt.Color(0, 204, 204));
         SearchBtn1.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         SearchBtn1.setText("Tìm nhà cung cấp");
         SearchBtn1.addActionListener(new java.awt.event.ActionListener() {
@@ -147,6 +149,7 @@ public class NhaCungCap extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTable1);
 
+        AddNCCBtn.setBackground(new java.awt.Color(0, 204, 204));
         AddNCCBtn.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         AddNCCBtn.setText("Thêm nhà cung cấp");
         AddNCCBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -176,6 +179,7 @@ public class NhaCungCap extends javax.swing.JFrame {
         SDT_txt.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         SDT_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 1, new java.awt.Color(0, 0, 0)));
 
+        ResetBtn.setBackground(new java.awt.Color(0, 204, 204));
         ResetBtn.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         ResetBtn.setText("Làm mới");
         ResetBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -184,6 +188,7 @@ public class NhaCungCap extends javax.swing.JFrame {
             }
         });
 
+        UpdateNCCBtn.setBackground(new java.awt.Color(0, 204, 204));
         UpdateNCCBtn.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         UpdateNCCBtn.setText("Sửa nhà cung cấp");
         UpdateNCCBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -192,6 +197,7 @@ public class NhaCungCap extends javax.swing.JFrame {
             }
         });
 
+        DelNCCBtn.setBackground(new java.awt.Color(0, 204, 204));
         DelNCCBtn.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         DelNCCBtn.setText("Xoá nhà cung cấp");
         DelNCCBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -285,7 +291,7 @@ public class NhaCungCap extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(261, 261, 261)
+                .addGap(317, 317, 317)
                 .addComponent(jLabel1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
