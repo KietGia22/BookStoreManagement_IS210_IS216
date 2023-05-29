@@ -351,18 +351,18 @@ public class NhaCungCap extends javax.swing.JFrame {
             return;
         }
         
-         int opt = JOptionPane.showConfirmDialog(this, "Bạn có chắc là muốn thêm thông tin nhà cung cấp", "Thêm nhà cung cấp", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-            if (opt == JOptionPane.YES_OPTION) {
-                    NhaCungCapModel nccm = new NhaCungCapModel(TenNCC, DiaChi, SDT);
-                    if(ncc.ThemNCC(nccm) != 0){
-                        JOptionPane.showMessageDialog(this, "Thêm thành công");
-                        Reset();
-                        GetAllNCC();
-                    } else {
-                        JOptionPane.showMessageDialog(this, "Thêm thất bại", "Error", JOptionPane.ERROR_MESSAGE);
-                        return;
-                    }
+        int opt = JOptionPane.showConfirmDialog(this, "Bạn có chắc là muốn thêm thông tin nhà cung cấp", "Thêm nhà cung cấp", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        if (opt == JOptionPane.YES_OPTION) {
+            NhaCungCapModel nccm = new NhaCungCapModel(TenNCC, DiaChi, SDT);
+            if(ncc.ThemNCC(nccm) != 0){
+                JOptionPane.showMessageDialog(this, "Thêm thành công");
+                Reset();
+                GetAllNCC();
+            } else {
+                JOptionPane.showMessageDialog(this, "Thêm thất bại", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
             }
+        }
     }//GEN-LAST:event_AddNCCBtnActionPerformed
 
     private void QlaiBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QlaiBtnActionPerformed
@@ -391,18 +391,18 @@ public class NhaCungCap extends javax.swing.JFrame {
             return;
         }
         
-         int opt = JOptionPane.showConfirmDialog(this, "Bạn có chắc là muốn sửa thông tin nhà cung cấp", "Sửa nhà cung cấp", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-            if (opt == JOptionPane.YES_OPTION) {
-                    NhaCungCapModel nccm = new NhaCungCapModel(ID, TenNCC, DiaChi, SDT);
-                    if(ncc.SuaNCC(nccm) != 0){
-                        JOptionPane.showMessageDialog(this, "Sửa thành công");
-                        Reset();
-                        GetAllNCC();
-                    } else {
-                        JOptionPane.showMessageDialog(this, "Sửa thất bại", "Error", JOptionPane.ERROR_MESSAGE);
-                        return;
-                    }
-            }
+        int opt = JOptionPane.showConfirmDialog(this, "Bạn có chắc là muốn sửa thông tin nhà cung cấp", "Sửa nhà cung cấp", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        if (opt == JOptionPane.YES_OPTION) {
+                NhaCungCapModel nccm = new NhaCungCapModel(ID, TenNCC, DiaChi, SDT);
+                if(ncc.SuaNCC(nccm) != 0){
+                    JOptionPane.showMessageDialog(this, "Sửa thành công");
+                    Reset();
+                    GetAllNCC();
+                } else {
+                    JOptionPane.showMessageDialog(this, "Sửa thất bại", "Error", JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
+         }
     }//GEN-LAST:event_UpdateNCCBtnActionPerformed
 
     private void DelNCCBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DelNCCBtnActionPerformed
@@ -419,18 +419,18 @@ public class NhaCungCap extends javax.swing.JFrame {
             return;
         }
         
-         int opt = JOptionPane.showConfirmDialog(this, "Bạn có chắc là muốn xoá thông tin nhà cung cấp", "Xoá nhà cung cấp", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-            if (opt == JOptionPane.YES_OPTION) {
-                    NhaCungCapModel nccm = new NhaCungCapModel(ID, TenNCC, DiaChi, SDT);
-                    if(ncc.XoaNCC(nccm) != 0){
-                        JOptionPane.showMessageDialog(this, "Xoá thành công");
-                        Reset();
-                        GetAllNCC();
-                    } else {
-                        JOptionPane.showMessageDialog(this, "Xoá thất bại", "Error", JOptionPane.ERROR_MESSAGE);
-                        return;
-                    }
-            }
+        int opt = JOptionPane.showConfirmDialog(this, "Bạn có chắc là muốn xoá thông tin nhà cung cấp", "Xoá nhà cung cấp", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        if (opt == JOptionPane.YES_OPTION) {
+            NhaCungCapModel nccm = new NhaCungCapModel(ID, TenNCC, DiaChi, SDT);
+            if(ncc.XoaNCC(nccm) != 0){
+                JOptionPane.showMessageDialog(this, "Xoá thành công");
+                Reset();
+                GetAllNCC();
+            } else {
+                JOptionPane.showMessageDialog(this, "Xoá thất bại", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+             }
+        }
     }//GEN-LAST:event_DelNCCBtnActionPerformed
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
@@ -451,13 +451,8 @@ public class NhaCungCap extends javax.swing.JFrame {
 
     
     public void Add(ArrayList<NhaCungCapModel> nccModel, DefaultTableModel table){
-        for(int i = 0; i < nccModel.size(); i++){
-            NhaCungCapModel nhaCC =  nccModel.get(i);
-            int MaNCC = nhaCC.getMaNCC();
-            String HoTen = nhaCC.getTenNCC();
-            String DiaChi = nhaCC.getDiaChi();
-            String SDT = nhaCC.getSDT();
-            Object[] obj = {MaNCC, HoTen, SDT, DiaChi};
+        for(NhaCungCapModel i : nccModel){
+            Object[] obj = {i.getMaNCC(), i.getTenNCC(), i.getSDT(), i.getDiaChi()};
             table.addRow(obj);
         }
     }

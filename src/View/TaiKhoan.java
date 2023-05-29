@@ -481,24 +481,21 @@ public class TaiKhoan extends javax.swing.JFrame {
         }
         
         int opt = JOptionPane.showConfirmDialog(this, "Bạn có chắc là muốn cập nhập thông tin nhân viên này", "Chỉnh sửa nhân viên", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-            if (opt == JOptionPane.YES_OPTION) {
-                TaiKhoanModel tkm = new TaiKhoanModel(ID, Long.parseLong(Luong), TenDNHome, MatKhauHome, HoTen, DiaChi, SDT, Gmail, ChucVuNV, NgSinhLC, NgTaoLC);
-                    if(tk.SuaTK(tkm) != 0){
-                        JOptionPane.showMessageDialog(this, "Chỉnh sửa thành công");
-                        Reset();
-                        GetAllNhanVien();
-                    } else {
-                        JOptionPane.showMessageDialog(this, "Chỉnh sửa thất bại", "Error", JOptionPane.ERROR_MESSAGE);
-                        return;
-                    }
+        if (opt == JOptionPane.YES_OPTION) {
+            TaiKhoanModel tkm = new TaiKhoanModel(ID, Long.parseLong(Luong), TenDNHome, MatKhauHome, HoTen, DiaChi, SDT, Gmail, ChucVuNV, NgSinhLC, NgTaoLC);
+            if(tk.SuaTK(tkm) != 0){
+                JOptionPane.showMessageDialog(this, "Chỉnh sửa thành công");
+                Reset();
+                GetAllNhanVien();
+            } else {
+                JOptionPane.showMessageDialog(this, "Chỉnh sửa thất bại", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
             }
+        }
     }//GEN-LAST:event_UpdateTKBtnActionPerformed
 
     private void DelTKBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DelTKBtnActionPerformed
         // TODO add your handling code here:
-        /*DefaultTableModel Table_for_delete = (DefaultTableModel) jTable2.getModel();
-        int selectedRow = jTable2.getSelectedRow();
-        ID = Integer.parseInt(Table_for_delete.getValueAt(selectedRow, 0).toString());*/
         String HoTen = HoTen_txt.getText();
         String Gmail = gmail_txt.getText();
         String SDT = SDT_txt.getText();
@@ -520,24 +517,25 @@ public class TaiKhoan extends javax.swing.JFrame {
             NgayTaoTK = date2.format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
             NgTaoLC = LocalDate.parse(NgayTaoTK, DateTimeFormatter.ofPattern("dd-MM-yyyy"));
         }
-        if(ID != 0){
-            int opt = JOptionPane.showConfirmDialog(this, "Bạn có chắc là muốn xoá nhân viên này", "Xoá nhân viên", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-            if (opt == JOptionPane.YES_OPTION) {
-                TaiKhoanModel tkm = new TaiKhoanModel(ID, Long.parseLong(Luong), TenDNHome, MatKhauHome, HoTen, DiaChi, SDT, Gmail, ChucVuNV, NgSinhLC, NgTaoLC);
-                    if(tk.XoaTK(tkm) != 0){
-                        JOptionPane.showMessageDialog(this, "Xoá thành công");
-                        Reset();
-                        GetAllNhanVien();
-                    } else {
-                        JOptionPane.showMessageDialog(this, "Xoá thất bại", "Error", JOptionPane.ERROR_MESSAGE);
-                        return;
-                    }
-            } 
-        } else {
-            JOptionPane.showMessageDialog(this, "Vui lòng chọn nhân viên muốn xoá trong bảng", "Lỗi khi xoá", JOptionPane.ERROR_MESSAGE);
+        
+        if(HoTen.isEmpty() || Gmail.isEmpty() || SDT.isEmpty() || DiaChi.isEmpty() || ChucVuNV.isEmpty() || Luong.isEmpty() || NgaySinh.isEmpty() || NgayTaoTK.isEmpty())
+        {
+            JOptionPane.showMessageDialog(this, "Vui lòng nhập đầy đủ thông tin", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
        
+       int opt = JOptionPane.showConfirmDialog(this, "Bạn có chắc là muốn xoá nhân viên này", "Xoá nhân viên", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+       if (opt == JOptionPane.YES_OPTION) {
+            TaiKhoanModel tkm = new TaiKhoanModel(ID, Long.parseLong(Luong), TenDNHome, MatKhauHome, HoTen, DiaChi, SDT, Gmail, ChucVuNV, NgSinhLC, NgTaoLC);
+            if(tk.XoaTK(tkm) != 0){
+                JOptionPane.showMessageDialog(this, "Xoá thành công");
+                Reset();
+                GetAllNhanVien();
+            } else {
+                JOptionPane.showMessageDialog(this, "Xoá thất bại", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+        }
     }//GEN-LAST:event_DelTKBtnActionPerformed
 
     private void QlaiBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QlaiBtn1ActionPerformed
@@ -558,8 +556,7 @@ public class TaiKhoan extends javax.swing.JFrame {
             return;
         } else {
             tkmodel = tk.TimKiemTK(choice, search);
-            TaiKhoanModel nvModel = new TaiKhoanModel();
-            Add(nvModel, tkmodel, Table_for_search);
+            Add(tkmodel, Table_for_search);
         }
     }//GEN-LAST:event_SearchBtn1ActionPerformed
 
@@ -598,19 +595,9 @@ public class TaiKhoan extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jTable2MouseClicked
 
-    public void Add(TaiKhoanModel nvModel, ArrayList<TaiKhoanModel> tkmodel, DefaultTableModel table){
-        for(int i = 0; i < tkmodel.size(); i++){
-            nvModel =  tkmodel.get(i);
-            int MaTK = nvModel.getMaTK();
-            String HoTen = nvModel.getHoTen();
-            String NgaySinh = nvModel.toString(nvModel.getNgSinh());
-            String Gmail = nvModel.getGmail();
-            String DiaChi = nvModel.getDiaChi();
-            String SDT = nvModel.getSDT();
-            long Luong = nvModel.getLuong();
-            String NgayTaoTaiKhoan = nvModel.toString(nvModel.getNgTaoTK());
-            String ChucVu_nhanvien = nvModel.getChucVu();
-            Object[] obj = {MaTK, HoTen, NgaySinh, Gmail, DiaChi, SDT, Luong, NgayTaoTaiKhoan, ChucVu_nhanvien};
+    public void Add(ArrayList<TaiKhoanModel> tkmodel, DefaultTableModel table){
+        for(TaiKhoanModel i : tkmodel){
+            Object[] obj = {i.getMaTK(), i.getHoTen(), i.toString(i.getNgSinh()), i.getGmail(), i.getDiaChi(), i.getSDT(), i.getLuong(), i.toString(i.getNgTaoTK()), i.getChucVu()};
             table.addRow(obj);
         }
     }
@@ -621,8 +608,7 @@ public class TaiKhoan extends javax.swing.JFrame {
         table.setRowCount(0);
         ArrayList<TaiKhoanModel> tkmodel = new ArrayList<TaiKhoanModel>();
         tkmodel = tk.getTCTaiKhoan();
-        TaiKhoanModel nvModel = new TaiKhoanModel();
-        Add(nvModel, tkmodel, table);
+        Add(tkmodel, table);
         jTable2.setModel(table);
         jTable2.getColumnModel().getColumn(0).setPreferredWidth(20);
         jTable2.getColumnModel().getColumn(2).setPreferredWidth(35);

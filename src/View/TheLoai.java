@@ -257,12 +257,13 @@ public class TheLoai extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(TL_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(GC_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(TL_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(50, 50, 50)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -313,17 +314,17 @@ public class TheLoai extends javax.swing.JFrame {
         }
         
         int opt = JOptionPane.showConfirmDialog(this, "Bạn có chắc là muốn xoá thông tin nhà cung cấp", "Xoá nhà cung cấp", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-            if (opt == JOptionPane.YES_OPTION) {
-                    TheLoaiModel tlm = new TheLoaiModel(ID, TenTL, GhiChu);
-                    if(tl.XoaTL(tlm) != 0){
-                        JOptionPane.showMessageDialog(this, "Xoá thành công");
-                        Reset();
-                        GetAllTheLoai();
-                    } else {
-                        JOptionPane.showMessageDialog(this, "Xoá thất bại", "Error", JOptionPane.ERROR_MESSAGE);
-                        return;
-                    }
+        if (opt == JOptionPane.YES_OPTION) {
+            TheLoaiModel tlm = new TheLoaiModel(ID, TenTL, GhiChu);
+            if(tl.XoaTL(tlm) != 0){
+                JOptionPane.showMessageDialog(this, "Xoá thành công");
+                Reset();
+                GetAllTheLoai();
+            } else {
+                JOptionPane.showMessageDialog(this, "Xoá thất bại", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
             }
+        }
     }//GEN-LAST:event_DelbtnActionPerformed
 
     private void AddTLBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddTLBtnActionPerformed
@@ -339,17 +340,17 @@ public class TheLoai extends javax.swing.JFrame {
             return;
         }
         int opt = JOptionPane.showConfirmDialog(this, "Bạn có chắc là muốn thêm thông tin nhà cung cấp", "Thêm nhà cung cấp", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-            if (opt == JOptionPane.YES_OPTION) {
-                    TheLoaiModel tlm = new TheLoaiModel(TenTL, GhiChu);
-                    if(tl.ThemTL(tlm) != 0){
-                        JOptionPane.showMessageDialog(this, "Thêm thành công");
-                        Reset();
-                        GetAllTheLoai();
-                    } else {
-                        JOptionPane.showMessageDialog(this, "Thêm thất bại", "Error", JOptionPane.ERROR_MESSAGE);
-                        return;
-                    }
+        if (opt == JOptionPane.YES_OPTION) {
+            TheLoaiModel tlm = new TheLoaiModel(TenTL, GhiChu);
+            if(tl.ThemTL(tlm) != 0){
+                JOptionPane.showMessageDialog(this, "Thêm thành công");
+                Reset();
+                GetAllTheLoai();
+            } else {
+                JOptionPane.showMessageDialog(this, "Thêm thất bại", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
             }
+        }
     }//GEN-LAST:event_AddTLBtnActionPerformed
 
     private void UpdateTLBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateTLBtnActionPerformed
@@ -366,17 +367,17 @@ public class TheLoai extends javax.swing.JFrame {
         }
         
         int opt = JOptionPane.showConfirmDialog(this, "Bạn có chắc là muốn sửa thông tin nhà cung cấp", "Xoá nhà cung cấp", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-            if (opt == JOptionPane.YES_OPTION) {
-                    TheLoaiModel tlm = new TheLoaiModel(ID, TenTL, GhiChu);
-                    if(tl.SuaTL(tlm) != 0){
-                        JOptionPane.showMessageDialog(this, "Sửa thành công");
-                        Reset();
-                        GetAllTheLoai();
-                    } else {
-                        JOptionPane.showMessageDialog(this, "Sửa thất bại", "Error", JOptionPane.ERROR_MESSAGE);
-                        return;
-                    }
+        if (opt == JOptionPane.YES_OPTION) {
+            TheLoaiModel tlm = new TheLoaiModel(ID, TenTL, GhiChu);
+            if(tl.SuaTL(tlm) != 0){
+                JOptionPane.showMessageDialog(this, "Sửa thành công");
+                Reset();
+                GetAllTheLoai();
+            } else {
+                JOptionPane.showMessageDialog(this, "Sửa thất bại", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
             }
+        }
     }//GEN-LAST:event_UpdateTLBtnActionPerformed
 
     private void QlaiBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QlaiBtnActionPerformed
@@ -425,12 +426,8 @@ public class TheLoai extends javax.swing.JFrame {
     }//GEN-LAST:event_jTable1MouseClicked
 
     public void Add(ArrayList<TheLoaiModel> tlModel, DefaultTableModel table){
-        for(int i = 0; i < tlModel.size(); i++){
-            TheLoaiModel Tloai =  tlModel.get(i);
-            int MaTL = Tloai.getMaTL();
-            String TenTL = Tloai.getTenTL();
-            String GhiChu = Tloai.getGhiChu();
-            Object[] obj = {MaTL, TenTL, GhiChu};
+        for(TheLoaiModel i : tlModel){
+            Object[] obj = {i.getMaTL(), i.getTenTL(), i.getGhiChu()};
             table.addRow(obj);
         }
     }
