@@ -440,7 +440,7 @@ public class KhachHang extends javax.swing.JFrame {
 
     private void DelKHBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DelKHBtnActionPerformed
         // TODO add your handling code here:
-         String HoTen = HoTen_txt.getText();
+        String HoTen = HoTen_txt.getText();
         String GioiTinh = GT_txt.getText();
         String SDT = SDT_txt.getText();
         String DiaChi = DC_txt.getText();
@@ -454,18 +454,24 @@ public class KhachHang extends javax.swing.JFrame {
             NgSinhLC = LocalDate.parse(NgaySinh, DateTimeFormatter.ofPattern("dd-MM-yyyy"));
         }    
         
+        if(HoTen.isEmpty() || GioiTinh.isEmpty() || SDT.isEmpty() || DiaChi.isEmpty() || CCCD.isEmpty() || NgaySinh.isEmpty())
+        {
+            JOptionPane.showMessageDialog(this, "Vui lòng nhập đầy đủ thông tin", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
         int opt = JOptionPane.showConfirmDialog(this, "Bạn có chắc là muốn xoá thông tin khách hàng", "Sửa khách hàng", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-            if (opt == JOptionPane.YES_OPTION) {
-                    KhachHangModel khm = new KhachHangModel(ID, HoTen, SDT, DiaChi, GioiTinh, GhiChu, NgSinhLC, null, CCCD);
-                    if(kh.XoaKH(khm) != 0){
-                        JOptionPane.showMessageDialog(this, "Xoá thành công");
-                        Reset();
-                        GetAllKhachHang();
-                    } else {
-                        JOptionPane.showMessageDialog(this, "Xoá thất bại", "Error", JOptionPane.ERROR_MESSAGE);
-                        return;
-                    }
+        if (opt == JOptionPane.YES_OPTION) {
+            KhachHangModel khm = new KhachHangModel(ID, HoTen, SDT, DiaChi, GioiTinh, GhiChu, NgSinhLC, null, CCCD);
+            if(kh.XoaKH(khm) != 0){
+                JOptionPane.showMessageDialog(this, "Xoá thành công");
+                Reset();
+                GetAllKhachHang();
+            } else {
+                JOptionPane.showMessageDialog(this, "Xoá thất bại", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
             }
+        }
     }//GEN-LAST:event_DelKHBtnActionPerformed
 
     private void UpdateKHBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateKHBtnActionPerformed
@@ -499,17 +505,17 @@ public class KhachHang extends javax.swing.JFrame {
         } 
    
         int opt = JOptionPane.showConfirmDialog(this, "Bạn có chắc là muốn chỉnh sửa thông tin khách hàng", "Sửa khách hàng", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-            if (opt == JOptionPane.YES_OPTION) {
-                    KhachHangModel khm = new KhachHangModel(ID, HoTen, SDT, DiaChi, GioiTinh, GhiChu, NgSinhLC, null, CCCD);
-                    if(kh.SuaKH(khm) != 0){
-                        JOptionPane.showMessageDialog(this, "Sửa thành công");
-                        Reset();
-                        GetAllKhachHang();
-                    } else {
-                        JOptionPane.showMessageDialog(this, "Sửa thất bại", "Error", JOptionPane.ERROR_MESSAGE);
-                        return;
-                    }
+        if (opt == JOptionPane.YES_OPTION) {
+            KhachHangModel khm = new KhachHangModel(ID, HoTen, SDT, DiaChi, GioiTinh, GhiChu, NgSinhLC, null, CCCD);
+            if(kh.SuaKH(khm) != 0){
+                JOptionPane.showMessageDialog(this, "Sửa thành công");
+                Reset();
+                GetAllKhachHang();
+            } else {
+                JOptionPane.showMessageDialog(this, "Sửa thất bại", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
             }
+        }
     }//GEN-LAST:event_UpdateKHBtnActionPerformed
 
     private void AddKHBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddKHBtnActionPerformed
@@ -543,17 +549,17 @@ public class KhachHang extends javax.swing.JFrame {
         } 
    
         int opt = JOptionPane.showConfirmDialog(this, "Bạn có chắc là muốn thêm thông tin khách hàng", "Thêm khách hàng", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-            if (opt == JOptionPane.YES_OPTION) {
-                    KhachHangModel khm = new KhachHangModel(HoTen, SDT, DiaChi, GioiTinh, GhiChu, CCCD, NgSinhLC, null);
-                    if(kh.ThemKH(khm) != 0){
-                        JOptionPane.showMessageDialog(this, "Thêm thành công");
-                        Reset();
-                        GetAllKhachHang();
-                    } else {
-                        JOptionPane.showMessageDialog(this, "Thêm thất bại", "Error", JOptionPane.ERROR_MESSAGE);
-                        return;
-                    }
+        if (opt == JOptionPane.YES_OPTION) {
+            KhachHangModel khm = new KhachHangModel(HoTen, SDT, DiaChi, GioiTinh, GhiChu, CCCD, NgSinhLC, null);
+            if(kh.ThemKH(khm) != 0){
+                JOptionPane.showMessageDialog(this, "Thêm thành công");
+                Reset();
+                GetAllKhachHang();
+            } else {
+                JOptionPane.showMessageDialog(this, "Thêm thất bại", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
             }
+        }
     }//GEN-LAST:event_AddKHBtnActionPerformed
 
     private void QlaiBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QlaiBtnActionPerformed
@@ -614,18 +620,8 @@ public class KhachHang extends javax.swing.JFrame {
     }//GEN-LAST:event_jTable1MouseClicked
 
     public void Add(ArrayList<KhachHangModel> arrkhmodel, DefaultTableModel table){
-        for(int i = 0; i < arrkhmodel.size(); i++){
-            KhachHangModel khModel =  arrkhmodel.get(i);
-            int MaKH = khModel.getMaKH();
-            String HoTen = khModel.getHoTen();
-            String NgaySinh = khModel.toString(khModel.getNgSinh());
-            String GioiTinh = khModel.getGioiTinh();
-            String DiaChi = khModel.getDiaChi();
-            String SDT = khModel.getSDT();
-            String CCCD = khModel.getCCCD();
-            String NgayTaoTaiKhoan = khModel.toString(khModel.getNgTao());
-            String GhiChu = khModel.getGhiChu();
-            Object[] obj = {MaKH, HoTen, NgaySinh, DiaChi, SDT, CCCD, NgayTaoTaiKhoan, GioiTinh, GhiChu};
+        for(KhachHangModel i : arrkhmodel){
+            Object[] obj = {i.getMaKH(), i.getHoTen(), i.toString(i.getNgSinh()), i.getDiaChi(), i.getSDT(), i.getCCCD(), i.getNgTao(), i.getGioiTinh(), i.getGhiChu()};
             table.addRow(obj);
         }
     }
