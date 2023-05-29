@@ -22,6 +22,14 @@ public class NhaCungCapModel {
         this.SDT = SDT;
     }
 
+    public NhaCungCapModel(String TenNCC, String DiaChi, String SDT) {
+        this.TenNCC = TenNCC;
+        this.DiaChi = DiaChi;
+        this.SDT = SDT;
+    }
+    
+    
+
     public int getMaNCC() {
         return MaNCC;
     }

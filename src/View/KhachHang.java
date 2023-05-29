@@ -124,11 +124,6 @@ public class KhachHang extends javax.swing.JFrame {
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mã khách hàng", "Tên khách hàng" }));
         jComboBox1.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
-            }
-        });
 
         SearchBtn.setText("Tìm khách hàng");
         SearchBtn.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
@@ -191,69 +186,69 @@ public class KhachHang extends javax.swing.JFrame {
             }
         });
 
-        jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel4.setText("Họ Tên");
+        jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
 
-        HoTen_txt.setBackground(new java.awt.Color(173, 216, 230));
         HoTen_txt.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        HoTen_txt.setBackground(new java.awt.Color(173, 216, 230));
         HoTen_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 1, new java.awt.Color(0, 0, 0)));
 
-        jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel3.setText("Ngày sinh");
+        jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
 
         NgSinhKH.setBackground(new java.awt.Color(173, 216, 230));
         NgSinhKH.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
 
-        jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel9.setText("Giới tính");
+        jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
 
-        GT_txt.setBackground(new java.awt.Color(173, 216, 230));
         GT_txt.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        GT_txt.setBackground(new java.awt.Color(173, 216, 230));
         GT_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 1, new java.awt.Color(0, 0, 0)));
 
-        jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel6.setText("Địa chỉ");
+        jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
 
-        DC_txt.setBackground(new java.awt.Color(173, 216, 230));
         DC_txt.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        DC_txt.setBackground(new java.awt.Color(173, 216, 230));
         DC_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 1, new java.awt.Color(0, 0, 0)));
 
-        jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel7.setText("Số điện thoại");
+        jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
 
-        SDT_txt.setBackground(new java.awt.Color(173, 216, 230));
         SDT_txt.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        SDT_txt.setBackground(new java.awt.Color(173, 216, 230));
         SDT_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 1, new java.awt.Color(0, 0, 0)));
 
-        jLabel10.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel10.setText("CCCD");
+        jLabel10.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
 
-        CCCD_txt.setBackground(new java.awt.Color(173, 216, 230));
         CCCD_txt.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        CCCD_txt.setBackground(new java.awt.Color(173, 216, 230));
         CCCD_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 1, new java.awt.Color(0, 0, 0)));
 
-        AddHDBtn.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         AddHDBtn.setText("Tạo hoá đơn cho khách hàng");
+        AddHDBtn.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         AddHDBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AddHDBtnActionPerformed(evt);
             }
         });
 
-        QlaiBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         QlaiBtn.setText("Quay lại");
         QlaiBtn.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 0, 51), 2, true));
+        QlaiBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         QlaiBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 QlaiBtnActionPerformed(evt);
             }
         });
 
-        jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel5.setText("Ghi chú");
+        jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
 
-        GC_txt.setBackground(new java.awt.Color(173, 216, 230));
         GC_txt.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        GC_txt.setBackground(new java.awt.Color(173, 216, 230));
         GC_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 1, new java.awt.Color(0, 0, 0)));
 
         ResetBtn.setText("Làm mới");
@@ -378,9 +373,9 @@ public class KhachHang extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(0, 100, 100));
 
+        jLabel1.setText("Danh sách khách hàng");
         jLabel1.setFont(new java.awt.Font("Serif", 3, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Danh sách khách hàng");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -561,10 +556,6 @@ public class KhachHang extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_QlaiBtnActionPerformed
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
-
     private void SearchBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchBtnActionPerformed
         // TODO add your handling code here:
         String search = Search_txt.getText();
@@ -572,7 +563,7 @@ public class KhachHang extends javax.swing.JFrame {
         DefaultTableModel Table_for_search = (DefaultTableModel) jTable1.getModel();
         Table_for_search.setRowCount(0);
         ArrayList<KhachHangModel> khmodel = new ArrayList<KhachHangModel>();
-        if(CheckNumberOrNot(search) == false && choice.equals("Mã nhân viên")){
+        if(CheckNumberOrNot(search) == false && choice.equals("Mã nhà cung cấp")){
             JOptionPane.showMessageDialog(this, "Mã khách hàng phải là số", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         } else {
