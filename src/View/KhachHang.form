@@ -190,7 +190,7 @@
                           <Component id="GC_txt" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
                           <Component id="jLabel5" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="103" alignment="1" groupAlignment="3" attributes="0">
                               <Component id="Search_txt" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
@@ -205,8 +205,8 @@
                           </Group>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jScrollPane1" min="-2" pref="125" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                      <Component id="jScrollPane1" min="-2" pref="118" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="AddHDBtn" min="-2" pref="53" max="-2" attributes="0"/>
                           <Component id="QlaiBtn" min="-2" pref="49" max="-2" attributes="0"/>
@@ -219,11 +219,11 @@
           <SubComponents>
             <Component class="javax.swing.JTextField" name="Search_txt">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="e6" green="d8" red="ad" type="rgb"/>
-                </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Times New Roman" size="15" style="1"/>
+                </Property>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="e6" green="d8" red="ad" type="rgb"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
@@ -234,14 +234,14 @@
             </Component>
             <Component class="javax.swing.JComboBox" name="jComboBox1">
               <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Times New Roman" size="16" style="1"/>
-                </Property>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="2">
                     <StringItem index="0" value="M&#xe3; kh&#xe1;ch h&#xe0;ng"/>
                     <StringItem index="1" value="T&#xea;n kh&#xe1;ch h&#xe0;ng"/>
                   </StringArray>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Times New Roman" size="16" style="1"/>
                 </Property>
               </Properties>
               <Events>
@@ -253,10 +253,10 @@
             </Component>
             <Component class="javax.swing.JButton" name="SearchBtn">
               <Properties>
+                <Property name="text" type="java.lang.String" value="T&#xec;m kh&#xe1;ch h&#xe0;ng"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Times New Roman" size="16" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="T&#xec;m kh&#xe1;ch h&#xe0;ng"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SearchBtnActionPerformed"/>
@@ -349,10 +349,10 @@
             </Container>
             <Component class="javax.swing.JButton" name="AddKHBtn">
               <Properties>
+                <Property name="text" type="java.lang.String" value="Th&#xea;m kh&#xe1;ch h&#xe0;ng"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Times New Roman" size="16" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Th&#xea;m kh&#xe1;ch h&#xe0;ng"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AddKHBtnActionPerformed"/>
@@ -360,10 +360,10 @@
             </Component>
             <Component class="javax.swing.JButton" name="UpdateKHBtn">
               <Properties>
+                <Property name="text" type="java.lang.String" value="S&#x1eed;a kh&#xe1;ch h&#xe0;ng"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Times New Roman" size="16" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="S&#x1eed;a kh&#xe1;ch h&#xe0;ng"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="UpdateKHBtnActionPerformed"/>
@@ -371,10 +371,10 @@
             </Component>
             <Component class="javax.swing.JButton" name="DelKHBtn">
               <Properties>
+                <Property name="text" type="java.lang.String" value="Xo&#xe1; kh&#xe1;ch h&#xe0;ng"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Times New Roman" size="16" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Xo&#xe1; kh&#xe1;ch h&#xe0;ng"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DelKHBtnActionPerformed"/>
@@ -382,19 +382,19 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel4">
               <Properties>
+                <Property name="text" type="java.lang.String" value="H&#x1ecd; T&#xea;n"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Times New Roman" size="18" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="H&#x1ecd; T&#xea;n"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="HoTen_txt">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="e6" green="d8" red="ad" type="rgb"/>
-                </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Times New Roman" size="18" style="1"/>
+                </Property>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="e6" green="d8" red="ad" type="rgb"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
@@ -405,10 +405,10 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel3">
               <Properties>
+                <Property name="text" type="java.lang.String" value="Ng&#xe0;y sinh"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Times New Roman" size="18" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Ng&#xe0;y sinh"/>
               </Properties>
             </Component>
             <Component class="com.github.lgooddatepicker.components.DatePicker" name="NgSinhKH">
@@ -425,19 +425,19 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel9">
               <Properties>
+                <Property name="text" type="java.lang.String" value="Gi&#x1edb;i t&#xed;nh"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Times New Roman" size="18" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Gi&#x1edb;i t&#xed;nh"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="GT_txt">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="e6" green="d8" red="ad" type="rgb"/>
-                </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Times New Roman" size="18" style="1"/>
+                </Property>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="e6" green="d8" red="ad" type="rgb"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
@@ -448,19 +448,19 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel6">
               <Properties>
+                <Property name="text" type="java.lang.String" value="&#x110;&#x1ecb;a ch&#x1ec9;"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Times New Roman" size="18" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="&#x110;&#x1ecb;a ch&#x1ec9;"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="DC_txt">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="e6" green="d8" red="ad" type="rgb"/>
-                </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Times New Roman" size="18" style="1"/>
+                </Property>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="e6" green="d8" red="ad" type="rgb"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
@@ -471,19 +471,19 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel7">
               <Properties>
+                <Property name="text" type="java.lang.String" value="S&#x1ed1; &#x111;i&#x1ec7;n tho&#x1ea1;i"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Times New Roman" size="18" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="S&#x1ed1; &#x111;i&#x1ec7;n tho&#x1ea1;i"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="SDT_txt">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="e6" green="d8" red="ad" type="rgb"/>
-                </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Times New Roman" size="18" style="1"/>
+                </Property>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="e6" green="d8" red="ad" type="rgb"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
@@ -494,19 +494,19 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel10">
               <Properties>
+                <Property name="text" type="java.lang.String" value="CCCD"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Times New Roman" size="18" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="CCCD"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="CCCD_txt">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="e6" green="d8" red="ad" type="rgb"/>
-                </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Times New Roman" size="18" style="1"/>
+                </Property>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="e6" green="d8" red="ad" type="rgb"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
@@ -517,10 +517,10 @@
             </Component>
             <Component class="javax.swing.JButton" name="AddHDBtn">
               <Properties>
+                <Property name="text" type="java.lang.String" value="T&#x1ea1;o ho&#xe1; &#x111;&#x1a1;n cho kh&#xe1;ch h&#xe0;ng"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Times New Roman" size="16" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="T&#x1ea1;o ho&#xe1; &#x111;&#x1a1;n cho kh&#xe1;ch h&#xe0;ng"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AddHDBtnActionPerformed"/>
@@ -528,9 +528,6 @@
             </Component>
             <Component class="javax.swing.JButton" name="QlaiBtn">
               <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Times New Roman" size="18" style="1"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Quay l&#x1ea1;i"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -539,6 +536,9 @@
                     </LineBorder>
                   </Border>
                 </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Times New Roman" size="18" style="1"/>
+                </Property>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="QlaiBtnActionPerformed"/>
@@ -546,19 +546,19 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel5">
               <Properties>
+                <Property name="text" type="java.lang.String" value="Ghi ch&#xfa;"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Times New Roman" size="18" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Ghi ch&#xfa;"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="GC_txt">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="e6" green="d8" red="ad" type="rgb"/>
-                </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Times New Roman" size="18" style="1"/>
+                </Property>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="e6" green="d8" red="ad" type="rgb"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
@@ -569,10 +569,10 @@
             </Component>
             <Component class="javax.swing.JButton" name="ResetBtn">
               <Properties>
+                <Property name="text" type="java.lang.String" value="L&#xe0;m m&#x1edb;i"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Times New Roman" size="16" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="L&#xe0;m m&#x1edb;i"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ResetBtnActionPerformed"/>
@@ -610,13 +610,13 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="jLabel1">
               <Properties>
+                <Property name="text" type="java.lang.String" value="Danh s&#xe1;ch kh&#xe1;ch h&#xe0;ng"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Serif" size="36" style="3"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Danh s&#xe1;ch kh&#xe1;ch h&#xe0;ng"/>
               </Properties>
             </Component>
           </SubComponents>

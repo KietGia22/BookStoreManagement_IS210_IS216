@@ -118,20 +118,20 @@ public class KhachHang extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(173, 216, 230));
 
-        Search_txt.setBackground(new java.awt.Color(173, 216, 230));
         Search_txt.setFont(new java.awt.Font("Times New Roman", 1, 15)); // NOI18N
+        Search_txt.setBackground(new java.awt.Color(173, 216, 230));
         Search_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 1, 1, new java.awt.Color(0, 0, 0)));
 
-        jComboBox1.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mã khách hàng", "Tên khách hàng" }));
+        jComboBox1.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
             }
         });
 
-        SearchBtn.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         SearchBtn.setText("Tìm khách hàng");
+        SearchBtn.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         SearchBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SearchBtnActionPerformed(evt);
@@ -167,24 +167,24 @@ public class KhachHang extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTable1);
 
-        AddKHBtn.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         AddKHBtn.setText("Thêm khách hàng");
+        AddKHBtn.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         AddKHBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AddKHBtnActionPerformed(evt);
             }
         });
 
-        UpdateKHBtn.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         UpdateKHBtn.setText("Sửa khách hàng");
+        UpdateKHBtn.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         UpdateKHBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 UpdateKHBtnActionPerformed(evt);
             }
         });
 
-        DelKHBtn.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         DelKHBtn.setText("Xoá khách hàng");
+        DelKHBtn.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         DelKHBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DelKHBtnActionPerformed(evt);
@@ -256,8 +256,8 @@ public class KhachHang extends javax.swing.JFrame {
         GC_txt.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         GC_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 1, new java.awt.Color(0, 0, 0)));
 
-        ResetBtn.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         ResetBtn.setText("Làm mới");
+        ResetBtn.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         ResetBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ResetBtnActionPerformed(evt);
@@ -356,7 +356,7 @@ public class KhachHang extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(GC_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(67, 67, 67)
+                .addGap(88, 88, 88)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(Search_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -368,8 +368,8 @@ public class KhachHang extends javax.swing.JFrame {
                         .addComponent(DelKHBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(AddKHBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(AddHDBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(QlaiBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
