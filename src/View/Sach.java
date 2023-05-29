@@ -4,16 +4,22 @@
  */
 package View;
 
+import Controller.SachController;
+import Controller.TaiKhoanController;
+import Model.SachModel;
 import java.awt.Image;
 import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -26,16 +32,40 @@ public class Sach extends javax.swing.JFrame {
      */
     public Sach() {
         initComponents();
+        GetTCSach();
     }
     
     public String TenDNHome, MatKhauHome;
     File filechooser;
+    public TaiKhoanController tk = new TaiKhoanController();
+    public SachController s = new SachController();
+    public int ChucVu = tk.TraVeChucVu(TenDNHome, MatKhauHome);
+    DefaultTableModel table = new DefaultTableModel();
+    public int ID;
+    
+    
     public Sach(String TenDN, String MatKhau){
         initComponents();
         this.setVisible(true);
         this.setLocationRelativeTo(null);
         this.TenDNHome = TenDN;
         this.MatKhauHome = MatKhau;
+        GetTCSach();
+    }
+    
+    public void Reset(){
+        this.TS_txt.setText("");
+        this.Tg_txt.setText("");
+        this.NXB_txt.setText("");
+        this.GC_txt.setText("");
+        this.G_txt.setText("");
+        this.SL_txt.setText("");
+        this.TS_txt.setText("");
+        this.jLabel1.setIcon(null);
+    }
+    
+    public boolean CheckNumberOrNot(String regax){
+        return regax.matches("-?\\d+(\\.\\d+)?");
     }
 
     /**
@@ -57,7 +87,6 @@ public class Sach extends javax.swing.JFrame {
         AddSBtn = new javax.swing.JButton();
         UpdateSBtn = new javax.swing.JButton();
         DelSBtn = new javax.swing.JButton();
-        DetailBtn = new javax.swing.JButton();
         ResetBtn = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         TS_txt = new javax.swing.JTextField();
@@ -74,7 +103,6 @@ public class Sach extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         GC_txt = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        Anh_txt = new javax.swing.JTextField();
         ChonAnhBtn = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
@@ -90,11 +118,18 @@ public class Sach extends javax.swing.JFrame {
         Search_txt1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         Search_txt1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 1, 1, new java.awt.Color(0, 0, 0)));
 
+        jComboBox2.setBackground(new java.awt.Color(0, 204, 204));
         jComboBox2.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mã sách", "Tên sách" }));
 
+        SearchBtn1.setBackground(new java.awt.Color(0, 204, 204));
         SearchBtn1.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         SearchBtn1.setText("Tìm sách");
+        SearchBtn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SearchBtn1ActionPerformed(evt);
+            }
+        });
 
         QlaiBtn1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         QlaiBtn1.setText("Quay lại");
@@ -127,8 +162,14 @@ public class Sach extends javax.swing.JFrame {
             }
         });
         jTable2.setShowGrid(true);
+        jTable2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable2MouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(jTable2);
 
+        AddSBtn.setBackground(new java.awt.Color(0, 204, 204));
         AddSBtn.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         AddSBtn.setText("Thêm sách");
         AddSBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -137,6 +178,7 @@ public class Sach extends javax.swing.JFrame {
             }
         });
 
+        UpdateSBtn.setBackground(new java.awt.Color(0, 204, 204));
         UpdateSBtn.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         UpdateSBtn.setText("Sửa sách");
         UpdateSBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -145,6 +187,7 @@ public class Sach extends javax.swing.JFrame {
             }
         });
 
+        DelSBtn.setBackground(new java.awt.Color(0, 204, 204));
         DelSBtn.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         DelSBtn.setText("Xoá sách");
         DelSBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -153,16 +196,14 @@ public class Sach extends javax.swing.JFrame {
             }
         });
 
-        DetailBtn.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
-        DetailBtn.setText("Thông tin chi tiết của sách");
-        DetailBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DetailBtnActionPerformed(evt);
-            }
-        });
-
+        ResetBtn.setBackground(new java.awt.Color(0, 204, 204));
         ResetBtn.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         ResetBtn.setText("Làm mới");
+        ResetBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ResetBtnActionPerformed(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel4.setText("Tên sách");
@@ -216,10 +257,6 @@ public class Sach extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel8.setText("Ảnh");
 
-        Anh_txt.setBackground(new java.awt.Color(173, 216, 230));
-        Anh_txt.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        Anh_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 1, new java.awt.Color(0, 0, 0)));
-
         ChonAnhBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         ChonAnhBtn.setText("Chọn Ảnh");
         ChonAnhBtn.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 0, 51), 2, true));
@@ -238,10 +275,7 @@ public class Sach extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(DetailBtn)
-                        .addGap(28, 28, 28)
-                        .addComponent(QlaiBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(QlaiBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1119, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(jPanel3Layout.createSequentialGroup()
@@ -282,11 +316,9 @@ public class Sach extends javax.swing.JFrame {
                                     .addGap(18, 18, 18)
                                     .addComponent(DelSBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(jPanel3Layout.createSequentialGroup()
-                                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(Anh_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(Tg_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(G_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(Tg_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(G_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(ChonAnhBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGap(63, 63, 63)
                                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -298,7 +330,7 @@ public class Sach extends javax.swing.JFrame {
                                             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                                 .addComponent(NXB_txt, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
                                                 .addComponent(SL_txt)))
-                                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGap(0, 0, Short.MAX_VALUE))))))
                 .addGap(41, 41, 41))
         );
@@ -323,15 +355,12 @@ public class Sach extends javax.swing.JFrame {
                     .addComponent(SL_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(GC_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Anh_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(GC_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(ChonAnhBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Search_txt1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -344,9 +373,7 @@ public class Sach extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(QlaiBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(DetailBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE))
+                .addComponent(QlaiBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18))
         );
 
@@ -393,9 +420,7 @@ public class Sach extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -410,6 +435,7 @@ public class Sach extends javax.swing.JFrame {
 
     private void AddSBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddSBtnActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_AddSBtnActionPerformed
 
     private void UpdateSBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateSBtnActionPerformed
@@ -419,10 +445,6 @@ public class Sach extends javax.swing.JFrame {
     private void DelSBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DelSBtnActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_DelSBtnActionPerformed
-
-    private void DetailBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DetailBtnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_DetailBtnActionPerformed
 
     private void QlaiBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QlaiBtn1ActionPerformed
         // TODO add your handling code here:
@@ -442,22 +464,93 @@ public class Sach extends javax.swing.JFrame {
         file.addChoosableFileFilter(fnef);
         int showOpenDialogue = file.showOpenDialog(null);
         if(showOpenDialogue == JFileChooser.APPROVE_OPTION){
-            filechooser = file.getSelectedFile();
-            HienThi(filechooser);
+            String path = file.getSelectedFile().getAbsolutePath();
+            System.out.println(path);
+            ImageIcon AnhSachIcon = new ImageIcon(path);
+            Image AnhSachDimension = AnhSachIcon.getImage().getScaledInstance(jLabel1.getWidth(), jLabel1.getHeight(), Image.SCALE_SMOOTH);
+            jLabel1.setIcon(new ImageIcon(AnhSachDimension));
         }
     }//GEN-LAST:event_ChonAnhBtnActionPerformed
 
     public void HienThi(File file){
-        try {
-            if(ImageIO.read(file) != null){
-                String path = file.getAbsolutePath();
-                ImageIcon MyImage = new ImageIcon(path);
-                Image newImg = MyImage.getImage().getScaledInstance(jLabel1.getWidth(), jLabel1.getHeight(), Image.SCALE_SMOOTH);
-                jLabel1.setIcon(new ImageIcon(newImg));
+        
+    }
+    
+    private void SearchBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchBtn1ActionPerformed
+        // TODO add your handling code here:
+        DefaultTableModel Table_for_search = (DefaultTableModel) jTable2.getModel();
+        Table_for_search.setRowCount(0);
+        ArrayList<SachModel> SModel = new ArrayList<SachModel>();
+        if(CheckNumberOrNot(Search_txt1.getText()) == false && jComboBox2.getSelectedItem().toString() == "Mã sách"){
+            JOptionPane.showMessageDialog(this, "Mã sách phải là số", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        } else {
+            try{
+                SModel = s.TimKiemSach(jComboBox2.getSelectedItem().toString(), Search_txt1.getText());
+                Add(SModel, Table_for_search);
+            } catch(Exception e) {
+                e.printStackTrace();
             }
-        } catch (IOException ex) {
-            Logger.getLogger(Sach.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }//GEN-LAST:event_SearchBtn1ActionPerformed
+
+    private void jTable2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable2MouseClicked
+        // TODO add your handling code here:
+        try {
+            // TODO add your handling code here:
+            int selectedRow = jTable2.getSelectedRow();
+            DefaultTableModel temp = (DefaultTableModel) jTable2.getModel();
+            ID = Integer.parseInt(temp.getValueAt(selectedRow, 0).toString());
+            TS_txt.setText(temp.getValueAt(selectedRow, 1).toString());
+            TL_txt.setText(temp.getValueAt(selectedRow, 2).toString());
+            Tg_txt.setText(temp.getValueAt(selectedRow, 3).toString());
+            NXB_txt.setText(temp.getValueAt(selectedRow, 4).toString());
+            G_txt.setText(temp.getValueAt(selectedRow, 5).toString());
+            SL_txt.setText(temp.getValueAt(selectedRow, 6).toString());
+            try{
+                GC_txt.setText(temp.getValueAt(selectedRow, 7).toString());
+            } catch(Exception e){
+                GC_txt.setText("");
+            }
+            String AnhSach = s.GETAnh(ID);
+            ImageIcon AnhSachIcon = new ImageIcon(getClass().getResource("/Ima/" + AnhSach));
+            System.out.println(getClass().getResource("/Ima/" + AnhSach).toString());
+            Image AnhSachDimension = AnhSachIcon.getImage().getScaledInstance(jLabel1.getWidth(), jLabel1.getHeight(), Image.SCALE_SMOOTH);
+            jLabel1.setIcon(new ImageIcon(AnhSachDimension));
+        } catch (Exception ex) {
+            //Logger.getLogger(TaiKhoan.class.getName()).log(Level.SEVERE, null, ex);
+            ex.printStackTrace();
+        }
+    }//GEN-LAST:event_jTable2MouseClicked
+
+    private void ResetBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResetBtnActionPerformed
+        // TODO add your handling code here:
+        Reset();
+        GetTCSach();
+    }//GEN-LAST:event_ResetBtnActionPerformed
+
+    
+    public void Add(ArrayList<SachModel> SModel, DefaultTableModel table){
+        for(SachModel i : SModel){
+            Object[] obj = {i.getMaSach(), i.getTenSach(), i.getTenTheLoai(), i.getTenTG(), i.getNXB(), i.getGia(), i.getSlTon(), i.getGhiChu()};
+            table.addRow(obj);
+        }
+    }
+    
+    public void GetTCSach(){
+        String title[] = {"Mã sách", "Tên sách", "Thể loại", "Tác giả", "Nhà xuất bản", "Giá", "Số lượng hiện tại", "Ghi chú"};
+        table.setColumnIdentifiers(title);
+        table.setRowCount(0);
+        ArrayList<SachModel> SModel = new ArrayList<SachModel>();
+        SModel = s.getTCSach();
+        Add(SModel, table);
+        jTable2.setModel(table);
+        jTable2.getColumnModel().getColumn(0).setPreferredWidth(20);
+        jTable2.getColumnModel().getColumn(1).setPreferredWidth(250);
+        jTable2.getColumnModel().getColumn(2).setPreferredWidth(30);
+        jTable2.getColumnModel().getColumn(5).setPreferredWidth(15);
+        jTable2.getColumnModel().getColumn(6).setPreferredWidth(20);
+        jTable2.getColumnModel().getColumn(7).setPreferredWidth(30);
     }
     
     /**
@@ -498,10 +591,8 @@ public class Sach extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AddSBtn;
-    private javax.swing.JTextField Anh_txt;
     private javax.swing.JButton ChonAnhBtn;
     private javax.swing.JButton DelSBtn;
-    private javax.swing.JButton DetailBtn;
     private javax.swing.JTextField GC_txt;
     private javax.swing.JTextField G_txt;
     private javax.swing.JTextField NXB_txt;

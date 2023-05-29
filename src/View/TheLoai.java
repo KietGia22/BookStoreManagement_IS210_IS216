@@ -302,20 +302,17 @@ public class TheLoai extends javax.swing.JFrame {
 
     private void DelbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DelbtnActionPerformed
         // TODO add your handling code here:
-        String TenTL = TL_txt.getText();
-        String GhiChu = GC_txt.getText();
-        
-        if(TenTL.isEmpty()){
+        if(TL_txt.getText().isEmpty()){
             JOptionPane.showMessageDialog(this, "Vui lòng nhập đầy đủ thông tin", "Error", JOptionPane.ERROR_MESSAGE);
             return;
-        } else if (CheckNumberOrNot(TenTL) == true){
+        } else if (CheckNumberOrNot(TL_txt.getText()) == true){
             JOptionPane.showMessageDialog(this, "Họ tên không chứa số", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
         
         int opt = JOptionPane.showConfirmDialog(this, "Bạn có chắc là muốn xoá thông tin nhà cung cấp", "Xoá nhà cung cấp", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
         if (opt == JOptionPane.YES_OPTION) {
-            TheLoaiModel tlm = new TheLoaiModel(ID, TenTL, GhiChu);
+            TheLoaiModel tlm = new TheLoaiModel(ID, TL_txt.getText(), GC_txt.getText());
             if(tl.XoaTL(tlm) != 0){
                 JOptionPane.showMessageDialog(this, "Xoá thành công");
                 Reset();
@@ -329,19 +326,16 @@ public class TheLoai extends javax.swing.JFrame {
 
     private void AddTLBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddTLBtnActionPerformed
         // TODO add your handling code here:
-        String TenTL = TL_txt.getText();
-        String GhiChu = GC_txt.getText();
-        
-        if(TenTL.isEmpty()){
+        if(TL_txt.getText().isEmpty()){
             JOptionPane.showMessageDialog(this, "Vui lòng nhập đầy đủ thông tin", "Error", JOptionPane.ERROR_MESSAGE);
             return;
-        } else if (CheckNumberOrNot(TenTL) == true){
+        } else if (CheckNumberOrNot(TL_txt.getText()) == true){
             JOptionPane.showMessageDialog(this, "Họ tên không chứa số", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
         int opt = JOptionPane.showConfirmDialog(this, "Bạn có chắc là muốn thêm thông tin nhà cung cấp", "Thêm nhà cung cấp", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
         if (opt == JOptionPane.YES_OPTION) {
-            TheLoaiModel tlm = new TheLoaiModel(TenTL, GhiChu);
+            TheLoaiModel tlm = new TheLoaiModel(TL_txt.getText(), GC_txt.getText());
             if(tl.ThemTL(tlm) != 0){
                 JOptionPane.showMessageDialog(this, "Thêm thành công");
                 Reset();
@@ -355,20 +349,17 @@ public class TheLoai extends javax.swing.JFrame {
 
     private void UpdateTLBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateTLBtnActionPerformed
         // TODO add your handling code here:
-        String TenTL = TL_txt.getText();
-        String GhiChu = GC_txt.getText();
-        
-        if(TenTL.isEmpty()){
+        if(TL_txt.getText().isEmpty()){
             JOptionPane.showMessageDialog(this, "Vui lòng nhập đầy đủ thông tin", "Error", JOptionPane.ERROR_MESSAGE);
             return;
-        } else if (CheckNumberOrNot(TenTL) == true){
+        } else if (CheckNumberOrNot(TL_txt.getText()) == true){
             JOptionPane.showMessageDialog(this, "Họ tên không chứa số", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
         
         int opt = JOptionPane.showConfirmDialog(this, "Bạn có chắc là muốn sửa thông tin nhà cung cấp", "Xoá nhà cung cấp", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
         if (opt == JOptionPane.YES_OPTION) {
-            TheLoaiModel tlm = new TheLoaiModel(ID, TenTL, GhiChu);
+            TheLoaiModel tlm = new TheLoaiModel(ID, TL_txt.getText(), GC_txt.getText());
             if(tl.SuaTL(tlm) != 0){
                 JOptionPane.showMessageDialog(this, "Sửa thành công");
                 Reset();

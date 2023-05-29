@@ -273,28 +273,6 @@ public class KhachHang extends javax.swing.JFrame {
                 .addGap(28, 28, 28)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(AddHDBtn)
-                                .addGap(29, 29, 29)
-                                .addComponent(QlaiBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(Search_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(SearchBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ResetBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(AddKHBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(UpdateKHBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(DelKHBtn)))
-                        .addGap(0, 30, Short.MAX_VALUE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel4)
@@ -327,8 +305,28 @@ public class KhachHang extends javax.swing.JFrame {
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel9)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(GT_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(30, 30, 30))))
+                                .addComponent(GT_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addComponent(Search_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(SearchBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(ResetBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(53, 53, 53)
+                            .addComponent(AddKHBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGap(18, 18, 18)
+                            .addComponent(UpdateKHBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(DelKHBtn))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addComponent(AddHDBtn)
+                            .addGap(29, 29, 29)
+                            .addComponent(QlaiBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(30, 30, 30))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -440,12 +438,6 @@ public class KhachHang extends javax.swing.JFrame {
 
     private void DelKHBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DelKHBtnActionPerformed
         // TODO add your handling code here:
-        String HoTen = HoTen_txt.getText();
-        String GioiTinh = GT_txt.getText();
-        String SDT = SDT_txt.getText();
-        String DiaChi = DC_txt.getText();
-        String GhiChu = GC_txt.getText();
-        String CCCD = CCCD_txt.getText();
         LocalDate date1 = NgSinhKH.getDate();
         String NgaySinh = "";
         LocalDate NgSinhLC = null;
@@ -454,7 +446,7 @@ public class KhachHang extends javax.swing.JFrame {
             NgSinhLC = LocalDate.parse(NgaySinh, DateTimeFormatter.ofPattern("dd-MM-yyyy"));
         }    
         
-        if(HoTen.isEmpty() || GioiTinh.isEmpty() || SDT.isEmpty() || DiaChi.isEmpty() || CCCD.isEmpty() || NgaySinh.isEmpty())
+        if(HoTen_txt.getText().isEmpty() || GT_txt.getText().isEmpty() || SDT_txt.getText().isEmpty() || DC_txt.getText().isEmpty() || CCCD_txt.getText().isEmpty() || NgaySinh.isEmpty())
         {
             JOptionPane.showMessageDialog(this, "Vui lòng nhập đầy đủ thông tin", "Error", JOptionPane.ERROR_MESSAGE);
             return;
@@ -462,7 +454,7 @@ public class KhachHang extends javax.swing.JFrame {
         
         int opt = JOptionPane.showConfirmDialog(this, "Bạn có chắc là muốn xoá thông tin khách hàng", "Sửa khách hàng", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
         if (opt == JOptionPane.YES_OPTION) {
-            KhachHangModel khm = new KhachHangModel(ID, HoTen, SDT, DiaChi, GioiTinh, GhiChu, NgSinhLC, null, CCCD);
+            KhachHangModel khm = new KhachHangModel(ID, HoTen_txt.getText(), SDT_txt.getText(), DC_txt.getText(), GT_txt.getText(), GC_txt.getText(), NgSinhLC, null, CCCD_txt.getText());
             if(kh.XoaKH(khm) != 0){
                 JOptionPane.showMessageDialog(this, "Xoá thành công");
                 Reset();
@@ -476,12 +468,6 @@ public class KhachHang extends javax.swing.JFrame {
 
     private void UpdateKHBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateKHBtnActionPerformed
         // TODO add your handling code here:
-        String HoTen = HoTen_txt.getText();
-        String GioiTinh = GT_txt.getText();
-        String SDT = SDT_txt.getText();
-        String DiaChi = DC_txt.getText();
-        String GhiChu = GC_txt.getText();
-        String CCCD = CCCD_txt.getText();
         LocalDate date1 = NgSinhKH.getDate();
         String NgaySinh = "";
         LocalDate NgSinhLC = null;
@@ -489,24 +475,25 @@ public class KhachHang extends javax.swing.JFrame {
             NgaySinh = date1.format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
             NgSinhLC = LocalDate.parse(NgaySinh, DateTimeFormatter.ofPattern("dd-MM-yyyy"));
         }    
-        if(HoTen.isEmpty() || GioiTinh.isEmpty() || SDT.isEmpty() || DiaChi.isEmpty() || CCCD.isEmpty() || NgaySinh.isEmpty())
+        
+        if(HoTen_txt.getText().isEmpty() || GT_txt.getText().isEmpty() || SDT_txt.getText().isEmpty() || DC_txt.getText().isEmpty() || CCCD_txt.getText().isEmpty() || NgaySinh.isEmpty())
         {
             JOptionPane.showMessageDialog(this, "Vui lòng nhập đầy đủ thông tin", "Error", JOptionPane.ERROR_MESSAGE);
             return;
-        } else if(CheckSDT(SDT) == false) {
+        } else if(CheckSDT(SDT_txt.getText()) == false) {
             JOptionPane.showMessageDialog(this, "Sai định dạng SDT", "Error", JOptionPane.ERROR_MESSAGE);
             return;
-        } else if(CheckNumberOrNot(HoTen) == true){
+        } else if(CheckNumberOrNot(HoTen_txt.getText()) == true){
             JOptionPane.showMessageDialog(this, "Họ tên không chứa số", "Error", JOptionPane.ERROR_MESSAGE);
             return;
-        } else if(CheckNumberOrNot(SDT) == false || CheckNumberOrNot(CCCD) == false){
+        } else if(CheckNumberOrNot(SDT_txt.getText()) == false || CheckNumberOrNot(CCCD_txt.getText()) == false){
             JOptionPane.showMessageDialog(this, "Lương hoặc SĐT phải là số", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         } 
    
         int opt = JOptionPane.showConfirmDialog(this, "Bạn có chắc là muốn chỉnh sửa thông tin khách hàng", "Sửa khách hàng", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
         if (opt == JOptionPane.YES_OPTION) {
-            KhachHangModel khm = new KhachHangModel(ID, HoTen, SDT, DiaChi, GioiTinh, GhiChu, NgSinhLC, null, CCCD);
+            KhachHangModel khm = new KhachHangModel(ID, HoTen_txt.getText(), SDT_txt.getText(), DC_txt.getText(), GT_txt.getText(), GC_txt.getText(), NgSinhLC, null, CCCD_txt.getText());
             if(kh.SuaKH(khm) != 0){
                 JOptionPane.showMessageDialog(this, "Sửa thành công");
                 Reset();
@@ -520,12 +507,6 @@ public class KhachHang extends javax.swing.JFrame {
 
     private void AddKHBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddKHBtnActionPerformed
         // TODO add your handling code here:
-        String HoTen = HoTen_txt.getText();
-        String GioiTinh = GT_txt.getText();
-        String SDT = SDT_txt.getText();
-        String DiaChi = DC_txt.getText();
-        String GhiChu = GC_txt.getText();
-        String CCCD = CCCD_txt.getText();
         LocalDate date1 = NgSinhKH.getDate();
         String NgaySinh = "";
         LocalDate NgSinhLC = null;
@@ -533,24 +514,25 @@ public class KhachHang extends javax.swing.JFrame {
             NgaySinh = date1.format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
             NgSinhLC = LocalDate.parse(NgaySinh, DateTimeFormatter.ofPattern("dd-MM-yyyy"));
         }    
-        if(HoTen.isEmpty() || GioiTinh.isEmpty() || SDT.isEmpty() || DiaChi.isEmpty() || CCCD.isEmpty() || NgaySinh.isEmpty())
+        
+        if(HoTen_txt.getText().isEmpty() || GT_txt.getText().isEmpty() || SDT_txt.getText().isEmpty() || DC_txt.getText().isEmpty() || CCCD_txt.getText().isEmpty() || NgaySinh.isEmpty())
         {
             JOptionPane.showMessageDialog(this, "Vui lòng nhập đầy đủ thông tin", "Error", JOptionPane.ERROR_MESSAGE);
             return;
-        } else if(CheckSDT(SDT) == false) {
+        } else if(CheckSDT(SDT_txt.getText()) == false) {
             JOptionPane.showMessageDialog(this, "Sai định dạng SDT", "Error", JOptionPane.ERROR_MESSAGE);
             return;
-        } else if(CheckNumberOrNot(HoTen) == true){
+        } else if(CheckNumberOrNot(HoTen_txt.getText()) == true){
             JOptionPane.showMessageDialog(this, "Họ tên không chứa số", "Error", JOptionPane.ERROR_MESSAGE);
             return;
-        } else if(CheckNumberOrNot(SDT) == false || CheckNumberOrNot(CCCD) == false){
+        } else if(CheckNumberOrNot(SDT_txt.getText()) == false || CheckNumberOrNot(CCCD_txt.getText()) == false){
             JOptionPane.showMessageDialog(this, "Lương hoặc SĐT phải là số", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         } 
    
         int opt = JOptionPane.showConfirmDialog(this, "Bạn có chắc là muốn thêm thông tin khách hàng", "Thêm khách hàng", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
         if (opt == JOptionPane.YES_OPTION) {
-            KhachHangModel khm = new KhachHangModel(HoTen, SDT, DiaChi, GioiTinh, GhiChu, CCCD, NgSinhLC, null);
+            KhachHangModel khm = new KhachHangModel(HoTen_txt.getText(), SDT_txt.getText(), DC_txt.getText(), GT_txt.getText(), GC_txt.getText(), CCCD_txt.getText(), NgSinhLC, null);
             if(kh.ThemKH(khm) != 0){
                 JOptionPane.showMessageDialog(this, "Thêm thành công");
                 Reset();
