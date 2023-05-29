@@ -8,6 +8,7 @@ import Controller.SachController;
 import Controller.TaiKhoanController;
 import Model.SachModel;
 import java.awt.Image;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -36,7 +37,7 @@ public class Sach extends javax.swing.JFrame {
     }
     
     public String TenDNHome, MatKhauHome;
-    File filechooser;
+    String path;
     public TaiKhoanController tk = new TaiKhoanController();
     public SachController s = new SachController();
     public int ChucVu = tk.TraVeChucVu(TenDNHome, MatKhauHome);
@@ -55,6 +56,7 @@ public class Sach extends javax.swing.JFrame {
     
     public void Reset(){
         this.TS_txt.setText("");
+        this.TL_txt.setText("");
         this.Tg_txt.setText("");
         this.NXB_txt.setText("");
         this.GC_txt.setText("");
@@ -435,15 +437,122 @@ public class Sach extends javax.swing.JFrame {
 
     private void AddSBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddSBtnActionPerformed
         // TODO add your handling code here:
+        if(TS_txt.getText().isEmpty() || Tg_txt.getText().isEmpty() || NXB_txt.getText().isEmpty() || TL_txt.getText().isEmpty() || G_txt.getText().isEmpty() || SL_txt.getText().isEmpty() || jLabel1.getIcon().equals(null)){
+            JOptionPane.showMessageDialog(this, "Vui lòng nhập đầy đủ thông tin", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        } else if(CheckNumberOrNot(TL_txt.getText()) == true){
+            JOptionPane.showMessageDialog(this, "Thể loại không có số", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        } else if(CheckNumberOrNot(G_txt.getText()) == false || CheckNumberOrNot(SL_txt.getText()) == false || Integer.parseInt(SL_txt.getText()) <= 0 || Long.parseLong(G_txt.getText()) <= 0){
+            JOptionPane.showMessageDialog(this, "Giá tiền hoặc số lượng tồn phải là số và lớn hơn 0", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
         
+        int opt = JOptionPane.showConfirmDialog(this, "Bạn có chắc là muốn thêm thông tin sách", "Thêm sách", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        if (opt == JOptionPane.YES_OPTION) {
+            
+            int MaTL = s.GetMaTL(TL_txt.getText());
+            try{
+                if(MaTL == 0)
+                {
+                    JOptionPane.showConfirmDialog(this, "Hãy chắc là bạn nhập đúng tên thể loại, nếu thể loại chưa có hãy thêm vào", "Thêm sách", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+                    return;
+                }
+            } catch(Exception e){
+                TL_txt.setText("");
+            }
+            
+            String AnhSach = path;
+            System.out.println(AnhSach);
+            SachModel sm = 
+                    new SachModel(Integer.parseInt(SL_txt.getText()), MaTL, TS_txt.getText(), GC_txt.getText(), Tg_txt.getText(), NXB_txt.getText(), AnhSach, TL_txt.getText(), Long.parseLong(G_txt.getText()));
+            if(s.ThemSach(sm) != 0){
+                JOptionPane.showMessageDialog(this, "Thêm thành công");
+                Reset();
+                GetTCSach();
+            } else {
+                JOptionPane.showMessageDialog(this, "Thêm thất bại", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+        }
     }//GEN-LAST:event_AddSBtnActionPerformed
 
     private void UpdateSBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateSBtnActionPerformed
         // TODO add your handling code here:
+        if(TS_txt.getText().isEmpty() || Tg_txt.getText().isEmpty() || NXB_txt.getText().isEmpty() || TL_txt.getText().isEmpty() || G_txt.getText().isEmpty() || SL_txt.getText().isEmpty() || jLabel1.getIcon().equals(null)){
+            JOptionPane.showMessageDialog(this, "Vui lòng nhập đầy đủ thông tin", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        } else if(CheckNumberOrNot(TL_txt.getText()) == true){
+            JOptionPane.showMessageDialog(this, "Thể loại không có số", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        } else if(CheckNumberOrNot(G_txt.getText()) == false || CheckNumberOrNot(SL_txt.getText()) == false || Integer.parseInt(SL_txt.getText()) <= 0 || Long.parseLong(G_txt.getText()) <= 0){
+            JOptionPane.showMessageDialog(this, "Giá tiền hoặc số lượng tồn phải là số và lớn hơn 0", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        int opt = JOptionPane.showConfirmDialog(this, "Bạn có chắc là muốn sửa thông tin sách", "Sửa thông tin sách", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        if (opt == JOptionPane.YES_OPTION) {
+            
+            int MaTL = s.GetMaTL(TL_txt.getText());
+            try{
+                if(MaTL == 0)
+                {
+                    JOptionPane.showConfirmDialog(this, "Hãy chắc là bạn nhập đúng tên thể loại, nếu thể loại chưa có hãy thêm vào", "Thêm sách", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+                    return;
+                }
+            } catch(Exception e){
+                TL_txt.setText("");
+            }
+            
+            String AnhSach = path;
+            System.out.println(AnhSach);
+            SachModel sm = 
+                    new SachModel(ID, Integer.parseInt(SL_txt.getText()), MaTL, TS_txt.getText(), GC_txt.getText(), Tg_txt.getText(), NXB_txt.getText(), AnhSach, Long.parseLong(G_txt.getText()), TL_txt.getText());
+            if(s.SuaSach(sm) != 0){
+                JOptionPane.showMessageDialog(this, "Sửa thành công");
+                Reset();
+                GetTCSach();
+            } else {
+                JOptionPane.showMessageDialog(this, "Sửa thất bại", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+        }
     }//GEN-LAST:event_UpdateSBtnActionPerformed
 
     private void DelSBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DelSBtnActionPerformed
         // TODO add your handling code here:
+        if(TS_txt.getText().isEmpty() || Tg_txt.getText().isEmpty() || NXB_txt.getText().isEmpty() || TL_txt.getText().isEmpty() || G_txt.getText().isEmpty() || SL_txt.getText().isEmpty() || jLabel1.getIcon().equals(null)){
+            JOptionPane.showMessageDialog(this, "Vui lòng nhập đầy đủ thông tin", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        int opt = JOptionPane.showConfirmDialog(this, "Bạn có chắc là muốn xoá thông tin sách", "Xoá thông tin sách", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        if (opt == JOptionPane.YES_OPTION) {
+            
+            int MaTL = s.GetMaTL(TL_txt.getText());
+            try{
+                if(MaTL == 0)
+                {
+                    JOptionPane.showConfirmDialog(this, "Hãy chắc là bạn nhập đúng tên thể loại, nếu thể loại chưa có hãy thêm vào", "Thêm sách", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+                    return;
+                }
+            } catch(Exception e){
+                TL_txt.setText("");
+            }
+            
+            String AnhSach = path;
+            System.out.println(AnhSach);
+            SachModel sm = 
+                    new SachModel(ID, Integer.parseInt(SL_txt.getText()), MaTL, TS_txt.getText(), GC_txt.getText(), Tg_txt.getText(), NXB_txt.getText(), AnhSach, Long.parseLong(G_txt.getText()), TL_txt.getText());
+            if(s.XoaSach(sm) != 0){
+                JOptionPane.showMessageDialog(this, "Xoá thành công");
+                Reset();
+                GetTCSach();
+            } else {
+                JOptionPane.showMessageDialog(this, "Xoá thất bại", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+        }
     }//GEN-LAST:event_DelSBtnActionPerformed
 
     private void QlaiBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QlaiBtn1ActionPerformed
@@ -464,7 +573,7 @@ public class Sach extends javax.swing.JFrame {
         file.addChoosableFileFilter(fnef);
         int showOpenDialogue = file.showOpenDialog(null);
         if(showOpenDialogue == JFileChooser.APPROVE_OPTION){
-            String path = file.getSelectedFile().getAbsolutePath();
+            path = file.getSelectedFile().getAbsolutePath();
             System.out.println(path);
             ImageIcon AnhSachIcon = new ImageIcon(path);
             Image AnhSachDimension = AnhSachIcon.getImage().getScaledInstance(jLabel1.getWidth(), jLabel1.getHeight(), Image.SCALE_SMOOTH);
@@ -472,7 +581,15 @@ public class Sach extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_ChonAnhBtnActionPerformed
 
-    public void HienThi(File file){
+    public void KiemTraAnhHienThi(String anh){
+        BufferedImage AnhSach = null;
+        try {
+            AnhSach = ImageIO.read(new File(anh));
+        } catch (IOException ex) {
+            Logger.getLogger(Sach.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        Image AnhSachDimension = AnhSach.getScaledInstance(jLabel1.getWidth(), jLabel1.getHeight(), Image.SCALE_SMOOTH);
+        jLabel1.setIcon(new ImageIcon(AnhSachDimension));
         
     }
     
@@ -513,10 +630,14 @@ public class Sach extends javax.swing.JFrame {
                 GC_txt.setText("");
             }
             String AnhSach = s.GETAnh(ID);
-            ImageIcon AnhSachIcon = new ImageIcon(getClass().getResource("/Ima/" + AnhSach));
-            System.out.println(getClass().getResource("/Ima/" + AnhSach).toString());
-            Image AnhSachDimension = AnhSachIcon.getImage().getScaledInstance(jLabel1.getWidth(), jLabel1.getHeight(), Image.SCALE_SMOOTH);
-            jLabel1.setIcon(new ImageIcon(AnhSachDimension));
+            if(AnhSach.contains("build\\classes")) {
+                KiemTraAnhHienThi(AnhSach);
+            } else {
+                ImageIcon AnhSachIcon = new ImageIcon(getClass().getResource("/Ima/" + AnhSach));
+                System.out.println(getClass().getResource("/Ima/" + AnhSach).toString());
+                Image AnhSachDimension = AnhSachIcon.getImage().getScaledInstance(jLabel1.getWidth(), jLabel1.getHeight(), Image.SCALE_SMOOTH);
+                jLabel1.setIcon(new ImageIcon(AnhSachDimension));
+            }
         } catch (Exception ex) {
             //Logger.getLogger(TaiKhoan.class.getName()).log(Level.SEVERE, null, ex);
             ex.printStackTrace();

@@ -29,6 +29,20 @@ public class SachModel {
         this.TenTheLoai = TenTheLoai;
     }
 
+    public SachModel(int SlTon, int MaTL, String TenSach, String GhiChu, String TenTG, String NXB, String AnhSach, String TenTheLoai, long Gia) {
+        this.SlTon = SlTon;
+        this.MaTL = MaTL;
+        this.TenSach = TenSach;
+        this.GhiChu = GhiChu;
+        this.TenTG = TenTG;
+        this.NXB = NXB;
+        this.AnhSach = AnhSach;
+        this.TenTheLoai = TenTheLoai;
+        this.Gia = Gia;
+    }
+
+    
+    
     public int getMaSach() {
         return MaSach;
     }
