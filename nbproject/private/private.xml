@@ -3,12 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/KIET's%20Folder/CODE/Research/Java/Project/BookStoreManagement/src/Controller/SachController.java</file>
-            <file>file:/D:/KIET's%20Folder/CODE/Research/Java/Project/BookStoreManagement/src/View/Them_TK.java</file>
-            <file>file:/D:/KIET's%20Folder/CODE/Research/Java/Project/BookStoreManagement/src/Controller/TheLoaiController.java</file>
-            <file>file:/D:/KIET's%20Folder/CODE/Research/Java/Project/BookStoreManagement/src/Model/SachModel.java</file>
-            <file>file:/D:/KIET's%20Folder/CODE/Research/Java/Project/BookStoreManagement/src/View/Sach.java</file>
-            <file>file:/D:/KIET's%20Folder/CODE/Research/Java/Project/BookStoreManagement/src/View/TheLoai.java</file>
+            <file>file:/D:/KIET's%20Folder/CODE/Research/Java/Project/BookStoreManagement/src/Controller/HoaDonController.java</file>
+            <file>file:/D:/KIET's%20Folder/CODE/Research/Java/Project/BookStoreManagement/src/View/HoaDon.java</file>
+            <file>file:/D:/KIET's%20Folder/CODE/Research/Java/Project/BookStoreManagement/src/View/Them_HD.java</file>
+            <file>file:/D:/KIET's%20Folder/CODE/Research/Java/Project/BookStoreManagement/src/View/NhaCungCap.java</file>
+            <file>file:/D:/KIET's%20Folder/CODE/Research/Java/Project/BookStoreManagement/src/Model/HoaDonModel.java</file>
+            <file>file:/D:/KIET's%20Folder/CODE/Research/Java/Project/BookStoreManagement/src/Controller/TaiKhoanController.java</file>
         </group>
     </open-files>
 </project-private>

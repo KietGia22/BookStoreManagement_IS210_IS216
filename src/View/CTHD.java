@@ -15,6 +15,16 @@ public class CTHD extends javax.swing.JFrame {
      */
     public CTHD() {
         initComponents();
+        this.setVisible(true);
+    }
+    
+    String TenDNHome, MatKhauHome;
+    
+    public CTHD(String TDN, String MK){
+        initComponents();
+        this.setVisible(true);
+        this.TenDNHome = TDN;
+        this.MatKhauHome = MK;
     }
 
     /**

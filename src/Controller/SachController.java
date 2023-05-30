@@ -101,6 +101,7 @@ public class SachController {
             if(rs.next()){
                 AnhSach = rs.getString("ANHSACH");
             }
+            conn.close();
         } catch(SQLException e){
             e.printStackTrace();
         }

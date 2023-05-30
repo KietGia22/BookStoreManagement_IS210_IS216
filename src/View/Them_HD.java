@@ -15,6 +15,7 @@ public class Them_HD extends javax.swing.JFrame {
      */
     public Them_HD() {
         initComponents();
+        this.setVisible(true);
     }
     
     
@@ -22,6 +23,7 @@ public class Them_HD extends javax.swing.JFrame {
     
     public Them_HD(String TenDN, String MatKhau){
         initComponents();
+        this.setVisible(true);
         this.TenDNHome = TenDN;
         this.MatKhauHome = MatKhau;
     }

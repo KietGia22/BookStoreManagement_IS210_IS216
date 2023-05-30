@@ -14,24 +14,30 @@ import java.time.format.DateTimeFormatter;
 public class HoaDonModel {
     protected int MaHD, MaKH, MaTK, MaSach, Soluong;
     protected long TongTien;
-    protected String GhiChu;
     protected LocalDate NgTaoHD;
     DateTimeFormatter dtformat = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 
     public HoaDonModel() {
     }
 
-    public HoaDonModel(int MaHD, int MaKH, int MaTK, int MaSach, int Soluong, long TongTien, String GhiChu, LocalDate NgTaoHD) {
+    public HoaDonModel(int MaHD, int MaKH, int MaTK, int MaSach, int Soluong, long TongTien, LocalDate NgTaoHD) {
         this.MaHD = MaHD;
         this.MaKH = MaKH;
         this.MaTK = MaTK;
         this.MaSach = MaSach;
         this.Soluong = Soluong;
         this.TongTien = TongTien;
-        this.GhiChu = GhiChu;
         this.NgTaoHD = NgTaoHD;
     }
 
+    public HoaDonModel(int MaHD, int MaKH, int MaTK, long TongTien, LocalDate NgTaoHD) {
+        this.MaHD = MaHD;
+        this.MaKH = MaKH;
+        this.MaTK = MaTK;
+        this.TongTien = TongTien;
+        this.NgTaoHD = NgTaoHD;
+    }
+    
     public int getMaHD() {
         return MaHD;
     }
@@ -78,14 +84,6 @@ public class HoaDonModel {
 
     public void setTongTien(long TongTien) {
         this.TongTien = TongTien;
-    }
-
-    public String getGhiChu() {
-        return GhiChu;
-    }
-
-    public void setGhiChu(String GhiChu) {
-        this.GhiChu = GhiChu;
     }
 
     public LocalDate getNgTaoHD() {
