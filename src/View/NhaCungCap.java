@@ -323,16 +323,14 @@ public class NhaCungCap extends javax.swing.JFrame {
 
     private void SearchBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchBtn1ActionPerformed
         // TODO add your handling code here:
-        String search = Search_txt.getText();
-        String choice =  jComboBox1.getSelectedItem().toString();
         DefaultTableModel Table_for_search = (DefaultTableModel) jTable1.getModel();
         Table_for_search.setRowCount(0);
         ArrayList<NhaCungCapModel> nccModel = new ArrayList<NhaCungCapModel>();
-        if(CheckNumberOrNot(search) == false && choice.equals("Mã nhà cung cấp")){
+        if(CheckNumberOrNot(Search_txt.getText()) == false && jComboBox1.getSelectedItem().toString().equals("Mã nhà cung cấp")){
             JOptionPane.showMessageDialog(this, "Mã nhà cung cấp phải là số", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         } else {
-            nccModel = ncc.TimKiemNCC(choice, search);
+            nccModel = ncc.TimKiemNCC(jComboBox1.getSelectedItem().toString(), Search_txt.getText());
             Add(nccModel, Table_for_search);
         } 
     }//GEN-LAST:event_SearchBtn1ActionPerformed
