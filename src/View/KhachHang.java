@@ -415,6 +415,8 @@ public class KhachHang extends javax.swing.JFrame {
 
     private void AddHDBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddHDBtnActionPerformed
         // TODO add your handling code here:
+        dispose();
+        new Them_HD(TenDNHome, MatKhauHome, ID);
     }//GEN-LAST:event_AddHDBtnActionPerformed
 
     private void DelKHBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DelKHBtnActionPerformed
