@@ -603,6 +603,7 @@ public class TaiKhoan extends javax.swing.JFrame {
         jTable2.getColumnModel().getColumn(5).setPreferredWidth(35);
         jTable2.getColumnModel().getColumn(6).setPreferredWidth(10);
         jTable2.getColumnModel().getColumn(7).setPreferredWidth(35);
+        jTable2.setRowHeight(30);
     }
     /**
      * @param args the command line arguments

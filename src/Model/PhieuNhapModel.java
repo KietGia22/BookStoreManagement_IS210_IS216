@@ -16,6 +16,7 @@ public class PhieuNhapModel {
     protected long TongTien, GiaNhap;
     protected LocalDate NgNhap;
     DateTimeFormatter dtformat = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+    protected String TenNCC, TenNV;
 
     public PhieuNhapModel() {
     }
@@ -31,6 +32,16 @@ public class PhieuNhapModel {
         this.NgNhap = NgNhap;
     }
 
+    public PhieuNhapModel(int MaPN, long TongTien, LocalDate NgNhap, String TenNCC, String TenNV) {
+        this.MaPN = MaPN;
+        this.TongTien = TongTien;
+        this.NgNhap = NgNhap;
+        this.TenNCC = TenNCC;
+        this.TenNV = TenNV;
+    }
+    
+    
+    
     public int getMaPN() {
         return MaPN;
     }
@@ -97,5 +108,21 @@ public class PhieuNhapModel {
 
     public String toString(LocalDate dateformat) {
         return dtformat.format(dateformat);
+    }
+
+    public String getTenNCC() {
+        return TenNCC;
+    }
+
+    public void setTenNCC(String TenNCC) {
+        this.TenNCC = TenNCC;
+    }
+
+    public String getTenNV() {
+        return TenNV;
+    }
+
+    public void setTenNV(String TenNV) {
+        this.TenNV = TenNV;
     }
 }
