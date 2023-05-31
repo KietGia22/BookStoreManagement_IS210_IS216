@@ -651,6 +651,7 @@ public class Sach extends javax.swing.JFrame {
         jTable2.getColumnModel().getColumn(2).setPreferredWidth(30);
         jTable2.getColumnModel().getColumn(5).setPreferredWidth(15);
         jTable2.getColumnModel().getColumn(6).setPreferredWidth(20);
+        jTable2.setRowHeight(30);
     }
     
     /**

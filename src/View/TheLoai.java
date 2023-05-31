@@ -406,6 +406,7 @@ public class TheLoai extends javax.swing.JFrame {
         tlModel = tl.getTCTL();
         Add(tlModel, table);
         jTable1.setModel(table);
+        jTable1.setRowHeight(30);
     }
     
     /**

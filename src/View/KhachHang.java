@@ -597,6 +597,7 @@ public class KhachHang extends javax.swing.JFrame {
         jTable1.getColumnModel().getColumn(0).setPreferredWidth(20);
         jTable1.getColumnModel().getColumn(3).setPreferredWidth(425);
         jTable1.getColumnModel().getColumn(7).setPreferredWidth(25);
+        jTable1.setRowHeight(30);
     }
     
     /**

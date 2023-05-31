@@ -451,6 +451,11 @@ public class NhaCungCap extends javax.swing.JFrame {
         nccModel = ncc.getTCNCC();
         Add(nccModel, table);
         jTable1.setModel(table);
+        jTable1.getColumnModel().getColumn(0).setPreferredWidth(20);
+        jTable1.getColumnModel().getColumn(1).setPreferredWidth(80);
+        jTable1.getColumnModel().getColumn(2).setPreferredWidth(30);
+        jTable1.getColumnModel().getColumn(3).setPreferredWidth(250);
+        jTable1.setRowHeight(30);
     }
     /**
      * @param args the command line arguments

@@ -279,6 +279,7 @@ public class CTHD extends javax.swing.JFrame {
             table.addRow(obj);
         }
         jTable1.setModel(table);
+        jTable1.setRowHeight(30);
     }
     
     /**

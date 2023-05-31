@@ -434,6 +434,7 @@ public class Them_HD extends javax.swing.JFrame {
             jTable2.getColumnModel().getColumn(0).setPreferredWidth(20);
             jTable2.getColumnModel().getColumn(1).setPreferredWidth(150);
             jTable2.getColumnModel().getColumn(3).setPreferredWidth(30);
+            jTable2.setRowHeight(30);
         }
     }//GEN-LAST:event_ThemBtnActionPerformed
 
@@ -519,6 +520,7 @@ public class Them_HD extends javax.swing.JFrame {
         jTable1.getColumnModel().getColumn(0).setPreferredWidth(20);
         jTable1.getColumnModel().getColumn(1).setPreferredWidth(150);
         jTable1.getColumnModel().getColumn(3).setPreferredWidth(30);
+        jTable1.setRowHeight(30);
     }
     
     public void TinhTien(){
