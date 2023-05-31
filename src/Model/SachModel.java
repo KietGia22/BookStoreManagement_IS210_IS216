@@ -10,30 +10,28 @@ package Model;
  */
 public class SachModel {
     protected int MaSach, SlTon, MaTL;
-    protected String TenSach, GhiChu, TenTG, NXB, AnhSach, TenTheLoai;
+    protected String TenSach, TenTG, NXB, AnhSach, TenTheLoai;
     protected long Gia;
 
     public SachModel() {
     }
 
-    public SachModel(int MaSach, int SlTon, int MaTL, String TenSach, String GhiChu, String TenTG, String NXB, String AnhSach, long Gia, String TenTheLoai) {
+    public SachModel(int MaSach, int SlTon, int MaTL, String TenSach, String TenTG, String NXB, String AnhSach, long Gia, String TenTheLoai) {
         this.MaSach = MaSach;
         this.SlTon = SlTon;
         this.MaTL = MaTL;
         this.TenSach = TenSach;
-        this.GhiChu = GhiChu;
         this.TenTG = TenTG;
         this.NXB = NXB;
         this.AnhSach = AnhSach;
         this.Gia = Gia;
         this.TenTheLoai = TenTheLoai;
     }
-
-    public SachModel(int SlTon, int MaTL, String TenSach, String GhiChu, String TenTG, String NXB, String AnhSach, String TenTheLoai, long Gia) {
+    
+    public SachModel(int SlTon, int MaTL, String TenSach, String TenTG, String NXB, String AnhSach, String TenTheLoai, long Gia) {
         this.SlTon = SlTon;
         this.MaTL = MaTL;
         this.TenSach = TenSach;
-        this.GhiChu = GhiChu;
         this.TenTG = TenTG;
         this.NXB = NXB;
         this.AnhSach = AnhSach;
@@ -73,14 +71,6 @@ public class SachModel {
 
     public void setTenSach(String TenSach) {
         this.TenSach = TenSach;
-    }
-
-    public String getGhiChu() {
-        return GhiChu;
-    }
-
-    public void setGhiChu(String GhiChu) {
-        this.GhiChu = GhiChu;
     }
 
     public String getTenTG() {

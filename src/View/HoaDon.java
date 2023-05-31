@@ -40,6 +40,7 @@ public class HoaDon extends javax.swing.JFrame {
     public int ChucVu = tk.TraVeChucVu(TenDNHome, MatKhauHome);
     DefaultTableModel table = new DefaultTableModel();
     public int ID;
+    public String TenKH, TenNV, NgayTaoHD, TriGia;
     
     public boolean CheckNumberOrNot(String regax){
         return regax.matches("-?\\d+(\\.\\d+)?");
@@ -120,6 +121,11 @@ public class HoaDon extends javax.swing.JFrame {
             }
         });
         jTable1.setShowGrid(true);
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
 
         XemDSHSBtn.setBackground(new java.awt.Color(0, 204, 204));
@@ -177,7 +183,7 @@ public class HoaDon extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(39, Short.MAX_VALUE)
+                .addContainerGap(51, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Search_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -187,7 +193,7 @@ public class HoaDon extends javax.swing.JFrame {
                     .addComponent(ResetBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(65, 65, 65)
+                .addGap(53, 53, 53)
                 .addComponent(QlaiBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(47, 47, 47))
         );
@@ -242,13 +248,13 @@ public class HoaDon extends javax.swing.JFrame {
 
     private void AddHDBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddHDBtnActionPerformed
         // TODO add your handling code here:
-        new Them_HD(TenDNHome, MatKhauHome);
+        new Them_HD(TenDNHome, MatKhauHome, 0);
         dispose();
     }//GEN-LAST:event_AddHDBtnActionPerformed
 
     private void SearchBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchBtnActionPerformed
         // TODO add your handling code here:
-         DefaultTableModel Table_for_search = (DefaultTableModel) jTable1.getModel();
+        DefaultTableModel Table_for_search = (DefaultTableModel) jTable1.getModel();
         Table_for_search.setRowCount(0);
         ArrayList<HoaDonModel> hdModel = new ArrayList<HoaDonModel>();
         if(CheckNumberOrNot(Search_txt.getText()) == false && jComboBox1.getSelectedItem().toString().equals("Mã nhà cung cấp")){
@@ -268,10 +274,22 @@ public class HoaDon extends javax.swing.JFrame {
 
     private void XemDSHSBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_XemDSHSBtnActionPerformed
         // TODO add your handling code here:
-        new CTHD(this.TenDNHome, this.MatKhauHome);
+        new CTHD(this.TenDNHome, this.MatKhauHome, this.ID, this.TenKH, this.TenNV, this.NgayTaoHD, this.TriGia);
         dispose();
         
     }//GEN-LAST:event_XemDSHSBtnActionPerformed
+
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+        // TODO add your handling code here:
+        int selectedRow = jTable1.getSelectedRow();
+        DefaultTableModel temp = (DefaultTableModel) jTable1.getModel();
+        ID = Integer.parseInt(temp.getValueAt(selectedRow,0).toString());
+        TenKH = temp.getValueAt(selectedRow, 1).toString();
+        TenNV = temp.getValueAt(selectedRow, 2).toString();
+        NgayTaoHD = temp.getValueAt(selectedRow, 3).toString();
+        TriGia = temp.getValueAt(selectedRow, 4).toString();
+        System.out.println(ID + " " + TenKH + " " + TenNV + " " + NgayTaoHD + " " + TriGia);
+    }//GEN-LAST:event_jTable1MouseClicked
 
     public void Add(ArrayList<HoaDonModel> hdModel, DefaultTableModel table){
         for(HoaDonModel i : hdModel){

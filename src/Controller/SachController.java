@@ -39,7 +39,15 @@ public class SachController {
             rs =  (ResultSet) callsql.getObject(1);
             while(rs.next()){
                 SachModel SM = new 
-                    SachModel(rs.getInt("MASACH"), rs.getInt("SLTON"), rs.getInt("MATL"), rs.getString("TENSACH"), rs.getString("GHICHU"), rs.getString("TENTG"), rs.getString("NXB"), rs.getString("ANHSACH"), rs.getLong("GIA"), rs.getString("TENTHELOAI"));
+                    SachModel(rs.getInt("MASACH"), 
+                            rs.getInt("SLTON"), 
+                            rs.getInt("MATL"), 
+                            rs.getString("TENSACH"), 
+                            rs.getString("TENTG"), 
+                            rs.getString("NXB"), 
+                            rs.getString("ANHSACH"), 
+                            rs.getLong("GIA"), 
+                            rs.getString("TENTHELOAI"));
                 sachModel.add(SM);
             }
         } catch(SQLException e){
@@ -71,7 +79,15 @@ public class SachController {
             rs =  (ResultSet) callsql.getObject(2);
             while(rs.next()){
                 SachModel SM = new 
-                    SachModel(rs.getInt("MASACH"), rs.getInt("SLTON"), rs.getInt("MATL"), rs.getString("TENSACH"), rs.getString("GHICHU"), rs.getString("TENTG"), rs.getString("NXB"), rs.getString("ANHSACH"), rs.getLong("GIA"), rs.getString("TENTHELOAI"));
+                    SachModel(rs.getInt("MASACH"), 
+                            rs.getInt("SLTON"), 
+                            rs.getInt("MATL"), 
+                            rs.getString("TENSACH"),
+                            rs.getString("TENTG"), 
+                            rs.getString("NXB"), 
+                            rs.getString("ANHSACH"), 
+                            rs.getLong("GIA"), 
+                            rs.getString("TENTHELOAI"));
                 sachModel.add(SM);
             }
         } catch(SQLException e){
@@ -146,16 +162,15 @@ public class SachController {
             } catch (ClassNotFoundException ex) {
                 Logger.getLogger(TheLoaiController.class.getName()).log(Level.SEVERE, null, ex);
             }
-            sql = "{call ThemSACH(?, ?, ?, ?, ?, ?, ?, ?)}";
+            sql = "{call ThemSACH(?, ?, ?, ?, ?, ?, ?)}";
             callsql = conn.prepareCall(sql);
             callsql.setString(1, sm.getTenSach());
             callsql.setLong(2, sm.getGia());
             callsql.setInt(3, sm.getMaTL());
             callsql.setInt(4, sm.getSlTon());
             callsql.setString(5, sm.getAnhSach());
-            callsql.setString(6, sm.getGhiChu());
-            callsql.setString(7, sm.getTenTG());
-            callsql.setString(8, sm.getNXB());
+            callsql.setString(6, sm.getTenTG());
+            callsql.setString(7, sm.getNXB());
             check = callsql.executeUpdate();
             conn.close();
             return check;
@@ -176,7 +191,7 @@ public class SachController {
             } catch (ClassNotFoundException ex) {
                 Logger.getLogger(TheLoaiController.class.getName()).log(Level.SEVERE, null, ex);
             }
-            sql = "{call SuaSACH(?, ?, ?, ?, ?, ?, ?, ?, ?)}";
+            sql = "{call SuaSACH(?, ?, ?, ?, ?, ?, ?, ?)}";
             callsql = conn.prepareCall(sql);
             callsql.setInt(1, sm.getMaSach());
             callsql.setString(2, sm.getTenSach());
@@ -184,9 +199,8 @@ public class SachController {
             callsql.setInt(4, sm.getMaTL());
             callsql.setInt(5, sm.getSlTon());
             callsql.setString(6, sm.getAnhSach());
-            callsql.setString(7, sm.getGhiChu());
-            callsql.setString(8, sm.getTenTG());
-            callsql.setString(9, sm.getNXB());
+            callsql.setString(7, sm.getTenTG());
+            callsql.setString(8, sm.getNXB());
             check = callsql.executeUpdate();
             conn.close();
             return check;

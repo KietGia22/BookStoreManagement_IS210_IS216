@@ -43,7 +43,6 @@ public class TheLoai extends javax.swing.JFrame {
     
     public void Reset(){
         TL_txt.setText("");
-        GC_txt.setText("");
     }
     
     public boolean CheckNumberOrNot(String regax){
@@ -74,8 +73,6 @@ public class TheLoai extends javax.swing.JFrame {
         ResetBtn = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         TL_txt = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        GC_txt = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Xoá thể loại");
@@ -118,17 +115,17 @@ public class TheLoai extends javax.swing.JFrame {
         jTable1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
             },
             new String [] {
-                "Mã TL", "Tên thể loại", "Ghi chú"
+                "Mã TL", "Tên thể loại"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class
+                java.lang.Integer.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -204,13 +201,6 @@ public class TheLoai extends javax.swing.JFrame {
         TL_txt.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         TL_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 1, new java.awt.Color(0, 0, 0)));
 
-        jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel4.setText("Ghi chú");
-
-        GC_txt.setBackground(new java.awt.Color(173, 216, 230));
-        GC_txt.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        GC_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 1, new java.awt.Color(0, 0, 0)));
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -231,15 +221,9 @@ public class TheLoai extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(TL_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(GC_txt))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(SearchBtn)
-                                .addGap(18, 18, 18)
-                                .addComponent(ResetBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addComponent(SearchBtn)
+                        .addGap(18, 18, 18)
+                        .addComponent(ResetBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(16, 16, 16)
@@ -257,13 +241,9 @@ public class TheLoai extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(GC_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(TL_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TL_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(50, 50, 50)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -312,7 +292,7 @@ public class TheLoai extends javax.swing.JFrame {
         
         int opt = JOptionPane.showConfirmDialog(this, "Bạn có chắc là muốn xoá thông tin thể loại", "Xoá thể loại", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
         if (opt == JOptionPane.YES_OPTION) {
-            TheLoaiModel tlm = new TheLoaiModel(ID, TL_txt.getText(), GC_txt.getText());
+            TheLoaiModel tlm = new TheLoaiModel(ID, TL_txt.getText());
             if(tl.XoaTL(tlm) != 0){
                 JOptionPane.showMessageDialog(this, "Xoá thành công");
                 Reset();
@@ -335,7 +315,7 @@ public class TheLoai extends javax.swing.JFrame {
         }
         int opt = JOptionPane.showConfirmDialog(this, "Bạn có chắc là muốn thêm thông tin thể loại", "Thêm thể loại", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
         if (opt == JOptionPane.YES_OPTION) {
-            TheLoaiModel tlm = new TheLoaiModel(TL_txt.getText(), GC_txt.getText());
+            TheLoaiModel tlm = new TheLoaiModel(TL_txt.getText());
             if(tl.ThemTL(tlm) != 0){
                 JOptionPane.showMessageDialog(this, "Thêm thành công");
                 Reset();
@@ -359,7 +339,7 @@ public class TheLoai extends javax.swing.JFrame {
         
         int opt = JOptionPane.showConfirmDialog(this, "Bạn có chắc là muốn sửa thông tin thể loại", "Sửa thể loại", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
         if (opt == JOptionPane.YES_OPTION) {
-            TheLoaiModel tlm = new TheLoaiModel(ID, TL_txt.getText(), GC_txt.getText());
+            TheLoaiModel tlm = new TheLoaiModel(ID, TL_txt.getText());
             if(tl.SuaTL(tlm) != 0){
                 JOptionPane.showMessageDialog(this, "Sửa thành công");
                 Reset();
@@ -406,11 +386,6 @@ public class TheLoai extends javax.swing.JFrame {
             DefaultTableModel temp = (DefaultTableModel) jTable1.getModel();
             ID = Integer.parseInt(temp.getValueAt(selectedRow, 0).toString());
             TL_txt.setText(temp.getValueAt(selectedRow, 1).toString());          
-            try{
-                 GC_txt.setText(temp.getValueAt(selectedRow, 2).toString());
-            } catch(Exception e){
-                 GC_txt.setText("");
-            }
         } catch(Exception e){
             e.printStackTrace();
         }
@@ -418,13 +393,13 @@ public class TheLoai extends javax.swing.JFrame {
 
     public void Add(ArrayList<TheLoaiModel> tlModel, DefaultTableModel table){
         for(TheLoaiModel i : tlModel){
-            Object[] obj = {i.getMaTL(), i.getTenTL(), i.getGhiChu()};
+            Object[] obj = {i.getMaTL(), i.getTenTL()};
             table.addRow(obj);
         }
     }
     
     public void GetAllTheLoai(){
-        String title[] = {"Mã TL", "Tên thể loại", "Ghi chú"};
+        String title[] = {"Mã TL", "Tên thể loại"};
         table.setColumnIdentifiers(title);
         table.setRowCount(0);
         ArrayList<TheLoaiModel> tlModel = new ArrayList<TheLoaiModel>(); 
@@ -472,7 +447,6 @@ public class TheLoai extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AddTLBtn;
     private javax.swing.JButton Delbtn;
-    private javax.swing.JTextField GC_txt;
     private javax.swing.JButton QlaiBtn;
     private javax.swing.JButton ResetBtn;
     private javax.swing.JButton SearchBtn;
@@ -482,7 +456,6 @@ public class TheLoai extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;

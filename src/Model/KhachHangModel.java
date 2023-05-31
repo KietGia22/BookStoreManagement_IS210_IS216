@@ -13,31 +13,29 @@ import java.time.format.DateTimeFormatter;
  */
 public class KhachHangModel {
     protected int MaKH;
-    protected String HoTen, SDT, DiaChi, GioiTinh, GhiChu, CCCD;
+    protected String HoTen, SDT, DiaChi, GioiTinh, CCCD;
     protected LocalDate NgSinh, NgTao;
     DateTimeFormatter dtformat = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 
     public KhachHangModel() {
     }
 
-    public KhachHangModel(int MaKH, String HoTen, String SDT, String DiaChi, String GioiTinh, String GhiChu, LocalDate NgSinh, LocalDate NgTao, String CCCD) {
+    public KhachHangModel(int MaKH, String HoTen, String SDT, String DiaChi, String GioiTinh, LocalDate NgSinh, LocalDate NgTao, String CCCD) {
         this.MaKH = MaKH;
         this.HoTen = HoTen;
         this.SDT = SDT;
         this.DiaChi = DiaChi;
         this.GioiTinh = GioiTinh;
-        this.GhiChu = GhiChu;
         this.NgSinh = NgSinh;
         this.NgTao = NgTao;
         this.CCCD = CCCD;
     }
 
-    public KhachHangModel(String HoTen, String SDT, String DiaChi, String GioiTinh, String GhiChu, String CCCD, LocalDate NgSinh, LocalDate NgTao) {
+    public KhachHangModel(String HoTen, String SDT, String DiaChi, String GioiTinh, String CCCD, LocalDate NgSinh, LocalDate NgTao) {
         this.HoTen = HoTen;
         this.SDT = SDT;
         this.DiaChi = DiaChi;
         this.GioiTinh = GioiTinh;
-        this.GhiChu = GhiChu;
         this.CCCD = CCCD;
         this.NgSinh = NgSinh;
         this.NgTao = NgTao;
@@ -85,20 +83,12 @@ public class KhachHangModel {
         this.GioiTinh = GioiTinh;
     }
 
-    public String getGhiChu() {
-        return GhiChu;
-    }
-
     public String getCCCD() {
         return CCCD;
     }
 
     public void setCCCD(String CCCD) {
         this.CCCD = CCCD;
-    }
-
-    public void setGhiChu(String GhiChu) {
-        this.GhiChu = GhiChu;
     }
 
     public LocalDate getNgSinh() {

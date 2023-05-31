@@ -35,7 +35,7 @@ public class TheLoaiController {
             callsql.execute();
             rs = (ResultSet) callsql.getObject(1);
             while(rs.next()){
-                TheLoaiModel TheLoaiM = new TheLoaiModel(rs.getInt("MATL"), rs.getString("TENTHELOAI"), rs.getString("GHICHU"));
+                TheLoaiModel TheLoaiM = new TheLoaiModel(rs.getInt("MATL"), rs.getString("TENTHELOAI"));
                 tlModel.add(TheLoaiM);
             }
             rs.close();
@@ -68,7 +68,7 @@ public class TheLoaiController {
             callsql.execute();
             rs = (ResultSet) callsql.getObject(2);
             while(rs.next()){
-                TheLoaiModel TheLoaiM = new TheLoaiModel(rs.getInt("MATL"), rs.getString("TENTHELOAI"), rs.getString("GHICHU"));
+                TheLoaiModel TheLoaiM = new TheLoaiModel(rs.getInt("MATL"), rs.getString("TENTHELOAI"));
                 tlModel.add(TheLoaiM);
             }
             rs.close();
@@ -90,10 +90,9 @@ public class TheLoaiController {
             } catch (ClassNotFoundException ex) {
                 Logger.getLogger(TheLoaiController.class.getName()).log(Level.SEVERE, null, ex);
             }
-            sql = "{call ThemTL(?, ?)}";
+            sql = "{call ThemTL(?)}";
             callsql = conn.prepareCall(sql);
             callsql.setString(1, tl.getTenTL());
-            callsql.setString(2, tl.getGhiChu());
             check = callsql.executeUpdate();
             conn.close();
             return check;
@@ -114,11 +113,10 @@ public class TheLoaiController {
             } catch (ClassNotFoundException ex) {
                 Logger.getLogger(TheLoaiController.class.getName()).log(Level.SEVERE, null, ex);
             }
-            sql = "{call SuaTL(?, ?, ?)}";
+            sql = "{call SuaTL(?, ?)}";
             callsql = conn.prepareCall(sql);
             callsql.setInt(1, tl.getMaTL());
             callsql.setString(2, tl.getTenTL());
-            callsql.setString(3, tl.getGhiChu());
             check = callsql.executeUpdate();
             conn.close();
             return check;
