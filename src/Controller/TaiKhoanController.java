@@ -75,6 +75,35 @@ public class TaiKhoanController {
         return ChucVu;
     }
     
+    public int GetMaTK(String TenDN, String MatKhau){
+        Connection conn = null;
+        ResultSet rs = null;
+        CallableStatement callsql = null;
+        int MaTK = 0;
+        try {
+            try{
+                conn = ConnectDB.getJDBCConnection();
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(TaiKhoanController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            String sql = "{call GET_DANG_NHAP(?, ?, ?)}";
+            callsql = conn.prepareCall(sql);
+            callsql.setString(1, TenDN);
+            callsql.setString(2, MatKhau);
+            callsql.registerOutParameter(3, OracleTypes.CURSOR);
+            callsql.execute();
+            rs = (ResultSet) callsql.getObject(3);
+            if(rs.next()){
+                MaTK = rs.getInt("MATK");
+            }
+            rs.close();
+            conn.close();
+        } catch (SQLException e){
+            e.printStackTrace();
+        }
+        return MaTK;
+    }
+    
     public int TraVeChucVu(String TenDN, String MatKhau){
         String chucvu = getChucVu(TenDN, MatKhau);
         if(chucvu.equals("Quản lý"))

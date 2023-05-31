@@ -10,20 +10,18 @@ package Model;
  */
 public class TheLoaiModel {
     protected int MaTL;
-    protected String TenTL, GhiChu;
+    protected String TenTL;
 
     public TheLoaiModel() {
     }
 
-    public TheLoaiModel(int MaTL, String TenTL, String GhiChu) {
+    public TheLoaiModel(int MaTL, String TenTL) {
         this.MaTL = MaTL;
         this.TenTL = TenTL;
-        this.GhiChu = GhiChu;
     }
     
-    public TheLoaiModel(String TenTL, String GhiChu){
+    public TheLoaiModel(String TenTL){
         this.TenTL = TenTL;
-        this.GhiChu = GhiChu;
     }
 
     public int getMaTL() {
@@ -40,13 +38,5 @@ public class TheLoaiModel {
 
     public void setTenTL(String TenTL) {
         this.TenTL = TenTL;
-    }
-
-    public String getGhiChu() {
-        return GhiChu;
-    }
-
-    public void setGhiChu(String GhiChu) {
-        this.GhiChu = GhiChu;
     }
 }

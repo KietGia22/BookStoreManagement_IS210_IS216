@@ -39,7 +39,7 @@ public class KhachHangController {
             rs =  (ResultSet) callsql.getObject(1);
             while(rs.next()){
                 KhachHangModel kh = new 
-                    KhachHangModel(rs.getInt("MAKH"), rs.getString("HOTEN"), rs.getString("SDT"), rs.getString("DIACHI"), rs.getString("GIOITINH"), rs.getString("GHICHU"), rs.getDate("NGAYSINH").toLocalDate(), rs.getDate("NGAYTAO").toLocalDate(), rs.getString("CCCD"));
+                    KhachHangModel(rs.getInt("MAKH"), rs.getString("HOTEN"), rs.getString("SDT"), rs.getString("DIACHI"), rs.getString("GIOITINH"), rs.getDate("NGAYSINH").toLocalDate(), rs.getDate("NGAYTAO").toLocalDate(), rs.getString("CCCD"));
                 khModel.add(kh);
             }
             rs.close();
@@ -74,7 +74,7 @@ public class KhachHangController {
             rs =  (ResultSet) callsql.getObject(2);
             while(rs.next()){
                 KhachHangModel kh = new 
-                    KhachHangModel(rs.getInt("MAKH"), rs.getString("HOTEN"), rs.getString("SDT"), rs.getString("DIACHI"), rs.getString("GIOITINH"), rs.getString("GHICHU"), rs.getDate("NGAYSINH").toLocalDate(), rs.getDate("NGAYTAO").toLocalDate(), rs.getString("CCCD"));
+                    KhachHangModel(rs.getInt("MAKH"), rs.getString("HOTEN"), rs.getString("SDT"), rs.getString("DIACHI"), rs.getString("GIOITINH"), rs.getDate("NGAYSINH").toLocalDate(), rs.getDate("NGAYTAO").toLocalDate(), rs.getString("CCCD"));
                 khModel.add(kh);
             }
             rs.close();
@@ -88,7 +88,7 @@ public class KhachHangController {
     public int ThemKH(KhachHangModel kh){
         Connection conn = null;
         CallableStatement callsql = null;
-        String sql;
+        String sql = "";
         int check;
         try {
             try{
@@ -96,15 +96,14 @@ public class KhachHangController {
             } catch (ClassNotFoundException ex) {
                 Logger.getLogger(TaiKhoanController.class.getName()).log(Level.SEVERE, null, ex);
             }
-            sql = "{call ThemKH(?, to_date(?, ('dd-mm-yyyy')), ?, ?, ?, ?, ?)}";
+            sql = "{call ThemKH(?, to_date(?, ('dd-mm-yyyy')), ?, ?, ?, ?)}";
             callsql = conn.prepareCall(sql);
             callsql.setString(1, kh.getHoTen());
             callsql.setString(2, kh.toString(kh.getNgSinh()));
             callsql.setString(3, kh.getDiaChi());
             callsql.setString(4, kh.getSDT());      
             callsql.setString(5, kh.getGioiTinh());
-            callsql.setString(6, kh.getGhiChu());
-            callsql.setString(7, kh.getCCCD());
+            callsql.setString(6, kh.getCCCD());
             check = callsql.executeUpdate();
             conn.close();
             return check;
@@ -125,7 +124,7 @@ public class KhachHangController {
             } catch (ClassNotFoundException ex) {
                 Logger.getLogger(TaiKhoanController.class.getName()).log(Level.SEVERE, null, ex);
             }
-            sql = "{call SuaKH(?, ?, to_date(?, ('dd-mm-yyyy')), ?, ?, ?, ?, ?)}";
+            sql = "{call SuaKH(?, ?, to_date(?, ('dd-mm-yyyy')), ?, ?, ?, ?)}";
             callsql = conn.prepareCall(sql);
             callsql.setInt(1, kh.getMaKH());
             callsql.setString(2, kh.getHoTen());
@@ -133,8 +132,7 @@ public class KhachHangController {
             callsql.setString(4, kh.getDiaChi());
             callsql.setString(5, kh.getSDT());      
             callsql.setString(6, kh.getGioiTinh());
-            callsql.setString(7, kh.getGhiChu());
-            callsql.setString(8, kh.getCCCD());
+            callsql.setString(7, kh.getCCCD());
             check = callsql.executeUpdate();
             conn.close();
             return check;

@@ -59,7 +59,6 @@ public class Sach extends javax.swing.JFrame {
         this.TL_txt.setText("");
         this.Tg_txt.setText("");
         this.NXB_txt.setText("");
-        this.GC_txt.setText("");
         this.G_txt.setText("");
         this.SL_txt.setText("");
         this.TS_txt.setText("");
@@ -102,8 +101,6 @@ public class Sach extends javax.swing.JFrame {
         G_txt = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         SL_txt = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        GC_txt = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         ChonAnhBtn = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -146,17 +143,17 @@ public class Sach extends javax.swing.JFrame {
         jTable2.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Mã sách", "Tên sách", "Thể loại", "Tác giả", "NXB", "Giá sách", "Số lượng trong kho", "Ghi chú"
+                "Mã sách", "Tên sách", "Thể loại", "Tác giả", "NXB", "Giá sách", "Số lượng trong kho"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Double.class, java.lang.Integer.class, java.lang.String.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Double.class, java.lang.Integer.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -249,13 +246,6 @@ public class Sach extends javax.swing.JFrame {
         SL_txt.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         SL_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 1, new java.awt.Color(0, 0, 0)));
 
-        jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel5.setText("Ghi chú");
-
-        GC_txt.setBackground(new java.awt.Color(173, 216, 230));
-        GC_txt.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        GC_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 1, new java.awt.Color(0, 0, 0)));
-
         jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel8.setText("Ảnh");
 
@@ -296,17 +286,14 @@ public class Sach extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(SearchBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGroup(jPanel3Layout.createSequentialGroup()
-                                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(jLabel3)
                                     .addGap(18, 18, 18)
                                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(TL_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(GC_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGap(66, 66, 66)
-                                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel8)
-                                        .addComponent(jLabel6))))
+                                        .addComponent(ChonAnhBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(jPanel3Layout.createSequentialGroup()
+                                            .addComponent(TL_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(66, 66, 66)
+                                            .addComponent(jLabel6)))))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(jPanel3Layout.createSequentialGroup()
@@ -320,20 +307,20 @@ public class Sach extends javax.swing.JFrame {
                                 .addGroup(jPanel3Layout.createSequentialGroup()
                                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(Tg_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(G_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(ChonAnhBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(G_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGap(63, 63, 63)
                                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(jPanel3Layout.createSequentialGroup()
-                                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(jLabel7))
-                                            .addGap(26, 26, 26)
-                                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                .addComponent(NXB_txt, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
-                                                .addComponent(SL_txt)))
-                                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGap(0, 0, Short.MAX_VALUE))))))
+                                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel7))
+                                    .addGap(26, 26, 26)
+                                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(NXB_txt, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
+                                        .addComponent(SL_txt))
+                                    .addGap(0, 0, Short.MAX_VALUE))))
+                        .addGroup(jPanel3Layout.createSequentialGroup()
+                            .addComponent(jLabel8)
+                            .addGap(321, 321, 321)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(41, 41, 41))
         );
         jPanel3Layout.setVerticalGroup(
@@ -358,8 +345,6 @@ public class Sach extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(GC_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(ChonAnhBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -465,7 +450,7 @@ public class Sach extends javax.swing.JFrame {
             String AnhSach = path;
             System.out.println(AnhSach);
             SachModel sm = 
-                    new SachModel(Integer.parseInt(SL_txt.getText()), MaTL, TS_txt.getText(), GC_txt.getText(), Tg_txt.getText(), NXB_txt.getText(), AnhSach, TL_txt.getText(), Long.parseLong(G_txt.getText()));
+                    new SachModel(Integer.parseInt(SL_txt.getText()), MaTL, TS_txt.getText(), Tg_txt.getText(), NXB_txt.getText(), AnhSach, TL_txt.getText(), Long.parseLong(G_txt.getText()));
             if(s.ThemSach(sm) != 0){
                 JOptionPane.showMessageDialog(this, "Thêm thành công");
                 Reset();
@@ -507,7 +492,7 @@ public class Sach extends javax.swing.JFrame {
             String AnhSach = path;
             System.out.println(AnhSach);
             SachModel sm = 
-                    new SachModel(ID, Integer.parseInt(SL_txt.getText()), MaTL, TS_txt.getText(), GC_txt.getText(), Tg_txt.getText(), NXB_txt.getText(), AnhSach, Long.parseLong(G_txt.getText()), TL_txt.getText());
+                    new SachModel(ID, Integer.parseInt(SL_txt.getText()), MaTL, TS_txt.getText(), Tg_txt.getText(), NXB_txt.getText(), AnhSach, Long.parseLong(G_txt.getText()), TL_txt.getText());
             if(s.SuaSach(sm) != 0){
                 JOptionPane.showMessageDialog(this, "Sửa thành công");
                 Reset();
@@ -543,7 +528,7 @@ public class Sach extends javax.swing.JFrame {
             String AnhSach = path;
             System.out.println(AnhSach);
             SachModel sm = 
-                    new SachModel(ID, Integer.parseInt(SL_txt.getText()), MaTL, TS_txt.getText(), GC_txt.getText(), Tg_txt.getText(), NXB_txt.getText(), AnhSach, Long.parseLong(G_txt.getText()), TL_txt.getText());
+                    new SachModel(ID, Integer.parseInt(SL_txt.getText()), MaTL, TS_txt.getText(), Tg_txt.getText(), NXB_txt.getText(), AnhSach, Long.parseLong(G_txt.getText()), TL_txt.getText());
             if(s.XoaSach(sm) != 0){
                 JOptionPane.showMessageDialog(this, "Xoá thành công");
                 Reset();
@@ -624,11 +609,6 @@ public class Sach extends javax.swing.JFrame {
             NXB_txt.setText(temp.getValueAt(selectedRow, 4).toString());
             G_txt.setText(temp.getValueAt(selectedRow, 5).toString());
             SL_txt.setText(temp.getValueAt(selectedRow, 6).toString());
-            try{
-                GC_txt.setText(temp.getValueAt(selectedRow, 7).toString());
-            } catch(Exception e){
-                GC_txt.setText("");
-            }
             String AnhSach = s.GETAnh(ID);
             if(AnhSach.contains("build\\classes")) {
                 KiemTraAnhHienThi(AnhSach);
@@ -653,13 +633,13 @@ public class Sach extends javax.swing.JFrame {
     
     public void Add(ArrayList<SachModel> SModel, DefaultTableModel table){
         for(SachModel i : SModel){
-            Object[] obj = {i.getMaSach(), i.getTenSach(), i.getTenTheLoai(), i.getTenTG(), i.getNXB(), i.getGia(), i.getSlTon(), i.getGhiChu()};
+            Object[] obj = {i.getMaSach(), i.getTenSach(), i.getTenTheLoai(), i.getTenTG(), i.getNXB(), i.getGia(), i.getSlTon()};
             table.addRow(obj);
         }
     }
     
     public void GetTCSach(){
-        String title[] = {"Mã sách", "Tên sách", "Thể loại", "Tác giả", "Nhà xuất bản", "Giá", "Số lượng hiện tại", "Ghi chú"};
+        String title[] = {"Mã sách", "Tên sách", "Thể loại", "Tác giả", "Nhà xuất bản", "Giá", "Số lượng hiện tại"};
         table.setColumnIdentifiers(title);
         table.setRowCount(0);
         ArrayList<SachModel> SModel = new ArrayList<SachModel>();
@@ -671,7 +651,6 @@ public class Sach extends javax.swing.JFrame {
         jTable2.getColumnModel().getColumn(2).setPreferredWidth(30);
         jTable2.getColumnModel().getColumn(5).setPreferredWidth(15);
         jTable2.getColumnModel().getColumn(6).setPreferredWidth(20);
-        jTable2.getColumnModel().getColumn(7).setPreferredWidth(30);
     }
     
     /**
@@ -714,7 +693,6 @@ public class Sach extends javax.swing.JFrame {
     private javax.swing.JButton AddSBtn;
     private javax.swing.JButton ChonAnhBtn;
     private javax.swing.JButton DelSBtn;
-    private javax.swing.JTextField GC_txt;
     private javax.swing.JTextField G_txt;
     private javax.swing.JTextField NXB_txt;
     private javax.swing.JButton QlaiBtn1;
@@ -732,7 +710,6 @@ public class Sach extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;

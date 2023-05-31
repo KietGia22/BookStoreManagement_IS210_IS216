@@ -29,6 +29,14 @@ public class HoaDonModel {
         this.TongTien = TongTien;
         this.NgTaoHD = NgTaoHD;
     }
+    
+    public HoaDonModel(int MaKH, int MaTK, int MaSach, int Soluong, long TongTien, LocalDate NgTaoHD) {
+        this.MaTK = MaTK;
+        this.MaSach = MaSach;
+        this.Soluong = Soluong;
+        this.TongTien = TongTien;
+        this.NgTaoHD = NgTaoHD;
+    }
 
     public HoaDonModel(int MaHD, int MaKH, int MaTK, long TongTien, LocalDate NgTaoHD) {
         this.MaHD = MaHD;
@@ -36,6 +44,19 @@ public class HoaDonModel {
         this.MaTK = MaTK;
         this.TongTien = TongTien;
         this.NgTaoHD = NgTaoHD;
+    }
+
+    public HoaDonModel(int MaKH, int MaTK, long TongTien, LocalDate NgTaoHD) {
+        this.MaKH = MaKH;
+        this.MaTK = MaTK;
+        this.TongTien = TongTien;
+        this.NgTaoHD = NgTaoHD;
+    }
+
+    public HoaDonModel(int MaHD, int MaSach, int Soluong) {
+        this.MaHD = MaHD;
+        this.MaSach = MaSach;
+        this.Soluong = Soluong;
     }
     
     public int getMaHD() {
