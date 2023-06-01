@@ -275,7 +275,7 @@ public class CTHD extends javax.swing.JFrame {
         ArrayList<SachModel> smodel = new ArrayList<SachModel>();
         smodel = hd.GetSachTheoMaHD(ID);
         for(SachModel i : smodel){
-            Object[] obj = {i.getMaSach(), i.getTenSach(), i.getTenTheLoai(), i.getSlTon(), i.getGia()};
+            Object[] obj = {i.getMaSach(), i.getTenSach(), i.getTenTheLoai(), i.getSlHienCo(), i.getGiaTien()};
             table.addRow(obj);
         }
         jTable1.setModel(table);

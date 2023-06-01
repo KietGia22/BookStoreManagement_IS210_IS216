@@ -9,34 +9,34 @@ package Model;
  * @author GIA KIET
  */
 public class SachModel {
-    protected int MaSach, SlTon, MaTL;
+    protected int MaSach, SlHienCo, MaTL;
     protected String TenSach, TenTG, NXB, AnhSach, TenTheLoai;
-    protected long Gia;
+    protected long GiaTien;
 
     public SachModel() {
     }
 
-    public SachModel(int MaSach, int SlTon, int MaTL, String TenSach, String TenTG, String NXB, String AnhSach, long Gia, String TenTheLoai) {
+    public SachModel(int MaSach, int SlHienCo, int MaTL, String TenSach, String TenTG, String NXB, String AnhSach, long GiaTien, String TenTheLoai) {
         this.MaSach = MaSach;
-        this.SlTon = SlTon;
+        this.SlHienCo = SlHienCo;
         this.MaTL = MaTL;
         this.TenSach = TenSach;
         this.TenTG = TenTG;
         this.NXB = NXB;
         this.AnhSach = AnhSach;
-        this.Gia = Gia;
+        this.GiaTien = GiaTien;
         this.TenTheLoai = TenTheLoai;
     }
     
-    public SachModel(int SlTon, int MaTL, String TenSach, String TenTG, String NXB, String AnhSach, String TenTheLoai, long Gia) {
-        this.SlTon = SlTon;
+    public SachModel(int SlHienCo, int MaTL, String TenSach, String TenTG, String NXB, String AnhSach, String TenTheLoai, long GiaTien) {
+        this.SlHienCo = SlHienCo;
         this.MaTL = MaTL;
         this.TenSach = TenSach;
         this.TenTG = TenTG;
         this.NXB = NXB;
         this.AnhSach = AnhSach;
         this.TenTheLoai = TenTheLoai;
-        this.Gia = Gia;
+        this.GiaTien = GiaTien;
     }
 
     
@@ -49,14 +49,14 @@ public class SachModel {
         this.MaSach = MaSach;
     }
 
-    public int getSlTon() {
-        return SlTon;
+    public int getSlHienCo() {
+        return SlHienCo;
     }
 
-    public void setSlTon(int SlTon) {
-        this.SlTon = SlTon;
+    public void setSlHienCo(int SlHienCo) {
+        this.SlHienCo = SlHienCo;
     }
-
+    
     public int getMaTL() {
         return MaTL;
     }
@@ -97,12 +97,12 @@ public class SachModel {
         this.AnhSach = AnhSach;
     }
 
-    public long getGia() {
-        return Gia;
+    public long getGiaTien() {
+        return GiaTien;
     }
 
-    public void setGia(long Gia) {
-        this.Gia = Gia;
+    public void setGiaTien(long GiaTien) {
+        this.GiaTien = GiaTien;
     }
 
     public String getTenTheLoai() {

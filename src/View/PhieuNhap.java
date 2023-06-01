@@ -4,10 +4,10 @@
  */
 package View;
 
-import Controller.PhieuNhapController;
+import Controller.PhieuNhapSachController;
 import Controller.SachController;
 import Controller.TaiKhoanController;
-import Model.PhieuNhapModel;
+import Model.PhieuNhapSachModel;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 
@@ -27,7 +27,7 @@ public class PhieuNhap extends javax.swing.JFrame {
     
     public String TenDNHome, MatKhauHome;
     public TaiKhoanController tk = new TaiKhoanController();
-    public PhieuNhapController pn = new PhieuNhapController();
+    public PhieuNhapSachController pn = new PhieuNhapSachController();
     public int ChucVu = tk.TraVeChucVu(TenDNHome, MatKhauHome);
     DefaultTableModel table = new DefaultTableModel();
     public int ID;
@@ -247,8 +247,8 @@ public class PhieuNhap extends javax.swing.JFrame {
     }//GEN-LAST:event_QlaiBtnActionPerformed
 
     
-    public void Add(ArrayList<PhieuNhapModel> pnModel, DefaultTableModel table){
-        for(PhieuNhapModel i : pnModel){
+    public void Add(ArrayList<PhieuNhapSachModel> pnModel, DefaultTableModel table){
+        for(PhieuNhapSachModel i : pnModel){
             Object[] obj = {i.getMaPN(), i.getTenNCC(), i.getTenNV(), i.getNgNhap().toString(), i.getTongTien()};
             table.addRow(obj);
         }
@@ -258,7 +258,7 @@ public class PhieuNhap extends javax.swing.JFrame {
         String[] title = {"Mã phiếu nhập", "Tên NCC", "Tên nhân viên", "Ngày nhập hàng", "Số tiền nhập"};
         table.setColumnIdentifiers(title);
         table.setRowCount(0);
-        ArrayList<PhieuNhapModel> pnModel = new ArrayList<PhieuNhapModel>();
+        ArrayList<PhieuNhapSachModel> pnModel = new ArrayList<PhieuNhapSachModel>();
         pnModel = pn.getThongTinPhieuNhap();
         Add(pnModel, table);
         jTable1.setModel(table);

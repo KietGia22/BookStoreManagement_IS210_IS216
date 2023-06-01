@@ -44,7 +44,7 @@ public class HoaDonController {
                     HoaDonModel(rs.getInt("MAHD"), 
                             rs.getInt("MAKH"), 
                             rs.getInt("MATK"), 
-                            rs.getLong("TONGTIEN"), 
+                            rs.getLong("TONGTIENHD"), 
                             rs.getDate("NGAYTAOHD").toLocalDate());
                 hdModel.add(hd);
             }
@@ -256,6 +256,29 @@ public class HoaDonController {
             callsql.setInt(1, hd.getMaHD());
             callsql.setInt(2, hd.getMaSach());
             callsql.setInt(3, hd.getSoluong());
+            check = callsql.executeUpdate();
+            conn.close();
+            return check;
+        } catch (SQLException e){
+            e.printStackTrace();
+        }
+        return 0;
+    }
+    
+    public int XoaHD(HoaDonModel hd){
+        Connection conn = null;
+        CallableStatement callsql = null;
+        String sql = "";
+        int check = 0;
+        try{
+            try {
+                conn = ConnectDB.getJDBCConnection();
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(HoaDonController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            sql = "{call XoaHD(?)}";
+            callsql = conn.prepareCall(sql);
+            callsql.setInt(1, hd.getMaHD());
             check = callsql.executeUpdate();
             conn.close();
             return check;

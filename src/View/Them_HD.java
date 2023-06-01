@@ -504,7 +504,7 @@ public class Them_HD extends javax.swing.JFrame {
 
     public void Add(ArrayList<SachModel> SModel, DefaultTableModel table){
         for(SachModel i : SModel){
-            Object[] obj = {i.getMaSach(), i.getTenSach(), i.getSlTon(), i.getGia()};
+            Object[] obj = {i.getMaSach(), i.getTenSach(), i.getSlHienCo(), i.getGiaTien()};
             table.addRow(obj);
         }
     }

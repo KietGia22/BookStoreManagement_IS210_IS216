@@ -5,7 +5,7 @@
 package Controller;
 
 import Connection.ConnectDB;
-import Model.PhieuNhapModel;
+import Model.PhieuNhapSachModel;
 import java.util.ArrayList;
 import java.sql.*;
 import java.util.logging.Level;
@@ -16,9 +16,9 @@ import oracle.jdbc.OracleTypes;
  *
  * @author GIA KIET
  */
-public class PhieuNhapController {
-    public ArrayList<PhieuNhapModel> getThongTinPhieuNhap(){
-        ArrayList<PhieuNhapModel> pn = new ArrayList<PhieuNhapModel>();
+public class PhieuNhapSachController {
+    public ArrayList<PhieuNhapSachModel> getThongTinPhieuNhap(){
+        ArrayList<PhieuNhapSachModel> pn = new ArrayList<PhieuNhapSachModel>();
         
         Connection conn = null;
         ResultSet rs = null;
@@ -29,7 +29,7 @@ public class PhieuNhapController {
             try {
                 conn = ConnectDB.getJDBCConnection();
             } catch (ClassNotFoundException ex) {
-                Logger.getLogger(PhieuNhapController.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(PhieuNhapSachController.class.getName()).log(Level.SEVERE, null, ex);
             }
             
             sql = "{call GETTCPN(?)}";
@@ -38,7 +38,7 @@ public class PhieuNhapController {
             callsql.execute();
             rs =  (ResultSet) callsql.getObject(1);
             while(rs.next()) {
-                PhieuNhapModel pnModel = new PhieuNhapModel(
+                PhieuNhapSachModel pnModel = new PhieuNhapSachModel(
                                          rs.getInt("MAPN"),
                                          rs.getLong("TONGTIENNHAP"),
                                          rs.getDate("NGAYNHAP").toLocalDate(),
