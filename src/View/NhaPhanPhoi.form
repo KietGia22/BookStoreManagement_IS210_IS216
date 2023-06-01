@@ -50,7 +50,7 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace pref="49" max="32767" attributes="0"/>
+                  <EmptySpace pref="44" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="1" attributes="0">
@@ -59,9 +59,9 @@
                                   <Component id="jScrollPane1" min="-2" pref="775" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="AddNCCBtn" max="32767" attributes="0"/>
-                                      <Component id="UpdateNCCBtn" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="DelNCCBtn" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="AddNPPBtn" max="32767" attributes="0"/>
+                                      <Component id="UpdateNPPBtn" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="DelNPPBtn" alignment="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -82,7 +82,7 @@
                                   <Group type="102" alignment="1" attributes="0">
                                       <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="NCC_txt" min="-2" pref="166" max="-2" attributes="0"/>
+                                      <Component id="NPP_txt" min="-2" pref="166" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
                                       <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="184" pref="184" max="-2" attributes="0"/>
@@ -105,7 +105,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="NCC_txt" alignment="1" min="-2" pref="41" max="-2" attributes="0"/>
+                      <Component id="NPP_txt" alignment="1" min="-2" pref="41" max="-2" attributes="0"/>
                       <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                           <Component id="jLabel4" alignment="3" min="-2" pref="42" max="-2" attributes="0"/>
                           <Component id="DC_txt" alignment="3" min="-2" pref="41" max="-2" attributes="0"/>
@@ -120,14 +120,14 @@
                       <Component id="jComboBox1" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
                       <Component id="SearchBtn1" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
                       <Component id="ResetBtn" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
-                      <Component id="AddNCCBtn" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="AddNPPBtn" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <Component id="UpdateNCCBtn" min="-2" pref="40" max="-2" attributes="0"/>
+                          <Component id="UpdateNPPBtn" min="-2" pref="40" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                          <Component id="DelNCCBtn" min="-2" pref="40" max="-2" attributes="0"/>
+                          <Component id="DelNPPBtn" min="-2" pref="40" max="-2" attributes="0"/>
                       </Group>
                       <Component id="jScrollPane1" min="-2" pref="118" max="-2" attributes="0"/>
                   </Group>
@@ -149,8 +149,8 @@
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="2">
-                <StringItem index="0" value="M&#xe3; nh&#xe0; cung c&#x1ea5;p"/>
-                <StringItem index="1" value="T&#xea;n nh&#xe0; cung c&#x1ea5;p"/>
+                <StringItem index="0" value="M&#xe3; nh&#xe0; ph&#xe2;n ph&#x1ed1;i"/>
+                <StringItem index="1" value="T&#xea;n nh&#xe0; ph&#xe2;n ph&#x1ed1;i"/>
               </StringArray>
             </Property>
           </Properties>
@@ -181,7 +181,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Times New Roman" size="16" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="T&#xec;m nh&#xe0; cung c&#x1ea5;p"/>
+            <Property name="text" type="java.lang.String" value="T&#xec;m nh&#xe0; ph&#xe2;n ph&#x1ed1;i"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SearchBtn1ActionPerformed"/>
@@ -260,7 +260,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JButton" name="AddNCCBtn">
+        <Component class="javax.swing.JButton" name="AddNPPBtn">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="cc" red="0" type="rgb"/>
@@ -268,10 +268,10 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Times New Roman" size="16" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Th&#xea;m nh&#xe0; cung c&#x1ea5;p"/>
+            <Property name="text" type="java.lang.String" value="Th&#xea;m nh&#xe0; ph&#xe2;n ph&#x1ed1;i"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AddNCCBtnActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AddNPPBtnActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">
@@ -282,7 +282,7 @@
             <Property name="text" type="java.lang.String" value="T&#xea;n nh&#xe0; cung c&#x1ea5;p"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="NCC_txt">
+        <Component class="javax.swing.JTextField" name="NPP_txt">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="e6" green="d8" red="ad" type="rgb"/>
@@ -357,7 +357,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ResetBtnActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="UpdateNCCBtn">
+        <Component class="javax.swing.JButton" name="UpdateNPPBtn">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="cc" red="0" type="rgb"/>
@@ -365,13 +365,13 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Times New Roman" size="16" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="S&#x1eed;a nh&#xe0; cung c&#x1ea5;p"/>
+            <Property name="text" type="java.lang.String" value="S&#x1eed;a nh&#xe0; ph&#xe2;n ph&#x1ed1;i"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="UpdateNCCBtnActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="UpdateNPPBtnActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="DelNCCBtn">
+        <Component class="javax.swing.JButton" name="DelNPPBtn">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="cc" red="0" type="rgb"/>
@@ -379,10 +379,10 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Times New Roman" size="16" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Xo&#xe1; nh&#xe0; cung c&#x1ea5;p"/>
+            <Property name="text" type="java.lang.String" value="Xo&#xe1; nh&#xe0; ph&#xe2;n ph&#x1ed1;i"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DelNCCBtnActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DelNPPBtnActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

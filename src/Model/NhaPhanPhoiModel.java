@@ -8,42 +8,42 @@ package Model;
  *
  * @author GIA KIET
  */
-public class NhaCungCapModel {
-    protected int MaNCC;
-    protected String TenNCC, DiaChi, SDT;
+public class NhaPhanPhoiModel {
+    protected int MaNPP;
+    protected String TenNPP, DiaChi, SDT;
 
-    public NhaCungCapModel() {
+    public NhaPhanPhoiModel() {
     }
 
-    public NhaCungCapModel(int MaNCC, String TenNCC, String DiaChi, String SDT) {
-        this.MaNCC = MaNCC;
-        this.TenNCC = TenNCC;
+    public NhaPhanPhoiModel(int MaNPP, String TenNPP, String DiaChi, String SDT) {
+        this.MaNPP = MaNPP;
+        this.TenNPP = TenNPP;
         this.DiaChi = DiaChi;
         this.SDT = SDT;
     }
 
-    public NhaCungCapModel(String TenNCC, String DiaChi, String SDT) {
-        this.TenNCC = TenNCC;
+    public NhaPhanPhoiModel(String TenNPP, String DiaChi, String SDT) {
+        this.TenNPP = TenNPP;
         this.DiaChi = DiaChi;
         this.SDT = SDT;
     }
     
     
 
-    public int getMaNCC() {
-        return MaNCC;
+    public int getMaNPP() {
+        return MaNPP;
     }
 
-    public void setMaNCC(int MaNCC) {
-        this.MaNCC = MaNCC;
+    public void setMaNPP(int MaNPP) {
+        this.MaNPP = MaNPP;
     }
 
-    public String getTenNCC() {
-        return TenNCC;
+    public String getTenNPP() {
+        return TenNPP;
     }
 
-    public void setTenNCC(String TenNCC) {
-        this.TenNCC = TenNCC;
+    public void setTenNPP(String TenNPP) {
+        this.TenNPP = TenNPP;
     }
 
     public String getDiaChi() {
