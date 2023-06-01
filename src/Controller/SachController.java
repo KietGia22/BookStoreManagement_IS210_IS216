@@ -40,13 +40,13 @@ public class SachController {
             while(rs.next()){
                 SachModel SM = new 
                     SachModel(rs.getInt("MASACH"), 
-                            rs.getInt("SLTON"), 
+                            rs.getInt("SLHIENCO"), 
                             rs.getInt("MATL"), 
                             rs.getString("TENSACH"), 
                             rs.getString("TENTG"), 
                             rs.getString("NXB"), 
                             rs.getString("ANHSACH"), 
-                            rs.getLong("GIA"), 
+                            rs.getLong("GIATIEN"), 
                             rs.getString("TENTHELOAI"));
                 sachModel.add(SM);
             }
@@ -80,13 +80,13 @@ public class SachController {
             while(rs.next()){
                 SachModel SM = new 
                     SachModel(rs.getInt("MASACH"), 
-                            rs.getInt("SLTON"), 
+                            rs.getInt("SLHIENCO"), 
                             rs.getInt("MATL"), 
                             rs.getString("TENSACH"),
                             rs.getString("TENTG"), 
                             rs.getString("NXB"), 
                             rs.getString("ANHSACH"), 
-                            rs.getLong("GIA"), 
+                            rs.getLong("GIATIEN"), 
                             rs.getString("TENTHELOAI"));
                 sachModel.add(SM);
             }
@@ -165,12 +165,12 @@ public class SachController {
             sql = "{call ThemSACH(?, ?, ?, ?, ?, ?, ?)}";
             callsql = conn.prepareCall(sql);
             callsql.setString(1, sm.getTenSach());
-            callsql.setLong(2, sm.getGia());
-            callsql.setInt(3, sm.getMaTL());
-            callsql.setInt(4, sm.getSlTon());
-            callsql.setString(5, sm.getAnhSach());
-            callsql.setString(6, sm.getTenTG());
-            callsql.setString(7, sm.getNXB());
+            callsql.setString(2, sm.getTenTG());
+            callsql.setString(3, sm.getNXB());
+            callsql.setInt(4, sm.getMaTL());
+            callsql.setInt(5, sm.getSlHienCo());
+            callsql.setString(6, sm.getAnhSach());
+            callsql.setLong(7, sm.getGiaTien());
             check = callsql.executeUpdate();
             conn.close();
             return check;
@@ -195,12 +195,12 @@ public class SachController {
             callsql = conn.prepareCall(sql);
             callsql.setInt(1, sm.getMaSach());
             callsql.setString(2, sm.getTenSach());
-            callsql.setLong(3, sm.getGia());
-            callsql.setInt(4, sm.getMaTL());
-            callsql.setInt(5, sm.getSlTon());
-            callsql.setString(6, sm.getAnhSach());
-            callsql.setString(7, sm.getTenTG());
-            callsql.setString(8, sm.getNXB());
+            callsql.setString(3, sm.getTenTG());
+            callsql.setString(4, sm.getNXB());
+            callsql.setInt(5, sm.getMaTL());
+            callsql.setInt(6, sm.getSlHienCo());
+            callsql.setString(7, sm.getAnhSach());
+            callsql.setLong(8, sm.getGiaTien());
             check = callsql.executeUpdate();
             conn.close();
             return check;

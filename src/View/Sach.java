@@ -633,7 +633,7 @@ public class Sach extends javax.swing.JFrame {
     
     public void Add(ArrayList<SachModel> SModel, DefaultTableModel table){
         for(SachModel i : SModel){
-            Object[] obj = {i.getMaSach(), i.getTenSach(), i.getTenTheLoai(), i.getTenTG(), i.getNXB(), i.getGia(), i.getSlTon()};
+            Object[] obj = {i.getMaSach(), i.getTenSach(), i.getTenTheLoai(), i.getTenTG(), i.getNXB(), i.getGiaTien(), i.getSlHienCo()};
             table.addRow(obj);
         }
     }

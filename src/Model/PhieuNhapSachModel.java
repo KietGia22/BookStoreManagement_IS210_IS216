@@ -11,17 +11,17 @@ import java.time.format.DateTimeFormatter;
  *
  * @author GIA KIET
  */
-public class PhieuNhapModel {
+public class PhieuNhapSachModel {
     protected int MaPN, MaTK, MaSach, MaNCC, SoLuong;
     protected long TongTien, GiaNhap;
     protected LocalDate NgNhap;
     DateTimeFormatter dtformat = DateTimeFormatter.ofPattern("dd-MM-yyyy");
     protected String TenNCC, TenNV;
 
-    public PhieuNhapModel() {
+    public PhieuNhapSachModel() {
     }
 
-    public PhieuNhapModel(int MaPN, int MaTK, int MaSach, int MaNCC, int SoLuong, long TongTien, long GiaNhap, LocalDate NgNhap) {
+    public PhieuNhapSachModel(int MaPN, int MaTK, int MaSach, int MaNCC, int SoLuong, long TongTien, long GiaNhap, LocalDate NgNhap) {
         this.MaPN = MaPN;
         this.MaTK = MaTK;
         this.MaSach = MaSach;
@@ -32,7 +32,7 @@ public class PhieuNhapModel {
         this.NgNhap = NgNhap;
     }
 
-    public PhieuNhapModel(int MaPN, long TongTien, LocalDate NgNhap, String TenNCC, String TenNV) {
+    public PhieuNhapSachModel(int MaPN, long TongTien, LocalDate NgNhap, String TenNCC, String TenNV) {
         this.MaPN = MaPN;
         this.TongTien = TongTien;
         this.NgNhap = NgNhap;
