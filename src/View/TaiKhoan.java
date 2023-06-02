@@ -30,6 +30,7 @@ public class TaiKhoan extends javax.swing.JFrame {
      */
     public TaiKhoan() {
         initComponents();
+        this.setLocationRelativeTo(null);
         GetAllNhanVien();
     }
     

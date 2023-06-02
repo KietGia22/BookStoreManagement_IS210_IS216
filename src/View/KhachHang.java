@@ -38,6 +38,7 @@ public class KhachHang extends javax.swing.JFrame {
     
     public KhachHang() {
         initComponents();
+        this.setLocationRelativeTo(null);
         GetAllKhachHang();
     }
     
@@ -102,7 +103,6 @@ public class KhachHang extends javax.swing.JFrame {
         SDT_txt = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         CCCD_txt = new javax.swing.JTextField();
-        AddHDBtn = new javax.swing.JButton();
         QlaiBtn = new javax.swing.JButton();
         ResetBtn = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
@@ -229,14 +229,6 @@ public class KhachHang extends javax.swing.JFrame {
         CCCD_txt.setBackground(new java.awt.Color(173, 216, 230));
         CCCD_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 1, new java.awt.Color(0, 0, 0)));
 
-        AddHDBtn.setText("Tạo hoá đơn cho khách hàng");
-        AddHDBtn.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
-        AddHDBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AddHDBtnActionPerformed(evt);
-            }
-        });
-
         QlaiBtn.setText("Quay lại");
         QlaiBtn.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 0, 51), 2, true));
         QlaiBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -306,10 +298,11 @@ public class KhachHang extends javax.swing.JFrame {
                         .addComponent(UpdateKHBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(DelKHBtn))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(AddHDBtn)
-                        .addGap(29, 29, 29)
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(QlaiBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(30, 30, 30))
         );
@@ -350,10 +343,8 @@ public class KhachHang extends javax.swing.JFrame {
                 .addGap(33, 33, 33)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(33, 33, 33)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(AddHDBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(QlaiBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addComponent(QlaiBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(32, Short.MAX_VALUE))
         );
 
         jPanel3.setBackground(new java.awt.Color(0, 100, 100));
@@ -412,12 +403,6 @@ public class KhachHang extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void AddHDBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddHDBtnActionPerformed
-        // TODO add your handling code here:
-        dispose();
-        new Them_HD(TenDNHome, MatKhauHome, ID);
-    }//GEN-LAST:event_AddHDBtnActionPerformed
 
     private void DelKHBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DelKHBtnActionPerformed
         // TODO add your handling code here:
@@ -527,12 +512,6 @@ public class KhachHang extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_AddKHBtnActionPerformed
 
-    private void QlaiBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QlaiBtnActionPerformed
-        // TODO add your handling code here:
-        new Home(TenDNHome, MatKhauHome);
-        this.dispose();
-    }//GEN-LAST:event_QlaiBtnActionPerformed
-
     private void SearchBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchBtnActionPerformed
         // TODO add your handling code here:
         String search = Search_txt.getText();
@@ -558,7 +537,6 @@ public class KhachHang extends javax.swing.JFrame {
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
         // TODO add your handling code here:
         try {
-            // TODO add your handling code here:
             int selectedRow = jTable1.getSelectedRow();
             DefaultTableModel temp = (DefaultTableModel) jTable1.getModel();
             SimpleDateFormat dtformat = new SimpleDateFormat("dd-MM-yyyy");
@@ -579,6 +557,12 @@ public class KhachHang extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jTable1MouseClicked
 
+    private void QlaiBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QlaiBtnActionPerformed
+        // TODO add your handling code here:
+        new Home(TenDNHome, MatKhauHome);
+        this.dispose();
+    }//GEN-LAST:event_QlaiBtnActionPerformed
+
     public void Add(ArrayList<KhachHangModel> arrkhmodel, DefaultTableModel table){
         for(KhachHangModel i : arrkhmodel){
             Object[] obj = {i.getMaKH(), i.getHoTen(), i.toString(i.getNgSinh()), i.getDiaChi(), i.getSDT(), i.getCCCD(), i.getNgTao(), i.getGioiTinh()};
@@ -594,7 +578,7 @@ public class KhachHang extends javax.swing.JFrame {
         arrkhmodel = kh.getTCKhachHang();
         Add(arrkhmodel, table);
         jTable1.setModel(table);
-        jTable1.getColumnModel().getColumn(0).setPreferredWidth(20);
+        jTable1.getColumnModel().getColumn(0).setPreferredWidth(10);
         jTable1.getColumnModel().getColumn(3).setPreferredWidth(425);
         jTable1.getColumnModel().getColumn(7).setPreferredWidth(25);
         jTable1.setRowHeight(30);
@@ -636,7 +620,6 @@ public class KhachHang extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton AddHDBtn;
     private javax.swing.JButton AddKHBtn;
     private javax.swing.JTextField CCCD_txt;
     private javax.swing.JTextField DC_txt;

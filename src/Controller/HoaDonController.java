@@ -136,7 +136,7 @@ public class HoaDonController {
                     HoaDonModel(rs.getInt("MAHD"), 
                             rs.getInt("MAKH"), 
                             rs.getInt("MATK"), 
-                            rs.getLong("TONGTIEN"), 
+                            rs.getLong("TONGTIENHD"), 
                             rs.getDate("NGAYTAOHD").toLocalDate());
                 hdModel.add(hd);
             }
@@ -169,13 +169,13 @@ public class HoaDonController {
             while(rs.next()){
                 SachModel s = new
                     SachModel(rs.getInt("MASACH"), 
-                            rs.getInt("SOLUONG"), 
+                            rs.getInt("SOLUONGMUATUNGCUONSACH"), 
                             rs.getInt("MATL"), 
                             rs.getString("TENSACH"),
                             rs.getString("TENTG"), 
                             rs.getString("NXB"), 
                             rs.getString("ANHSACH"), 
-                            rs.getLong("GIA"), 
+                            rs.getLong("GIATIEN"), 
                             rs.getString("TENTHELOAI"));
                 sModel.add(s);
             }

@@ -8,6 +8,7 @@ import Controller.HoaDonController;
 import Controller.TaiKhoanController;
 import Model.SachModel;
 import java.util.ArrayList;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -22,6 +23,7 @@ public class CTHD extends javax.swing.JFrame {
     public CTHD() {
         initComponents();
         this.setVisible(true);
+        this.setLocationRelativeTo(null);
         GetCTHD();
     }
     
@@ -36,6 +38,7 @@ public class CTHD extends javax.swing.JFrame {
     public CTHD(String TDN, String MK, int ID, String TenKH, String TenNV, String NgayTaoHD, String TriGia){
         initComponents();
         this.setVisible(true);
+        this.setLocationRelativeTo(null);
         this.TenDNHome = TDN;
         this.MatKhauHome = MK;
         this.ID = ID;
@@ -81,6 +84,11 @@ public class CTHD extends javax.swing.JFrame {
         QlaiBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         QlaiBtn.setText("Quay lại");
         QlaiBtn.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 0, 51), 2, true));
+        QlaiBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                QlaiBtnActionPerformed(evt);
+            }
+        });
 
         jTable1.setBackground(new java.awt.Color(0, 204, 204));
         jTable1.setFont(new java.awt.Font("Times New Roman", 1, 15)); // NOI18N
@@ -262,6 +270,12 @@ public class CTHD extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void QlaiBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QlaiBtnActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        new HoaDon(TenDNHome, MatKhauHome);
+    }//GEN-LAST:event_QlaiBtnActionPerformed
+
     
     public void GetCTHD(){
         this.MaHD_txt.setText(Integer.toString(ID));
@@ -269,7 +283,7 @@ public class CTHD extends javax.swing.JFrame {
         this.TenKH_txt.setText(this.TenKH);
         this.TenNV_txt.setText(this.TenNV);
         this.Gia_txt.setText(this.TriGia);
-        String[] title = {"Mã sách", "Tên sách", "Thể loại", "Số lượng", "Giá sách"};
+        String[] title = {"Mã sách", "Tên sách", "Thể loại", "Số lượng", "Tổng giá sách"};
         table.setColumnIdentifiers(title);
         table.setRowCount(0);
         ArrayList<SachModel> smodel = new ArrayList<SachModel>();
@@ -279,6 +293,10 @@ public class CTHD extends javax.swing.JFrame {
             table.addRow(obj);
         }
         jTable1.setModel(table);
+        jTable1.getColumnModel().getColumn(0).setPreferredWidth(10);
+        jTable1.getColumnModel().getColumn(1).setPreferredWidth(250);
+        jTable1.getColumnModel().getColumn(2).setPreferredWidth(50);
+        jTable1.getColumnModel().getColumn(3).setPreferredWidth(50);
         jTable1.setRowHeight(30);
     }
     

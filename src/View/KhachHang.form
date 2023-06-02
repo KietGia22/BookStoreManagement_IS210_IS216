@@ -135,10 +135,12 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="DelKHBtn" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="jScrollPane1" alignment="0" min="-2" pref="1150" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jScrollPane1" min="-2" pref="1150" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          </Group>
                           <Group type="102" alignment="1" attributes="0">
-                              <Component id="AddHDBtn" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               <Component id="QlaiBtn" min="-2" pref="137" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -192,11 +194,8 @@
                       <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                       <Component id="jScrollPane1" min="-2" pref="118" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="AddHDBtn" min="-2" pref="53" max="-2" attributes="0"/>
-                          <Component id="QlaiBtn" min="-2" pref="49" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace pref="28" max="32767" attributes="0"/>
+                      <Component id="QlaiBtn" min="-2" pref="49" max="-2" attributes="0"/>
+                      <EmptySpace pref="32" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -505,17 +504,6 @@
                   </Border>
                 </Property>
               </Properties>
-            </Component>
-            <Component class="javax.swing.JButton" name="AddHDBtn">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="T&#x1ea1;o ho&#xe1; &#x111;&#x1a1;n cho kh&#xe1;ch h&#xe0;ng"/>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Times New Roman" size="16" style="1"/>
-                </Property>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AddHDBtnActionPerformed"/>
-              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="QlaiBtn">
               <Properties>

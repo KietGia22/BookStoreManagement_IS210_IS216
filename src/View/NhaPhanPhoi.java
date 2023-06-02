@@ -28,6 +28,7 @@ public class NhaPhanPhoi extends javax.swing.JFrame {
     public NhaPhanPhoi() {
         initComponents();
         GetAllNPP();
+        this.setLocationRelativeTo(null);
     }
     
     public String TenDNHome, MatKhauHome;

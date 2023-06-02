@@ -33,6 +33,7 @@ public class Sach extends javax.swing.JFrame {
      */
     public Sach() {
         initComponents();
+        this.setLocationRelativeTo(null);
         GetTCSach();
     }
     
@@ -139,8 +140,6 @@ public class Sach extends javax.swing.JFrame {
             }
         });
 
-        jTable2.setBackground(new java.awt.Color(0, 204, 204));
-        jTable2.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
@@ -149,7 +148,7 @@ public class Sach extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Mã sách", "Tên sách", "Thể loại", "Tác giả", "NXB", "Giá sách", "Số lượng trong kho"
+                "Mã sách", "Tên sách", "Thể loại", "Tác giả", "NXB", "Giá sách", "Số lượng hiện có"
             }
         ) {
             Class[] types = new Class [] {
@@ -160,6 +159,8 @@ public class Sach extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
+        jTable2.setBackground(new java.awt.Color(0, 204, 204));
+        jTable2.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jTable2.setShowGrid(true);
         jTable2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -639,7 +640,7 @@ public class Sach extends javax.swing.JFrame {
     }
     
     public void GetTCSach(){
-        String title[] = {"Mã sách", "Tên sách", "Thể loại", "Tác giả", "Nhà xuất bản", "Giá", "Số lượng hiện tại"};
+        String title[] = {"Mã sách", "Tên sách", "Thể loại", "Tác giả", "Nhà xuất bản", "Giá", "Số lượng hiện có"};
         table.setColumnIdentifiers(title);
         table.setRowCount(0);
         ArrayList<SachModel> SModel = new ArrayList<SachModel>();
@@ -647,8 +648,9 @@ public class Sach extends javax.swing.JFrame {
         Add(SModel, table);
         jTable2.setModel(table);
         jTable2.getColumnModel().getColumn(0).setPreferredWidth(20);
-        jTable2.getColumnModel().getColumn(1).setPreferredWidth(250);
+        jTable2.getColumnModel().getColumn(1).setPreferredWidth(240);
         jTable2.getColumnModel().getColumn(2).setPreferredWidth(30);
+        jTable2.getColumnModel().getColumn(4).setPreferredWidth(180);        
         jTable2.getColumnModel().getColumn(5).setPreferredWidth(15);
         jTable2.getColumnModel().getColumn(6).setPreferredWidth(20);
         jTable2.setRowHeight(30);

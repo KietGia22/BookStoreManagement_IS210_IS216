@@ -22,6 +22,7 @@ public class TheLoai extends javax.swing.JFrame {
      */
     public TheLoai() {
         initComponents();
+        this.setLocationRelativeTo(null);
         GetAllTheLoai();
     }
     
