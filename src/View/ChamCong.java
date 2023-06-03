@@ -25,7 +25,7 @@ public class ChamCong extends javax.swing.JFrame {
         this.TenDNHome = TenDN;
         this.MatKhauHome = MatKhau;
         TaiKhoanController tk = new TaiKhoanController();
-        if(tk.TraVeChucVu(TenDNHome, MatKhauHome) != 3)
+        if(tk.TraVeChucVu(TenDNHome, MatKhauHome) != 4)
             this.XemdsccBtn.setVisible(false);
     }
 

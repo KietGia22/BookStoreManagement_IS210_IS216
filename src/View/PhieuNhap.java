@@ -260,6 +260,8 @@ public class PhieuNhap extends javax.swing.JFrame {
 
     private void AddPNBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddPNBtnActionPerformed
         // TODO add your handling code here:
+        new Chon_NPP_cho_PNS(TenDNHome, MatKhauHome);
+        dispose();
     }//GEN-LAST:event_AddPNBtnActionPerformed
 
     private void QlaiBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QlaiBtnActionPerformed
@@ -303,7 +305,7 @@ public class PhieuNhap extends javax.swing.JFrame {
     
     public void Add(ArrayList<PhieuNhapSachModel> pnModel, DefaultTableModel table){
         for(PhieuNhapSachModel i : pnModel){
-            Object[] obj = {i.getMaPN(), i.getTenNV(), i.getTenNPP(), i.toString(i.getNgNhap()), i.getTongTien()};
+            Object[] obj = {i.getMaPNS(), i.getTenNV(), i.getTenNPP(), i.toString(i.getNgNhap()), i.getTongTien()};
             table.addRow(obj);
         }
     }

@@ -160,7 +160,7 @@ public class NhaPhanPhoiController {
         Connection conn = null;
         ResultSet rs = null;
         CallableStatement callsql = null;
-        int MaTK = 0;
+        int MaNPP = 0;
         try {
             try{
                 conn = ConnectDB.getJDBCConnection();
@@ -174,14 +174,41 @@ public class NhaPhanPhoiController {
             callsql.execute();
             rs = (ResultSet) callsql.getObject(2);
             if(rs.next()){
-                MaTK = rs.getInt("MANPP");
+                MaNPP = rs.getInt("MANPP");
             }
             rs.close();
             conn.close();
         } catch (SQLException e){
             e.printStackTrace();
         }
-        return MaTK;
+        return MaNPP;
     }
     
+    public String GetTenNPPTheoMa(int ma){
+        Connection conn = null;
+        ResultSet rs = null;
+        CallableStatement callsql = null;
+        String TenNPP = "";
+        try {
+            try{
+                conn = ConnectDB.getJDBCConnection();
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(TaiKhoanController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            String sql = sql = "{call GETNPPTHEOMA(?, ?)}";
+            callsql = conn.prepareCall(sql);
+            callsql.setInt(1, ma);
+            callsql.registerOutParameter(2, OracleTypes.CURSOR);
+            callsql.execute();
+            rs = (ResultSet) callsql.getObject(2);
+            if(rs.next()){
+                TenNPP = rs.getString("TENNPP");
+            }
+            rs.close();
+            conn.close();
+        } catch (SQLException e){
+            e.printStackTrace();
+        }
+        return TenNPP;
+    }
 }
