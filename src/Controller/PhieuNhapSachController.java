@@ -12,6 +12,7 @@ import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import oracle.jdbc.OracleTypes;
+import View.Them_PN;
 
 /**
  *
@@ -154,5 +155,81 @@ public class PhieuNhapSachController {
             e.printStackTrace();
         }
         return sModel;
+    }
+    
+    public int ThemPN(PhieuNhapSachModel pns){
+        Connection conn = null;
+        CallableStatement callsql = null;
+        String sql = "";
+        int check = 0;
+        try{
+            try {
+                conn = ConnectDB.getJDBCConnection();
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(HoaDonController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            sql = "{call ThemPNS(?, ?)}";
+            callsql = conn.prepareCall(sql);
+            callsql.setInt(1, pns.getMaNPP());
+            callsql.setInt(2, pns.getMaTK());
+            check = callsql.executeUpdate();
+            conn.close();
+            return check;
+        } catch (SQLException e){
+            e.printStackTrace();
+        }
+        return 0;
+    }
+    
+    public int PhieuNhapSachVuaTao(){
+        Connection conn = null;
+        CallableStatement callsql = null;
+        ResultSet rs = null;
+        String sql = "";
+        int PNSVuaTao = 0;
+        try{
+            try {
+                conn = ConnectDB.getJDBCConnection();
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(HoaDonController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            sql = "{call GETMaPNS(?)}";
+            callsql = conn.prepareCall(sql);
+            callsql.registerOutParameter(1, OracleTypes.CURSOR);
+            callsql.execute();
+            rs = (ResultSet) callsql.getObject(1);
+            if(rs.next()){
+                PNSVuaTao  = rs.getInt("MAX(MAPNS)");
+            }
+        } catch (SQLException e){
+            e.printStackTrace();
+        }
+        return PNSVuaTao ;
+    }
+    
+    public int ThemCTPNS(PhieuNhapSachModel pns){
+        Connection conn = null;
+        CallableStatement callsql = null;
+        String sql = "";
+        int check = 0;
+        try{
+            try {
+                conn = ConnectDB.getJDBCConnection();
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(HoaDonController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            sql = "{call ThemCTPNSACH(?, ?, ?, ?)}";
+            callsql = conn.prepareCall(sql);
+            callsql.setInt(1, pns.getMaPNS());
+            callsql.setInt(2, pns.getMaSach());
+            callsql.setInt(3, pns.getSoLuong());
+            callsql.setLong(4, pns.getTongTien());
+            check = callsql.executeUpdate();
+            conn.close();
+            return check;
+        } catch (SQLException e){
+            e.printStackTrace();
+        }
+        return 0;
     }
 }

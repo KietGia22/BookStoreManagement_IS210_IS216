@@ -232,4 +232,85 @@ public class SachController {
         }
         return 0;
     }
+    
+    public String LayThongTinTacGia(String ten){
+        String TG = "";
+        Connection conn = null;
+        ResultSet rs = null;
+        CallableStatement callsql = null;
+        String sql = "";
+        try{
+            try {
+                conn = ConnectDB.getJDBCConnection();
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(SachController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            sql = "{call GETSACHTHEOTEN(?, ?)}";
+            callsql = conn.prepareCall(sql);
+            callsql.setString(1, ten);
+            callsql.registerOutParameter(2, OracleTypes.CURSOR);
+            callsql.execute();
+            rs =  (ResultSet) callsql.getObject(2);
+            if(rs.next()){
+                TG = rs.getString("TENTG");
+            }
+        } catch(SQLException e){
+            e.printStackTrace();
+        }
+        return TG;
+    }
+    
+    public String LayThongTinNXB(String ten){
+        String NXB = "";
+        Connection conn = null;
+        ResultSet rs = null;
+        CallableStatement callsql = null;
+        String sql = "";
+        try{
+            try {
+                conn = ConnectDB.getJDBCConnection();
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(SachController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            sql = "{call GETSACHTHEOTEN(?, ?)}";
+            callsql = conn.prepareCall(sql);
+            callsql.setString(1, ten);
+            callsql.registerOutParameter(2, OracleTypes.CURSOR);
+            callsql.execute();
+            rs =  (ResultSet) callsql.getObject(2);
+            if(rs.next()){
+                NXB = rs.getString("NXB");
+            }
+        } catch(SQLException e){
+            e.printStackTrace();
+        }
+        return NXB;
+    }
+    
+    public int LayMaSach(String ten){
+        int MaS = 0;
+        Connection conn = null;
+        ResultSet rs = null;
+        CallableStatement callsql = null;
+        String sql = "";
+        try{
+            try {
+                conn = ConnectDB.getJDBCConnection();
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(SachController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            sql = "{call GETSACHTHEOTEN(?, ?)}";
+            callsql = conn.prepareCall(sql);
+            callsql.setString(1, ten);
+            callsql.registerOutParameter(2, OracleTypes.CURSOR);
+            callsql.execute();
+            rs =  (ResultSet) callsql.getObject(2);
+            if(rs.next()){
+                MaS = rs.getInt("MASACH");
+            }
+        } catch(SQLException e){
+            e.printStackTrace();
+        }
+        return MaS;
+    }
 }

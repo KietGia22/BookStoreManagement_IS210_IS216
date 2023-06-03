@@ -63,7 +63,9 @@ public class Them_HD extends javax.swing.JFrame {
         {
             dm.removeRow(0);
         }
-    }
+        Arrtemp.clear();
+    }   
+  
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -94,6 +96,7 @@ public class Them_HD extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         TT_txt = new javax.swing.JTextField();
         TongTien_txt = new javax.swing.JTextField();
+        ResetBtn = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -231,10 +234,21 @@ public class Them_HD extends javax.swing.JFrame {
         TT_txt.setBackground(new java.awt.Color(173, 216, 230));
         TT_txt.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         TT_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 1, new java.awt.Color(0, 0, 0)));
+        TT_txt.setFocusable(false);
 
         TongTien_txt.setBackground(new java.awt.Color(173, 216, 230));
         TongTien_txt.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         TongTien_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 1, new java.awt.Color(0, 0, 0)));
+        TongTien_txt.setFocusable(false);
+
+        ResetBtn.setBackground(new java.awt.Color(0, 204, 204));
+        ResetBtn.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        ResetBtn.setText("Làm mới");
+        ResetBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ResetBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -269,12 +283,14 @@ public class Them_HD extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(SearchBtn))
                                     .addComponent(jScrollPane1))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 555, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(ResetBtn)
+                                        .addGap(18, 18, 18)
                                         .addComponent(DelBtn)
-                                        .addGap(93, 93, 93)
+                                        .addGap(18, 18, 18)
                                         .addComponent(TaoHDBtn))))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -301,7 +317,8 @@ public class Them_HD extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(TaoHDBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(DelBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(DelBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ResetBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
@@ -310,16 +327,16 @@ public class Them_HD extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(QlaiBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(ThemBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(51, 51, 51))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(SL_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(TongTien_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(6, 6, 6)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(TongTien_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(TKD_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -477,7 +494,8 @@ public class Them_HD extends javax.swing.JFrame {
                     int MaHD = hd.HoaDonVuaTao();
                     System.out.println(MaHD);
                     Object[] tablemua;
-                    for(Object i : Arrtemp){
+                    ArrayList<Object> tempArr = new ArrayList<>(Arrtemp);
+                    for(Object i : tempArr){
                         tablemua = (Object[]) i;
                         int MaS = Integer.parseInt(tablemua[0].toString());
                         int SL = Integer.parseInt(tablemua[2].toString());
@@ -486,12 +504,10 @@ public class Them_HD extends javax.swing.JFrame {
                             JOptionPane.showMessageDialog(this, "Tạo hoá đơn thành công");
                             GetTCSach();
                             TinhTien();
-                            SL_txt.setText("");
                             Reset();
                         } else {
                             JOptionPane.showMessageDialog(this, "Tạo hoá đơn thất bại", "Error", JOptionPane.ERROR_MESSAGE);
                             GetTCSach();
-                            SL_txt.setText("");
                         }
                     }
                 }  
@@ -504,8 +520,8 @@ public class Them_HD extends javax.swing.JFrame {
         long TongTienChuaHoanChinh = TongTien;
         int selectedRow = jTable2.getSelectedRow();
         DefaultTableModel temp = (DefaultTableModel) jTable2.getModel();
-        int MaS = Integer.parseInt(temp.getValueAt(selectedRow, 0).toString());
         if(selectedRow != -1){
+           int MaS = Integer.parseInt(temp.getValueAt(selectedRow, 0).toString());
            Object[] check;
             Iterator<Object> iterator = Arrtemp.iterator();
             while (iterator.hasNext()) {
@@ -522,6 +538,16 @@ public class Them_HD extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Bạn chưa chọn hàng để xoá");
         }
     }//GEN-LAST:event_DelBtnActionPerformed
+
+    private void ResetBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResetBtnActionPerformed
+        // TODO add your handling code here:
+        TKD_txt.setText("");
+        TongTien_txt.setText("");
+        TongTien=0;
+        SL_txt.setText("");
+        TT_txt.setText("");
+        Reset();
+    }//GEN-LAST:event_ResetBtnActionPerformed
 
     public void Add(ArrayList<SachModel> SModel, DefaultTableModel table){
         for(SachModel i : SModel){
@@ -588,6 +614,7 @@ public class Them_HD extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton DelBtn;
     private javax.swing.JButton QlaiBtn;
+    private javax.swing.JButton ResetBtn;
     private javax.swing.JTextField SL_txt;
     private javax.swing.JButton SearchBtn;
     private javax.swing.JTextField Search_txt;

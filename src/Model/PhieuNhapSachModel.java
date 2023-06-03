@@ -12,7 +12,7 @@ import java.time.format.DateTimeFormatter;
  * @author GIA KIET
  */
 public class PhieuNhapSachModel {
-    protected int MaPN, MaTK, MaSach, MaNPP, SoLuong;
+    protected int MaPNS, MaTK, MaSach, MaNPP, SoLuong;
     protected long TongTien, GiaNhap;
     protected LocalDate NgNhap;
     DateTimeFormatter dtformat = DateTimeFormatter.ofPattern("dd-MM-yyyy");
@@ -21,8 +21,8 @@ public class PhieuNhapSachModel {
     public PhieuNhapSachModel() {
     }
 
-    public PhieuNhapSachModel(int MaPN, int MaTK, int MaSach, int MaNPP, int SoLuong, long TongTien, long GiaNhap, LocalDate NgNhap) {
-        this.MaPN = MaPN;
+    public PhieuNhapSachModel(int MaPNS, int MaTK, int MaSach, int MaNPP, int SoLuong, long TongTien, long GiaNhap, LocalDate NgNhap) {
+        this.MaPNS = MaPNS;
         this.MaTK = MaTK;
         this.MaSach = MaSach;
         this.MaNPP = MaNPP;
@@ -32,22 +32,34 @@ public class PhieuNhapSachModel {
         this.NgNhap = NgNhap;
     }
 
-    public PhieuNhapSachModel(int MaPN, long TongTien, LocalDate NgNhap, String TenNPP, String TenNV) {
-        this.MaPN = MaPN;
+    public PhieuNhapSachModel(int MaPNS, long TongTien, LocalDate NgNhap, String TenNPP, String TenNV) {
+        this.MaPNS = MaPNS;
         this.TongTien = TongTien;
         this.NgNhap = NgNhap;
         this.TenNPP = TenNPP;
         this.TenNV = TenNV;
     }
-    
-    
-    
-    public int getMaPN() {
-        return MaPN;
+
+    public PhieuNhapSachModel(int MaTK, int MaNPP, long TongTien, LocalDate NgNhap) {
+        this.MaTK = MaTK;
+        this.MaNPP = MaNPP;
+        this.TongTien = TongTien;
+        this.NgNhap = NgNhap;
     }
 
-    public void setMaPN(int MaPN) {
-        this.MaPN = MaPN;
+    public PhieuNhapSachModel(int MaPNS, int MaSach, int SoLuong, long TongTien) {
+        this.MaPNS = MaPNS;
+        this.MaSach = MaSach;
+        this.SoLuong = SoLuong;
+        this.TongTien = TongTien;
+    }
+  
+    public int getMaPNS() {
+        return MaPNS;
+    }
+
+    public void setMaPNS(int MaPNSS) {
+        this.MaPNS = MaPNS;
     }
 
     public int getMaTK() {
