@@ -23,10 +23,11 @@ import javax.swing.JOptionPane;
 public class Them_TK extends javax.swing.JFrame {
 
     /**
-     * Creates new form Them_Tk
+     * Creates new form Them_TK
      */
     public Them_TK() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
     public String TenDNHome, MatKhauHome;
     

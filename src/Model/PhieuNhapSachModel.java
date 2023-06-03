@@ -12,31 +12,31 @@ import java.time.format.DateTimeFormatter;
  * @author GIA KIET
  */
 public class PhieuNhapSachModel {
-    protected int MaPN, MaTK, MaSach, MaNCC, SoLuong;
+    protected int MaPN, MaTK, MaSach, MaNPP, SoLuong;
     protected long TongTien, GiaNhap;
     protected LocalDate NgNhap;
     DateTimeFormatter dtformat = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-    protected String TenNCC, TenNV;
+    protected String TenNPP, TenNV;
 
     public PhieuNhapSachModel() {
     }
 
-    public PhieuNhapSachModel(int MaPN, int MaTK, int MaSach, int MaNCC, int SoLuong, long TongTien, long GiaNhap, LocalDate NgNhap) {
+    public PhieuNhapSachModel(int MaPN, int MaTK, int MaSach, int MaNPP, int SoLuong, long TongTien, long GiaNhap, LocalDate NgNhap) {
         this.MaPN = MaPN;
         this.MaTK = MaTK;
         this.MaSach = MaSach;
-        this.MaNCC = MaNCC;
+        this.MaNPP = MaNPP;
         this.SoLuong = SoLuong;
         this.TongTien = TongTien;
         this.GiaNhap = GiaNhap;
         this.NgNhap = NgNhap;
     }
 
-    public PhieuNhapSachModel(int MaPN, long TongTien, LocalDate NgNhap, String TenNCC, String TenNV) {
+    public PhieuNhapSachModel(int MaPN, long TongTien, LocalDate NgNhap, String TenNPP, String TenNV) {
         this.MaPN = MaPN;
         this.TongTien = TongTien;
         this.NgNhap = NgNhap;
-        this.TenNCC = TenNCC;
+        this.TenNPP = TenNPP;
         this.TenNV = TenNV;
     }
     
@@ -66,12 +66,12 @@ public class PhieuNhapSachModel {
         this.MaSach = MaSach;
     }
 
-    public int getMaNCC() {
-        return MaNCC;
+    public int getMaNPP() {
+        return MaNPP;
     }
 
-    public void setMaNCC(int MaNCC) {
-        this.MaNCC = MaNCC;
+    public void setMaNPP(int MaNPP) {
+        this.MaNPP = MaNPP;
     }
 
     public int getSoLuong() {
@@ -110,12 +110,12 @@ public class PhieuNhapSachModel {
         return dtformat.format(dateformat);
     }
 
-    public String getTenNCC() {
-        return TenNCC;
+    public String getTenNPP() {
+        return TenNPP;
     }
 
-    public void setTenNCC(String TenNCC) {
-        this.TenNCC = TenNCC;
+    public void setTenNPP(String TenNPP) {
+        this.TenNPP = TenNPP;
     }
 
     public String getTenNV() {

@@ -17,12 +17,14 @@ public class Home extends javax.swing.JFrame {
      */
     public Home() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
     
     public String TenDNHome, MatKhauHome;
     
     public Home(String TenDN, String MatKhau){
         initComponents();
+        this.setLocationRelativeTo(null);
         this.setVisible(true);
         this.TenDNHome = TenDN;
         this.MatKhauHome = MatKhau;

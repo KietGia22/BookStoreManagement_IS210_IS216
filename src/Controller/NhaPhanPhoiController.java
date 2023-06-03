@@ -155,4 +155,33 @@ public class NhaPhanPhoiController {
         }
         return 0;
     }
+    
+    public int GetNPPTheoTen(String ten){
+        Connection conn = null;
+        ResultSet rs = null;
+        CallableStatement callsql = null;
+        int MaTK = 0;
+        try {
+            try{
+                conn = ConnectDB.getJDBCConnection();
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(TaiKhoanController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            String sql = sql = "{call GETNPPTHEOTEN(?, ?)}";
+            callsql = conn.prepareCall(sql);
+            callsql.setString(1, ten);
+            callsql.registerOutParameter(2, OracleTypes.CURSOR);
+            callsql.execute();
+            rs = (ResultSet) callsql.getObject(2);
+            if(rs.next()){
+                MaTK = rs.getInt("MANPP");
+            }
+            rs.close();
+            conn.close();
+        } catch (SQLException e){
+            e.printStackTrace();
+        }
+        return MaTK;
+    }
+    
 }

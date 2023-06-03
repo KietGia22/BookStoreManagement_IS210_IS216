@@ -26,23 +26,27 @@ public class Them_HD extends javax.swing.JFrame {
     public Them_HD() {
         initComponents();
         this.setVisible(true);
+        this.setLocationRelativeTo(null);
         GetTCSach();
     }
     
     
     String TenDNHome, MatKhauHome;
     int LoaiKH;
-    DefaultTableModel table = new DefaultTableModel();
-    SachController s = new SachController();
-    TaiKhoanController tk = new TaiKhoanController();
-    HoaDonController hd = new HoaDonController();
-    String IDSach, TenSach, SLSachHienCo, GiaTienSach;
-    ArrayList<Object> Arrtemp = new ArrayList<Object>();
+    public DefaultTableModel table = new DefaultTableModel();
+    public SachController s = new SachController();
+    public TaiKhoanController tk = new TaiKhoanController();
+    public HoaDonController hd = new HoaDonController();
+    public String IDSach, TenSach;
+    public int SLSachHienCo;
+    public long GiaTienSach;
+    public ArrayList<Object> Arrtemp = new ArrayList<Object>();
     long TongTien = 0, TienKhachDua = 0, TienThoi = 0;
     
     public Them_HD(String TenDN, String MatKhau, int LoaiKH){
         initComponents();
         this.setVisible(true);
+        this.setLocationRelativeTo(null);
         this.TenDNHome = TenDN;
         this.MatKhauHome = MatKhau;
         this.LoaiKH = LoaiKH;
@@ -51,6 +55,14 @@ public class Them_HD extends javax.swing.JFrame {
     
     public boolean CheckNumberOrNot(String regax){
         return regax.matches("-?\\d+(\\.\\d+)?");
+    }
+    
+    public void Reset(){
+        DefaultTableModel dm = (DefaultTableModel)jTable2.getModel();
+        while(dm.getRowCount() > 0)
+        {
+            dm.removeRow(0);
+        }
     }
 
     /**
@@ -377,15 +389,14 @@ public class Them_HD extends javax.swing.JFrame {
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
         // TODO add your handling code here:
         try {
-            // TODO add your handling code here:
             int selectedRow = jTable1.getSelectedRow();
             DefaultTableModel temp = (DefaultTableModel) jTable1.getModel();
             IDSach = temp.getValueAt(selectedRow, 0).toString();
             TenSach = temp.getValueAt(selectedRow, 1).toString();
-            SLSachHienCo = temp.getValueAt(selectedRow, 2).toString();
-            GiaTienSach = temp.getValueAt(selectedRow, 3).toString();           
+            SLSachHienCo = Integer.parseInt(temp.getValueAt(selectedRow, 2).toString()) ;
+            GiaTienSach = Long.parseLong(temp.getValueAt(selectedRow, 3).toString());  
+            System.out.println(IDSach);
         } catch (Exception ex) {
-            //Logger.getLogger(TaiKhoan.class.getName()).log(Level.SEVERE, null, ex);
             ex.printStackTrace();
         }
     }//GEN-LAST:event_jTable1MouseClicked
@@ -399,7 +410,9 @@ public class Them_HD extends javax.swing.JFrame {
         } else if(CheckNumberOrNot(SL_txt.getText()) == false || Integer.parseInt(SL_txt.getText()) <= 0) {
             JOptionPane.showMessageDialog(this, "Số lượng phải là số và có giá trị lớn hơn 0");
             return;
-        } else if(Integer.parseInt(SL_txt.getText()) > Integer.parseInt(SLSachHienCo)){
+        } else if(Integer.parseInt(SL_txt.getText()) 
+                > 
+                SLSachHienCo){
             JOptionPane.showMessageDialog(this, "Số lượng sách hiện có không đủ để đáp ứng nhu cầu mua của bạn, vui lòng nhập lại");
             return;
         }
@@ -407,7 +420,7 @@ public class Them_HD extends javax.swing.JFrame {
         DefaultTableModel tableMua = new DefaultTableModel();
         tableMua.setColumnIdentifiers(title);
         tableMua.setRowCount(0);
-        String GiaMua = Integer.toString(Integer.parseInt(GiaTienSach) * Integer.parseInt(SL_txt.getText()));
+        String GiaMua = Long.toString(GiaTienSach * Integer.parseInt(SL_txt.getText()));
         
         int opt = JOptionPane.showConfirmDialog(this, "Bạn có muốn thêm vào hoá đơn", "Thêm vào hoá đơn", JOptionPane.YES_NO_OPTION);
         if(opt == JOptionPane.YES_OPTION){
@@ -425,7 +438,7 @@ public class Them_HD extends javax.swing.JFrame {
             for(Object i : Arrtemp){
                 tablemua = (Object[])i;
                 tableMua.addRow(tablemua);
-                TongTienChuaHoanChinh += Integer.parseInt(tablemua[3].toString());
+                TongTienChuaHoanChinh += Long.parseLong(tablemua[3].toString());
             }    
             TongTien = TongTienChuaHoanChinh;
             SL_txt.setText("");
@@ -448,33 +461,41 @@ public class Them_HD extends javax.swing.JFrame {
         // TODO add your handling code here:
         int opt = JOptionPane.showConfirmDialog(this, "Bạn muốn tạo hoá đơn", "Tạo hoá đơn", JOptionPane.YES_NO_OPTION);
         if(opt == JOptionPane.YES_OPTION){
-            int MaTK = tk.GetMaTK(TenDNHome, MatKhauHome);
-            HoaDonModel hdModel;
-            if(LoaiKH == 0){
-                hdModel = new HoaDonModel(0, MaTK, 0, null);
+            if(TKD_txt.getText().isEmpty())
+            {
+                JOptionPane.showMessageDialog(this, "Bạn chưa nhập tiền khách đưa");
+                return;
             } else {
-                hdModel = new HoaDonModel(LoaiKH, MaTK, 0, null);
-            }
-            if(hd.ThemHD(hdModel) != 0){
-                int MaHD = hd.HoaDonVuaTao();
-                System.out.println(MaHD);
-                Object[] tablemua;
-                for(Object i : Arrtemp){
-                    tablemua = (Object[]) i;
-                    int MaS = Integer.parseInt(tablemua[0].toString());
-                    int SL = Integer.parseInt(tablemua[2].toString());
-                    HoaDonModel chitiet = new HoaDonModel(MaHD, MaS, SL);
-                    if(hd.ThemCTHD(chitiet) != 0){
-                        JOptionPane.showMessageDialog(this, "Tạo hoá đơn thành công");
-                        GetTCSach();
-                        SL_txt.setText("");
-                    } else {
-                        JOptionPane.showMessageDialog(this, "Tạo hoá đơn thất bại", "Error", JOptionPane.ERROR_MESSAGE);
-                        GetTCSach();
-                        SL_txt.setText("");
-                    }
+                int MaTK = tk.GetMaTK(TenDNHome, MatKhauHome);
+                HoaDonModel hdModel;
+                if(LoaiKH == 0){
+                    hdModel = new HoaDonModel(0, MaTK, 0, null);
+                } else {
+                    hdModel = new HoaDonModel(LoaiKH, MaTK, 0, null);
                 }
-            }  
+                    if(hd.ThemHD(hdModel) != 0){
+                    int MaHD = hd.HoaDonVuaTao();
+                    System.out.println(MaHD);
+                    Object[] tablemua;
+                    for(Object i : Arrtemp){
+                        tablemua = (Object[]) i;
+                        int MaS = Integer.parseInt(tablemua[0].toString());
+                        int SL = Integer.parseInt(tablemua[2].toString());
+                        HoaDonModel chitiet = new HoaDonModel(MaHD, MaS, SL);
+                        if(hd.ThemCTHD(chitiet) != 0){
+                            JOptionPane.showMessageDialog(this, "Tạo hoá đơn thành công");
+                            GetTCSach();
+                            TinhTien();
+                            SL_txt.setText("");
+                            Reset();
+                        } else {
+                            JOptionPane.showMessageDialog(this, "Tạo hoá đơn thất bại", "Error", JOptionPane.ERROR_MESSAGE);
+                            GetTCSach();
+                            SL_txt.setText("");
+                        }
+                    }
+                }  
+            }
         }
     }//GEN-LAST:event_TaoHDBtnActionPerformed
 
