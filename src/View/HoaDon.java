@@ -288,21 +288,29 @@ public class HoaDon extends javax.swing.JFrame {
 
     private void XemDSHSBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_XemDSHSBtnActionPerformed
         // TODO add your handling code here:
-        new CTHD(this.TenDNHome, this.MatKhauHome, this.ID, this.TenKH, this.TenNV, this.NgayTaoHD, this.TriGia);
-        dispose();
+        if(ID == 0)
+            JOptionPane.showMessageDialog(this, "Bạn chưa chọn Hoá đơn để xem chi tiết");
+        else {
+            new CTHD(this.TenDNHome, this.MatKhauHome, this.ID, this.TenKH, this.TenNV, this.NgayTaoHD, this.TriGia);
+            dispose();
+        }
         
     }//GEN-LAST:event_XemDSHSBtnActionPerformed
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
         // TODO add your handling code here:
-        int selectedRow = jTable1.getSelectedRow();
-        DefaultTableModel temp = (DefaultTableModel) jTable1.getModel();
-        ID = Integer.parseInt(temp.getValueAt(selectedRow,0).toString());
-        TenKH = temp.getValueAt(selectedRow, 1).toString();
-        TenNV = temp.getValueAt(selectedRow, 2).toString();
-        NgayTaoHD = temp.getValueAt(selectedRow, 3).toString();
-        TriGia = temp.getValueAt(selectedRow, 4).toString();
-        System.out.println(ID + " " + TenKH + " " + TenNV + " " + NgayTaoHD + " " + TriGia);
+        try {
+            int selectedRow = jTable1.getSelectedRow();
+            DefaultTableModel temp = (DefaultTableModel) jTable1.getModel();
+            ID = Integer.parseInt(temp.getValueAt(selectedRow,0).toString());
+            TenKH = temp.getValueAt(selectedRow, 1).toString();
+            TenNV = temp.getValueAt(selectedRow, 2).toString();
+            NgayTaoHD = temp.getValueAt(selectedRow, 3).toString();
+            TriGia = temp.getValueAt(selectedRow, 4).toString();
+            System.out.println(ID + " " + TenKH + " " + TenNV + " " + NgayTaoHD + " " + TriGia);
+        } catch (Exception e){
+            e.printStackTrace();
+        }
     }//GEN-LAST:event_jTable1MouseClicked
 
     private void DelHDBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DelHDBtnActionPerformed

@@ -272,8 +272,8 @@ public class CTHD extends javax.swing.JFrame {
 
     private void QlaiBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QlaiBtnActionPerformed
         // TODO add your handling code here:
-        dispose();
         new HoaDon(TenDNHome, MatKhauHome);
+        dispose();
     }//GEN-LAST:event_QlaiBtnActionPerformed
 
     
@@ -283,7 +283,7 @@ public class CTHD extends javax.swing.JFrame {
         this.TenKH_txt.setText(this.TenKH);
         this.TenNV_txt.setText(this.TenNV);
         this.Gia_txt.setText(this.TriGia);
-        String[] title = {"Mã sách", "Tên sách", "Thể loại", "Số lượng", "Tổng giá sách"};
+        String[] title = {"Mã sách", "Tên sách", "Thể loại", "Số lượng", "Đơn giá sách"};
         table.setColumnIdentifiers(title);
         table.setRowCount(0);
         ArrayList<SachModel> smodel = new ArrayList<SachModel>();

@@ -565,7 +565,7 @@ public class KhachHang extends javax.swing.JFrame {
 
     public void Add(ArrayList<KhachHangModel> arrkhmodel, DefaultTableModel table){
         for(KhachHangModel i : arrkhmodel){
-            Object[] obj = {i.getMaKH(), i.getHoTen(), i.toString(i.getNgSinh()), i.getDiaChi(), i.getSDT(), i.getCCCD(), i.getNgTao(), i.getGioiTinh()};
+            Object[] obj = {i.getMaKH(), i.getHoTen(), i.toString(i.getNgSinh()), i.getDiaChi(), i.getSDT(), i.getCCCD(), i.toString(i.getNgTao()), i.getGioiTinh()};
             table.addRow(obj);
         }
     }
