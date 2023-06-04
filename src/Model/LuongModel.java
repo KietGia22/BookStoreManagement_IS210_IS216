@@ -39,6 +39,15 @@ public class LuongModel {
         this.SoGioLamViec = SoGioLamViec;
         this.TenNV = TenNV;
     }
+
+    public LuongModel(int Thang, int Nam, int MaTK, long Luong, double TongSoGioLamViec, String TenNV) {
+        this.Thang = Thang;
+        this.Nam = Nam;
+        this.MaTK = MaTK;
+        this.Luong = Luong;
+        this.TongSoGioLamViec = TongSoGioLamViec;
+        this.TenNV = TenNV;
+    }
     
     
 
@@ -112,8 +121,5 @@ public class LuongModel {
 
     public void setTenNV(String TenNV) {
         this.TenNV = TenNV;
-    }
-    
-    
-    
+    }    
 }

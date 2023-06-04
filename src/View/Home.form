@@ -345,6 +345,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="L&#x1b0;&#x1a1;ng"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LuongBtnActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

@@ -4,7 +4,10 @@
  */
 package View;
 
+import Controller.LuongController;
 import Controller.TaiKhoanController;
+import Model.LuongModel;
+import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -18,13 +21,16 @@ public class Luong extends javax.swing.JFrame {
      */
     public Luong() {
         initComponents();
+        this.setVisible(true);
+        this.setLocationRelativeTo(null);
+        getDSLuong();
     }
     
     public String TenDNHome, MatKhauHome;
     public TaiKhoanController tk = new TaiKhoanController();
-    public int ChucVu = tk.TraVeChucVu(TenDNHome, MatKhauHome);
+    public LuongController luong = new LuongController();
+    public int chucvu = tk.TraVeChucVu(TenDNHome, MatKhauHome);
     DefaultTableModel table = new DefaultTableModel();
-    public int ID;
     
     public Luong(String TenDN, String MatKhau){
         initComponents();
@@ -32,6 +38,7 @@ public class Luong extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         this.TenDNHome = TenDN;
         this.MatKhauHome = MatKhau;
+        getDSLuong();
     }
     
     public boolean CheckNumberOrNot(String regax){
@@ -52,6 +59,7 @@ public class Luong extends javax.swing.JFrame {
         QlaiBtn = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        ResetBtn = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -95,27 +103,38 @@ public class Luong extends javax.swing.JFrame {
         jTable1.setShowGrid(true);
         jScrollPane1.setViewportView(jTable1);
 
+        ResetBtn.setBackground(new java.awt.Color(0, 204, 204));
+        ResetBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        ResetBtn.setText("Làm mới");
+        ResetBtn.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 0, 51), 2, true));
+        ResetBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ResetBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(QlaiBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(65, 65, 65)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 770, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(114, Short.MAX_VALUE))
+                .addGap(70, 70, 70)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(ResetBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(QlaiBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 770, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(70, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(35, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 352, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(10, Short.MAX_VALUE)
+                .addComponent(ResetBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(46, 46, 46)
                 .addComponent(QlaiBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21))
+                .addGap(17, 17, 17))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -126,9 +145,9 @@ public class Luong extends javax.swing.JFrame {
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         jPanel3.setBackground(new java.awt.Color(0, 100, 100));
@@ -178,6 +197,29 @@ public class Luong extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_QlaiBtnActionPerformed
 
+    public void Add(ArrayList<LuongModel> luongModel, DefaultTableModel table){
+        for(LuongModel i : luongModel){
+            Object[] obj = {i.getMaTK(), i.getTenNV(), i.getThang(), i.getNam(),i.getTongSoGioLamViec(), i.getLuong()};
+            table.addRow(obj);
+        }
+    }
+    
+    private void ResetBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResetBtnActionPerformed
+        // TODO add your handling code here:
+        getDSLuong();
+    }//GEN-LAST:event_ResetBtnActionPerformed
+
+    public void getDSLuong(){
+        String[] title = {"Mã TK", "Tên nhân viên" ,"Tháng", "Năm", "Tổng số giờ làm", "Tổng lương"};
+        table.setColumnIdentifiers(title);
+        table.setRowCount(0);
+        ArrayList<LuongModel> luongModel = new ArrayList<LuongModel>();
+        luongModel = luong.getDSLuong();
+        Add(luongModel, table);
+        jTable1.setModel(table);
+        jTable1.setRowHeight(30);
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -215,6 +257,7 @@ public class Luong extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton QlaiBtn;
+    private javax.swing.JButton ResetBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

@@ -67,7 +67,6 @@ public class LuongController {
     
     public ArrayList<LuongModel> getDSChamCong(){
         ArrayList<LuongModel> luongModel = new ArrayList<LuongModel>();
-        HoaDonController hd = new HoaDonController();
         Connection conn = null;
         ResultSet rs = null;
         CallableStatement callsql = null;
@@ -87,6 +86,40 @@ public class LuongController {
                 LuongModel lmodel = new LuongModel (rs.getInt("MATK"),
                                                     rs.getDouble("SOGIOLAM"),
                                                      rs.getString("HOTEN"));
+                luongModel.add(lmodel);
+            }
+            rs.close();
+            conn.close();
+        } catch(SQLException e){
+            e.printStackTrace();
+        }
+        return luongModel;
+    }
+    
+    public ArrayList<LuongModel> getDSLuong(){
+        ArrayList<LuongModel> luongModel = new ArrayList<LuongModel>();
+        Connection conn = null;
+        ResultSet rs = null;
+        CallableStatement callsql = null;
+        String sql = "";
+        try {
+            try {
+                conn = ConnectDB.getJDBCConnection();
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(KhachHangController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            sql = "{call GETTCLUONG(?)}";
+            callsql = conn.prepareCall(sql);
+            callsql.registerOutParameter(1, OracleTypes.CURSOR);
+            callsql.execute();
+            rs =  (ResultSet) callsql.getObject(1);
+            while(rs.next()){
+                LuongModel lmodel = new LuongModel (rs.getInt("THANG"),
+                                                    rs.getInt("NAM"),
+                                                     rs.getInt("MATK"),
+                                                     rs.getLong("LUONG"),
+                                                      rs.getDouble("SOGIOLAM"),
+                                                      rs.getString("HOTEN"));
                 luongModel.add(lmodel);
             }
             rs.close();

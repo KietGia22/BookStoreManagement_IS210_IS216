@@ -166,6 +166,11 @@ public class Home extends javax.swing.JFrame {
         LuongBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         LuongBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/icon_img/icons8-report-file-48.png"))); // NOI18N
         LuongBtn.setText("Lương");
+        LuongBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LuongBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -341,6 +346,12 @@ public class Home extends javax.swing.JFrame {
         new ChamCong(TenDNHome, MatKhauHome);
         this.dispose();
     }//GEN-LAST:event_ChamCongBtnActionPerformed
+
+    private void LuongBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LuongBtnActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        new Luong(TenDNHome, MatKhauHome);
+    }//GEN-LAST:event_LuongBtnActionPerformed
 
     /**
      * @param args the command line arguments
