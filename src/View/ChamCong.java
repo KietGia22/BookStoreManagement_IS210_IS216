@@ -3,7 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package View;
+import Controller.LuongController;
 import Controller.TaiKhoanController;
+import javax.swing.JOptionPane;
 /**
  *
  * @author GIA KIET
@@ -18,13 +20,15 @@ public class ChamCong extends javax.swing.JFrame {
     }
     
     public String TenDNHome, MatKhauHome;
+    public TaiKhoanController tk = new TaiKhoanController();
+    public LuongController luong = new LuongController();
+    
     public ChamCong(String TenDN, String MatKhau){
         initComponents();
         this.setVisible(true);
         this.setLocationRelativeTo(null);
         this.TenDNHome = TenDN;
         this.MatKhauHome = MatKhau;
-        TaiKhoanController tk = new TaiKhoanController();
         if(tk.TraVeChucVu(TenDNHome, MatKhauHome) != 4)
             this.XemdsccBtn.setVisible(false);
     }
@@ -80,10 +84,20 @@ public class ChamCong extends javax.swing.JFrame {
         BatDauBtn.setBackground(new java.awt.Color(173, 216, 230));
         BatDauBtn.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         BatDauBtn.setText("Bắt đầu làm việc");
+        BatDauBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BatDauBtnActionPerformed(evt);
+            }
+        });
 
         KetThucBtn.setBackground(new java.awt.Color(173, 216, 230));
         KetThucBtn.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         KetThucBtn.setText("Kết thúc ca làm");
+        KetThucBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                KetThucBtnActionPerformed(evt);
+            }
+        });
 
         XemdsccBtn.setBackground(new java.awt.Color(173, 216, 230));
         XemdsccBtn.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
@@ -112,7 +126,7 @@ public class ChamCong extends javax.swing.JFrame {
                 .addComponent(BatDauBtn)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(KetThucBtn)
-                .addGap(17, 17, 17))
+                .addGap(16, 16, 16))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(36, 36, 36)
                 .addComponent(XemdsccBtn)
@@ -167,13 +181,44 @@ public class ChamCong extends javax.swing.JFrame {
 
     private void XemdsccBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_XemdsccBtnActionPerformed
         // TODO add your handling code here:
+        dispose();
+        new DSChamCong(TenDNHome, MatKhauHome);
     }//GEN-LAST:event_XemdsccBtnActionPerformed
 
     private void QlaiBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QlaiBtnActionPerformed
         // TODO add your handling code here:
+        dispose();
         new Home(TenDNHome, MatKhauHome);
-        this.dispose();
+        
     }//GEN-LAST:event_QlaiBtnActionPerformed
+
+    private void BatDauBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BatDauBtnActionPerformed
+        // TODO add your handling code here:
+        int MaTK = tk.GetMaTK(TenDNHome, MatKhauHome);
+        System.out.println(MaTK);
+        try {
+            if(luong.BatDauChamCong(MaTK) != 0)
+                JOptionPane.showMessageDialog(this, "Bắt đầu chấm công");
+            BatDauBtn.setEnabled(false);
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this, "Chấm công thất bại", "Bắt đầu chấm công", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_BatDauBtnActionPerformed
+
+    private void KetThucBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_KetThucBtnActionPerformed
+        // TODO add your handling code here:
+        int MaTK = tk.GetMaTK(TenDNHome, MatKhauHome);
+        System.out.println(MaTK);
+        try {
+            if(luong.KetThucChamCong(MaTK) != 0)
+                JOptionPane.showMessageDialog(this, "kết thúc chấm công");
+            KetThucBtn.setEnabled(false);
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this, "Chấm công thất bại", "Bắt đầu chấm công", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_KetThucBtnActionPerformed
 
     /**
      * @param args the command line arguments
