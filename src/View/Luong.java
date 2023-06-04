@@ -4,6 +4,9 @@
  */
 package View;
 
+import Controller.TaiKhoanController;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author GIA KIET
@@ -13,12 +16,15 @@ public class Luong extends javax.swing.JFrame {
     /**
      * Creates new form Luong
      */
-    
-    public String TenDNHome, MatKhauHome;
-    
     public Luong() {
         initComponents();
     }
+    
+    public String TenDNHome, MatKhauHome;
+    public TaiKhoanController tk = new TaiKhoanController();
+    public int ChucVu = tk.TraVeChucVu(TenDNHome, MatKhauHome);
+    DefaultTableModel table = new DefaultTableModel();
+    public int ID;
     
     public Luong(String TenDN, String MatKhau){
         initComponents();
@@ -27,7 +33,11 @@ public class Luong extends javax.swing.JFrame {
         this.TenDNHome = TenDN;
         this.MatKhauHome = MatKhau;
     }
-
+    
+    public boolean CheckNumberOrNot(String regax){
+        return regax.matches("-?\\d+(\\.\\d+)?");
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
