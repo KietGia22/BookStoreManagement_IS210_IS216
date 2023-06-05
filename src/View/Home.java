@@ -5,6 +5,7 @@
 package View;
 
 import Controller.TaiKhoanController;
+import Controller.BaoCaoController;
 
 /**
  *
@@ -28,6 +29,9 @@ public class Home extends javax.swing.JFrame {
         this.setVisible(true);
         this.TenDNHome = TenDN;
         this.MatKhauHome = MatKhau;
+        BaoCaoController bc = new BaoCaoController();
+        bc.CreateBaoCaoTon();
+        bc.CreateBaoCaoDT();
     }
 
     /**
@@ -125,6 +129,11 @@ public class Home extends javax.swing.JFrame {
         BaoCaoBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         BaoCaoBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/icon_img/icons8-report-file-48.png"))); // NOI18N
         BaoCaoBtn.setText("Báo cáo");
+        BaoCaoBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BaoCaoBtnActionPerformed(evt);
+            }
+        });
 
         PhieuNhapBtn.setBackground(new java.awt.Color(237, 242, 251));
         PhieuNhapBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -352,6 +361,12 @@ public class Home extends javax.swing.JFrame {
         dispose();
         new Luong(TenDNHome, MatKhauHome);
     }//GEN-LAST:event_LuongBtnActionPerformed
+
+    private void BaoCaoBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BaoCaoBtnActionPerformed
+        // TODO add your handling code here:
+        new SaleReport();
+        this.dispose();
+    }//GEN-LAST:event_BaoCaoBtnActionPerformed
 
     /**
      * @param args the command line arguments

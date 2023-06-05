@@ -47,7 +47,7 @@ CHECK ((LENGTH(SDT)) = 10 AND (SDT LIKE '0%'));
 /
 ALTER TABLE TAIKHOAN 
 ADD CONSTRAINT CHECK_CV
-CHECK (CHUCVU IN ('Qu?n lý', 'Nhân viên', 'Nhân viên kho', 'K? toán'));
+CHECK (CHUCVU IN ('Quáº£n lÃ½', 'NhÃ¢n viÃªn', 'NhÃ¢n viÃªn kho', 'Káº¿ toÃ¡n'));
 /
 ----PROCEDURE
 
