@@ -176,6 +176,8 @@ public class SaleReport extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Báo cáo tồn kho", tabChart);
 
+        tableReportDT.setBackground(new java.awt.Color(0, 204, 204));
+        tableReportDT.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         tableReportDT.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
