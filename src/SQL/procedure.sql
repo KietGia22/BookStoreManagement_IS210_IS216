@@ -212,7 +212,7 @@ END;
 
 
 
-
+/
 -----------------GET DU LIEU ------------------------
 --TAIKHOAN
 CREATE OR REPLACE PROCEDURE GETTCTK(out_cur OUT SYS_REFCURSOR)
