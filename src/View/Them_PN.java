@@ -134,17 +134,17 @@ public class Them_PN extends javax.swing.JFrame {
         jTable2.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Tên sách", "Thể loại", "Tác giả", "Nhà sản xuất", "Nhà phân phối", "Số lượng nhập", "Giá nhập"
+                "Tên sách", "Thể loại", "Tác giả", "Nhà sản xuất", "Nhà phân phối", "Số lượng nhập", "Đơn giá nhập", "Giá nhập"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Double.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Long.class, java.lang.Long.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -414,9 +414,10 @@ public class Them_PN extends javax.swing.JFrame {
             for(Object i : Arrtemp){
                 tablenhap = (Object[])i;
                 tablePNS.addRow(tablenhap);
-                TongTienChuaHoanChinh += Long.parseLong(tablenhap[6].toString());
+                TongTienChuaHoanChinh += Long.parseLong(tablenhap[7].toString());
             }    
             TongTien = TongTienChuaHoanChinh;
+            System.out.println(TongTien);
             SL_txt1.setText("");
             GN_txt.setText("");
             TTN_txt.setText(Long.toString(TongTien));
@@ -448,15 +449,15 @@ public class Them_PN extends javax.swing.JFrame {
                         int SL = Integer.parseInt(tablenhap[5].toString());
                         long GiaTienNhap = Long.parseLong(tablenhap[6].toString());
                         PhieuNhapSachModel chitiet = new PhieuNhapSachModel (MaPNS, MaS, SL, GiaTienNhap);
-                        if(pns.ThemCTPNS(chitiet) != 0){
-                            JOptionPane.showMessageDialog(this, "Tạo phiếu nhập sách thành công");
-                            GetTCSach();
-                            Reset();
-                        } else {
+                        if(pns.ThemCTPNS(chitiet) == 0){
                             JOptionPane.showMessageDialog(this, "Tạo phiếu nhập thất bại", "Error", JOptionPane.ERROR_MESSAGE);
                             GetTCSach();
+                            break;
                         }
                     }
+                    JOptionPane.showMessageDialog(this, "Tạo phiếu nhập thành công");
+                    GetTCSach();
+                    Reset();
                 }  
             }
     }//GEN-LAST:event_TaoHDBtnActionPerformed
