@@ -44,7 +44,7 @@ public class Home extends javax.swing.JFrame {
         SachBtn = new javax.swing.JButton();
         KHangBtn = new javax.swing.JButton();
         HoaDonBtn = new javax.swing.JButton();
-        NhaCCBtn = new javax.swing.JButton();
+        NhaPPBtn = new javax.swing.JButton();
         ChamCongBtn = new javax.swing.JButton();
         BaoCaoBtn = new javax.swing.JButton();
         PhieuNhapBtn = new javax.swing.JButton();
@@ -59,10 +59,10 @@ public class Home extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(237, 242, 251));
 
-        NVienBtn.setBackground(new java.awt.Color(237, 242, 251));
-        NVienBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         NVienBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/icon_img/icons8-employee-30.png"))); // NOI18N
         NVienBtn.setText("Nhân viên ");
+        NVienBtn.setBackground(new java.awt.Color(237, 242, 251));
+        NVienBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         NVienBtn.setToolTipText("");
         NVienBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -70,10 +70,10 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        SachBtn.setBackground(new java.awt.Color(237, 242, 251));
-        SachBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         SachBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/icon_img/icons8-book-30.png"))); // NOI18N
         SachBtn.setText("Sách");
+        SachBtn.setBackground(new java.awt.Color(237, 242, 251));
+        SachBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         SachBtn.setToolTipText("");
         SachBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -81,64 +81,64 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        KHangBtn.setBackground(new java.awt.Color(237, 242, 251));
-        KHangBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         KHangBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/icon_img/icons8-customer-48.png"))); // NOI18N
         KHangBtn.setText("Khách hàng");
+        KHangBtn.setBackground(new java.awt.Color(237, 242, 251));
+        KHangBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         KHangBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 KHangBtnActionPerformed(evt);
             }
         });
 
-        HoaDonBtn.setBackground(new java.awt.Color(237, 242, 251));
-        HoaDonBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         HoaDonBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/icon_img/icons8-bill-48.png"))); // NOI18N
         HoaDonBtn.setText("Hoá đơn");
+        HoaDonBtn.setBackground(new java.awt.Color(237, 242, 251));
+        HoaDonBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         HoaDonBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 HoaDonBtnActionPerformed(evt);
             }
         });
 
-        NhaCCBtn.setBackground(new java.awt.Color(237, 242, 251));
-        NhaCCBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        NhaCCBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/icon_img/icons8-supply-chain-48.png"))); // NOI18N
-        NhaCCBtn.setText("Nhà Cung Cấp");
-        NhaCCBtn.addActionListener(new java.awt.event.ActionListener() {
+        NhaPPBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/icon_img/icons8-supply-chain-48.png"))); // NOI18N
+        NhaPPBtn.setText("Nhà phân phối");
+        NhaPPBtn.setBackground(new java.awt.Color(237, 242, 251));
+        NhaPPBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        NhaPPBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NhaCCBtnActionPerformed(evt);
+                NhaPPBtnActionPerformed(evt);
             }
         });
 
-        ChamCongBtn.setBackground(new java.awt.Color(237, 242, 251));
-        ChamCongBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         ChamCongBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/icon_img/icons8-timer-30.png"))); // NOI18N
         ChamCongBtn.setText("Chấm công");
+        ChamCongBtn.setBackground(new java.awt.Color(237, 242, 251));
+        ChamCongBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         ChamCongBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ChamCongBtnActionPerformed(evt);
             }
         });
 
-        BaoCaoBtn.setBackground(new java.awt.Color(237, 242, 251));
-        BaoCaoBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         BaoCaoBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/icon_img/icons8-report-file-48.png"))); // NOI18N
         BaoCaoBtn.setText("Báo cáo");
+        BaoCaoBtn.setBackground(new java.awt.Color(237, 242, 251));
+        BaoCaoBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
 
-        PhieuNhapBtn.setBackground(new java.awt.Color(237, 242, 251));
-        PhieuNhapBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         PhieuNhapBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/icon_img/icons8-hangar-48.png"))); // NOI18N
         PhieuNhapBtn.setText("Phiếu nhập");
+        PhieuNhapBtn.setBackground(new java.awt.Color(237, 242, 251));
+        PhieuNhapBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         PhieuNhapBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PhieuNhapBtnActionPerformed(evt);
             }
         });
 
+        OutBtn.setText("Đăng xuất");
         OutBtn.setBackground(new java.awt.Color(9, 188, 138));
         OutBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        OutBtn.setText("Đăng xuất");
         OutBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 OutBtnActionPerformed(evt);
@@ -147,14 +147,14 @@ public class Home extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Interface_img/sach-1.jpg"))); // NOI18N
 
+        jLabel2.setText("Tiệm sách 4 cây nến");
         jLabel2.setFont(new java.awt.Font("Serif", 3, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 153, 102));
-        jLabel2.setText("Tiệm sách 4 cây nến");
 
-        TLBtn.setBackground(new java.awt.Color(237, 242, 251));
-        TLBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         TLBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/icon_img/icons8-category-48.png"))); // NOI18N
         TLBtn.setText("Thể loại");
+        TLBtn.setBackground(new java.awt.Color(237, 242, 251));
+        TLBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         TLBtn.setToolTipText("");
         TLBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -162,10 +162,10 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        LuongBtn.setBackground(new java.awt.Color(237, 242, 251));
-        LuongBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         LuongBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/icon_img/icons8-report-file-48.png"))); // NOI18N
         LuongBtn.setText("Lương");
+        LuongBtn.setBackground(new java.awt.Color(237, 242, 251));
+        LuongBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         LuongBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 LuongBtnActionPerformed(evt);
@@ -181,7 +181,7 @@ public class Home extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(NhaCCBtn)
+                            .addComponent(NhaPPBtn)
                             .addComponent(NVienBtn))
                         .addGap(64, 64, 64)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -237,7 +237,7 @@ public class Home extends javax.swing.JFrame {
                         .addGap(19, 19, 19)
                         .addComponent(NVienBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(NhaCCBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(NhaPPBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(99, 99, 99)
@@ -282,7 +282,7 @@ public class Home extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_NVienBtnActionPerformed
 
-    private void NhaCCBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NhaCCBtnActionPerformed
+    private void NhaPPBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NhaPPBtnActionPerformed
         // TODO add your handling code here:
         TaiKhoanController tk = new TaiKhoanController();
         if(tk.TraVeChucVu(TenDNHome, MatKhauHome) == 3 || tk.TraVeChucVu(TenDNHome, MatKhauHome) == 1){
@@ -291,7 +291,7 @@ public class Home extends javax.swing.JFrame {
             new NhaPhanPhoi(TenDNHome, MatKhauHome);
         }
         this.dispose();
-    }//GEN-LAST:event_NhaCCBtnActionPerformed
+    }//GEN-LAST:event_NhaPPBtnActionPerformed
 
     private void SachBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SachBtnActionPerformed
         // TODO add your handling code here:
@@ -395,7 +395,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JButton KHangBtn;
     private javax.swing.JButton LuongBtn;
     private javax.swing.JButton NVienBtn;
-    private javax.swing.JButton NhaCCBtn;
+    private javax.swing.JButton NhaPPBtn;
     private javax.swing.JButton OutBtn;
     private javax.swing.JButton PhieuNhapBtn;
     private javax.swing.JButton SachBtn;
