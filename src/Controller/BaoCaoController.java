@@ -212,7 +212,7 @@ public class BaoCaoController {
             ArrayList<SachModel> listsach = GetAllBook();
             for (SachModel sachModel : listsach) {
                 BaoCaoDoanhThuModel bcdt = GetLastBCDTByMaSach(sachModel.getMaSach(), month, year);
-                if(currentDay == 5 && bcdt.getThang() != month && bcdt.getNam() != year) {
+                if(currentDay == 8 && bcdt.getThang() != month && bcdt.getNam() != year) {
                     Connection connect = ConnectDB.getJDBCConnection();
                     String insertQuery = "INSERT INTO BAOCAODOANHTHU (MaBaoCao, Thang, Nam, MaSach, GiaTien, SoLuong, TongTien) VALUES (BCDT_ID.nextval, ?, ?, ?, ?, ?, ?)";
                     PreparedStatement pstmt = connect.prepareStatement(insertQuery);
