@@ -181,7 +181,7 @@ public class BaoCaoController {
                 BaoCaoTonModel last_bct = GetLastBCTByMaSach(sachModel.getMaSach(), lastMonth, lastYear);
                 BaoCaoTonModel bct = GetLastBCTByMaSach(sachModel.getMaSach(), month, year);
                 // Nếu sách không có trong báo cáo tồn tháng trước và ngày hiện tại là ngày 1 thì tạo mới
-                if(currentDay == 5 && bct.getThang() != month && bct.getNam() != year) {
+                if(currentDay == 8 && bct.getThang() != month && bct.getNam() != year) {
                     Connection connect = ConnectDB.getJDBCConnection();
                     String insertQuery = "INSERT INTO BAOCAOTON (MaBaoCao, Thang, Nam, MaSach, TonDau, PhatSinh, TonCuoi) VALUES (BCT_ID.nextval, ?, ?, ?, ?, ?, ?)";
                     PreparedStatement pstmt = connect.prepareStatement(insertQuery);
@@ -212,7 +212,7 @@ public class BaoCaoController {
             ArrayList<SachModel> listsach = GetAllBook();
             for (SachModel sachModel : listsach) {
                 BaoCaoDoanhThuModel bcdt = GetLastBCDTByMaSach(sachModel.getMaSach(), month, year);
-                if(currentDay == 5 && bcdt.getThang() != month && bcdt.getNam() != year) {
+                if(currentDay == 8 && bcdt.getThang() != month && bcdt.getNam() != year) {
                     Connection connect = ConnectDB.getJDBCConnection();
                     String insertQuery = "INSERT INTO BAOCAODOANHTHU (MaBaoCao, Thang, Nam, MaSach, GiaTien, SoLuong, TongTien) VALUES (BCDT_ID.nextval, ?, ?, ?, ?, ?, ?)";
                     PreparedStatement pstmt = connect.prepareStatement(insertQuery);
