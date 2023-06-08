@@ -123,6 +123,8 @@
               </Group>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
+                  <Component id="QuayLaiBtn" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                   <Component id="btnImportExcel" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="btnExportExcel" min="-2" max="-2" attributes="0"/>
@@ -150,6 +152,7 @@
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="btnImportExcel" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btnExportExcel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="QuayLaiBtn" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
@@ -452,6 +455,23 @@
               <Insets value="[2, 10, 2, 10]"/>
             </Property>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="QuayLaiBtn">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="cc" green="cc" red="0" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Times New Roman" size="16" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Quay l&#x1ea1;i"/>
+            <Property name="margin" type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">
+              <Insets value="[2, 10, 2, 10]"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="QuayLaiBtnActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

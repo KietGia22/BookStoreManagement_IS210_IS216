@@ -364,7 +364,7 @@ public class Home extends javax.swing.JFrame {
 
     private void BaoCaoBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BaoCaoBtnActionPerformed
         // TODO add your handling code here:
-        new SaleReport();
+        new SaleReport(TenDNHome, MatKhauHome);
         this.dispose();
     }//GEN-LAST:event_BaoCaoBtnActionPerformed
 
