@@ -423,7 +423,7 @@ public class Sach extends javax.swing.JFrame {
 
     private void AddSBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddSBtnActionPerformed
         // TODO add your handling code here:
-        if(TS_txt.getText().isEmpty() || Tg_txt.getText().isEmpty() || NXB_txt.getText().isEmpty() || TL_txt.getText().isEmpty() || G_txt.getText().isEmpty() || SL_txt.getText().isEmpty() || jLabel1.getIcon().equals(null)){
+         if(TS_txt.getText().isEmpty() || Tg_txt.getText().isEmpty() || NXB_txt.getText().isEmpty() || TL_txt.getText().isEmpty() || G_txt.getText().isEmpty() || SL_txt.getText().isEmpty() || jLabel1.getIcon().equals(null)){
             JOptionPane.showMessageDialog(this, "Vui lòng nhập đầy đủ thông tin", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         } else if(CheckNumberOrNot(TL_txt.getText()) == true){
@@ -611,7 +611,9 @@ public class Sach extends javax.swing.JFrame {
             G_txt.setText(temp.getValueAt(selectedRow, 5).toString());
             SL_txt.setText(temp.getValueAt(selectedRow, 6).toString());
             String AnhSach = s.GETAnh(ID);
+            path = AnhSach;
             if(AnhSach.contains("build\\classes")) {
+                System.out.println(AnhSach);
                 KiemTraAnhHienThi(AnhSach);
             } else {
                 ImageIcon AnhSachIcon = new ImageIcon(getClass().getResource("/Ima/" + AnhSach));

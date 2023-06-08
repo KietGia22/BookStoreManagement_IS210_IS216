@@ -28,8 +28,10 @@ public class ConnectDB {
     public static Connection getJDBCConnection() throws SQLException, ClassNotFoundException {
         String hostName = "localhost";
         String sid = "orcl";
-        String userName = "c##jv";
-        String password = "java22";
+        //String userName = "c##jv";
+        //String password = "java22";
+        String userName = "c##temp";
+        String password = "temp123";
 //        String userName = "c##bookstore";
 //        String password = "123456";
         return getJDBCConnection(hostName, sid, userName, password);

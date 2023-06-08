@@ -45,19 +45,23 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="565" max="32767" attributes="0"/>
                   <Component id="QlaiBtn" min="-2" pref="137" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
               </Group>
-              <Component id="jLabel1" alignment="0" pref="716" max="32767" attributes="0"/>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="135" max="-2" attributes="0"/>
+                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
                   <Component id="jLabel1" min="-2" pref="134" max="-2" attributes="0"/>
-                  <EmptySpace pref="91" max="32767" attributes="0"/>
+                  <EmptySpace pref="85" max="32767" attributes="0"/>
                   <Component id="QlaiBtn" min="-2" pref="49" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
               </Group>
@@ -88,7 +92,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Serif" size="24" style="3"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="B&#x1ea1;n kh&#xf4;ng ph&#x1ea3;i l&#xe0; qu&#x1ea3;n l&#xfd; n&#xea;n kh&#xf4;ng c&#xf3; quy&#x1ec1;n s&#x1eed; d&#x1ee5;ng t&#xed;nh n&#x103;ng n&#xe0;y"/>
+            <Property name="text" type="java.lang.String" value="B&#x1ea1;n kh&#xf4;ng c&#xf3; quy&#x1ec1;n s&#x1eed; d&#x1ee5;ng t&#xed;nh n&#x103;ng n&#xe0;y"/>
           </Properties>
         </Component>
       </SubComponents>

@@ -61,7 +61,7 @@ public class Chon_NPP_cho_PNS extends javax.swing.JFrame {
         Search_txt = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        AddHDBtn = new javax.swing.JButton();
+        AddPNSBtn = new javax.swing.JButton();
         QlaiBtn = new javax.swing.JButton();
         ResetBtn = new javax.swing.JButton();
         jComboBox1 = new javax.swing.JComboBox<>();
@@ -127,11 +127,11 @@ public class Chon_NPP_cho_PNS extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTable1);
 
-        AddHDBtn.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
-        AddHDBtn.setText("Tạo phiếu nhập");
-        AddHDBtn.addActionListener(new java.awt.event.ActionListener() {
+        AddPNSBtn.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        AddPNSBtn.setText("Tạo phiếu nhập");
+        AddPNSBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AddHDBtnActionPerformed(evt);
+                AddPNSBtnActionPerformed(evt);
             }
         });
 
@@ -173,7 +173,7 @@ public class Chon_NPP_cho_PNS extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(AddHDBtn)
+                    .addComponent(AddPNSBtn)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(QlaiBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -200,7 +200,7 @@ public class Chon_NPP_cho_PNS extends javax.swing.JFrame {
                 .addGap(41, 41, 41)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35)
-                .addComponent(AddHDBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(AddPNSBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
                 .addComponent(QlaiBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(33, 33, 33))
@@ -237,15 +237,15 @@ public class Chon_NPP_cho_PNS extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jTable1MouseClicked
 
-    private void AddHDBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddHDBtnActionPerformed
+    private void AddPNSBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddPNSBtnActionPerformed
         // TODO add your handling code here:
         new Them_PN(TenDNHome, MatKhauHome, ID);
         dispose();
-    }//GEN-LAST:event_AddHDBtnActionPerformed
+    }//GEN-LAST:event_AddPNSBtnActionPerformed
 
     private void QlaiBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QlaiBtnActionPerformed
         // TODO add your handling code here:
-        new PhieuNhap(TenDNHome, MatKhauHome);
+        new PhieuNhapSach(TenDNHome, MatKhauHome);
         dispose();
     }//GEN-LAST:event_QlaiBtnActionPerformed
 
@@ -326,7 +326,7 @@ public class Chon_NPP_cho_PNS extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton AddHDBtn;
+    private javax.swing.JButton AddPNSBtn;
     private javax.swing.JButton QlaiBtn;
     private javax.swing.JButton ResetBtn;
     private javax.swing.JButton SearchBtn1;

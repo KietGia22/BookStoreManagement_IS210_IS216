@@ -66,7 +66,6 @@ public class HoaDon extends javax.swing.JFrame {
         XemDSHSBtn = new javax.swing.JButton();
         AddHDBtn = new javax.swing.JButton();
         ResetBtn = new javax.swing.JButton();
-        DelHDBtn = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -81,7 +80,7 @@ public class HoaDon extends javax.swing.JFrame {
 
         jComboBox1.setBackground(new java.awt.Color(0, 204, 204));
         jComboBox1.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mã hoá đơn", "Tên nhân viên", "Tên khách hàng" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mã hoá đơn" }));
 
         SearchBtn.setBackground(new java.awt.Color(0, 204, 204));
         SearchBtn.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
@@ -158,15 +157,6 @@ public class HoaDon extends javax.swing.JFrame {
             }
         });
 
-        DelHDBtn.setBackground(new java.awt.Color(0, 204, 204));
-        DelHDBtn.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
-        DelHDBtn.setText("Xoá hoá đơn");
-        DelHDBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DelHDBtnActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -174,7 +164,6 @@ public class HoaDon extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(41, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(DelHDBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(QlaiBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(jPanel1Layout.createSequentialGroup()
@@ -205,9 +194,7 @@ public class HoaDon extends javax.swing.JFrame {
                     .addComponent(AddHDBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
-                .addComponent(DelHDBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(84, 84, 84)
                 .addComponent(QlaiBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30))
         );
@@ -313,19 +300,6 @@ public class HoaDon extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jTable1MouseClicked
 
-    private void DelHDBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DelHDBtnActionPerformed
-        // TODO add your handling code here:
-        if(TenKH.isEmpty() || TenNV.isEmpty() || NgayTaoHD.isEmpty()){
-            JOptionPane.showMessageDialog(this, "Vui lòng nhập đầy đủ thông tin", "Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-        
-        int opt = JOptionPane.showConfirmDialog(this, "Bạn có chắc là muốn xoá thông tin hoá đơn", "Xoá thông tin hoá đơn", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-        if(opt == JOptionPane.YES_OPTION){
-            HoaDonModel hdModel = new HoaDonModel(ID, Integer.parseInt(TenKH), Integer.parseInt(TenNV), Long.parseLong(TriGia), null);
-        }
-    }//GEN-LAST:event_DelHDBtnActionPerformed
-
     public void Add(ArrayList<HoaDonModel> hdModel, DefaultTableModel table){
         for(HoaDonModel i : hdModel){
             Object[] objTemp = null;
@@ -391,7 +365,6 @@ public class HoaDon extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AddHDBtn;
-    private javax.swing.JButton DelHDBtn;
     private javax.swing.JButton QlaiBtn;
     private javax.swing.JButton ResetBtn;
     private javax.swing.JButton SearchBtn;

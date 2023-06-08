@@ -70,7 +70,7 @@ public class CTPN extends javax.swing.JFrame {
         MaPNS_txt = new javax.swing.JTextField();
         TenNPP_txt = new javax.swing.JTextField();
         TenNV_txt = new javax.swing.JTextField();
-        NgayLapHD_txt = new javax.swing.JTextField();
+        NgayLapPNS_txt = new javax.swing.JTextField();
         TongTienNhap_txt = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -164,9 +164,9 @@ public class CTPN extends javax.swing.JFrame {
         TenNV_txt.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         TenNV_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 1, new java.awt.Color(0, 0, 0)));
 
-        NgayLapHD_txt.setBackground(new java.awt.Color(173, 216, 230));
-        NgayLapHD_txt.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        NgayLapHD_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 1, new java.awt.Color(0, 0, 0)));
+        NgayLapPNS_txt.setBackground(new java.awt.Color(173, 216, 230));
+        NgayLapPNS_txt.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        NgayLapPNS_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 1, new java.awt.Color(0, 0, 0)));
 
         TongTienNhap_txt.setBackground(new java.awt.Color(173, 216, 230));
         TongTienNhap_txt.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -200,7 +200,7 @@ public class CTPN extends javax.swing.JFrame {
                                     .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(NgayLapHD_txt, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(NgayLapPNS_txt, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(TenNPP_txt, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(jScrollPane1))))
                 .addGap(62, 62, 62))
@@ -212,7 +212,7 @@ public class CTPN extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(NgayLapHD_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(NgayLapPNS_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(92, 92, 92))
                     .addGroup(jPanel3Layout.createSequentialGroup()
@@ -260,7 +260,7 @@ public class CTPN extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(357, 357, 357)
+                .addGap(371, 371, 371)
                 .addComponent(jLabel1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -277,9 +277,7 @@ public class CTPN extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -294,13 +292,13 @@ public class CTPN extends javax.swing.JFrame {
 
     private void QlaiBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QlaiBtn1ActionPerformed
         // TODO add your handling code here:
-        new PhieuNhap(TenDNHome, MatKhauHome);
+        new PhieuNhapSach(TenDNHome, MatKhauHome);
         dispose();
     }//GEN-LAST:event_QlaiBtn1ActionPerformed
 
     public void GetCTPN(){
         this.MaPNS_txt.setText(Integer.toString(ID));
-        this.NgayLapHD_txt.setText(this.NgayTaoPNS);
+        this.NgayLapPNS_txt.setText(this.NgayTaoPNS);
         this.TenNPP_txt.setText(this.TenNPP);
         this.TenNV_txt.setText(this.TenNV);
         this.TongTienNhap_txt.setText(this.TongGiaTienNhap);
@@ -358,7 +356,7 @@ public class CTPN extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField MaPNS_txt;
-    private javax.swing.JTextField NgayLapHD_txt;
+    private javax.swing.JTextField NgayLapPNS_txt;
     private javax.swing.JButton QlaiBtn1;
     private javax.swing.JTextField TenNPP_txt;
     private javax.swing.JTextField TenNV_txt;
