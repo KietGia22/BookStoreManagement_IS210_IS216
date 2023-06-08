@@ -85,7 +85,7 @@ public class Them_PN extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         GN_txt = new javax.swing.JTextField();
         DelBtn = new javax.swing.JButton();
-        TaoHDBtn = new javax.swing.JButton();
+        TaoPNSBtn = new javax.swing.JButton();
         QlaiBtn = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         ThemBtn = new javax.swing.JButton();
@@ -187,12 +187,12 @@ public class Them_PN extends javax.swing.JFrame {
             }
         });
 
-        TaoHDBtn.setBackground(new java.awt.Color(0, 204, 204));
-        TaoHDBtn.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
-        TaoHDBtn.setText("Tạo phiếu nhập");
-        TaoHDBtn.addActionListener(new java.awt.event.ActionListener() {
+        TaoPNSBtn.setBackground(new java.awt.Color(0, 204, 204));
+        TaoPNSBtn.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        TaoPNSBtn.setText("Tạo phiếu nhập");
+        TaoPNSBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TaoHDBtnActionPerformed(evt);
+                TaoPNSBtnActionPerformed(evt);
             }
         });
 
@@ -258,7 +258,7 @@ public class Them_PN extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(ResetBtn)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(TaoHDBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(TaoPNSBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -292,7 +292,7 @@ public class Them_PN extends javax.swing.JFrame {
                     .addComponent(Search_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(SearchBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(TaoHDBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TaoPNSBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ResetBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(25, 25, 25)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -431,7 +431,7 @@ public class Them_PN extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_ThemBtnActionPerformed
 
-    private void TaoHDBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TaoHDBtnActionPerformed
+    private void TaoPNSBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TaoPNSBtnActionPerformed
         // TODO add your handling code here:
         int opt = JOptionPane.showConfirmDialog(this, "Bạn muốn tạo phiếu nhập sách", "Tạo phiếu nhập sách", JOptionPane.YES_NO_OPTION);
         if(opt == JOptionPane.YES_OPTION){
@@ -460,7 +460,7 @@ public class Them_PN extends javax.swing.JFrame {
                     Reset();
                 }  
             }
-    }//GEN-LAST:event_TaoHDBtnActionPerformed
+    }//GEN-LAST:event_TaoPNSBtnActionPerformed
 
     private void QlaiBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QlaiBtnActionPerformed
         // TODO add your handling code here:
@@ -588,7 +588,7 @@ public class Them_PN extends javax.swing.JFrame {
     private javax.swing.JButton SearchBtn;
     private javax.swing.JTextField Search_txt;
     private javax.swing.JTextField TTN_txt;
-    private javax.swing.JButton TaoHDBtn;
+    private javax.swing.JButton TaoPNSBtn;
     private javax.swing.JButton ThemBtn;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;

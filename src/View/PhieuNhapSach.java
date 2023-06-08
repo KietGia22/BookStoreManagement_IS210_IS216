@@ -16,12 +16,12 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author GIA KIET
  */
-public class PhieuNhap extends javax.swing.JFrame {
+public class PhieuNhapSach extends javax.swing.JFrame {
 
     /**
      * Creates new form PhieuNhap
      */
-    public PhieuNhap() {
+    public PhieuNhapSach() {
         initComponents();
          this.setLocationRelativeTo(null);
         GetTCPhieuNhapSach();
@@ -35,7 +35,7 @@ public class PhieuNhap extends javax.swing.JFrame {
     public int ID;
     public String TenNV, TenNPP, NgayTaoPNS, TongGiaTienNhap;
     
-    public PhieuNhap(String TenDN, String MatKhau){
+    public PhieuNhapSach(String TenDN, String MatKhau){
         initComponents();
         this.setVisible(true);
         this.setLocationRelativeTo(null);
@@ -114,7 +114,7 @@ public class PhieuNhap extends javax.swing.JFrame {
                 {null, null, null, null, null}
             },
             new String [] {
-                "Mã PN", "Tên nhân viên", "Tên NCC", "Ngày nhập ", "Tổng tiền"
+                "Mã PNS", "Tên nhân viên", "Tên NPP", "Ngày nhập ", "Tổng tiền"
             }
         ) {
             Class[] types = new Class [] {
@@ -158,7 +158,7 @@ public class PhieuNhap extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(37, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1008, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -211,23 +211,23 @@ public class PhieuNhap extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Serif", 3, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Danh sách phiếu nhập");
+        jLabel1.setText("Danh sách phiếu nhập sách");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(369, 369, 369)
+                .addGap(314, 314, 314)
                 .addComponent(jLabel1)
-                .addContainerGap(383, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(14, 14, 14)
+                .addGap(17, 17, 17)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -338,20 +338,21 @@ public class PhieuNhap extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(PhieuNhap.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PhieuNhapSach.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(PhieuNhap.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PhieuNhapSach.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(PhieuNhap.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PhieuNhapSach.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(PhieuNhap.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PhieuNhapSach.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new PhieuNhap().setVisible(true);
+                new PhieuNhapSach().setVisible(true);
             }
         });
     }

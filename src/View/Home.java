@@ -315,7 +315,7 @@ public class Home extends javax.swing.JFrame {
         if(tk.TraVeChucVu(TenDNHome, MatKhauHome) == 3 || tk.TraVeChucVu(TenDNHome, MatKhauHome) == 1){
             new KhongHien(TenDNHome, MatKhauHome);
         } else {
-            new PhieuNhap(TenDNHome, MatKhauHome);
+            new PhieuNhapSach(TenDNHome, MatKhauHome);
         }
         this.dispose();
     }//GEN-LAST:event_PhieuNhapBtnActionPerformed

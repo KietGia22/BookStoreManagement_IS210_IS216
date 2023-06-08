@@ -611,6 +611,7 @@ public class Sach extends javax.swing.JFrame {
             G_txt.setText(temp.getValueAt(selectedRow, 5).toString());
             SL_txt.setText(temp.getValueAt(selectedRow, 6).toString());
             String AnhSach = s.GETAnh(ID);
+            path = AnhSach;
             if(AnhSach.contains("build\\classes")) {
                 KiemTraAnhHienThi(AnhSach);
             } else {

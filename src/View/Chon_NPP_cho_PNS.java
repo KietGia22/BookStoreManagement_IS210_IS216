@@ -245,7 +245,7 @@ public class Chon_NPP_cho_PNS extends javax.swing.JFrame {
 
     private void QlaiBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QlaiBtnActionPerformed
         // TODO add your handling code here:
-        new PhieuNhap(TenDNHome, MatKhauHome);
+        new PhieuNhapSach(TenDNHome, MatKhauHome);
         dispose();
     }//GEN-LAST:event_QlaiBtnActionPerformed
 

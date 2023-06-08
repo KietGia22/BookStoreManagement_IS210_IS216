@@ -294,7 +294,7 @@ public class CTPN extends javax.swing.JFrame {
 
     private void QlaiBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QlaiBtn1ActionPerformed
         // TODO add your handling code here:
-        new PhieuNhap(TenDNHome, MatKhauHome);
+        new PhieuNhapSach(TenDNHome, MatKhauHome);
         dispose();
     }//GEN-LAST:event_QlaiBtn1ActionPerformed
 

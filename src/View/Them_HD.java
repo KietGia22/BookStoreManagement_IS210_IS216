@@ -500,16 +500,16 @@ public class Them_HD extends javax.swing.JFrame {
                         int MaS = Integer.parseInt(tablemua[0].toString());
                         int SL = Integer.parseInt(tablemua[2].toString());
                         HoaDonModel chitiet = new HoaDonModel(MaHD, MaS, SL);
-                        if(hd.ThemCTHD(chitiet) != 0){
-                            JOptionPane.showMessageDialog(this, "Tạo hoá đơn thành công");
-                            GetTCSach();
-                            TinhTien();
-                            Reset();
-                        } else {
+                        if(hd.ThemCTHD(chitiet) == 0){
                             JOptionPane.showMessageDialog(this, "Tạo hoá đơn thất bại", "Error", JOptionPane.ERROR_MESSAGE);
                             GetTCSach();
+                            break; 
                         }
                     }
+                    JOptionPane.showMessageDialog(this, "Tạo hoá đơn thành công");
+                    GetTCSach();
+                    TinhTien();
+                    Reset();
                 }  
             }
         }
