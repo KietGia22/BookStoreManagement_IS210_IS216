@@ -182,9 +182,13 @@ END;
 --CHAM CONG
 CREATE OR REPLACE PROCEDURE ThemCCONG(mtk IN CHAMCONG.MATK%TYPE)
 AS
+   l_batdatlam DATE;  -- Khai báo bi?n l_batdatlam ki?u DATE
 BEGIN
-       INSERT INTO CHAMCONG(MATK) VALUES (mtk);
-       COMMIT;
+   l_batdatlam := SYSDATE;  -- Gán giá tr? SYSDATE vào bi?n l_batdatlam
+
+   INSERT INTO CHAMCONG(MATK, BATDAULAM) VALUES (mtk, l_batdatlam);  -- S? d?ng bi?n l_batdatlam trong câu l?nh INSERT INTO
+
+   COMMIT;
 END;
 /
 
@@ -209,9 +213,6 @@ BEGIN
        INSERT INTO LUONG(THANG, NAM, MATK) VALUES (month_out, year_out, mtk);
        COMMIT;
 END;
-
-
-
 /
 -----------------GET DU LIEU ------------------------
 --TAIKHOAN

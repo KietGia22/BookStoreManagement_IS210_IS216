@@ -68,7 +68,7 @@
                               <Group type="102" alignment="1" attributes="0">
                                   <Component id="ResetBtn" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="TaoHDBtn" min="-2" pref="162" max="-2" attributes="0"/>
+                                  <Component id="TaoPNSBtn" min="-2" pref="162" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <Group type="103" groupAlignment="1" attributes="0">
@@ -91,11 +91,11 @@
                           </Group>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="ThemBtn" min="-2" max="-2" attributes="0"/>
-                              <Component id="DelBtn" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="ThemBtn" max="32767" attributes="0"/>
+                              <Component id="DelBtn" max="32767" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="111" max="32767" attributes="0"/>
+                          <EmptySpace pref="250" max="32767" attributes="0"/>
                           <Component id="jScrollPane2" min="-2" pref="1145" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
@@ -115,7 +115,7 @@
                       <Component id="Search_txt" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
                       <Component id="jComboBox1" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
                       <Component id="SearchBtn" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
-                      <Component id="TaoHDBtn" alignment="3" min="-2" pref="42" max="-2" attributes="0"/>
+                      <Component id="TaoPNSBtn" alignment="3" min="-2" pref="42" max="-2" attributes="0"/>
                       <Component id="ResetBtn" alignment="3" min="-2" pref="42" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
@@ -140,7 +140,7 @@
                       <Group type="102" attributes="0">
                           <Component id="ThemBtn" min="-2" pref="40" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="DelBtn" min="-2" pref="42" max="-2" attributes="0"/>
+                          <Component id="DelBtn" min="-2" pref="38" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
@@ -371,13 +371,13 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Times New Roman" size="16" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Xo&#xe1; s&#xe1;ch trong phi&#x1ebf;u nh&#x1ead;p"/>
+            <Property name="text" type="java.lang.String" value="Xo&#xe1; s&#xe1;ch"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DelBtnActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="TaoHDBtn">
+        <Component class="javax.swing.JButton" name="TaoPNSBtn">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="cc" red="0" type="rgb"/>
@@ -388,7 +388,7 @@
             <Property name="text" type="java.lang.String" value="T&#x1ea1;o phi&#x1ebf;u nh&#x1ead;p"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TaoHDBtnActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TaoPNSBtnActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="QlaiBtn">
@@ -425,7 +425,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Times New Roman" size="16" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Th&#xea;m s&#xe1;ch ch&#x1ecd;n v&#xe0;o phi&#x1ebf;u nh&#x1ead;p"/>
+            <Property name="text" type="java.lang.String" value="Th&#xea;m s&#xe1;ch"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ThemBtnActionPerformed"/>
