@@ -93,8 +93,6 @@ public class SaleReport extends javax.swing.JFrame {
         tabBookReport = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tableReportDT = new javax.swing.JTable();
-        btnImportExcel = new javax.swing.JButton();
-        btnExportExcel = new javax.swing.JButton();
         QuayLaiBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -239,14 +237,6 @@ public class SaleReport extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Báo cáo daonh thu", tabBookReport);
 
-        btnImportExcel.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnImportExcel.setText("Import Excel");
-        btnImportExcel.setMargin(new java.awt.Insets(2, 10, 2, 10));
-
-        btnExportExcel.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnExportExcel.setText("Export Excel");
-        btnExportExcel.setMargin(new java.awt.Insets(2, 10, 2, 10));
-
         QuayLaiBtn.setBackground(new java.awt.Color(0, 204, 204));
         QuayLaiBtn.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         QuayLaiBtn.setText("Quay lại");
@@ -280,11 +270,7 @@ public class SaleReport extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(QuayLaiBtn)
-                .addGap(28, 28, 28)
-                .addComponent(btnImportExcel)
-                .addGap(18, 18, 18)
-                .addComponent(btnExportExcel)
-                .addGap(26, 26, 26))
+                .addGap(30, 30, 30))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -301,10 +287,7 @@ public class SaleReport extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnImportExcel)
-                    .addComponent(btnExportExcel)
-                    .addComponent(QuayLaiBtn))
+                .addComponent(QuayLaiBtn)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -430,8 +413,6 @@ public class SaleReport extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton QuayLaiBtn;
-    private javax.swing.JButton btnExportExcel;
-    private javax.swing.JButton btnImportExcel;
     private javax.swing.JButton btnViewReport;
     private javax.swing.JComboBox<String> cbbMonth;
     private javax.swing.JComboBox<String> cbbYear;
