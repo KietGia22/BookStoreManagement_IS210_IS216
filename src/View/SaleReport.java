@@ -235,7 +235,7 @@ public class SaleReport extends javax.swing.JFrame {
             .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 287, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("Báo cáo daonh thu", tabBookReport);
+        jTabbedPane1.addTab("Báo cáo doanh thu", tabBookReport);
 
         QuayLaiBtn.setBackground(new java.awt.Color(0, 204, 204));
         QuayLaiBtn.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
