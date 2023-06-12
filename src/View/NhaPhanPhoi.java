@@ -423,6 +423,7 @@ public class NhaPhanPhoi extends javax.swing.JFrame {
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
         // TODO add your handling code here:
+        jTable1.setDefaultEditor(Object.class, null);
         try {
             // TODO add your handling code here:
             int selectedRow = jTable1.getSelectedRow();

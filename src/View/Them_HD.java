@@ -156,6 +156,11 @@ public class Them_HD extends javax.swing.JFrame {
             }
         });
         jTable2.setShowGrid(true);
+        jTable2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable2MouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(jTable2);
 
         Search_txt.setBackground(new java.awt.Color(173, 216, 230));
@@ -227,6 +232,11 @@ public class Them_HD extends javax.swing.JFrame {
         TKD_txt.setBackground(new java.awt.Color(173, 216, 230));
         TKD_txt.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         TKD_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 1, new java.awt.Color(0, 0, 0)));
+        TKD_txt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TKD_txtActionPerformed(evt);
+            }
+        });
 
         jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel6.setText("Tiền thối");
@@ -404,6 +414,7 @@ public class Them_HD extends javax.swing.JFrame {
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
         // TODO add your handling code here:
+        jTable1.setDefaultEditor(Object.class, null);
         try {
             int selectedRow = jTable1.getSelectedRow();
             DefaultTableModel temp = (DefaultTableModel) jTable1.getModel();
@@ -547,6 +558,18 @@ public class Them_HD extends javax.swing.JFrame {
         TT_txt.setText("");
         Reset();
     }//GEN-LAST:event_ResetBtnActionPerformed
+
+    private void TKD_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TKD_txtActionPerformed
+        // TODO add your handling code here:
+        TienKhachDua = Long.parseLong(TKD_txt.getText().toString());
+        TienThoi = TienKhachDua - TongTien;
+        TT_txt.setText(Long.toString(TienThoi));
+    }//GEN-LAST:event_TKD_txtActionPerformed
+
+    private void jTable2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable2MouseClicked
+        // TODO add your handling code here:
+        jTable2.setDefaultEditor(Object.class, null);
+    }//GEN-LAST:event_jTable2MouseClicked
 
     public void Add(ArrayList<SachModel> SModel, DefaultTableModel table){
         for(SachModel i : SModel){

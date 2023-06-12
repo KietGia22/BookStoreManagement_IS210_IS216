@@ -130,6 +130,11 @@ public class CTPN extends javax.swing.JFrame {
             }
         });
         jTable1.setShowGrid(true);
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -297,6 +302,11 @@ public class CTPN extends javax.swing.JFrame {
         new PhieuNhapSach(TenDNHome, MatKhauHome);
         dispose();
     }//GEN-LAST:event_QlaiBtn1ActionPerformed
+
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+        // TODO add your handling code here:
+        jTable1.setDefaultEditor(Object.class, null);
+    }//GEN-LAST:event_jTable1MouseClicked
 
     public void GetCTPN(){
         this.MaPNS_txt.setText(Integer.toString(ID));

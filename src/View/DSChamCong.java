@@ -83,6 +83,11 @@ public class DSChamCong extends javax.swing.JFrame {
             }
         });
         jTable1.setShowGrid(true);
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
 
         QlaiBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -161,6 +166,11 @@ public class DSChamCong extends javax.swing.JFrame {
         dispose();
         new ChamCong(TenDNHome, MatKhauHome);
     }//GEN-LAST:event_QlaiBtnActionPerformed
+
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+        // TODO add your handling code here:
+        jTable1.setDefaultEditor(Object.class, null);
+    }//GEN-LAST:event_jTable1MouseClicked
 
     public void Add(ArrayList<LuongModel> luongModel, DefaultTableModel table){
         for(LuongModel i : luongModel){

@@ -599,6 +599,7 @@ public class Sach extends javax.swing.JFrame {
 
     private void jTable2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable2MouseClicked
         // TODO add your handling code here:
+        jTable2.setDefaultEditor(Object.class, null);
         try {
             // TODO add your handling code here:
             int selectedRow = jTable2.getSelectedRow();
