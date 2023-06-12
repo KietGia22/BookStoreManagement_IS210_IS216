@@ -226,6 +226,7 @@ public class Chon_NPP_cho_PNS extends javax.swing.JFrame {
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
         // TODO add your handling code here:
+        jTable1.setDefaultEditor(Object.class, null);
         try{
             int selectedRow = jTable1.getSelectedRow();
             DefaultTableModel temp = (DefaultTableModel) jTable1.getModel();

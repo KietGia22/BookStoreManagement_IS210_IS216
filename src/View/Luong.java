@@ -101,6 +101,11 @@ public class Luong extends javax.swing.JFrame {
             }
         });
         jTable1.setShowGrid(true);
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
 
         ResetBtn.setBackground(new java.awt.Color(0, 204, 204));
@@ -208,6 +213,11 @@ public class Luong extends javax.swing.JFrame {
         // TODO add your handling code here:
         getDSLuong();
     }//GEN-LAST:event_ResetBtnActionPerformed
+
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+        // TODO add your handling code here:
+        jTable1.setDefaultEditor(Object.class, null);
+    }//GEN-LAST:event_jTable1MouseClicked
 
     public void getDSLuong(){
         String[] title = {"Mã TK", "Tên nhân viên" ,"Tháng", "Năm", "Tổng số giờ làm", "Tổng lương"};

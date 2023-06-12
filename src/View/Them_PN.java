@@ -152,6 +152,11 @@ public class Them_PN extends javax.swing.JFrame {
             }
         });
         jTable2.setShowGrid(true);
+        jTable2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable2MouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(jTable2);
 
         Search_txt.setBackground(new java.awt.Color(173, 216, 230));
@@ -480,6 +485,7 @@ public class Them_PN extends javax.swing.JFrame {
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
         // TODO add your handling code here:
+        jTable1.setDefaultEditor(Object.class, null);
         try {
             int selectedRow = jTable1.getSelectedRow();
             DefaultTableModel temp = (DefaultTableModel) jTable1.getModel();
@@ -519,6 +525,11 @@ public class Them_PN extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Bạn chưa chọn hàng để xoá");
         }
     }//GEN-LAST:event_DelBtnActionPerformed
+
+    private void jTable2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable2MouseClicked
+        // TODO add your handling code here:
+        jTable2.setDefaultEditor(Object.class, null);
+    }//GEN-LAST:event_jTable2MouseClicked
 
     
     public void Add(ArrayList<SachModel> SModel, DefaultTableModel table){

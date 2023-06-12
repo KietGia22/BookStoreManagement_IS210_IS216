@@ -555,6 +555,7 @@ public class TaiKhoan extends javax.swing.JFrame {
     }//GEN-LAST:event_ResetBtnActionPerformed
 
     private void jTable2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable2MouseClicked
+        jTable2.setDefaultEditor(Object.class, null);
         try {
             // TODO add your handling code here:
             int selectedRow = jTable2.getSelectedRow();
