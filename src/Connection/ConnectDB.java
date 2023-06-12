@@ -15,8 +15,7 @@ import java.sql.SQLException;
 public class ConnectDB {
     
     public static Connection getJDBCConnection(String hostName, String sid,
-            String userName, String password) throws ClassNotFoundException,
-            SQLException{
+    String userName, String password) throws ClassNotFoundException, SQLException{
         Class.forName("oracle.jdbc.driver.OracleDriver");
         String connectionURL = "jdbc:oracle:thin:@" + hostName + ":1521:" + sid;
 
@@ -30,8 +29,6 @@ public class ConnectDB {
         String sid = "orcl";
         String userName = "c##jv";
         String password = "java22";
-//        String userName = "c##bookstore";
-//        String password = "123456";
         return getJDBCConnection(hostName, sid, userName, password);
     }
     
