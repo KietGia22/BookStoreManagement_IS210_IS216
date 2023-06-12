@@ -4,7 +4,6 @@
  */
 package View;
 
-import Connection.ConnectDB;
 import Controller.HoaDonController;
 import Controller.SachController;
 import Model.SachModel;
@@ -14,17 +13,6 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import Controller.TaiKhoanController;
 import Model.HoaDonModel;
-import java.sql.Connection;
-import java.sql.SQLException;
-import java.util.Hashtable;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import net.sf.jasperreports.engine.JRException;
-import net.sf.jasperreports.engine.JasperCompileManager;
-import net.sf.jasperreports.engine.JasperFillManager;
-import net.sf.jasperreports.engine.JasperPrint;
-import net.sf.jasperreports.engine.JasperReport;
-import net.sf.jasperreports.view.JasperViewer;
 
 /**
  *
@@ -610,19 +598,7 @@ public class Them_HD extends javax.swing.JFrame {
         TT_txt.setText(Long.toString(TienThoi));
     }
     
-    public void TaoPhieuHDChoKhachHangDK(int maHD) throws SQLException, JRException{
-            Hashtable hashtable = new Hashtable();
-            JasperReport hoadonchokh = JasperCompileManager.compileReport("src\\Report\\reportHDKH.jrxml");
-            hashtable.put("MAHD", maHD);
-            try {
-                Connection con;
-                con = ConnectDB.getJDBCConnection();
-                JasperPrint p = JasperFillManager.fillReport(hoadonchokh, hashtable, con);
-                JasperViewer.viewReport(p, false);
-            } catch (ClassNotFoundException ex) {
-                ex.printStackTrace();
-            }
-    }
+    
     
     /**
      * @param args the command line arguments
