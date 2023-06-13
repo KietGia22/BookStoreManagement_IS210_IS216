@@ -4,6 +4,7 @@
  */
 package View;
 
+import Connection.ConnectDB;
 import Controller.HoaDonController;
 import Controller.SachController;
 import Model.SachModel;
@@ -13,6 +14,12 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import Controller.TaiKhoanController;
 import Model.HoaDonModel;
+import java.util.Hashtable;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.view.JasperViewer;
 
 /**
  *
@@ -500,26 +507,28 @@ public class Them_HD extends javax.swing.JFrame {
                 } else {
                     hdModel = new HoaDonModel(LoaiKH, MaTK, 0, null);
                 }
-                    if(hd.ThemHD(hdModel) != 0){
-                    int MaHD = hd.HoaDonVuaTao();
-                    System.out.println(MaHD);
-                    Object[] tablemua;
-                    ArrayList<Object> tempArr = new ArrayList<>(Arrtemp);
-                    for(Object i : tempArr){
-                        tablemua = (Object[]) i;
-                        int MaS = Integer.parseInt(tablemua[0].toString());
-                        int SL = Integer.parseInt(tablemua[2].toString());
-                        HoaDonModel chitiet = new HoaDonModel(MaHD, MaS, SL);
-                        if(hd.ThemCTHD(chitiet) == 0){
-                            JOptionPane.showMessageDialog(this, "Tạo hoá đơn thất bại", "Error", JOptionPane.ERROR_MESSAGE);
-                            GetTCSach();
-                            break; 
-                        }
+                if(hd.ThemHD(hdModel) != 0){
+                int MaHD = hd.HoaDonVuaTao();
+                System.out.println(MaHD);
+                Object[] tablemua;
+                ArrayList<Object> tempArr = new ArrayList<>(Arrtemp);
+                for(Object i : tempArr){
+                    tablemua = (Object[]) i;
+                    int MaS = Integer.parseInt(tablemua[0].toString());
+                    int SL = Integer.parseInt(tablemua[2].toString());
+                    HoaDonModel chitiet = new HoaDonModel(MaHD, MaS, SL);
+                    if(hd.ThemCTHD(chitiet) == 0){
+                        JOptionPane.showMessageDialog(this, "Tạo hoá đơn thất bại", "Error", JOptionPane.ERROR_MESSAGE);
+                        GetTCSach();
+                         break; 
                     }
-                    JOptionPane.showMessageDialog(this, "Tạo hoá đơn thành công");
-                    GetTCSach();
-                    TinhTien();
-                    Reset();
+                }
+                JOptionPane.showMessageDialog(this, "Tạo hoá đơn thành công");
+                GetTCSach();
+                TinhTien();
+                Reset();
+                int mhd = hd.HoaDonVuaTao();
+                XuatHoaDonChoKH(mhd);
                 }  
             }
         }
@@ -598,7 +607,17 @@ public class Them_HD extends javax.swing.JFrame {
         TT_txt.setText(Long.toString(TienThoi));
     }
     
-    
+    public void XuatHoaDonChoKH(int MaHD){
+        try {
+            Hashtable hashtable = new Hashtable();
+            JasperReport hdonKH = JasperCompileManager.compileReport("src\\Report\\reportHD.jrxml");
+            hashtable.put("mhd", MaHD);
+            JasperPrint jsprint = JasperFillManager.fillReport(hdonKH, hashtable, ConnectDB.getJDBCConnection());
+            JasperViewer.viewReport(jsprint, false);
+        } catch(Exception ex){
+            ex.printStackTrace();
+        }
+    }
     
     /**
      * @param args the command line arguments
