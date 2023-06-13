@@ -182,11 +182,11 @@ END;
 --CHAM CONG
 CREATE OR REPLACE PROCEDURE ThemCCONG(mtk IN CHAMCONG.MATK%TYPE)
 AS
-   l_batdatlam DATE;  -- Khai báo bi?n l_batdatlam ki?u DATE
+   l_batdatlam DATE;  -- Khai bï¿½o bi?n l_batdatlam ki?u DATE
 BEGIN
-   l_batdatlam := SYSDATE;  -- Gán giá tr? SYSDATE vào bi?n l_batdatlam
+   l_batdatlam := SYSDATE;  -- Gï¿½n giï¿½ tr? SYSDATE vï¿½o bi?n l_batdatlam
 
-   INSERT INTO CHAMCONG(MATK, BATDAULAM) VALUES (mtk, l_batdatlam);  -- S? d?ng bi?n l_batdatlam trong câu l?nh INSERT INTO
+   INSERT INTO CHAMCONG(MATK, BATDAULAM) VALUES (mtk, l_batdatlam);  -- S? d?ng bi?n l_batdatlam trong cï¿½u l?nh INSERT INTO
 
    COMMIT;
 END;
@@ -220,7 +220,8 @@ CREATE OR REPLACE PROCEDURE GETTCTK(out_cur OUT SYS_REFCURSOR)
 AS
 BEGIN 
         OPEN out_cur FOR
-        SELECT * FROM TAIKHOAN;
+        SELECT * FROM TAIKHOAN
+        ORDER BY MATK DESC;
         COMMIT;
 END;
 /
@@ -238,7 +239,8 @@ AS
 BEGIN 
         OPEN out_cur FOR
         SELECT * FROM TAIKHOAN
-        WHERE HOTEN =  hten;
+        WHERE HOTEN =  hten
+        ORDER BY MATK DESC;
         COMMIT;
 END;
 /
@@ -248,7 +250,8 @@ CREATE OR REPLACE PROCEDURE GETTCKH(out_cur OUT SYS_REFCURSOR)
 AS
 BEGIN 
         OPEN out_cur FOR
-        SELECT * FROM KHACHHANG;
+        SELECT * FROM KHACHHANG
+        ORDER BY MAKH DESC;
         COMMIT;
 END;
 /
@@ -266,7 +269,8 @@ AS
 BEGIN 
         OPEN out_cur FOR
         SELECT * FROM KHACHHANG
-        WHERE HOTEN =  hten;
+        WHERE HOTEN =  hten
+        ORDER BY MAKH DESC;
         COMMIT;
 END;
 /
@@ -276,7 +280,8 @@ CREATE OR REPLACE PROCEDURE GETTCSACH(out_cur OUT SYS_REFCURSOR)
 AS
 BEGIN 
         OPEN out_cur FOR
-        SELECT * FROM SACH;
+        SELECT * FROM SACH
+        ORDER BY MASACH DESC;
         COMMIT;
 END;
 /
@@ -296,7 +301,8 @@ BEGIN
         OPEN out_cur FOR
         SELECT SACH.*, THELOAI.* FROM SACH, THELOAI
         WHERE TENSACH =  ts
-        AND SACH.MATL = THELOAI.MATL;
+        AND SACH.MATL = THELOAI.MATL
+        ORDER BY MASACH DESC;
         COMMIT;
 END;
 /
@@ -327,7 +333,8 @@ CREATE OR REPLACE PROCEDURE GETTCTL(out_cur OUT SYS_REFCURSOR)
 AS
 BEGIN
        OPEN out_cur FOR 
-        SELECT * FROM THELOAI;
+        SELECT * FROM THELOAI
+        ORDER BY MATL DESC;
         COMMIT;
 END;
 /
@@ -355,7 +362,8 @@ CREATE OR REPLACE PROCEDURE GETTCNPP(out_cur OUT SYS_REFCURSOR)
 AS
 BEGIN
        OPEN out_cur FOR 
-        SELECT * FROM NHAPHANPHOI;
+        SELECT * FROM NHAPHANPHOI
+        ORDER BY MANPP DESC;
         COMMIT;
 END;
 /
@@ -384,6 +392,7 @@ AS
 BEGIN
        OPEN out_cur FOR 
         SELECT * FROM HOADON
+        ORDER BY MAHD DESC;
         COMMIT;
 END;
 /
@@ -420,7 +429,8 @@ BEGIN
        OPEN out_cur FOR 
         SELECT PNS.*, NPP.*, TK.* FROM PHIEUNHAPSACH PNS, NHAPHANPHOI NPP, TAIKHOAN TK
         WHERE PNS.MANPP = NPP.MANPP
-        AND PNS.MATK = TK.MATK;
+        AND PNS.MATK = TK.MATK
+        ORDER BY MAPNS DESC;
         COMMIT;
 END;
 /
@@ -442,7 +452,8 @@ BEGIN
         SELECT PNS.*, NPP.*, TK.* FROM PHIEUNHAPSACH PNS, NHAPHANPHOI NPP, TAIKHOAN TK
         WHERE PNS.MANPP = NPP.MANPP
         AND PNS.MATK = TK.MATK
-        AND TK.MATK = mtk;
+        AND TK.MATK = mtk
+        ORDER BY MAPNS;
         COMMIT;
 END;
 /
@@ -453,7 +464,8 @@ BEGIN
         SELECT PNS.*, NPP.*, TK.* FROM PHIEUNHAPSACH PNS, NHAPHANPHOI NPP, TAIKHOAN TK
         WHERE PNS.MANPP = NPP.MANPP
         AND PNS.MATK = TK.MATK
-        AND NPP.MANPP = mnpp;
+        AND NPP.MANPP = mnpp
+        ORDER BY MAPNS;
         COMMIT;
 END;
 /
@@ -549,7 +561,8 @@ AS
 BEGIN 
       OPEN out_cur FOR
       SELECT S.*, TL.* FROM SACH S, THELOAI TL
-      WHERE S.MATL = TL.MATL;
+      WHERE S.MATL = TL.MATL
+      ORDER BY MASACH DESC;
       COMMIT;
 END;
 /
@@ -569,6 +582,7 @@ BEGIN
         COMMIT;
 END;
    
+commit;
 
 
 
