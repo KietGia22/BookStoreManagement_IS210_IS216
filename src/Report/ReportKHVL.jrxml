@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ece3267c-91a7-41e2-aa13-ae8795d12fa0">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="72421c2a-314f-4bd7-9ed4-25d7b9bd0f90">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
@@ -7,16 +7,14 @@
 		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
 	</parameter>
 	<queryString>
-		<![CDATA[SELECT TK.HOTEN AS TK_HT, KH.HOTEN AS TK_KH, TENSACH, S.MASACH, NGAYTAOHD, TONGTIENHD, HD.MAHD, GIATIEN, SOLUONGMUATUNGCUONSACH
-FROM KHACHHANG KH, TAIKHOAN TK, SACH S, HOADON HD, CTHD CT
-WHERE KH.MAKH = HD.MAKH
-AND TK.MATK = HD.MATK
+		<![CDATA[SELECT TK.HOTEN AS TK_HT, TENSACH, S.MASACH, NGAYTAOHD, TONGTIENHD, HD.MAHD, GIATIEN, SOLUONGMUATUNGCUONSACH
+FROM TAIKHOAN TK, SACH S, HOADON HD, CTHD CT
+WHERE TK.MATK = HD.MATK
 AND HD.MAHD = CT.MAHD
 AND CT.MASACH = S.MASACH
-AND HD.MAHD = $P{mhd}]]>
+AND CT.MAHD = $P{mhd}]]>
 	</queryString>
 	<field name="TK_HT" class="java.lang.String"/>
-	<field name="TK_KH" class="java.lang.String"/>
 	<field name="TENSACH" class="java.lang.String"/>
 	<field name="MASACH" class="java.math.BigDecimal"/>
 	<field name="NGAYTAOHD" class="java.sql.Timestamp"/>
@@ -30,7 +28,7 @@ AND HD.MAHD = $P{mhd}]]>
 	<title>
 		<band height="79" splitType="Stretch">
 			<staticText>
-				<reportElement x="168" y="0" width="220" height="76" forecolor="#006666" uuid="52df7db8-875e-4ef4-b257-a283daf035ed"/>
+				<reportElement x="163" y="0" width="220" height="76" forecolor="#006666" uuid="7d7ff107-e4a8-48df-806a-50aa52c51001"/>
 				<textElement textAlignment="Center">
 					<font size="36" isBold="true"/>
 				</textElement>
@@ -39,58 +37,58 @@ AND HD.MAHD = $P{mhd}]]>
 		</band>
 	</title>
 	<pageHeader>
-		<band height="223" splitType="Stretch">
+		<band height="219" splitType="Stretch">
 			<staticText>
-				<reportElement x="0" y="61" width="271" height="42" uuid="c51b55e3-39ad-4cbb-8456-8d9f817c7ff0"/>
+				<reportElement x="0" y="0" width="271" height="42" uuid="82afe13f-275a-4f42-884f-b1fc49a96f64"/>
 				<textElement>
 					<font size="24"/>
 				</textElement>
-				<text><![CDATA[TÊN NHÂN VIÊN:]]></text>
+				<text><![CDATA[TÊN KHÁCH HÀNG:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="0" y="119" width="271" height="42" uuid="c6df24ce-a0ba-42e3-97c2-f81f7de4411a"/>
+				<reportElement x="317" y="0" width="209" height="42" uuid="c55e7d33-92be-45a8-ba30-9ba83cab4722"/>
+				<textElement>
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[KHÁCH VÃNG LAI]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="317" y="53" width="189" height="42" uuid="3ba11d32-cac7-4d35-9b8c-39777ea430ab"/>
+				<textElement>
+					<font size="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TK_HT}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="111" width="271" height="42" uuid="1bc21805-fa7b-4162-baa5-68633c8708da"/>
 				<textElement>
 					<font size="24"/>
 				</textElement>
 				<text><![CDATA[NGÀY TẠO HOÁ ĐƠN:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="0" y="179" width="271" height="42" uuid="52ddf5f3-5090-4500-8866-830951493cc5"/>
+				<reportElement x="0" y="53" width="271" height="42" uuid="cfad3d15-b24b-45ec-8191-6fee2b6d3adc"/>
 				<textElement>
 					<font size="24"/>
 				</textElement>
-				<text><![CDATA[MÃ HOÁ ĐƠN:]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="0" y="0" width="271" height="42" uuid="cf0c795e-2403-4cb4-a37c-18144b09829e"/>
-				<textElement>
-					<font size="24"/>
-				</textElement>
-				<text><![CDATA[TÊN KHÁCH HÀNG:]]></text>
+				<text><![CDATA[TÊN NHÂN VIÊN:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="343" y="61" width="189" height="42" uuid="605ce1a7-f87a-42b7-8ee4-de0d83c46425"/>
-				<textElement>
-					<font size="20"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{TK_HT}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="343" y="0" width="189" height="42" uuid="33e9e2f8-c4de-43ac-92a7-708c253a80e7"/>
-				<textElement>
-					<font size="20"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{TK_KH}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="343" y="119" width="189" height="42" uuid="dd94cefc-7830-4c7d-9578-2c741804e636"/>
+				<reportElement x="317" y="111" width="189" height="42" uuid="d16c6e73-2490-4ca2-b7ed-8b0fe19d35ba"/>
 				<textElement>
 					<font size="20"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{NGAYTAOHD}]]></textFieldExpression>
 			</textField>
+			<staticText>
+				<reportElement x="0" y="174" width="271" height="42" uuid="840973e8-66d1-4454-a335-1dfa84d8800e"/>
+				<textElement>
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[MÃ HOÁ ĐƠN:]]></text>
+			</staticText>
 			<textField>
-				<reportElement x="343" y="179" width="189" height="42" uuid="b7f3b365-7806-44e1-af20-9a596892676b"/>
+				<reportElement x="317" y="174" width="189" height="42" uuid="19aac44f-e849-44d0-9d9b-e5678c4f3b9b"/>
 				<textElement>
 					<font size="20"/>
 				</textElement>
@@ -101,21 +99,21 @@ AND HD.MAHD = $P{mhd}]]>
 	<columnHeader>
 		<band height="61" splitType="Stretch">
 			<staticText>
-				<reportElement x="0" y="19" width="388" height="42" uuid="beb426b7-c316-47fa-8fc5-7e5053815e4d"/>
+				<reportElement x="0" y="19" width="383" height="42" uuid="7f5a1c3c-a282-4225-8f15-e50f550f2364"/>
 				<textElement>
 					<font size="24"/>
 				</textElement>
 				<text><![CDATA[TÊN SÁCH]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="443" y="19" width="112" height="42" uuid="c9783e99-124b-41c3-8278-d31c0dfe2c2d"/>
+				<reportElement x="443" y="19" width="112" height="42" uuid="bc29d044-c9d9-4e64-bca0-4a8bd7c54812"/>
 				<textElement>
 					<font size="24"/>
 				</textElement>
 				<text><![CDATA[GIÁ TIỀN]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="388" y="19" width="55" height="42" uuid="e074c055-4581-472d-99ae-7d9dfc872d1b"/>
+				<reportElement x="383" y="19" width="60" height="42" uuid="9ffeecf4-aa93-4a4e-8bb6-01a87b6693ab"/>
 				<textElement>
 					<font size="24"/>
 				</textElement>
@@ -126,21 +124,21 @@ AND HD.MAHD = $P{mhd}]]>
 	<detail>
 		<band height="125" splitType="Stretch">
 			<textField>
-				<reportElement x="4" y="0" width="384" height="54" uuid="f1050676-d4b8-44e3-9580-737e418101c4"/>
+				<reportElement x="0" y="0" width="383" height="54" uuid="fbe7b18f-fa40-4427-bbb4-f5549339eda9"/>
 				<textElement>
 					<font size="20"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{TENSACH}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="443" y="0" width="112" height="54" uuid="4258a171-6a6a-4263-a2fe-6485735e4e79"/>
+				<reportElement x="443" y="0" width="112" height="54" uuid="d28f5382-5563-4012-9f13-50573123e3f4"/>
 				<textElement>
 					<font size="20"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{GIATIEN}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="388" y="0" width="55" height="54" uuid="3a68d04c-d767-4d7e-921f-abfff50bf099"/>
+				<reportElement x="383" y="0" width="60" height="54" uuid="68d5f69b-6f65-452e-b9ca-67c92b6f2b4b"/>
 				<textElement>
 					<font size="20"/>
 				</textElement>
@@ -148,22 +146,22 @@ AND HD.MAHD = $P{mhd}]]>
 			</textField>
 		</band>
 	</detail>
-	<summary>
-		<band height="42" splitType="Stretch">
+	<columnFooter>
+		<band height="45" splitType="Stretch">
 			<staticText>
-				<reportElement x="104" y="0" width="296" height="42" uuid="00c13777-5b9d-4ea8-a46f-d29d2d4b31c6"/>
+				<reportElement x="101" y="3" width="296" height="42" uuid="7ad83152-ddcf-4ec0-828c-b3517dd5d360"/>
 				<textElement>
 					<font size="24"/>
 				</textElement>
 				<text><![CDATA[TỔNG TIỀN HOÁ ĐƠN:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="400" y="0" width="155" height="42" uuid="b6567390-7f7d-4be3-bb62-50aa6f626979"/>
+				<reportElement x="397" y="3" width="155" height="42" uuid="cd46bb73-19cb-4395-947f-dc04c8fd4756"/>
 				<textElement>
 					<font size="20"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{TONGTIENHD}]]></textFieldExpression>
 			</textField>
 		</band>
-	</summary>
+	</columnFooter>
 </jasperReport>

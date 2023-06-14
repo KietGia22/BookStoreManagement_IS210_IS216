@@ -527,9 +527,14 @@ public class Them_HD extends javax.swing.JFrame {
                 GetTCSach();
                 TinhTien();
                 Reset();
-                int mhd = hd.HoaDonVuaTao();
-                XuatHoaDonChoKH(mhd);
-                }  
+                if(LoaiKH == 0){
+                    int mhd = hd.HoaDonVuaTao();
+                    XuatHoaDonChoKHVL(mhd);
+                } else {
+                    int mhd = hd.HoaDonVuaTao();
+                    XuatHoaDonChoKH(mhd);
+                }
+              }  
             }
         }
     }//GEN-LAST:event_TaoHDBtnActionPerformed
@@ -611,6 +616,18 @@ public class Them_HD extends javax.swing.JFrame {
         try {
             Hashtable hashtable = new Hashtable();
             JasperReport hdonKH = JasperCompileManager.compileReport("src\\Report\\reportHD.jrxml");
+            hashtable.put("mhd", MaHD);
+            JasperPrint jsprint = JasperFillManager.fillReport(hdonKH, hashtable, ConnectDB.getJDBCConnection());
+            JasperViewer.viewReport(jsprint, false);
+        } catch(Exception ex){
+            ex.printStackTrace();
+        }
+    }
+    
+    public void XuatHoaDonChoKHVL(int MaHD){
+        try {
+            Hashtable hashtable = new Hashtable();
+            JasperReport hdonKH = JasperCompileManager.compileReport("src\\Report\\reportKHVL.jrxml");
             hashtable.put("mhd", MaHD);
             JasperPrint jsprint = JasperFillManager.fillReport(hdonKH, hashtable, ConnectDB.getJDBCConnection());
             JasperViewer.viewReport(jsprint, false);
