@@ -581,7 +581,7 @@ BEGIN
         SELECT MAX(MAPNS) FROM PHIEUNHAPSACH;
         COMMIT;
 END;
-   
+/
 commit;
 
 
