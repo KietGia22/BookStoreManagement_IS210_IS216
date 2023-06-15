@@ -43,7 +43,6 @@ public class LuongController {
     
     public int KetThucChamCong(int MaTK){
         Connection conn = null;
-        ResultSet rs = null;
         CallableStatement callsql = null;
         String sql = "";
         int check = 0;
@@ -128,5 +127,32 @@ public class LuongController {
             e.printStackTrace();
         }
         return luongModel;
+    }
+    
+    public int SlChamCong(int MaTK){
+        int check = -1;
+        Connection conn = null;
+        CallableStatement callsql = null;
+        String sql = "";
+        ResultSet rs = null;
+        try {
+            try {
+                conn = ConnectDB.getJDBCConnection();
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(LuongController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            sql = "{call KTRACHAMCONG(?, ?)}";
+            callsql = conn.prepareCall(sql);
+            callsql.setInt(1, MaTK);
+            callsql.registerOutParameter(2, OracleTypes.CURSOR);
+            callsql.execute();
+            rs =  (ResultSet) callsql.getObject(2);
+            if(rs.next())
+                check = rs.getInt("SLCHAM");
+            return check;
+        } catch(SQLException e) {
+            e.printStackTrace();
+        }
+        return 0;
     }
 }
