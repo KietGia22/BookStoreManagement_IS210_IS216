@@ -22,6 +22,7 @@ public class ChamCong extends javax.swing.JFrame {
     public String TenDNHome, MatKhauHome;
     public TaiKhoanController tk = new TaiKhoanController();
     public LuongController luong = new LuongController();
+    public int checkChamCong = 0;
     
     public ChamCong(String TenDN, String MatKhau){
         initComponents();
@@ -31,6 +32,7 @@ public class ChamCong extends javax.swing.JFrame {
         this.MatKhauHome = MatKhau;
         if(tk.TraVeChucVu(TenDNHome, MatKhauHome) != 4)
             this.XemdsccBtn.setVisible(false);
+        CheckChamCong();
     }
 
     /**
@@ -179,6 +181,17 @@ public class ChamCong extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public void CheckChamCong(){
+        int MaTK = tk.GetMaTK(TenDNHome, MatKhauHome);
+        System.out.println(MaTK);
+        if(luong.SlChamCong(MaTK) == 1){
+            BatDauBtn.setEnabled(false);
+        } else if(luong.SlChamCong(MaTK) == 2) {
+            BatDauBtn.setEnabled(false);
+            KetThucBtn.setEnabled(false);
+        }
+    }
+    
     private void XemdsccBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_XemdsccBtnActionPerformed
         // TODO add your handling code here:
         dispose();
@@ -200,6 +213,7 @@ public class ChamCong extends javax.swing.JFrame {
             if(luong.BatDauChamCong(MaTK) != 0)
                 JOptionPane.showMessageDialog(this, "Bắt đầu chấm công");
             BatDauBtn.setEnabled(false);
+            CheckChamCong();
         } catch (Exception e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(this, "Chấm công thất bại", "Bắt đầu chấm công", JOptionPane.ERROR_MESSAGE);
@@ -214,6 +228,7 @@ public class ChamCong extends javax.swing.JFrame {
             if(luong.KetThucChamCong(MaTK) != 0)
                 JOptionPane.showMessageDialog(this, "kết thúc chấm công");
             KetThucBtn.setEnabled(false);
+            CheckChamCong();
         } catch (Exception e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(this, "Chấm công thất bại", "Bắt đầu chấm công", JOptionPane.ERROR_MESSAGE);
