@@ -75,14 +75,14 @@
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="UpdateTLBtn" min="-2" pref="122" max="-2" attributes="0"/>
-                              <Component id="AddTLBtn" min="-2" pref="122" max="-2" attributes="0"/>
-                              <Component id="Delbtn" min="-2" pref="122" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="AddTLBtn" alignment="0" pref="145" max="32767" attributes="0"/>
+                              <Component id="UpdateTLBtn" alignment="0" max="32767" attributes="0"/>
+                              <Component id="Delbtn" alignment="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace pref="31" max="32767" attributes="0"/>
+                  <EmptySpace pref="21" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
