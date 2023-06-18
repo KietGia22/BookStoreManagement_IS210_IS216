@@ -5,6 +5,8 @@
  
 <p align-items: center>Phần mềm Quản lý nhà sách được xây dựng nhằm mục đích phục vụ việc mua bán, nhập và quản lý sách được thực hiện một cách tự động, dễ dàng và chính xác hơn. Từ đó giảm bớt lượng công việc của nhân viên và chủ nhà sách phải làm, tăng năng suất công việc và đem lại lợi nhuận cho các cửa hàng sách quy mô vừa và nhỏ. </p>
 
+<p> Đây là đồ án hoàn chỉnh đầu tiên về giao diện và chức năng mình làm </p> 
+
 ## Thành viên
  |Tên                   | MSSV     |
  |----------------------| ---------|
