@@ -545,7 +545,8 @@ AS
 BEGIN
        OPEN out_cur FOR 
         SELECT CC.*, TK.* FROM CHAMCONG CC, TAIKHOAN TK
-        WHERE CC.MATK = TK.MATK;
+        WHERE CC.MATK = TK.MATK
+        ORDER BY KETTHUC DESC;
         COMMIT;
 END;
 /
