@@ -110,9 +110,9 @@
                               </Group>
                           </Group>
                           <EmptySpace pref="24" max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="AddHDKHVLBtn" min="-2" max="-2" attributes="0"/>
-                              <Component id="AddHDBtn" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="AddHDKHVLBtn" max="32767" attributes="0"/>
+                              <Component id="AddHDBtn" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>

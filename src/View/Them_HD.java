@@ -4,7 +4,6 @@
  */
 package View;
 
-import Connection.ConnectDB;
 import Controller.HoaDonController;
 import Controller.SachController;
 import Model.SachModel;
@@ -14,12 +13,6 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import Controller.TaiKhoanController;
 import Model.HoaDonModel;
-import java.util.Hashtable;
-import net.sf.jasperreports.engine.JasperCompileManager;
-import net.sf.jasperreports.engine.JasperFillManager;
-import net.sf.jasperreports.engine.JasperPrint;
-import net.sf.jasperreports.engine.JasperReport;
-import net.sf.jasperreports.view.JasperViewer;
 
 /**
  *
@@ -415,7 +408,7 @@ public class Them_HD extends javax.swing.JFrame {
             return;
         } else {
             SModel = s.TimKiemSach(jComboBox1.getSelectedItem().toString(), Search_txt.getText());
-                Add(SModel, Table_for_search);
+            s.AddSachCTHD(SModel, Table_for_search);
         }
     }//GEN-LAST:event_SearchBtnActionPerformed
 
@@ -487,8 +480,8 @@ public class Them_HD extends javax.swing.JFrame {
 
     private void QlaiBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QlaiBtnActionPerformed
         // TODO add your handling code here:
-        dispose();
         new HoaDon(TenDNHome, MatKhauHome);
+        dispose();
     }//GEN-LAST:event_QlaiBtnActionPerformed
 
     private void TaoHDBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TaoHDBtnActionPerformed
@@ -529,10 +522,10 @@ public class Them_HD extends javax.swing.JFrame {
                 Reset();
                 if(LoaiKH == 0){
                     int mhd = hd.HoaDonVuaTao();
-                    XuatHoaDonChoKHVL(mhd);
+                    hd.XuatHoaDonChoKHVL(mhd);
                 } else {
                     int mhd = hd.HoaDonVuaTao();
-                    XuatHoaDonChoKH(mhd);
+                    hd.XuatHoaDonChoKH(mhd);
                 }
               }  
             }
@@ -585,20 +578,13 @@ public class Them_HD extends javax.swing.JFrame {
         jTable2.setDefaultEditor(Object.class, null);
     }//GEN-LAST:event_jTable2MouseClicked
 
-    public void Add(ArrayList<SachModel> SModel, DefaultTableModel table){
-        for(SachModel i : SModel){
-            Object[] obj = {i.getMaSach(), i.getTenSach(), i.getSlHienCo(), i.getGiaTien()};
-            table.addRow(obj);
-        }
-    }
-    
     public void GetTCSach(){
         String title[] = {"Mã sách", "Tên sách", "Số lượng hiện tại", "Giá"};
         table.setColumnIdentifiers(title);
         table.setRowCount(0);
         ArrayList<SachModel> SModel = new ArrayList<SachModel>();
         SModel = s.getTCSach();
-        Add(SModel, table);
+        s.AddSachCTHD(SModel, table);
         jTable1.setModel(table);
         jTable1.getColumnModel().getColumn(0).setPreferredWidth(20);
         jTable1.getColumnModel().getColumn(1).setPreferredWidth(150);
@@ -611,31 +597,6 @@ public class Them_HD extends javax.swing.JFrame {
         TienThoi = TienKhachDua - TongTien;
         TT_txt.setText(Long.toString(TienThoi));
     }
-    
-    public void XuatHoaDonChoKH(int MaHD){
-        try {
-            Hashtable hashtable = new Hashtable();
-            JasperReport hdonKH = JasperCompileManager.compileReport("src\\Report\\reportHD.jrxml");
-            hashtable.put("mhd", MaHD);
-            JasperPrint jsprint = JasperFillManager.fillReport(hdonKH, hashtable, ConnectDB.getJDBCConnection());
-            JasperViewer.viewReport(jsprint, false);
-        } catch(Exception ex){
-            ex.printStackTrace();
-        }
-    }
-    
-    public void XuatHoaDonChoKHVL(int MaHD){
-        try {
-            Hashtable hashtable = new Hashtable();
-            JasperReport hdonKH = JasperCompileManager.compileReport("src\\Report\\reportKHVL.jrxml");
-            hashtable.put("mhd", MaHD);
-            JasperPrint jsprint = JasperFillManager.fillReport(hdonKH, hashtable, ConnectDB.getJDBCConnection());
-            JasperViewer.viewReport(jsprint, false);
-        } catch(Exception ex){
-            ex.printStackTrace();
-        }
-    }
-    
     /**
      * @param args the command line arguments
      */
@@ -661,6 +622,9 @@ public class Them_HD extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Them_HD.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */

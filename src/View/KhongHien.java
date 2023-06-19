@@ -94,7 +94,7 @@ public class KhongHien extends javax.swing.JFrame {
     private void QlaiBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QlaiBtnActionPerformed
         // TODO add your handling code here:
         new Home(TenDNHome, MatKhauHome);
-        this.dispose();
+        dispose();
     }//GEN-LAST:event_QlaiBtnActionPerformed
 
     /**
@@ -122,6 +122,7 @@ public class KhongHien extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(KhongHien.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */

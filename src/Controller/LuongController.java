@@ -10,6 +10,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.table.DefaultTableModel;
 import oracle.jdbc.OracleTypes;
 
 /**
@@ -17,6 +18,22 @@ import oracle.jdbc.OracleTypes;
  * @author GIA KIET
  */
 public class LuongController {
+    
+    public void Add(ArrayList<LuongModel> luongModel, DefaultTableModel table){
+        for(LuongModel i : luongModel){
+            Object[] obj = {i.getMaTK(), i.getTenNV(), i.getThang(), i.getNam(),i.getTongSoGioLamViec(), i.getLuong()};
+            table.addRow(obj);
+        }
+    }
+    
+    public void AddDSChamCong(ArrayList<LuongModel> luongModel, DefaultTableModel table){
+        for(LuongModel i : luongModel){
+            Object[] obj = {i.getMaTK(), i.getTenNV() , i.getSoGioLamViec()};
+            table.addRow(obj);
+        }
+    }
+    
+    
     public int BatDauChamCong(int MaTK){
         Connection conn = null;
         ResultSet rs = null;

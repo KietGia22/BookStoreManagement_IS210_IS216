@@ -32,8 +32,7 @@ public class CTHD extends javax.swing.JFrame {
     public int ID;
     public TaiKhoanController tk = new TaiKhoanController();
     public HoaDonController hd = new HoaDonController();
-    public int ChucVu = tk.TraVeChucVu(TenDNHome, MatKhauHome);
-    DefaultTableModel table = new DefaultTableModel();
+    public DefaultTableModel table = new DefaultTableModel();
     
     public CTHD(String TDN, String MK, int ID, String TenKH, String TenNV, String NgayTaoHD, String TriGia){
         initComponents();
@@ -81,9 +80,9 @@ public class CTHD extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(173, 216, 230));
         jPanel1.setFocusable(false);
 
-        QlaiBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         QlaiBtn.setText("Quay lại");
         QlaiBtn.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 0, 51), 2, true));
+        QlaiBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         QlaiBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 QlaiBtnActionPerformed(evt);
@@ -135,45 +134,50 @@ public class CTHD extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTable1);
 
-        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel2.setText("Mã hoá đơn");
+        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel2.setToolTipText("");
 
-        jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel3.setText("Tên khách hàng");
+        jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel3.setToolTipText("");
 
-        jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel4.setText("Tên nhân viên");
+        jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel4.setToolTipText("");
 
-        jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel5.setText("Tồng tiền");
+        jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel5.setToolTipText("");
 
-        jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel6.setText("Ngày lập hoá đơn");
+        jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel6.setToolTipText("");
 
         MaHD_txt.setBackground(new java.awt.Color(173, 216, 230));
         MaHD_txt.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         MaHD_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 1, new java.awt.Color(0, 0, 0)));
+        MaHD_txt.setFocusable(false);
 
         TenKH_txt.setBackground(new java.awt.Color(173, 216, 230));
         TenKH_txt.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         TenKH_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 1, new java.awt.Color(0, 0, 0)));
+        TenKH_txt.setFocusable(false);
 
         TenNV_txt.setBackground(new java.awt.Color(173, 216, 230));
         TenNV_txt.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         TenNV_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 1, new java.awt.Color(0, 0, 0)));
+        TenNV_txt.setFocusable(false);
 
         NgayLapHD_txt.setBackground(new java.awt.Color(173, 216, 230));
         NgayLapHD_txt.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         NgayLapHD_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 1, new java.awt.Color(0, 0, 0)));
+        NgayLapHD_txt.setFocusable(false);
 
         Gia_txt.setBackground(new java.awt.Color(173, 216, 230));
         Gia_txt.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         Gia_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 1, new java.awt.Color(0, 0, 0)));
+        Gia_txt.setFocusable(false);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -236,9 +240,9 @@ public class CTHD extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(0, 100, 100));
 
+        jLabel1.setText("Chi tiết hoá đơn");
         jLabel1.setFont(new java.awt.Font("Serif", 3, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Chi tiết hoá đơn");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -335,6 +339,7 @@ public class CTHD extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(CTHD.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */

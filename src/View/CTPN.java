@@ -31,8 +31,7 @@ public class CTPN extends javax.swing.JFrame {
     public String TenNV, TenNPP, NgayTaoPNS, TongGiaTienNhap;
     public TaiKhoanController tk = new TaiKhoanController();
     public PhieuNhapSachController pns = new PhieuNhapSachController();
-    public int ChucVu = tk.TraVeChucVu(TenDNHome, MatKhauHome);
-    DefaultTableModel table = new DefaultTableModel();
+    public DefaultTableModel table = new DefaultTableModel();
     
     public CTPN(String TDN, String MK, int ID, String TenNV, String TenNPP, String NgayTaoPNS, String TongGiaTienNhap){
         initComponents();
@@ -160,22 +159,27 @@ public class CTPN extends javax.swing.JFrame {
         MaPNS_txt.setBackground(new java.awt.Color(173, 216, 230));
         MaPNS_txt.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         MaPNS_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 1, new java.awt.Color(0, 0, 0)));
+        MaPNS_txt.setFocusable(false);
 
         TenNPP_txt.setBackground(new java.awt.Color(173, 216, 230));
         TenNPP_txt.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         TenNPP_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 1, new java.awt.Color(0, 0, 0)));
+        TenNPP_txt.setFocusable(false);
 
         TenNV_txt.setBackground(new java.awt.Color(173, 216, 230));
         TenNV_txt.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         TenNV_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 1, new java.awt.Color(0, 0, 0)));
+        TenNV_txt.setFocusable(false);
 
         NgayLapHD_txt.setBackground(new java.awt.Color(173, 216, 230));
         NgayLapHD_txt.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         NgayLapHD_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 1, new java.awt.Color(0, 0, 0)));
+        NgayLapHD_txt.setFocusable(false);
 
         TongTienNhap_txt.setBackground(new java.awt.Color(173, 216, 230));
         TongTienNhap_txt.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         TongTienNhap_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 1, new java.awt.Color(0, 0, 0)));
+        TongTienNhap_txt.setFocusable(false);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -356,6 +360,7 @@ public class CTPN extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(CTPN.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */

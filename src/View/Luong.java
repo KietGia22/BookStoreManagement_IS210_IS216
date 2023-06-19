@@ -29,8 +29,7 @@ public class Luong extends javax.swing.JFrame {
     public String TenDNHome, MatKhauHome;
     public TaiKhoanController tk = new TaiKhoanController();
     public LuongController luong = new LuongController();
-    public int chucvu = tk.TraVeChucVu(TenDNHome, MatKhauHome);
-    DefaultTableModel table = new DefaultTableModel();
+    public DefaultTableModel table = new DefaultTableModel();
     
     public Luong(String TenDN, String MatKhau){
         initComponents();
@@ -197,18 +196,12 @@ public class Luong extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void QlaiBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QlaiBtnActionPerformed
-        // TODO add your handling code here:
+        // TODO add your handling code here
         new Home(TenDNHome, MatKhauHome);
-        this.dispose();
+        dispose();
+
     }//GEN-LAST:event_QlaiBtnActionPerformed
 
-    public void Add(ArrayList<LuongModel> luongModel, DefaultTableModel table){
-        for(LuongModel i : luongModel){
-            Object[] obj = {i.getMaTK(), i.getTenNV(), i.getThang(), i.getNam(),i.getTongSoGioLamViec(), i.getLuong()};
-            table.addRow(obj);
-        }
-    }
-    
     private void ResetBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResetBtnActionPerformed
         // TODO add your handling code here:
         getDSLuong();
@@ -225,7 +218,7 @@ public class Luong extends javax.swing.JFrame {
         table.setRowCount(0);
         ArrayList<LuongModel> luongModel = new ArrayList<LuongModel>();
         luongModel = luong.getDSLuong();
-        Add(luongModel, table);
+        luong.Add(luongModel, table);
         jTable1.setModel(table);
         jTable1.setRowHeight(30);
     }
@@ -255,6 +248,7 @@ public class Luong extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Luong.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */

@@ -30,8 +30,7 @@ public class PhieuNhapSach extends javax.swing.JFrame {
     public String TenDNHome, MatKhauHome;
     public TaiKhoanController tk = new TaiKhoanController();
     public PhieuNhapSachController pns = new PhieuNhapSachController();
-    public int ChucVu = tk.TraVeChucVu(TenDNHome, MatKhauHome);
-    DefaultTableModel table = new DefaultTableModel();
+    public DefaultTableModel table = new DefaultTableModel();
     public int ID;
     public String TenNV, TenNPP, NgayTaoPNS, TongGiaTienNhap;
     
@@ -67,6 +66,7 @@ public class PhieuNhapSach extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         DetailBtn = new javax.swing.JButton();
         AddPNBtn = new javax.swing.JButton();
+        Resetbtn = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -153,6 +153,16 @@ public class PhieuNhapSach extends javax.swing.JFrame {
             }
         });
 
+        Resetbtn.setBackground(new java.awt.Color(0, 204, 204));
+        Resetbtn.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        Resetbtn.setText("Làm mới");
+        Resetbtn.setToolTipText("");
+        Resetbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ResetbtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -173,7 +183,9 @@ public class PhieuNhapSach extends javax.swing.JFrame {
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                             .addComponent(DetailBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addGap(856, 856, 856)
+                            .addGap(652, 652, 652)
+                            .addComponent(Resetbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(59, 59, 59)
                             .addComponent(QlaiBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(43, 43, 43))
         );
@@ -190,7 +202,9 @@ public class PhieuNhapSach extends javax.swing.JFrame {
                 .addGap(30, 30, 30)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(33, 33, 33)
-                .addComponent(QlaiBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(QlaiBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
+                    .addComponent(Resetbtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(29, Short.MAX_VALUE))
         );
 
@@ -267,7 +281,7 @@ public class PhieuNhapSach extends javax.swing.JFrame {
     private void QlaiBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QlaiBtnActionPerformed
         // TODO add your handling code here:
         new Home(TenDNHome, MatKhauHome);
-        this.dispose();
+        dispose();
     }//GEN-LAST:event_QlaiBtnActionPerformed
 
     private void SearchBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchBtnActionPerformed
@@ -282,7 +296,7 @@ public class PhieuNhapSach extends javax.swing.JFrame {
             return;
         } else {
             pnsModel = pns.TimKiem(choice, search);
-            Add(pnsModel, Table_for_search);
+            pns.Add(pnsModel, Table_for_search);
         }  
     }//GEN-LAST:event_SearchBtnActionPerformed
 
@@ -303,21 +317,19 @@ public class PhieuNhapSach extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jTable1MouseClicked
 
-    
-    public void Add(ArrayList<PhieuNhapSachModel> pnModel, DefaultTableModel table){
-        for(PhieuNhapSachModel i : pnModel){
-            Object[] obj = {i.getMaPNS(), i.getTenNV(), i.getTenNPP(), i.toString(i.getNgNhap()), i.getTongTien()};
-            table.addRow(obj);
-        }
-    }
-    
+    private void ResetbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResetbtnActionPerformed
+        // TODO add your handling code here:
+        Search_txt.setText("");
+        GetTCPhieuNhapSach();
+    }//GEN-LAST:event_ResetbtnActionPerformed
+
     public void GetTCPhieuNhapSach(){
         String[] title = {"Mã phiếu nhập", "Tên nhân viên", "Tên NPP", "Ngày nhập hàng", "Số tiền nhập"};
         table.setColumnIdentifiers(title);
         table.setRowCount(0);
         ArrayList<PhieuNhapSachModel> pnModel = new ArrayList<PhieuNhapSachModel>();
         pnModel = pns.getThongTinPhieuNhap();
-        Add(pnModel, table);
+        pns.Add(pnModel, table);
         jTable1.setModel(table);
         jTable1.setRowHeight(30);
     }
@@ -349,6 +361,8 @@ public class PhieuNhapSach extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -362,6 +376,7 @@ public class PhieuNhapSach extends javax.swing.JFrame {
     private javax.swing.JButton AddPNBtn;
     private javax.swing.JButton DetailBtn;
     private javax.swing.JButton QlaiBtn;
+    private javax.swing.JButton Resetbtn;
     private javax.swing.JButton SearchBtn;
     private javax.swing.JTextField Search_txt;
     private javax.swing.JComboBox<String> jComboBox1;

@@ -38,11 +38,10 @@ public class Sach extends javax.swing.JFrame {
     }
     
     public String TenDNHome, MatKhauHome;
-    String path;
+    public String path;
     public TaiKhoanController tk = new TaiKhoanController();
     public SachController s = new SachController();
-    public int ChucVu = tk.TraVeChucVu(TenDNHome, MatKhauHome);
-    DefaultTableModel table = new DefaultTableModel();
+    public DefaultTableModel table = new DefaultTableModel();
     public int ID;
     
     
@@ -544,7 +543,7 @@ public class Sach extends javax.swing.JFrame {
     private void QlaiBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QlaiBtn1ActionPerformed
         // TODO add your handling code here:
         new Home(TenDNHome, MatKhauHome);
-        this.dispose();
+        dispose();
     }//GEN-LAST:event_QlaiBtn1ActionPerformed
 
     private void ChonAnhBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChonAnhBtnActionPerformed
@@ -588,12 +587,8 @@ public class Sach extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Mã sách phải là số", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         } else {
-            try{
-                SModel = s.TimKiemSach(jComboBox2.getSelectedItem().toString(), Search_txt1.getText());
-                Add(SModel, Table_for_search);
-            } catch(Exception e) {
-                e.printStackTrace();
-            }
+            SModel = s.TimKiemSach(jComboBox2.getSelectedItem().toString(), Search_txt1.getText());
+            s.Add(SModel, Table_for_search);
         }
     }//GEN-LAST:event_SearchBtn1ActionPerformed
 
@@ -633,13 +628,7 @@ public class Sach extends javax.swing.JFrame {
         GetTCSach();
     }//GEN-LAST:event_ResetBtnActionPerformed
 
-    
-    public void Add(ArrayList<SachModel> SModel, DefaultTableModel table){
-        for(SachModel i : SModel){
-            Object[] obj = {i.getMaSach(), i.getTenSach(), i.getTenTheLoai(), i.getTenTG(), i.getNXB(), i.getGiaTien(), i.getSlHienCo()};
-            table.addRow(obj);
-        }
-    }
+   
     
     public void GetTCSach(){
         String title[] = {"Mã sách", "Tên sách", "Thể loại", "Tác giả", "Nhà xuất bản", "Giá", "Số lượng hiện có"};
@@ -647,7 +636,7 @@ public class Sach extends javax.swing.JFrame {
         table.setRowCount(0);
         ArrayList<SachModel> SModel = new ArrayList<SachModel>();
         SModel = s.getTCSach();
-        Add(SModel, table);
+        s.Add(SModel, table);
         jTable2.setModel(table);
         jTable2.getColumnModel().getColumn(0).setPreferredWidth(20);
         jTable2.getColumnModel().getColumn(1).setPreferredWidth(240);
@@ -683,6 +672,8 @@ public class Sach extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Sach.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 

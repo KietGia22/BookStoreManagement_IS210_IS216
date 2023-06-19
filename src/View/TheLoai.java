@@ -29,8 +29,7 @@ public class TheLoai extends javax.swing.JFrame {
     public String TenDNHome, MatKhauHome;
     public TaiKhoanController tk = new TaiKhoanController();
     public TheLoaiController tl = new TheLoaiController();
-    public int ChucVu = tk.TraVeChucVu(TenDNHome, MatKhauHome);
-    DefaultTableModel table = new DefaultTableModel();
+    public DefaultTableModel table = new DefaultTableModel();
     public int ID;
     
     public TheLoai(String TenDN, String MatKhau){
@@ -225,17 +224,19 @@ public class TheLoai extends javax.swing.JFrame {
                         .addComponent(SearchBtn)
                         .addGap(18, 18, 18)
                         .addComponent(ResetBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(16, 16, 16)
                         .addComponent(QlaiBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(AddTLBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
-                            .addComponent(UpdateTLBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Delbtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(21, Short.MAX_VALUE))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(UpdateTLBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE)
+                            .addComponent(AddTLBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(Delbtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -253,12 +254,13 @@ public class TheLoai extends javax.swing.JFrame {
                                 .addComponent(Tim_txt1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(SearchBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(ResetBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(ResetBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(AddTLBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(AddTLBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(51, 51, 51)
                         .addComponent(UpdateTLBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(Delbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -287,7 +289,7 @@ public class TheLoai extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Vui lòng nhập đầy đủ thông tin", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         } else if (CheckNumberOrNot(TL_txt.getText()) == true){
-            JOptionPane.showMessageDialog(this, "Họ tên không chứa số", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Tên thể loại không chứa số", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
         
@@ -311,7 +313,7 @@ public class TheLoai extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Vui lòng nhập đầy đủ thông tin", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         } else if (CheckNumberOrNot(TL_txt.getText()) == true){
-            JOptionPane.showMessageDialog(this, "Họ tên không chứa số", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Tên thể loại không chứa số", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
         int opt = JOptionPane.showConfirmDialog(this, "Bạn có chắc là muốn thêm thông tin thể loại", "Thêm thể loại", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
@@ -334,7 +336,7 @@ public class TheLoai extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Vui lòng nhập đầy đủ thông tin", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         } else if (CheckNumberOrNot(TL_txt.getText()) == true){
-            JOptionPane.showMessageDialog(this, "Họ tên không chứa số", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Tên thể loại không chứa số", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
         
@@ -355,7 +357,7 @@ public class TheLoai extends javax.swing.JFrame {
     private void QlaiBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QlaiBtnActionPerformed
         // TODO add your handling code here:
         new Home(TenDNHome, MatKhauHome);
-        this.dispose();
+        dispose();
     }//GEN-LAST:event_QlaiBtnActionPerformed
 
     private void ResetBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResetBtnActionPerformed
@@ -376,7 +378,7 @@ public class TheLoai extends javax.swing.JFrame {
             return;
         } else {
             tlModel = tl.TimKiemTL(choice, search);
-            Add(tlModel, Table_for_search);
+            tl.Add(tlModel, Table_for_search);
         }  
     }//GEN-LAST:event_SearchBtnActionPerformed
 
@@ -392,21 +394,14 @@ public class TheLoai extends javax.swing.JFrame {
             e.printStackTrace();
         }
     }//GEN-LAST:event_jTable1MouseClicked
-
-    public void Add(ArrayList<TheLoaiModel> tlModel, DefaultTableModel table){
-        for(TheLoaiModel i : tlModel){
-            Object[] obj = {i.getMaTL(), i.getTenTL()};
-            table.addRow(obj);
-        }
-    }
-    
+   
     public void GetAllTheLoai(){
         String title[] = {"Mã TL", "Tên thể loại"};
         table.setColumnIdentifiers(title);
         table.setRowCount(0);
         ArrayList<TheLoaiModel> tlModel = new ArrayList<TheLoaiModel>(); 
         tlModel = tl.getTCTL();
-        Add(tlModel, table);
+        tl.Add(tlModel, table);
         jTable1.setModel(table);
         jTable1.setRowHeight(30);
     }
@@ -436,6 +431,8 @@ public class TheLoai extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(TheLoai.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 

@@ -68,21 +68,24 @@
                           <Component id="ResetBtn" min="-2" pref="142" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Group type="102" attributes="0">
                           <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                           <Component id="QlaiBtn" min="-2" pref="137" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="AddTLBtn" alignment="0" pref="145" max="32767" attributes="0"/>
-                              <Component id="UpdateTLBtn" alignment="0" max="32767" attributes="0"/>
-                              <Component id="Delbtn" alignment="0" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="UpdateTLBtn" pref="147" max="32767" attributes="0"/>
+                              <Component id="AddTLBtn" pref="147" max="32767" attributes="0"/>
                           </Group>
                       </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="Delbtn" max="32767" attributes="0"/>
+                      </Group>
                   </Group>
-                  <EmptySpace pref="21" max="32767" attributes="0"/>
+                  <EmptySpace pref="19" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -104,14 +107,16 @@
                                   <Component id="SearchBtn" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
                                   <Component id="jComboBox1" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="ResetBtn" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="ResetBtn" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
+                                  <Component id="AddTLBtn" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="jScrollPane1" min="-2" pref="128" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="AddTLBtn" min="-2" pref="39" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
                           <Component id="UpdateTLBtn" min="-2" pref="39" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="Delbtn" min="-2" pref="39" max="-2" attributes="0"/>
