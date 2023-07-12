@@ -45,7 +45,7 @@ public class SachController {
     public ArrayList<SachModel> getTCSach(){
         ArrayList<SachModel> sachModel = new ArrayList<SachModel>();
         Connection conn = null;
-        ResultSet rs = null;
+        //ResultSet rs = null;
         CallableStatement callsql = null;
         String sql = "";
         try{
@@ -58,7 +58,7 @@ public class SachController {
             callsql = conn.prepareCall(sql);
             callsql.registerOutParameter(1, OracleTypes.CURSOR);
             callsql.execute();
-            rs =  (ResultSet) callsql.getObject(1);
+            ResultSet rs =  (ResultSet) callsql.getObject(1);
             while(rs.next()){
                 SachModel SM = new 
                     SachModel(rs.getInt("MASACH"), 
@@ -72,9 +72,9 @@ public class SachController {
                             rs.getString("TENTHELOAI"));
                 sachModel.add(SM);
             }
-        } catch(SQLException e){
+        } catch(Exception e){
             e.printStackTrace();
-        }
+        } 
         return sachModel;
     }
     
