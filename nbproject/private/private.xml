@@ -3,9 +3,19 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/D:/KIET's%20Folder/CODE/Research/Java/Project/BookStoreManagement/src/View/Luong.java</file>
             <file>file:/D:/KIET's%20Folder/CODE/Research/Java/Project/BookStoreManagement/src/View/Login.java</file>
             <file>file:/D:/KIET's%20Folder/CODE/Research/Java/Project/BookStoreManagement/src/Controller/TaiKhoanController.java</file>
+=======
+<<<<<<< HEAD
+            <file>file:/D:/KIET's%20Folder/CODE/UIT/Second_year/Semester%202/IS216_Programming_with_Java/Project/DoAn/BookStoreManagement/src/Connection/ConnectDB.java</file>
+=======
+            <file>file:/D:/KIET's%20Folder/CODE/Research/Java/Project/BookStoreManagement/src/Controller/HoaDonController.java</file>
+            <file>file:/D:/KIET's%20Folder/CODE/Research/Java/Project/BookStoreManagement/src/View/Them_TK.java</file>
+            <file>file:/D:/KIET's%20Folder/CODE/Research/Java/Project/BookStoreManagement/src/Controller/BaoCaoController.java</file>
+>>>>>>> c4f2a9ae5eb4b8eefd97873ed7fc393dfd38f5a3
+>>>>>>> c954a33093d28cb3aa61250eb71b16bae74893ef
         </group>
     </open-files>
 </project-private>
