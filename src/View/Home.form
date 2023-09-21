@@ -48,16 +48,16 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="NhaCCBtn" min="-2" max="-2" attributes="0"/>
-                              <Component id="NVienBtn" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="NhaCCBtn" max="32767" attributes="0"/>
+                              <Component id="NVienBtn" max="32767" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="SachBtn" min="-2" pref="153" max="-2" attributes="0"/>
-                              <Component id="PhieuNhapBtn" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="PhieuNhapBtn" min="-2" max="-2" attributes="0"/>
+                              <Component id="SachBtn" min="-2" pref="180" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="97" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="226" max="-2" attributes="0"/>
@@ -67,27 +67,24 @@
                               <Group type="102" alignment="1" attributes="0">
                                   <Group type="103" groupAlignment="1" attributes="0">
                                       <Component id="OutBtn" min="-2" pref="170" max="-2" attributes="0"/>
-                                      <Group type="102" attributes="0">
-                                          <Group type="103" groupAlignment="1" attributes="0">
-                                              <Group type="102" attributes="0">
-                                                  <Component id="TLBtn" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
-                                                  <Component id="ChamCongBtn" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" attributes="0">
-                                                  <Component id="KHangBtn" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-                                                  <Component id="HoaDonBtn" min="-2" pref="162" max="-2" attributes="0"/>
-                                              </Group>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="TLBtn" max="32767" attributes="0"/>
+                                              <Component id="KHangBtn" max="32767" attributes="0"/>
                                           </Group>
-                                          <EmptySpace pref="90" max="32767" attributes="0"/>
+                                          <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="HoaDonBtn" pref="162" max="32767" attributes="0"/>
+                                              <Component id="ChamCongBtn" max="32767" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace pref="50" max="32767" attributes="0"/>
                                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                               <Component id="BaoCaoBtn" max="32767" attributes="0"/>
                                               <Component id="LuongBtn" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
-                                  <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -102,31 +99,25 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="SachBtn" alignment="1" min="-2" pref="47" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="KHangBtn" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
-                                  <Component id="HoaDonBtn" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
-                                  <Component id="LuongBtn" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="PhieuNhapBtn" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
-                              <Component id="TLBtn" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
-                              <Component id="ChamCongBtn" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
-                              <Component id="BaoCaoBtn" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
-                          </Group>
+                  <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="NVienBtn" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
+                          <Component id="SachBtn" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
                       </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-                          <Component id="NVienBtn" min="-2" pref="47" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="NhaCCBtn" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="HoaDonBtn" alignment="3" pref="0" max="32767" attributes="0"/>
+                          <Component id="LuongBtn" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
+                          <Component id="KHangBtn" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
                       </Group>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="NhaCCBtn" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="PhieuNhapBtn" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
+                      <Component id="TLBtn" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
+                      <Component id="ChamCongBtn" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
+                      <Component id="BaoCaoBtn" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
                   </Group>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">

@@ -203,7 +203,7 @@ public class Login extends javax.swing.JFrame {
         this.user = TenDN_Txt.getText();
         TenDN = TenDN_Txt.getText();
         MatKhau = MatKhau_Txt.getText();
-        if(TenDN.equals("") || MatKhau.equals("")){
+        if(TenDN.equals("Enter Username") || MatKhau.equals("Enter Password") || TenDN.equals("") || MatKhau.equals("")){
             JOptionPane.showMessageDialog(this, "Vui lòng điền đầy đủ thông tin", "Error", JOptionPane.ERROR_MESSAGE);
         } else {
             TaiKhoanController tk = new TaiKhoanController();
@@ -243,6 +243,7 @@ public class Login extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */

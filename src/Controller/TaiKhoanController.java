@@ -12,6 +12,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.table.DefaultTableModel;
 import oracle.jdbc.OracleTypes;
 
 /**
@@ -19,6 +20,14 @@ import oracle.jdbc.OracleTypes;
  * @author GIA KIET
  */
 public class TaiKhoanController {
+    
+    public void Add(ArrayList<TaiKhoanModel> tkmodel, DefaultTableModel table){
+        for(TaiKhoanModel i : tkmodel){
+            Object[] obj = {i.getMaTK(), i.getHoTen(), i.toString(i.getNgSinh()), i.getGmail(), i.getDiaChi(), i.getSDT(), i.getLuong(), i.toString(i.getNgTaoTK()), i.getChucVu()};
+            table.addRow(obj);
+        }
+    }
+    
     public static int DangNhap(String TenDN, String MatKhau) {
         Connection conn = null;
         ResultSet rs = null;

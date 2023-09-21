@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.table.DefaultTableModel;
 import oracle.jdbc.OracleTypes;
 
 /**
@@ -20,10 +21,31 @@ import oracle.jdbc.OracleTypes;
  * @author GIA KIET
  */
 public class SachController {
+    
+    public void Add(ArrayList<SachModel> SModel, DefaultTableModel table){
+        for(SachModel i : SModel){
+            Object[] obj = {i.getMaSach(), i.getTenSach(), i.getTenTheLoai(), i.getTenTG(), i.getNXB(), i.getGiaTien(), i.getSlHienCo()};
+            table.addRow(obj);
+        }
+    }
+    public void AddSachCTHD(ArrayList<SachModel> SModel, DefaultTableModel table) {
+        for(SachModel i : SModel){
+            Object[] obj = {i.getMaSach(), i.getTenSach(), i.getSlHienCo(), i.getGiaTien()};
+            table.addRow(obj);
+        }
+    }
+    
+    public void AddSachCTPNS(ArrayList<SachModel> SModel, DefaultTableModel table){
+        for(SachModel i : SModel){
+            Object[] obj = {i.getMaSach(), i.getTenSach(), i.getTenTheLoai() ,i.getSlHienCo(), i.getGiaTien()};
+            table.addRow(obj);
+        }
+    }
+    
     public ArrayList<SachModel> getTCSach(){
         ArrayList<SachModel> sachModel = new ArrayList<SachModel>();
         Connection conn = null;
-        ResultSet rs = null;
+        //ResultSet rs = null;
         CallableStatement callsql = null;
         String sql = "";
         try{
@@ -36,7 +58,7 @@ public class SachController {
             callsql = conn.prepareCall(sql);
             callsql.registerOutParameter(1, OracleTypes.CURSOR);
             callsql.execute();
-            rs =  (ResultSet) callsql.getObject(1);
+            ResultSet rs =  (ResultSet) callsql.getObject(1);
             while(rs.next()){
                 SachModel SM = new 
                     SachModel(rs.getInt("MASACH"), 
@@ -50,9 +72,9 @@ public class SachController {
                             rs.getString("TENTHELOAI"));
                 sachModel.add(SM);
             }
-        } catch(SQLException e){
+        } catch(Exception e){
             e.printStackTrace();
-        }
+        } 
         return sachModel;
     }
     

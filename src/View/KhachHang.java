@@ -31,8 +31,7 @@ public class KhachHang extends javax.swing.JFrame {
     public String TenDNHome, MatKhauHome;
     public KhachHangController kh = new KhachHangController();
     public TaiKhoanController tk = new TaiKhoanController();
-    public int ChucVu = tk.TraVeChucVu(TenDNHome, MatKhauHome);
-    DefaultTableModel table = new DefaultTableModel();
+    public DefaultTableModel table = new DefaultTableModel();
     public int ID;
 
     
@@ -524,7 +523,7 @@ public class KhachHang extends javax.swing.JFrame {
             return;
         } else {
             khmodel = kh.TimKiemKH(choice, search);
-            Add(khmodel, Table_for_search);
+            kh.Add(khmodel, Table_for_search);
         } 
     }//GEN-LAST:event_SearchBtnActionPerformed
 
@@ -536,6 +535,7 @@ public class KhachHang extends javax.swing.JFrame {
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
         // TODO add your handling code here:
+        jTable1.setDefaultEditor(Object.class, null);
         try {
             int selectedRow = jTable1.getSelectedRow();
             DefaultTableModel temp = (DefaultTableModel) jTable1.getModel();
@@ -560,23 +560,16 @@ public class KhachHang extends javax.swing.JFrame {
     private void QlaiBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QlaiBtnActionPerformed
         // TODO add your handling code here:
         new Home(TenDNHome, MatKhauHome);
-        this.dispose();
+        dispose();
     }//GEN-LAST:event_QlaiBtnActionPerformed
 
-    public void Add(ArrayList<KhachHangModel> arrkhmodel, DefaultTableModel table){
-        for(KhachHangModel i : arrkhmodel){
-            Object[] obj = {i.getMaKH(), i.getHoTen(), i.toString(i.getNgSinh()), i.getDiaChi(), i.getSDT(), i.getCCCD(), i.toString(i.getNgTao()), i.getGioiTinh()};
-            table.addRow(obj);
-        }
-    }
-    
     public void GetAllKhachHang(){
         String[] title = {"Mã KH", "Họ Tên", "Ngày sinh", "Địa chỉ", "SĐT", "CCCD", "Ngày tạo", "Giới tính"};
         table.setColumnIdentifiers(title);
         table.setRowCount(0);
         ArrayList<KhachHangModel> arrkhmodel = new ArrayList<KhachHangModel>();
         arrkhmodel = kh.getTCKhachHang();
-        Add(arrkhmodel, table);
+        kh.Add(arrkhmodel, table);
         jTable1.setModel(table);
         jTable1.getColumnModel().getColumn(0).setPreferredWidth(10);
         jTable1.getColumnModel().getColumn(3).setPreferredWidth(425);
@@ -587,7 +580,7 @@ public class KhachHang extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static void main(String args) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -609,6 +602,7 @@ public class KhachHang extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(KhachHang.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */

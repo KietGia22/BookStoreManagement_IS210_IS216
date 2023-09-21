@@ -156,6 +156,11 @@ public class Them_HD extends javax.swing.JFrame {
             }
         });
         jTable2.setShowGrid(true);
+        jTable2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable2MouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(jTable2);
 
         Search_txt.setBackground(new java.awt.Color(173, 216, 230));
@@ -227,6 +232,11 @@ public class Them_HD extends javax.swing.JFrame {
         TKD_txt.setBackground(new java.awt.Color(173, 216, 230));
         TKD_txt.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         TKD_txt.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 1, new java.awt.Color(0, 0, 0)));
+        TKD_txt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TKD_txtActionPerformed(evt);
+            }
+        });
 
         jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel6.setText("Tiền thối");
@@ -344,7 +354,7 @@ public class Them_HD extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(TT_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 17, Short.MAX_VALUE))
+                .addGap(0, 23, Short.MAX_VALUE))
         );
 
         jPanel2.setBackground(new java.awt.Color(0, 100, 100));
@@ -382,8 +392,7 @@ public class Them_HD extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -399,12 +408,13 @@ public class Them_HD extends javax.swing.JFrame {
             return;
         } else {
             SModel = s.TimKiemSach(jComboBox1.getSelectedItem().toString(), Search_txt.getText());
-                Add(SModel, Table_for_search);
+            s.AddSachCTHD(SModel, Table_for_search);
         }
     }//GEN-LAST:event_SearchBtnActionPerformed
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
         // TODO add your handling code here:
+        jTable1.setDefaultEditor(Object.class, null);
         try {
             int selectedRow = jTable1.getSelectedRow();
             DefaultTableModel temp = (DefaultTableModel) jTable1.getModel();
@@ -470,8 +480,8 @@ public class Them_HD extends javax.swing.JFrame {
 
     private void QlaiBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QlaiBtnActionPerformed
         // TODO add your handling code here:
-        dispose();
         new HoaDon(TenDNHome, MatKhauHome);
+        dispose();
     }//GEN-LAST:event_QlaiBtnActionPerformed
 
     private void TaoHDBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TaoHDBtnActionPerformed
@@ -490,27 +500,34 @@ public class Them_HD extends javax.swing.JFrame {
                 } else {
                     hdModel = new HoaDonModel(LoaiKH, MaTK, 0, null);
                 }
-                    if(hd.ThemHD(hdModel) != 0){
-                    int MaHD = hd.HoaDonVuaTao();
-                    System.out.println(MaHD);
-                    Object[] tablemua;
-                    ArrayList<Object> tempArr = new ArrayList<>(Arrtemp);
-                    for(Object i : tempArr){
-                        tablemua = (Object[]) i;
-                        int MaS = Integer.parseInt(tablemua[0].toString());
-                        int SL = Integer.parseInt(tablemua[2].toString());
-                        HoaDonModel chitiet = new HoaDonModel(MaHD, MaS, SL);
-                        if(hd.ThemCTHD(chitiet) != 0){
-                            JOptionPane.showMessageDialog(this, "Tạo hoá đơn thành công");
-                            GetTCSach();
-                            TinhTien();
-                            Reset();
-                        } else {
-                            JOptionPane.showMessageDialog(this, "Tạo hoá đơn thất bại", "Error", JOptionPane.ERROR_MESSAGE);
-                            GetTCSach();
-                        }
+                if(hd.ThemHD(hdModel) != 0){
+                int MaHD = hd.HoaDonVuaTao();
+                System.out.println(MaHD);
+                Object[] tablemua;
+                ArrayList<Object> tempArr = new ArrayList<>(Arrtemp);
+                for(Object i : tempArr){
+                    tablemua = (Object[]) i;
+                    int MaS = Integer.parseInt(tablemua[0].toString());
+                    int SL = Integer.parseInt(tablemua[2].toString());
+                    HoaDonModel chitiet = new HoaDonModel(MaHD, MaS, SL);
+                    if(hd.ThemCTHD(chitiet) == 0){
+                        JOptionPane.showMessageDialog(this, "Tạo hoá đơn thất bại", "Error", JOptionPane.ERROR_MESSAGE);
+                        GetTCSach();
+                         break; 
                     }
-                }  
+                }
+                JOptionPane.showMessageDialog(this, "Tạo hoá đơn thành công");
+                GetTCSach();
+                TinhTien();
+                Reset();
+                if(LoaiKH == 0){
+                    int mhd = hd.HoaDonVuaTao();
+                    hd.XuatHoaDonChoKHVL(mhd);
+                } else {
+                    int mhd = hd.HoaDonVuaTao();
+                    hd.XuatHoaDonChoKH(mhd);
+                }
+              }  
             }
         }
     }//GEN-LAST:event_TaoHDBtnActionPerformed
@@ -549,20 +566,25 @@ public class Them_HD extends javax.swing.JFrame {
         Reset();
     }//GEN-LAST:event_ResetBtnActionPerformed
 
-    public void Add(ArrayList<SachModel> SModel, DefaultTableModel table){
-        for(SachModel i : SModel){
-            Object[] obj = {i.getMaSach(), i.getTenSach(), i.getSlHienCo(), i.getGiaTien()};
-            table.addRow(obj);
-        }
-    }
-    
+    private void TKD_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TKD_txtActionPerformed
+        // TODO add your handling code here:
+        TienKhachDua = Long.parseLong(TKD_txt.getText().toString());
+        TienThoi = TienKhachDua - TongTien;
+        TT_txt.setText(Long.toString(TienThoi));
+    }//GEN-LAST:event_TKD_txtActionPerformed
+
+    private void jTable2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable2MouseClicked
+        // TODO add your handling code here:
+        jTable2.setDefaultEditor(Object.class, null);
+    }//GEN-LAST:event_jTable2MouseClicked
+
     public void GetTCSach(){
         String title[] = {"Mã sách", "Tên sách", "Số lượng hiện tại", "Giá"};
         table.setColumnIdentifiers(title);
         table.setRowCount(0);
         ArrayList<SachModel> SModel = new ArrayList<SachModel>();
         SModel = s.getTCSach();
-        Add(SModel, table);
+        s.AddSachCTHD(SModel, table);
         jTable1.setModel(table);
         jTable1.getColumnModel().getColumn(0).setPreferredWidth(20);
         jTable1.getColumnModel().getColumn(1).setPreferredWidth(150);
@@ -575,11 +597,10 @@ public class Them_HD extends javax.swing.JFrame {
         TienThoi = TienKhachDua - TongTien;
         TT_txt.setText(Long.toString(TienThoi));
     }
-    
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static void main(String args) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -601,6 +622,9 @@ public class Them_HD extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Them_HD.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */

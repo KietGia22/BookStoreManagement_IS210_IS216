@@ -10,6 +10,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.table.DefaultTableModel;
 import oracle.jdbc.OracleTypes;
 
 /**
@@ -17,6 +18,14 @@ import oracle.jdbc.OracleTypes;
  * @author GIA KIET
  */
 public class NhaPhanPhoiController {
+    
+    public void Add(ArrayList<NhaPhanPhoiModel> nppModel, DefaultTableModel table){
+        for(NhaPhanPhoiModel i : nppModel){
+            Object[] obj = {i.getMaNPP(), i.getTenNPP(), i.getSDT(), i.getDiaChi()};
+            table.addRow(obj);
+        }
+    }
+    
     public ArrayList<NhaPhanPhoiModel> getTCNCC(){
         ArrayList<NhaPhanPhoiModel> nppModel = new ArrayList<NhaPhanPhoiModel>();
         Connection conn = null;

@@ -22,6 +22,7 @@ public class ChamCong extends javax.swing.JFrame {
     public String TenDNHome, MatKhauHome;
     public TaiKhoanController tk = new TaiKhoanController();
     public LuongController luong = new LuongController();
+    public int checkChamCong = 0;
     
     public ChamCong(String TenDN, String MatKhau){
         initComponents();
@@ -31,6 +32,7 @@ public class ChamCong extends javax.swing.JFrame {
         this.MatKhauHome = MatKhau;
         if(tk.TraVeChucVu(TenDNHome, MatKhauHome) != 4)
             this.XemdsccBtn.setVisible(false);
+        CheckChamCong();
     }
 
     /**
@@ -179,17 +181,27 @@ public class ChamCong extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public void CheckChamCong(){
+        int MaTK = tk.GetMaTK(TenDNHome, MatKhauHome);
+        System.out.println(MaTK);
+        if(luong.SlChamCong(MaTK) == 1){
+            BatDauBtn.setEnabled(false);
+        } else if(luong.SlChamCong(MaTK) == 2) {
+            BatDauBtn.setEnabled(false);
+            KetThucBtn.setEnabled(false);
+        }
+    }
+    
     private void XemdsccBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_XemdsccBtnActionPerformed
         // TODO add your handling code here:
-        dispose();
         new DSChamCong(TenDNHome, MatKhauHome);
+        dispose();
     }//GEN-LAST:event_XemdsccBtnActionPerformed
 
     private void QlaiBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QlaiBtnActionPerformed
         // TODO add your handling code here:
-        dispose();
         new Home(TenDNHome, MatKhauHome);
-        
+        dispose();
     }//GEN-LAST:event_QlaiBtnActionPerformed
 
     private void BatDauBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BatDauBtnActionPerformed
@@ -200,6 +212,7 @@ public class ChamCong extends javax.swing.JFrame {
             if(luong.BatDauChamCong(MaTK) != 0)
                 JOptionPane.showMessageDialog(this, "Bắt đầu chấm công");
             BatDauBtn.setEnabled(false);
+            CheckChamCong();
         } catch (Exception e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(this, "Chấm công thất bại", "Bắt đầu chấm công", JOptionPane.ERROR_MESSAGE);
@@ -214,6 +227,7 @@ public class ChamCong extends javax.swing.JFrame {
             if(luong.KetThucChamCong(MaTK) != 0)
                 JOptionPane.showMessageDialog(this, "kết thúc chấm công");
             KetThucBtn.setEnabled(false);
+            CheckChamCong();
         } catch (Exception e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(this, "Chấm công thất bại", "Bắt đầu chấm công", JOptionPane.ERROR_MESSAGE);
@@ -223,7 +237,7 @@ public class ChamCong extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static void main(String args) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -245,6 +259,9 @@ public class ChamCong extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(ChamCong.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */

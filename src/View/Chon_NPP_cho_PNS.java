@@ -29,8 +29,7 @@ public class Chon_NPP_cho_PNS extends javax.swing.JFrame {
     public int ID;
     public TaiKhoanController tk = new TaiKhoanController();
     public NhaPhanPhoiController npp = new NhaPhanPhoiController(); 
-    public int ChucVu = tk.TraVeChucVu(TenDNHome, MatKhauHome);
-    DefaultTableModel table = new DefaultTableModel();
+    public DefaultTableModel table = new DefaultTableModel();
     
     public boolean CheckNumberOrNot(String regax){
         return regax.matches("-?\\d+(\\.\\d+)?");
@@ -226,6 +225,7 @@ public class Chon_NPP_cho_PNS extends javax.swing.JFrame {
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
         // TODO add your handling code here:
+        jTable1.setDefaultEditor(Object.class, null);
         try{
             int selectedRow = jTable1.getSelectedRow();
             DefaultTableModel temp = (DefaultTableModel) jTable1.getModel();
@@ -245,7 +245,7 @@ public class Chon_NPP_cho_PNS extends javax.swing.JFrame {
 
     private void QlaiBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QlaiBtnActionPerformed
         // TODO add your handling code here:
-        new PhieuNhap(TenDNHome, MatKhauHome);
+        new PhieuNhapSach(TenDNHome, MatKhauHome);
         dispose();
     }//GEN-LAST:event_QlaiBtnActionPerformed
 
@@ -266,24 +266,17 @@ public class Chon_NPP_cho_PNS extends javax.swing.JFrame {
             return;
         } else {
             nppModel = npp.TimKiemNCC(jComboBox1.getSelectedItem().toString(), Search_txt.getText());
-            Add(nppModel, Table_for_search);
+            npp.Add(nppModel, Table_for_search);
         }
     }//GEN-LAST:event_SearchBtn1ActionPerformed
 
-    public void Add(ArrayList<NhaPhanPhoiModel> nppModel, DefaultTableModel table){
-        for(NhaPhanPhoiModel i : nppModel){
-            Object[] obj = {i.getMaNPP(), i.getTenNPP()};
-            table.addRow(obj);
-        }
-    }
-    
     public void GetAllNPP(){
         String title[] = {"Mã NPP", "Tên NPP"};
         table.setColumnIdentifiers(title);
         table.setRowCount(0);
         ArrayList<NhaPhanPhoiModel> nppModel = new ArrayList<NhaPhanPhoiModel>();
         nppModel = npp.getTCNCC();
-        Add(nppModel, table);
+        npp.Add(nppModel, table);
         jTable1.setModel(table);
         jTable1.getColumnModel().getColumn(0).setPreferredWidth(20);
         jTable1.getColumnModel().getColumn(1).setPreferredWidth(80);
@@ -293,7 +286,7 @@ public class Chon_NPP_cho_PNS extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static void main(String args) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -315,6 +308,7 @@ public class Chon_NPP_cho_PNS extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Chon_NPP_cho_PNS.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */

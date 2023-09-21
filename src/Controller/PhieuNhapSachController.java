@@ -13,6 +13,13 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import oracle.jdbc.OracleTypes;
 import View.Them_PN;
+import java.util.Hashtable;
+import javax.swing.table.DefaultTableModel;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.view.JasperViewer;
 
 /**
  *
@@ -22,6 +29,13 @@ public class PhieuNhapSachController {
     
     public TaiKhoanController tk = new TaiKhoanController();
     public NhaPhanPhoiController npp = new NhaPhanPhoiController();
+    
+    public void Add(ArrayList<PhieuNhapSachModel> pnModel, DefaultTableModel table){
+        for(PhieuNhapSachModel i : pnModel){
+            Object[] obj = {i.getMaPNS(), i.getTenNV(), i.getTenNPP(), i.toString(i.getNgNhap()), i.getTongTien()};
+            table.addRow(obj);
+        }
+    }
     
     public ArrayList<PhieuNhapSachModel> getThongTinPhieuNhap(){
         ArrayList<PhieuNhapSachModel> pn = new ArrayList<PhieuNhapSachModel>();
@@ -231,5 +245,17 @@ public class PhieuNhapSachController {
             e.printStackTrace();
         }
         return 0;
+    }
+    
+    public void XuatHoaDonChoPN(int Ma){
+        try {
+            Hashtable hashtable = new Hashtable();
+            JasperReport hdonPN = JasperCompileManager.compileReport("src\\Report\\reportPN.jrxml");
+            hashtable.put("mpn", Ma);
+            JasperPrint jsprint = JasperFillManager.fillReport(hdonPN, hashtable, ConnectDB.getJDBCConnection());
+            JasperViewer.viewReport(jsprint, false);
+        } catch(Exception ex){
+            ex.printStackTrace();
+        }
     }
 }

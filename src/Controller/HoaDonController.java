@@ -9,8 +9,15 @@ import Model.HoaDonModel;
 import Model.SachModel;
 import java.util.ArrayList;
 import java.sql.*;
+import java.util.Hashtable;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.table.DefaultTableModel;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.view.JasperViewer;
 import oracle.jdbc.OracleTypes;
 
 /**
@@ -21,6 +28,23 @@ import oracle.jdbc.OracleTypes;
 public class HoaDonController {
     
     public SachController s = new SachController();
+    
+    public void Add(ArrayList<HoaDonModel> hdModel, DefaultTableModel table){
+        for(HoaDonModel i : hdModel){
+            Object[] objTemp = null;
+            if(i.getMaKH() == 0){
+                String TenNV = GetTenNV(i.getMaTK());
+                Object[] obj = {i.getMaHD(), "Khách vãng lai", TenNV, i.toString(i.getNgTaoHD()), i.getTongTien()};
+                objTemp = obj;
+            } else if(i.getMaKH() > 0) {
+                String TenNV = GetTenNV(i.getMaTK());
+                String TenKH = GetTenKH(i.getMaKH());
+                Object[] obj = {i.getMaHD(), TenKH, TenNV, i.toString(i.getNgTaoHD()), i.getTongTien()};
+                objTemp = obj;
+            }
+            table.addRow(objTemp);
+        }
+    }
     
     public ArrayList<HoaDonModel> getTCHoaDon(){
         ArrayList<HoaDonModel> hdModel = new ArrayList<HoaDonModel>();
@@ -286,5 +310,29 @@ public class HoaDonController {
             e.printStackTrace();
         }
         return 0;
+    }
+    
+    public void XuatHoaDonChoKH(int MaHD){
+        try {
+            Hashtable hashtable = new Hashtable();
+            JasperReport hdonKH = JasperCompileManager.compileReport("src\\Report\\reportHD.jrxml");
+            hashtable.put("mhd", MaHD);
+            JasperPrint jsprint = JasperFillManager.fillReport(hdonKH, hashtable, ConnectDB.getJDBCConnection());
+            JasperViewer.viewReport(jsprint, false);
+        } catch(Exception ex){
+            ex.printStackTrace();
+        }
+    }
+    
+    public void XuatHoaDonChoKHVL(int MaHD){
+        try {
+            Hashtable hashtable = new Hashtable();
+            JasperReport hdonKH = JasperCompileManager.compileReport("src\\Report\\reportKHVL.jrxml");
+            hashtable.put("mhd", MaHD);
+            JasperPrint jsprint = JasperFillManager.fillReport(hdonKH, hashtable, ConnectDB.getJDBCConnection());
+            JasperViewer.viewReport(jsprint, false);
+        } catch(Exception ex){
+            ex.printStackTrace();
+        }
     }
 }

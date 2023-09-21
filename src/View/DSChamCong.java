@@ -28,8 +28,7 @@ public class DSChamCong extends javax.swing.JFrame {
     public String TenDNHome, MatKhauHome;
     public TaiKhoanController tk = new TaiKhoanController();
     public LuongController luong = new LuongController();
-    public int chucvu = tk.TraVeChucVu(TenDNHome, MatKhauHome);
-    DefaultTableModel table = new DefaultTableModel();
+    public DefaultTableModel table = new DefaultTableModel();
     
     public DSChamCong(String TenDN, String MatKhau){
         initComponents();
@@ -83,6 +82,11 @@ public class DSChamCong extends javax.swing.JFrame {
             }
         });
         jTable1.setShowGrid(true);
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
 
         QlaiBtn.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -158,24 +162,22 @@ public class DSChamCong extends javax.swing.JFrame {
 
     private void QlaiBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QlaiBtnActionPerformed
         // TODO add your handling code here:
-        dispose();
         new ChamCong(TenDNHome, MatKhauHome);
+        dispose();
     }//GEN-LAST:event_QlaiBtnActionPerformed
 
-    public void Add(ArrayList<LuongModel> luongModel, DefaultTableModel table){
-        for(LuongModel i : luongModel){
-            Object[] obj = {i.getMaTK(), i.getTenNV() , i.getSoGioLamViec()};
-            table.addRow(obj);
-        }
-    }
-    
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+        // TODO add your handling code here:
+        jTable1.setDefaultEditor(Object.class, null);
+    }//GEN-LAST:event_jTable1MouseClicked
+
     public void GetDSChamCong(){
         String[] title = {"Mã TK", "Tên nhân viên" ,"Số giờ làm"};
         table.setColumnIdentifiers(title);
         table.setRowCount(0);
         ArrayList<LuongModel> luongModel = new ArrayList<LuongModel>();
         luongModel = luong.getDSChamCong();
-        Add(luongModel, table);
+        luong.AddDSChamCong(luongModel, table);
         jTable1.setModel(table);
         jTable1.setRowHeight(30);
     }
@@ -184,7 +186,7 @@ public class DSChamCong extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static void main(String args) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -206,6 +208,7 @@ public class DSChamCong extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(DSChamCong.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */

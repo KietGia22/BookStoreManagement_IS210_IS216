@@ -10,6 +10,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.table.DefaultTableModel;
 import oracle.jdbc.OracleTypes;
 
 /**
@@ -17,6 +18,22 @@ import oracle.jdbc.OracleTypes;
  * @author GIA KIET
  */
 public class LuongController {
+    
+    public void Add(ArrayList<LuongModel> luongModel, DefaultTableModel table){
+        for(LuongModel i : luongModel){
+            Object[] obj = {i.getMaTK(), i.getTenNV(), i.getThang(), i.getNam(),i.getTongSoGioLamViec(), i.getLuong()};
+            table.addRow(obj);
+        }
+    }
+    
+    public void AddDSChamCong(ArrayList<LuongModel> luongModel, DefaultTableModel table){
+        for(LuongModel i : luongModel){
+            Object[] obj = {i.getMaTK(), i.getTenNV() , i.getSoGioLamViec()};
+            table.addRow(obj);
+        }
+    }
+    
+    
     public int BatDauChamCong(int MaTK){
         Connection conn = null;
         ResultSet rs = null;
@@ -43,7 +60,6 @@ public class LuongController {
     
     public int KetThucChamCong(int MaTK){
         Connection conn = null;
-        ResultSet rs = null;
         CallableStatement callsql = null;
         String sql = "";
         int check = 0;
@@ -128,5 +144,32 @@ public class LuongController {
             e.printStackTrace();
         }
         return luongModel;
+    }
+    
+    public int SlChamCong(int MaTK){
+        int check = -1;
+        Connection conn = null;
+        CallableStatement callsql = null;
+        String sql = "";
+        ResultSet rs = null;
+        try {
+            try {
+                conn = ConnectDB.getJDBCConnection();
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(LuongController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            sql = "{call KTRACHAMCONG(?, ?)}";
+            callsql = conn.prepareCall(sql);
+            callsql.setInt(1, MaTK);
+            callsql.registerOutParameter(2, OracleTypes.CURSOR);
+            callsql.execute();
+            rs =  (ResultSet) callsql.getObject(2);
+            if(rs.next())
+                check = rs.getInt("SLCHAM");
+            return check;
+        } catch(SQLException e) {
+            e.printStackTrace();
+        }
+        return 0;
     }
 }

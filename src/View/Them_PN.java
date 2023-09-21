@@ -15,6 +15,7 @@ import java.util.Iterator;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
+
 /**
  *
  * @author GIA KIET
@@ -85,7 +86,7 @@ public class Them_PN extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         GN_txt = new javax.swing.JTextField();
         DelBtn = new javax.swing.JButton();
-        TaoHDBtn = new javax.swing.JButton();
+        TaoPNSBtn = new javax.swing.JButton();
         QlaiBtn = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         ThemBtn = new javax.swing.JButton();
@@ -152,6 +153,11 @@ public class Them_PN extends javax.swing.JFrame {
             }
         });
         jTable2.setShowGrid(true);
+        jTable2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable2MouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(jTable2);
 
         Search_txt.setBackground(new java.awt.Color(173, 216, 230));
@@ -180,19 +186,19 @@ public class Them_PN extends javax.swing.JFrame {
 
         DelBtn.setBackground(new java.awt.Color(0, 204, 204));
         DelBtn.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
-        DelBtn.setText("Xoá sách trong phiếu nhập");
+        DelBtn.setText("Xoá sách");
         DelBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DelBtnActionPerformed(evt);
             }
         });
 
-        TaoHDBtn.setBackground(new java.awt.Color(0, 204, 204));
-        TaoHDBtn.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
-        TaoHDBtn.setText("Tạo phiếu nhập");
-        TaoHDBtn.addActionListener(new java.awt.event.ActionListener() {
+        TaoPNSBtn.setBackground(new java.awt.Color(0, 204, 204));
+        TaoPNSBtn.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        TaoPNSBtn.setText("Tạo phiếu nhập");
+        TaoPNSBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TaoHDBtnActionPerformed(evt);
+                TaoPNSBtnActionPerformed(evt);
             }
         });
 
@@ -210,7 +216,7 @@ public class Them_PN extends javax.swing.JFrame {
 
         ThemBtn.setBackground(new java.awt.Color(0, 204, 204));
         ThemBtn.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
-        ThemBtn.setText("Thêm sách chọn vào phiếu nhập");
+        ThemBtn.setText("Thêm sách");
         ThemBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ThemBtnActionPerformed(evt);
@@ -258,7 +264,7 @@ public class Them_PN extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(ResetBtn)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(TaoHDBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(TaoPNSBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -274,10 +280,10 @@ public class Them_PN extends javax.swing.JFrame {
                                 .addGap(26, 26, 26)
                                 .addComponent(GN_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(ThemBtn)
-                            .addComponent(DelBtn))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 111, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(ThemBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(DelBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 250, Short.MAX_VALUE)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1145, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
@@ -292,7 +298,7 @@ public class Them_PN extends javax.swing.JFrame {
                     .addComponent(Search_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(SearchBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(TaoHDBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TaoPNSBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ResetBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(25, 25, 25)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -312,7 +318,7 @@ public class Them_PN extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(ThemBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(DelBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(DelBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -372,7 +378,7 @@ public class Them_PN extends javax.swing.JFrame {
             return;
         } else {
             SModel = s.TimKiemSach(jComboBox1.getSelectedItem().toString(), Search_txt.getText());
-                Add(SModel, Table_for_search);
+            s.AddSachCTPNS(SModel, Table_for_search);
         }
     }//GEN-LAST:event_SearchBtnActionPerformed
 
@@ -431,7 +437,7 @@ public class Them_PN extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_ThemBtnActionPerformed
 
-    private void TaoHDBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TaoHDBtnActionPerformed
+    private void TaoPNSBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TaoPNSBtnActionPerformed
         // TODO add your handling code here:
         int opt = JOptionPane.showConfirmDialog(this, "Bạn muốn tạo phiếu nhập sách", "Tạo phiếu nhập sách", JOptionPane.YES_NO_OPTION);
         if(opt == JOptionPane.YES_OPTION){
@@ -458,14 +464,16 @@ public class Them_PN extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(this, "Tạo phiếu nhập thành công");
                     GetTCSach();
                     Reset();
+                    int MA = pns.PhieuNhapSachVuaTao();
+                    pns.XuatHoaDonChoPN(MA);
                 }  
             }
-    }//GEN-LAST:event_TaoHDBtnActionPerformed
+    }//GEN-LAST:event_TaoPNSBtnActionPerformed
 
     private void QlaiBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QlaiBtnActionPerformed
         // TODO add your handling code here:
         dispose();
-        new Chon_NPP_cho_PNS(TenDNHome, MatKhauHome);
+        new PhieuNhapSach(TenDNHome, MatKhauHome);
         
     }//GEN-LAST:event_QlaiBtnActionPerformed
 
@@ -480,6 +488,7 @@ public class Them_PN extends javax.swing.JFrame {
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
         // TODO add your handling code here:
+        jTable1.setDefaultEditor(Object.class, null);
         try {
             int selectedRow = jTable1.getSelectedRow();
             DefaultTableModel temp = (DefaultTableModel) jTable1.getModel();
@@ -520,21 +529,18 @@ public class Them_PN extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_DelBtnActionPerformed
 
-    
-    public void Add(ArrayList<SachModel> SModel, DefaultTableModel table){
-        for(SachModel i : SModel){
-            Object[] obj = {i.getMaSach(), i.getTenSach(), i.getTenTheLoai() ,i.getSlHienCo(), i.getGiaTien()};
-            table.addRow(obj);
-        }
-    }
-    
+    private void jTable2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable2MouseClicked
+        // TODO add your handling code here:
+        jTable2.setDefaultEditor(Object.class, null);
+    }//GEN-LAST:event_jTable2MouseClicked
+
     public void GetTCSach(){
         String title[] = {"Mã sách", "Tên sách", "Thể loại", "Số lượng hiện tại", "Đơn giá sách"};
         table.setColumnIdentifiers(title);
         table.setRowCount(0);
         ArrayList<SachModel> SModel = new ArrayList<SachModel>();
         SModel = s.getTCSach();
-        Add(SModel, table);
+        s.AddSachCTPNS(SModel, table);
         jTable1.setModel(table);
         jTable1.getColumnModel().getColumn(0).setPreferredWidth(20);
         jTable1.getColumnModel().getColumn(1).setPreferredWidth(240);
@@ -543,11 +549,10 @@ public class Them_PN extends javax.swing.JFrame {
         jTable1.getColumnModel().getColumn(4).setPreferredWidth(30);
         jTable1.setRowHeight(30);
     }
-    
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static void main(String args) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -570,6 +575,7 @@ public class Them_PN extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Them_PN.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -588,7 +594,7 @@ public class Them_PN extends javax.swing.JFrame {
     private javax.swing.JButton SearchBtn;
     private javax.swing.JTextField Search_txt;
     private javax.swing.JTextField TTN_txt;
-    private javax.swing.JButton TaoHDBtn;
+    private javax.swing.JButton TaoPNSBtn;
     private javax.swing.JButton ThemBtn;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;

@@ -28,6 +28,7 @@ public class SaleReport extends javax.swing.JFrame {
     ArrayList<BaoCaoTonModel> list_bctModel = new ArrayList<BaoCaoTonModel>();
     ArrayList<BaoCaoDoanhThuModel> list_bcdtModel = new ArrayList<BaoCaoDoanhThuModel>();
     BaoCaoController bcController = new BaoCaoController();
+    String TDN, MK;
     
     public SaleReport() {
         initComponents();
@@ -45,6 +46,27 @@ public class SaleReport extends javax.swing.JFrame {
 
         tableReportTon.getTableHeader().setDefaultRenderer(centerRenderer);
         tableReportDT.getTableHeader().setDefaultRenderer(centerRenderer);
+    }
+    
+    public SaleReport(String TenDN, String MatKhau) {
+        initComponents();
+        this.setLocationRelativeTo(null);
+        this.setVisible(true);
+        int lastYear = bcController.GetMinYear();
+        System.out.println(lastYear);
+        int currentYear = Calendar.getInstance().get(Calendar.YEAR);
+        for(int i = lastYear; i <= currentYear; i++ ) {
+            cbbYear.addItem(String.valueOf(i));
+        }
+
+        DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
+        centerRenderer.setHorizontalAlignment(SwingConstants.CENTER);
+
+        tableReportTon.getTableHeader().setDefaultRenderer(centerRenderer);
+        tableReportDT.getTableHeader().setDefaultRenderer(centerRenderer);
+        
+        this.TDN = TenDN;
+        this.MK = MatKhau;
     }
 
     /**
@@ -71,8 +93,7 @@ public class SaleReport extends javax.swing.JFrame {
         tabBookReport = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tableReportDT = new javax.swing.JTable();
-        btnImportExcel = new javax.swing.JButton();
-        btnExportExcel = new javax.swing.JButton();
+        QuayLaiBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -187,7 +208,7 @@ public class SaleReport extends javax.swing.JFrame {
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Object.class, java.lang.Object.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class
             };
             boolean[] canEdit = new boolean [] {
                 false, false, false, false, false, false
@@ -214,15 +235,17 @@ public class SaleReport extends javax.swing.JFrame {
             .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 287, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("Báo cáo daonh thu", tabBookReport);
+        jTabbedPane1.addTab("Báo cáo doanh thu", tabBookReport);
 
-        btnImportExcel.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnImportExcel.setText("Import Excel");
-        btnImportExcel.setMargin(new java.awt.Insets(2, 10, 2, 10));
-
-        btnExportExcel.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnExportExcel.setText("Export Excel");
-        btnExportExcel.setMargin(new java.awt.Insets(2, 10, 2, 10));
+        QuayLaiBtn.setBackground(new java.awt.Color(0, 204, 204));
+        QuayLaiBtn.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        QuayLaiBtn.setText("Quay lại");
+        QuayLaiBtn.setMargin(new java.awt.Insets(2, 10, 2, 10));
+        QuayLaiBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                QuayLaiBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -246,10 +269,8 @@ public class SaleReport extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnImportExcel)
-                .addGap(18, 18, 18)
-                .addComponent(btnExportExcel)
-                .addGap(26, 26, 26))
+                .addComponent(QuayLaiBtn)
+                .addGap(30, 30, 30))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -266,9 +287,7 @@ public class SaleReport extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnImportExcel)
-                    .addComponent(btnExportExcel))
+                .addComponent(QuayLaiBtn)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -315,7 +334,7 @@ public class SaleReport extends javax.swing.JFrame {
         STT_BCT = 1;
         list_bctModel = bcController.GetListBaoCaoTon(month, year);
         if(list_bctModel.size() == 0) {
-            JOptionPane.showMessageDialog(null, "Không có dữ liệu để hiển thị");
+            JOptionPane.showMessageDialog(null, "Không có dữ liệu báo cáo tồn để hiển thị");
         }
         else {
             for (BaoCaoTonModel bct : list_bctModel) {
@@ -333,8 +352,8 @@ public class SaleReport extends javax.swing.JFrame {
         }
         STT_BCDT = 1;
         list_bcdtModel = bcController.GetListBaoCaoDoanhThu(month, year);
-        if(list_bcdtModel == null) {
-            JOptionPane.showMessageDialog(null, "Không có dữ liệu để hiển thị");
+        if(list_bcdtModel.size() == 0) {
+            JOptionPane.showMessageDialog(null, "Không có dữ liệu báo cáo doanh thu để hiển thị");
         }
         else {
             for (BaoCaoDoanhThuModel bcdt : list_bcdtModel) {
@@ -348,10 +367,16 @@ public class SaleReport extends javax.swing.JFrame {
         System.out.println(list_bcdtModel.size());
     }//GEN-LAST:event_btnViewReportActionPerformed
 
+    private void QuayLaiBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QuayLaiBtnActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        new Home(TDN, MK);
+    }//GEN-LAST:event_QuayLaiBtnActionPerformed
+
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static void main(String args) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -377,6 +402,10 @@ public class SaleReport extends javax.swing.JFrame {
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -387,8 +416,7 @@ public class SaleReport extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnExportExcel;
-    private javax.swing.JButton btnImportExcel;
+    private javax.swing.JButton QuayLaiBtn;
     private javax.swing.JButton btnViewReport;
     private javax.swing.JComboBox<String> cbbMonth;
     private javax.swing.JComboBox<String> cbbYear;

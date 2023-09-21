@@ -71,7 +71,7 @@ public class TaiKhoan extends javax.swing.JFrame {
     
     public TaiKhoanController tk = new TaiKhoanController();
     public int ChucVu = tk.TraVeChucVu(TenDNHome, MatKhauHome);
-    DefaultTableModel table = new DefaultTableModel();
+    public DefaultTableModel table = new DefaultTableModel();
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -544,7 +544,7 @@ public class TaiKhoan extends javax.swing.JFrame {
             return;
         } else {
             tkmodel = tk.TimKiemTK(choice, search);
-            Add(tkmodel, Table_for_search);
+            tk.Add(tkmodel, Table_for_search);
         }
     }//GEN-LAST:event_SearchBtn1ActionPerformed
 
@@ -555,6 +555,7 @@ public class TaiKhoan extends javax.swing.JFrame {
     }//GEN-LAST:event_ResetBtnActionPerformed
 
     private void jTable2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable2MouseClicked
+        jTable2.setDefaultEditor(Object.class, null);
         try {
             // TODO add your handling code here:
             int selectedRow = jTable2.getSelectedRow();
@@ -582,13 +583,6 @@ public class TaiKhoan extends javax.swing.JFrame {
             Logger.getLogger(TaiKhoan.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jTable2MouseClicked
-
-    public void Add(ArrayList<TaiKhoanModel> tkmodel, DefaultTableModel table){
-        for(TaiKhoanModel i : tkmodel){
-            Object[] obj = {i.getMaTK(), i.getHoTen(), i.toString(i.getNgSinh()), i.getGmail(), i.getDiaChi(), i.getSDT(), i.getLuong(), i.toString(i.getNgTaoTK()), i.getChucVu()};
-            table.addRow(obj);
-        }
-    }
     
     public void GetAllNhanVien(){
         String[] title = {"Mã TK", "Họ Tên", "Ngày sinh", "Gmail", "Địa chỉ", "SĐT", "Lương", "Ngày tạo", "Chức vụ"};
@@ -596,7 +590,7 @@ public class TaiKhoan extends javax.swing.JFrame {
         table.setRowCount(0);
         ArrayList<TaiKhoanModel> tkmodel = new ArrayList<TaiKhoanModel>();
         tkmodel = tk.getTCTaiKhoan();
-        Add(tkmodel, table);
+        tk.Add(tkmodel, table);
         jTable2.setModel(table);
         jTable2.getColumnModel().getColumn(0).setPreferredWidth(20);
         jTable2.getColumnModel().getColumn(2).setPreferredWidth(35);
@@ -609,7 +603,7 @@ public class TaiKhoan extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static void main(String args) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -631,6 +625,7 @@ public class TaiKhoan extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(TaiKhoan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */

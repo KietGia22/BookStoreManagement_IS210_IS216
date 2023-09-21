@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Model;
+
 import java.math.BigDecimal;
 
 /**
@@ -11,13 +12,23 @@ import java.math.BigDecimal;
  */
 public class BaoCaoDoanhThuModel {
     private int MaBaoCao, Thang, Nam, MaSach, SoLuong;
-    private String TenSach, TenTheLoai;    
+    private String TenSach, TenTheLoai;
     private BigDecimal GiaTien, TongTien;
 
     public BaoCaoDoanhThuModel() {
+        this.MaBaoCao = 0;
+        this.Thang = 0;
+        this.Nam = 0;
+        this.MaSach = 0;
+        this.TenSach = "";
+        this.TenTheLoai = "";
+        this.SoLuong = 0;
+        this.GiaTien = BigDecimal.ZERO;
+        this.TongTien = BigDecimal.ZERO;
     }
 
-    public BaoCaoDoanhThuModel(int MaBaoCao, int Thang, int Nam, int MaSach, String TenSach, String TenTheLoai, int SoLuong, BigDecimal GiaTien, BigDecimal TongTien) {
+    public BaoCaoDoanhThuModel(int MaBaoCao, int Thang, int Nam, int MaSach, String TenSach, String TenTheLoai,
+            int SoLuong, BigDecimal GiaTien, BigDecimal TongTien) {
         this.MaBaoCao = MaBaoCao;
         this.Thang = Thang;
         this.Nam = Nam;

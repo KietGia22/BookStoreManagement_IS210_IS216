@@ -10,6 +10,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.table.DefaultTableModel;
 import oracle.jdbc.OracleTypes;
 
 /**
@@ -17,6 +18,14 @@ import oracle.jdbc.OracleTypes;
  * @author GIA KIET
  */
 public class TheLoaiController {
+    
+    public void Add(ArrayList<TheLoaiModel> tlModel, DefaultTableModel table){
+        for(TheLoaiModel i : tlModel){
+            Object[] obj = {i.getMaTL(), i.getTenTL()};
+            table.addRow(obj);
+        }
+    }
+    
     public ArrayList<TheLoaiModel> getTCTL(){
         ArrayList<TheLoaiModel> tlModel = new ArrayList<TheLoaiModel>();
         Connection conn = null;

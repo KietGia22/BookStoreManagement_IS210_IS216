@@ -18,6 +18,7 @@ public class HoaDonModel {
     DateTimeFormatter dtformat = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 
     public HoaDonModel() {
+        this.Soluong = 0;
     }
 
     public HoaDonModel(int MaHD, int MaKH, int MaTK, int MaSach, int Soluong, long TongTien, LocalDate NgTaoHD) {

@@ -230,6 +230,9 @@
                       <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jTable1MouseClicked"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -291,6 +294,7 @@
                     <MatteColorBorder bottom="1" left="0" right="1" top="0"/>
                   </Border>
                 </Property>
+                <Property name="focusable" type="boolean" value="false"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="TenNPP_txt">
@@ -306,6 +310,7 @@
                     <MatteColorBorder bottom="1" left="0" right="1" top="0"/>
                   </Border>
                 </Property>
+                <Property name="focusable" type="boolean" value="false"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="TenNV_txt">
@@ -321,6 +326,7 @@
                     <MatteColorBorder bottom="1" left="0" right="1" top="0"/>
                   </Border>
                 </Property>
+                <Property name="focusable" type="boolean" value="false"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="NgayLapHD_txt">
@@ -336,6 +342,7 @@
                     <MatteColorBorder bottom="1" left="0" right="1" top="0"/>
                   </Border>
                 </Property>
+                <Property name="focusable" type="boolean" value="false"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="TongTienNhap_txt">
@@ -351,6 +358,7 @@
                     <MatteColorBorder bottom="1" left="0" right="1" top="0"/>
                   </Border>
                 </Property>
+                <Property name="focusable" type="boolean" value="false"/>
               </Properties>
             </Component>
           </SubComponents>

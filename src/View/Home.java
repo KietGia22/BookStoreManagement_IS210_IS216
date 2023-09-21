@@ -189,14 +189,14 @@ public class Home extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(NhaCCBtn)
-                            .addComponent(NVienBtn))
-                        .addGap(64, 64, 64)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(SachBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(PhieuNhapBtn))
-                        .addGap(97, 97, 97)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(NhaCCBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(NVienBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(43, 43, 43)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(PhieuNhapBtn)
+                            .addComponent(SachBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(50, 50, 50)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(226, 226, 226)
@@ -206,20 +206,18 @@ public class Home extends javax.swing.JFrame {
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(OutBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addComponent(TLBtn)
-                                                .addGap(81, 81, 81)
-                                                .addComponent(ChamCongBtn))
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addComponent(KHangBtn)
-                                                .addGap(40, 40, 40)
-                                                .addComponent(HoaDonBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 90, Short.MAX_VALUE)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(TLBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(KHangBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addGap(50, 50, 50)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(HoaDonBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)
+                                            .addComponent(ChamCongBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                             .addComponent(BaoCaoBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                             .addComponent(LuongBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                                .addGap(20, 20, 20))))
+                                .addGap(6, 6, 6))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addGap(0, 0, Short.MAX_VALUE))))
@@ -227,26 +225,22 @@ public class Home extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(14, 14, 14)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(SachBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(KHangBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(HoaDonBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(LuongBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(PhieuNhapBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TLBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ChamCongBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(BaoCaoBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
+                .addGap(19, 19, 19)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(NVienBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(NhaCCBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(SachBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(HoaDonBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addComponent(LuongBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(KHangBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(NhaCCBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PhieuNhapBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TLBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ChamCongBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BaoCaoBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(99, 99, 99)
@@ -283,88 +277,101 @@ public class Home extends javax.swing.JFrame {
     private void NVienBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NVienBtnActionPerformed
         // TODO add your handling code here:
         TaiKhoanController tk = new TaiKhoanController();
+        dispose();
         if(tk.TraVeChucVu(TenDNHome, MatKhauHome) == 4){
             new TaiKhoan(TenDNHome, MatKhauHome);
         } else {
             new KhongHien(TenDNHome, MatKhauHome);
         }
-        this.dispose();
     }//GEN-LAST:event_NVienBtnActionPerformed
 
     private void NhaCCBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NhaCCBtnActionPerformed
         // TODO add your handling code here:
         TaiKhoanController tk = new TaiKhoanController();
+        dispose();
         if(tk.TraVeChucVu(TenDNHome, MatKhauHome) == 3 || tk.TraVeChucVu(TenDNHome, MatKhauHome) == 1){
             new KhongHien(TenDNHome, MatKhauHome);
         } else {
             new NhaPhanPhoi(TenDNHome, MatKhauHome);
         }
-        this.dispose();
     }//GEN-LAST:event_NhaCCBtnActionPerformed
 
     private void SachBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SachBtnActionPerformed
         // TODO add your handling code here:
         TaiKhoanController tk = new TaiKhoanController();
-        new Sach(TenDNHome, MatKhauHome);
-        this.dispose();
+        dispose();
+        if(tk.TraVeChucVu(TenDNHome, MatKhauHome) == 1) {
+            new KhongHien(TenDNHome, MatKhauHome);
+        } else {
+            new Sach(TenDNHome, MatKhauHome);
+        }
     }//GEN-LAST:event_SachBtnActionPerformed
 
     private void PhieuNhapBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PhieuNhapBtnActionPerformed
         // TODO add your handling code here:
         TaiKhoanController tk = new TaiKhoanController();
+        dispose();
         if(tk.TraVeChucVu(TenDNHome, MatKhauHome) == 3 || tk.TraVeChucVu(TenDNHome, MatKhauHome) == 1){
             new KhongHien(TenDNHome, MatKhauHome);
         } else {
-            new PhieuNhap(TenDNHome, MatKhauHome);
+            new PhieuNhapSach(TenDNHome, MatKhauHome);
         }
-        this.dispose();
     }//GEN-LAST:event_PhieuNhapBtnActionPerformed
 
     private void KHangBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_KHangBtnActionPerformed
         // TODO add your handling code here:
         TaiKhoanController tk = new TaiKhoanController();
+        dispose();
         if(tk.TraVeChucVu(TenDNHome, MatKhauHome) == 2 || tk.TraVeChucVu(TenDNHome, MatKhauHome) == 1){
             new KhongHien(TenDNHome, MatKhauHome);
         } else {
             new KhachHang(TenDNHome, MatKhauHome);
         }
-        this.dispose();
     }//GEN-LAST:event_KHangBtnActionPerformed
 
     private void TLBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TLBtnActionPerformed
         // TODO add your handling code here:
         TaiKhoanController tk = new TaiKhoanController();
+        dispose();
         if(tk.TraVeChucVu(TenDNHome, MatKhauHome) == 4){
             new TheLoai(TenDNHome, MatKhauHome);
         } else {
             new KhongHien(TenDNHome, MatKhauHome);
         }
-        this.dispose();
     }//GEN-LAST:event_TLBtnActionPerformed
 
     private void HoaDonBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HoaDonBtnActionPerformed
         // TODO add your handling code here:
         TaiKhoanController tk = new TaiKhoanController();
-        new HoaDon(TenDNHome, MatKhauHome);
-        this.dispose();
+        dispose();
+        if(tk.TraVeChucVu(TenDNHome, MatKhauHome) == 1){
+            new TheLoai(TenDNHome, MatKhauHome);
+        } else {
+            new HoaDon(TenDNHome, MatKhauHome);
+        }
     }//GEN-LAST:event_HoaDonBtnActionPerformed
 
     private void ChamCongBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChamCongBtnActionPerformed
         // TODO add your handling code here:
         TaiKhoanController tk = new TaiKhoanController();
+        dispose();
         new ChamCong(TenDNHome, MatKhauHome);
-        this.dispose();
     }//GEN-LAST:event_ChamCongBtnActionPerformed
 
     private void LuongBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LuongBtnActionPerformed
         // TODO add your handling code here:
+        TaiKhoanController tk = new TaiKhoanController();
         dispose();
-        new Luong(TenDNHome, MatKhauHome);
+        if(tk.TraVeChucVu(TenDNHome, MatKhauHome) == 3 || tk.TraVeChucVu(TenDNHome, MatKhauHome) == 2){
+            new KhongHien(TenDNHome, MatKhauHome);
+        } else {
+            new Luong(TenDNHome, MatKhauHome);
+        }
     }//GEN-LAST:event_LuongBtnActionPerformed
 
     private void BaoCaoBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BaoCaoBtnActionPerformed
         // TODO add your handling code here:
-        new SaleReport();
+        new SaleReport(TenDNHome, MatKhauHome);
         this.dispose();
     }//GEN-LAST:event_BaoCaoBtnActionPerformed
 
@@ -393,6 +400,7 @@ public class Home extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Home.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
