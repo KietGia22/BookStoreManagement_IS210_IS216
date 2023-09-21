@@ -69,6 +69,11 @@ public class Login extends javax.swing.JFrame {
                 TenDN_TxtFocusLost(evt);
             }
         });
+        TenDN_Txt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TenDN_TxtActionPerformed(evt);
+            }
+        });
 
         MatKhau_Txt.setBackground(new java.awt.Color(183, 239, 197));
         MatKhau_Txt.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -208,6 +213,7 @@ public class Login extends javax.swing.JFrame {
         } else {
             TaiKhoanController tk = new TaiKhoanController();
             int kiemtra = tk.DangNhap(TenDN, MatKhau);
+            System.out.println(kiemtra);
             if(kiemtra == 1){
                 JOptionPane.showMessageDialog(this, "Chào mừng");
                 new Home(TenDN, MatKhau);
@@ -217,6 +223,10 @@ public class Login extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void TenDN_TxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TenDN_TxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TenDN_TxtActionPerformed
 
     /**
      * @param args the command line arguments

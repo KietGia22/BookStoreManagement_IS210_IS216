@@ -567,11 +567,16 @@ AS
 BEGIN
        OPEN out_cur FOR 
         SELECT * FROM TAIKHOAN
-        WHERE TENDN = tendn
+        WHERE TENDN = tdn
         AND MATKHAU = mk;
+        
         COMMIT;
 END;
 /
+
+select * from TAIKHOAN
+where TENDN = 'nv2' AND MATKHAU = '123456';
+
 CREATE OR REPLACE PROCEDURE GET_TL_CHO_SACH(out_cur OUT SYS_REFCURSOR)
 AS 
 BEGIN 

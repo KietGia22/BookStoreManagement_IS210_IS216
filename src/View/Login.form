@@ -127,6 +127,7 @@
           <Events>
             <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="TenDN_TxtFocusGained"/>
             <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="TenDN_TxtFocusLost"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TenDN_TxtActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JPasswordField" name="MatKhau_Txt">

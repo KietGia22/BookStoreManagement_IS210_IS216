@@ -47,8 +47,6 @@ public class TaiKhoanController {
             rs = (ResultSet) callsql.getObject(3);
             if(rs.next())
                 return 1;
-            rs.close();
-            conn.close();
         } catch (SQLException e){
             e.printStackTrace();
         }
