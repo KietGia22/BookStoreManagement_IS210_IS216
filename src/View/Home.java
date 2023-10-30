@@ -29,9 +29,9 @@ public class Home extends javax.swing.JFrame {
         this.setVisible(true);
         this.TenDNHome = TenDN;
         this.MatKhauHome = MatKhau;
-        BaoCaoController bc = new BaoCaoController();
+        /*BaoCaoController bc = new BaoCaoController();
         bc.CreateBaoCaoTon();
-        bc.CreateBaoCaoDT();
+        bc.CreateBaoCaoDT();*/
     }
 
     /**
